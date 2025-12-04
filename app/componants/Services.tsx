@@ -1,15 +1,14 @@
-"use client"
+"use client";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 // Services data
 export const allServices = [
-  
   // ---------------- SPECIALIZATION: REAL ESTATE ----------------
   {
     title: "Our Strategic Expertise",
-    image: "/images/real-estate.png",
+    image: "/stretgy.png",
     description:
       "We empower real estate businesses with modern digital solutions—automation, analytics, and immersive experiences to maximize ROI.",
     services: [
@@ -18,7 +17,7 @@ export const allServices = [
       "Blockchain Development & Web3 Engineering",
       "Trading Platforms & Fintech Engineering",
       "AI Automation & Intelligent Systems",
-    ]
+    ],
   },
 
   // ---------------- APP DEVELOPMENT ----------------
@@ -34,8 +33,8 @@ export const allServices = [
       "App UI/UX Design",
       "Real-Time App Features & Notifications",
       "App Store Optimization (ASO)",
-      "App Maintenance & Feature Upgrades"
-    ]
+      "App Maintenance & Feature Upgrades",
+    ],
   },
 
   // ---------------- WEB DEVELOPMENT ----------------
@@ -51,13 +50,13 @@ export const allServices = [
       "E-commerce Development",
       "CMS Development (WordPress, Headless CMS)",
       "Landing Page Development",
-      "Website Optimization & Maintenance"
-    ]
+      "Website Optimization & Maintenance",
+    ],
   },
   // ---------------- DESIGN ----------------
   {
     title: "Brand Identity & Strategy",
-    image: "/images/brand-identity.png",
+    image: "/brancIdentity.png",
     description:
       "We create strong brand identities and strategic frameworks that position your business for long-term market impact.",
     services: [
@@ -67,8 +66,8 @@ export const allServices = [
       "Typography & Color Systems",
       "Brand Guidelines Creation",
       "Rebranding & Refresh Projects",
-      "Messaging & Positioning Frameworks"
-    ]
+      "Messaging & Positioning Frameworks",
+    ],
   },
 
   // ---------------- MARKETING ----------------
@@ -84,8 +83,8 @@ export const allServices = [
       "Email Marketing & Automation",
       "Influencer & Community Marketing",
       "Funnel Building & Conversion Optimization",
-      "Performance Analytics & Reporting"
-    ]
+      "Performance Analytics & Reporting",
+    ],
   },
   // ---------------- AI ENGINEERING ----------------
   {
@@ -100,9 +99,9 @@ export const allServices = [
       "AI Chatbots & Virtual Assistants",
       "Data Engineering & Pipelines",
       "Predictive Analytics Models",
-      "AI Integration with Existing Systems"
-    ]
-  }
+      "AI Integration with Existing Systems",
+    ],
+  },
 ];
 
 export const Services = () => {
@@ -131,7 +130,7 @@ export const Services = () => {
             [index === 0 ? "0vh" : "100vh", "0vh"]
           );
 
-          return (  
+          return (
             <motion.div
               key={index}
               style={{
@@ -145,38 +144,44 @@ export const Services = () => {
                 <div className="w-full md:w-5/12 h-1/2 bg-black/90 md:h-full relative overflow-hidden">
                   <div className="absolute inset-0 " />
                   <div className="h-full w-full flex items-center justify-center text-9xl object-contain">
-                    <img src={service.image} alt="web dev" className="w-full h-full" />
+                    <img
+                      src={service.image}
+                      alt="web dev"
+                      className="w-full h-full"
+                    />
                   </div>
                 </div>
 
                 {/* Content Section */}
                 <div className="w-full md:w-7/12 flex justify-end items-center font-pt">
-                <div className="flex flex-col h-3/5 w-4/5 justify-start">
-                <div className="w-3/5">
-                <div className="flex justify-between group">
-                  <h3 className="text-3xl font-bold font-pt mb-6 hover:text-blue-800 hover:cursor-pointer">{service.title}</h3>
-                  <ArrowUpRight className="w-7 h-7 group-hover:text-blue-800 group-hover:cursor-pointer group-hover:translate-x-1 group-hover:-translate-y-1 transition" />
-                </div>
-                  <p className="text-xl leading-relaxed opacity-90">
-                    {service.description}
-                  </p>
-                  <div className="flex gap-5 hover:cursor-pointer  mt-5 pb-5 border-b-2 ">
-                    <p className="text-xs font-bold font-sans bg-blue-800 w-fit text-white px-2 py-1 rounded-r-xl">
-                      Specialized Solutions We Offer
-                    </p>
+                  <div className="flex flex-col h-3/5 w-4/5 justify-start">
+                    <div className="w-3/5">
+                      <div className="flex justify-between group">
+                        <h3 className="text-3xl font-bold font-pt mb-6 hover:text-blue-800 hover:cursor-pointer">
+                          {service.title}
+                        </h3>
+                        <ArrowUpRight className="w-7 h-7 group-hover:text-blue-800 group-hover:cursor-pointer group-hover:translate-x-1 group-hover:-translate-y-1 transition" />
+                      </div>
+                      <p className="text-xl leading-relaxed opacity-90">
+                        {service.description}
+                      </p>
+                      <div className="flex gap-5 hover:cursor-pointer  mt-5 pb-5 border-b-2 ">
+                        <p className="text-xs font-bold font-sans bg-blue-800 w-fit text-white px-2 py-1 rounded-r-xl">
+                          Specialized Solutions We Offer
+                        </p>
+                      </div>
+                      <div className="flex flex-col list-inside mt-5">
+                        {service.services.map((item, idx) => (
+                          <li
+                            key={idx}
+                            className="px-4 py-2 rounded-full text-sm md:text-lg hover:text-blue-800 hover:cursor-pointer mr-2 bg-blend-color-dodge hover:translate-x-1 transition"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex flex-col list-inside mt-5">
-                    {service.services.map((item, idx) => (
-                      <li
-                        key={idx}
-                        className="px-4 py-2 rounded-full text-sm md:text-lg hover:text-blue-800 hover:cursor-pointer mr-2 bg-blend-color-dodge hover:translate-x-1 transition"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </div>
-                </div>
-                </div>
                 </div>
               </div>
             </motion.div>

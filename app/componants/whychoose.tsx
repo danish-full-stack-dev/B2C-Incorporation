@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
@@ -11,16 +11,28 @@ const WhyChooseUs: React.FC = () => {
     offset: ["start end", "center start"],
   });
 
-  const textColor = useTransform(scrollYProgress, [0, 1], ["#1f2937", "#ffffff"]);
+  const textColor = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["#1f2937", "#ffffff"]
+  );
 
   const bgColor = useTransform(scrollYProgress, [0, 1], ["#456882", "#234C6A"]);
 
   const brands: string[] = [
-    "/addidas.png",
-    "/lofo.png",
-    "/mcdonalds.png",
-    "/nike.jpeg",
+    "/ters.png",
+    "/D&J.png",
+    "/ellis&cco.png",
+    "/goodies.png",
     "/outfiters.png",
+    "/lvi-info.png",
+    "/mpower.png",
+    "/NERF.png",
+    "/Rising phoenix.png",
+    "/rye-assic.png",
+    "/saya.png",
+    "/sirona.png",
+    "/WealthWise.png",
     "/zero.png",
   ];
 
@@ -55,12 +67,9 @@ const WhyChooseUs: React.FC = () => {
           animate={{ x: ["0%", "-50%"] }}
           transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
         >
-          {[...brands,...brands,...brands].map((logo, idx) => (
-            <Link href={"/design"} className="">
-              <div
-                key={idx}
-                className="shrink-0 w-32 h-16 flex items-center  grayscale hover:grayscale-0 justify-center group relative"
-              >
+          {[...brands, ...brands, ...brands].map((logo, idx) => (
+            <Link key={idx} href={"/design"} className="">
+              <div className="shrink-0 w-32 h-16 flex items-center  grayscale hover:grayscale-0 justify-center group relative">
                 <img
                   src={logo}
                   alt={`Brand ${idx % brands.length}`}
@@ -69,7 +78,6 @@ const WhyChooseUs: React.FC = () => {
                 <div className="absolute inset-0" />
               </div>
             </Link>
-
           ))}
         </motion.div>
       </div>

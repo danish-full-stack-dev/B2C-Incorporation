@@ -4,7 +4,7 @@ import React from "react";
 const TechnicalExpertise: React.FC = () => {
   return (
     <section className="">
-      <section className="flex items-center bg-[#172b68] h-80">
+      <section className="flex items-center bg-[#00091f] h-80">
         <div className="flex flex-row  text-white">
           <div className="w-1/3 font-sans font-medium flex justify-center">
             <h4>TECNICAL EPERTISES</h4>
@@ -18,7 +18,7 @@ const TechnicalExpertise: React.FC = () => {
       </section>
       <section className="flex flex-col">
         <img
-          src="https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/78651/330.awards.png"
+          src="award__2.png"
           alt="bg award image"
           className="w-full h-full bg-cover"
         />
@@ -27,16 +27,17 @@ const TechnicalExpertise: React.FC = () => {
           hello
         </div>
       </section>
-      <section className="relative flex flex-col bg-indigo-950 py-20 font-sans text-white">
+      <section className="relative flex flex-col bg-[#00091f] py-20 font-sans text-white">
         <div className="flex flex-col justify-center items-center">
-          <div className="font-sans flex justify-start font-medium text-4xl my-20 w-8/12 px-5">
-            <h4 className="">NUMBERS</h4>
+          <div className="font-sans flex justify-start font-medium text-4xl my-20 w-9/12 px-5">
+            <h4 className="captalize">B2C INC. SUCCESS STATS</h4>
           </div>
-          <div className="grid grid-cols-3 w-8/12 px-5">
+          <div className="grid grid-cols-4 w-9/12 px-5">
             {[
               { header: "WE WORK SINCE", value: "2024" },
-              { header: "LOCATION WORLDWIDE", value: "3" },
-              { header: "LONG-TERM CLIENTS", value: "85%" },
+              { header: "LOCATION WORLDWIDE", value: "02" },
+              { header: "ON-GOING CLIENTS", value: "200+" },
+              { header: "SERVED-CLIENTS", value: "1000+" },
             ].map((v, idx) => (
               <div
                 key={idx}

@@ -44,7 +44,7 @@ const handleInputChange = (
   // };
 
   return (
-    <div className="min-h-screen bg-linear-to-r from-blue-600 to-blue-800 flex">
+    <div className="min-h-screen bg-blue-600 flex">
       {/* Left Section */}
       <div className="w-2/5 p-12 text-white flex flex-col justify-center">
         <h1 className="text-4xl font-bold mb-4">Let's connect</h1>
