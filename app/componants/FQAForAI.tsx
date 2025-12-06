@@ -9,7 +9,7 @@ interface FAQItem {
   answer: string;
 }
 
-export const FAQAccordion:React.FC=()=> {
+export const FAQForDataAI:React.FC=()=> {
   const [openItem, setOpenItem] = useState<number | null>(null);
 
   const faqItems: FAQItem[] = [

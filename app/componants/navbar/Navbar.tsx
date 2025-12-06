@@ -81,7 +81,7 @@ export const Navbar: React.FC = () => {
                         setIndex(idx);
                         setSelectedNav(value);
                       }}
-                      className="flex items-center gap-1 hover:cursor-pointer hover:text-gray-600 transition-all duration-300"
+                      className="flex items-center gap-1 hover:cursor-pointer hover:text-gray-400 transition-all duration-300"
                     >
                       {value}
                       {value !== "Case Studies" ? (
@@ -102,10 +102,10 @@ export const Navbar: React.FC = () => {
           <div className=" flex justify-center">
             <button
               className={`bg-blue-600 hover:bg-blue-800 transition-all duration-500 ${
-                strecth ? "p-2" : "px-4 py-1"
+                strecth ? "p-2" : "px-4 py-2 font-medium text-sm"
               }`}
             >
-              {strecth ? <Mail className="h-5 w-5" /> : "Send request"}
+              {strecth ? <Mail className="h-5 w-5" /> : "Quick demo"}
             </button>
           </div>
         </div>
@@ -133,8 +133,8 @@ export const Navbar: React.FC = () => {
                 strecth ? "w-full" : "w-8/12"
               }`}
             >
-              <div className="grid grid-flow-col text-base">
-                <div className="flex flex-col gap-2 pr-20 border-r border-gray-700">
+              <div className="grid grid-flow-col text-sm">
+                <div className="flex flex-col gap-4 pr-20 border-r border-gray-700">
                   <span className="text-gray-500 text-xs font-bold mb-1">
                     Our Expertise
                   </span>
@@ -142,8 +142,8 @@ export const Navbar: React.FC = () => {
                     { heading: "Design", to: "/design" },
                     { heading: "Product engineering", to: "/design" },
                     { heading: "Cloud", to: "/design" },
-                    { heading: "Data services", to: "/data-service" },
-                    { heading: "AI Automation", to: "/ai-service" },
+                    { heading: "Data services", to: "/pages/services/data-service" },
+                    { heading: "AI Automation", to: "/pages/services/ai-service" },
                   ].map((value, idx) => (
                     <Link
                       href={value.to}
@@ -154,7 +154,7 @@ export const Navbar: React.FC = () => {
                     </Link>
                   ))}
                 </div>
-                <div className="flex flex-col gap-2 px-20 border-r  border-gray-700">
+                <div className="flex flex-col px-20 border-r  border-gray-700 gap-4">
                   <span className="text-gray-500 text-xs font-bold mb-1">
                     Fintech specialization
                   </span>
@@ -167,7 +167,7 @@ export const Navbar: React.FC = () => {
                     </p>
                   ))}
                 </div>
-                <div className="flex flex-col gap-2 pl-20">
+                <div className="flex flex-col gap-4 pl-20">
                   <span className="text-gray-500 text-xs font-bold mb-1">
                     Healthcare specialization
                   </span>
@@ -195,7 +195,7 @@ export const Navbar: React.FC = () => {
             >
               <div>
                 <div className="flex flex-row text-base px-5">
-                  <div className="flex flex-col gap-3 w-1/3 border-r-2  border-gray-700">
+                  <div className="flex flex-col gap-4 w-1/3 border-r-2  border-gray-700">
                     {[
                       "About us",
                       "Leadership",
@@ -203,7 +203,7 @@ export const Navbar: React.FC = () => {
                       "Careers",
                       "Certifications",
                     ].map((value, idx) => (
-                      <p key={idx}>{value}</p>
+                      <p key={idx} className="hover:text-blue-600 hover:cursor-pointer">{value}</p>
                     ))}
                   </div>
                   <div className="flex flex-col w-2/3 pl-10">
@@ -215,12 +215,7 @@ export const Navbar: React.FC = () => {
                     <p className="">
                       We are extremely satisfied with our collaboration with
                       EffectiveSoft. We engaged them for business analysis,
-                      UI/UX design, web development, and testing. The results
-                      were visually stunning designs and wireframes, remarkable
-                      UX suggestions, and an app fully aligned with our
-                      requirements. The team quickly understood our needs,
-                      worked flexibly within tight deadlines, and consistently
-                      delivered exceptional work.
+                      UI/UX design, web development, and testing. 
                     </p>
                     <div className="flex flex-col justify-start pt-5">
                       <h4>Gulfam .......</h4>
@@ -241,8 +236,8 @@ export const Navbar: React.FC = () => {
               <div>
                 <div className="grid grid-flow-col grid-cols-3 text-base px-5">
                   <div className="flex flex-col  gap-3 border-r  border-gray-700">
-                    <h4 className="hover:text-blue-500">Blog</h4>
-                    <h4 className="hover:text-blue-500">Company updates</h4>
+                    <h4 className="hover:text-blue-500 hover:cursor-pointer">Blog</h4>
+                    <h4 className="hover:text-blue-500 hover:cursor-pointer">Company updates</h4>
                   </div>
                   <div className="grid col-span-2 grid-flow-col">
                     <div className="flex flex-col border-r px-10  border-gray-700">

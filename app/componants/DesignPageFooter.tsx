@@ -17,15 +17,15 @@ export const DesignPageFooter: React.FC = () => {
 
   return (
     <div>
-      <footer className="relative text-gray-300 pt-16">
+      <footer className="relative text-gray-300 pt-16 bg-black">
 
         <div className="absolute left-0 top-10 w-[400px] h-[400px] 
-              bg-blue-700/40 blur-[160px] rounded-full"></div>
+              bg-blue-700/70 blur-[160px] rounded-full"></div>
 
         <div className="absolute right-0 top-20 w-[400px] h-[400px] 
-              bg-blue-500/40 blur-[160px] rounded-full"></div>
+              bg-blue-700/70 blur-[160px] rounded-full"></div>
 
-        <div className="relative z-10 w-10/12 mx-auto px-6 md:px-12 grid md:grid-cols-4 gap-12 border-y py-10">
+        <div className="relative z-10 w-10/12 mx-auto px-6 md:px-12 grid md:grid-cols-4 gap-12 border-y py-10 ">
           <div className='flex w-full'><h3 className='w-full text-lg leading-tight'>B2C.design Incorporation <br /><span className='text-xs'>Powered by B2C </span> </h3></div>
           {/* Contact Info */}
           <div>

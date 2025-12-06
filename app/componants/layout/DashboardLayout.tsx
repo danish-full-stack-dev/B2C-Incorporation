@@ -1,13 +1,22 @@
-"use client"
-import React from 'react'
-import { Navbar } from '../navbar/Navbar'
-import Footer from '../Footer'
+"use client";
+import { Navbar } from "../navbar/Navbar";
+import Footer from "../Footer";
+import { usePathname } from "next/navigation";
+import { DesignPageNavbar } from "../navbar/DesignPageNavbar";
+import { DesignPageFooter } from "../DesignPageFooter";
 
-export const DashboardLayout: React.FC = () => {
-    return (
-        <div>
-            <Navbar/>
-            <Footer />
-        </div>
-    )
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const path = usePathname();
+
+  return (
+    <div>
+      {path === "/design" ? <DesignPageNavbar /> : <Navbar />}
+      {children}
+      {path === "/design" ? <DesignPageFooter /> : <Footer />}
+    </div>
+  );
 }

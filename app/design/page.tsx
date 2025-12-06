@@ -136,8 +136,31 @@ export default function DesignHome() {
             </div>
           </div>
           <div className="flex flex-row gap-10 w-full mt-16 p-3">
-            <BorderAnimation className="flex flex-col w-1/3 justify-between h-[50vh] p-8">
-              <div className="flex flex-col p-8">
+            <BorderAnimation className="flex p-10 flex-col w-1/3 justify-between h-[50vh]">
+              <div className="flex flex-col px-8 pt-8">
+                <Snowflake className="w-12 h-12 text-blue-800" />
+                <h3 className="my-8 text-2xl">Strategize</h3>
+                <div className="flex flex-col text-lg gap-2">
+                  {[
+                    "Product discovery",
+                    "Proof of concept design",
+                    "MVP design",
+                  ].map((value, idx) => (
+                    <li key={idx} className="list-inside">
+                      {value}
+                    </li>
+                  ))}
+                </div>
+              </div>
+              <Link href={"#"} className="flex gap-2 items-center p-8">
+                Explore{" "}
+                <span>
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+              </Link>
+            </BorderAnimation>
+            <BorderAnimation className="flex flex-col w-1/3 justify-between h-[50vh]">
+              <div className="flex flex-col px-8 pt-8">
                 <Snowflake className="w-12 h-12 text-blue-800" />
                 <h3 className="my-8 text-2xl">Strategize</h3>
                 <div className="flex flex-col text-lg gap-2">
@@ -160,7 +183,7 @@ export default function DesignHome() {
               </Link>
             </BorderAnimation>
             <BorderAnimation className="flex flex-col w-1/3 justify-between h-[50vh] p-8 ">
-              <div className="flex flex-col">
+              <div className="flex flex-col px-8 pt-8">
                 <Snowflake className="w-12 h-12 text-blue-800" />
                 <h3 className="my-8 text-2xl">Strategize</h3>
                 <div className="flex flex-col text-lg gap-2">
@@ -175,30 +198,7 @@ export default function DesignHome() {
                   ))}
                 </div>
               </div>
-              <Link href={"#"} className="flex gap-2 items-center">
-                Explore{" "}
-                <span>
-                  <ArrowRight className="w-4 h-4" />
-                </span>
-              </Link>
-            </BorderAnimation>
-            <BorderAnimation className="flex flex-col w-1/3 justify-between h-[50vh] p-8 ">
-              <div className="flex flex-col">
-                <Snowflake className="w-12 h-12 text-blue-800" />
-                <h3 className="my-8 text-2xl">Strategize</h3>
-                <div className="flex flex-col text-lg gap-2">
-                  {[
-                    "Product discovery",
-                    "Proof of concept design",
-                    "MVP design",
-                  ].map((value, idx) => (
-                    <li key={idx} className="list-inside">
-                      {value}
-                    </li>
-                  ))}
-                </div>
-              </div>
-              <Link href={"#"} className="flex gap-2 items-center">
+              <Link href={"#"} className="flex gap-2 items-center p-8">
                 Explore{" "}
                 <span>
                   <ArrowRight className="w-4 h-4" />
@@ -340,7 +340,7 @@ export default function DesignHome() {
         </div>
         <div className="flex flex-row  gap-10 w-10/12 mx-auto my-16">
           <BorderAnimation className="flex flex-col w-1/2 justify-between h-[25vh] p-8 ">
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-5 p-6">
               <h3 className="text-2xl">Project Based</h3>
               <p className="text-base">
                 If you have a need for a high-quality product delivered within a
@@ -349,7 +349,7 @@ export default function DesignHome() {
                 ensure it's done in time and on budget.
               </p>
             </div>
-            <Link href={"#"} className="flex gap-2 items-center">
+            <Link href={"#"} className="flex gap-2 items-center pl-6 pb-3">
               Explore{" "}
               <span>
                 <ArrowRight className="w-4 h-4" />
@@ -358,7 +358,7 @@ export default function DesignHome() {
           </BorderAnimation>
 
           <BorderAnimation className="flex flex-col w-1/2 justify-between h-[25vh] p-8 ">
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-5 p-6">
               <h3 className="text-2xl">Project Based</h3>
               <p className="text-base">
                 If you have a need for a high-quality product delivered within a
@@ -367,7 +367,7 @@ export default function DesignHome() {
                 ensure it's done in time and on budget.
               </p>
             </div>
-            <Link href={"#"} className="flex gap-2 items-center">
+            <Link href={"#"} className="flex gap-2 items-center pl-6 pb-3">
               Explore{" "}
               <span>
                 <ArrowRight className="w-4 h-4" />
@@ -382,13 +382,13 @@ export default function DesignHome() {
               <span className="text-blue-700">awesome together!</span>
             </h3>
             <div className="flex gap-4 my-10">
-              <button className="px-8 py-2 rounded-full w-fit outline-1">
+              <button className="px-8 py-2 rounded-full w-fit outline-1 outline">
                 drop a line.!
               </button>
-              <button className="px-3 py-3 rounded-full w-fit outline-1">
+              <button className="px-3 py-3 rounded-full w-fit outline-1 outline">
                 <Volleyball className="w-5 h-5" />
               </button>
-              <button className="px-3 py-3 rounded-full w-fit outline-1">
+              <button className="px-3 py-3 rounded-full w-fit outline-1 outline">
                 <Volleyball className="w-5 h-5" />
               </button>
             </div>
@@ -400,9 +400,6 @@ export default function DesignHome() {
         </section>
         <div className="absolute -z-10 inset-0 flex justify-end"></div>
       </section>
-      <footer>
-        <DesignPageFooter />
-      </footer>
     </div>
   );
 }

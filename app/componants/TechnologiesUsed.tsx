@@ -34,7 +34,7 @@ export const TechnologiesUsed: React.FC = () => {
         const container = scrollRef.current;
         if (!container) return;
 
-        const scrollAmount = Math.round(container.offsetWidth /12)
+        const scrollAmount = Math.round(container.offsetWidth /11)
         if (direction === "left" && currentSlide !== 0)
       setCurrentSlide((prev) => prev - 1)
     else if(direction==="right" && currentSlide !== totalSlides/2)
@@ -53,7 +53,7 @@ export const TechnologiesUsed: React.FC = () => {
             </div>
             <div
                 ref={scrollRef}
-                className="flex overflow-x-hidden snap-x snap-mandatory py-16"
+                className="flex overflow-x-hidden snap-x snap-mandatory py-16 gap-10"
             >
                 {technologies.map((value, idx) => (
                     <div

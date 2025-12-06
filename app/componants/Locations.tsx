@@ -1,6 +1,6 @@
-"use client"
-import React, { useState } from 'react';
-import { Mail } from 'lucide-react';
+"use client";
+import React, { useState } from "react";
+import { Mail } from "lucide-react";
 
 interface Location {
   city: string;
@@ -12,103 +12,70 @@ interface RegionLocations {
   [key: string]: Location[];
 }
 
-export const LocationsSection:React.FC=()=> {
-  const [activeTab, setActiveTab] = useState<string>('Americas');
-  const [email, setEmail] = useState<string>('');
+export const LocationsSection: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<string>("America");
+  const [email, setEmail] = useState<string>("");
 
   const locations: RegionLocations = {
-    Americas: [
+    America: [
       {
-        city: 'San Diego, California',
-        address: '4445 Eastgate Mall, Suite 200\n92121',
-        phone: '1-800-288-9659'
+        city: "Cheyenne, WY 82002, US",
+        address: "Herschler Building East, 122 W 25th St, Suites 100 & 101",
+        phone: "+130 74 41 3171",
       },
-      {
-        city: 'San Francisco, California',
-        address: '50 California St #1500\n94111',
-        phone: '1-800-288-9659'
-      },
-      {
-        city: 'Pittsburgh, Pennsylvania',
-        address: 'One Oxford Centre, 500 Grant St Suite 2900\n15219',
-        phone: '1-800-288-9659'
-      },
-      {
-        city: 'Durham, North Carolina',
-        address: 'RTP Meridian, 2530 Meridian Pkwy Suite 300\n27713',
-        phone: '1-800-288-9659'
-      },
-      {
-        city: 'San Jose, Costa Rica',
-        address: 'Escazú Corporate Centre, Piso 6\n40602',
-        phone: '1-800-288-9659'
-      }
     ],
-    Europe: [
+    UAE: [
       {
-        city: 'London, United Kingdom',
-        address: '1 Knightsbridge Green\nSW1X 7QA',
-        phone: '+44 20 7123 4567'
+        city: "Al Nahda 1, Dubai, UAE",
+        address: "Office 318,  3rd Floor, Al Noor Building 1,",
+        phone: "+971 (0) 50 328 2209",
       },
-      {
-        city: 'Berlin, Germany',
-        address: 'Friedrichstrasse 95\n10117',
-        phone: '+49 30 1234 5678'
-      },
-      {
-        city: 'Paris, France',
-        address: '75 Avenue des Champs-Élysées\n75008',
-        phone: '+33 1 23 45 67 89'
-      }
     ],
-    'Middle East': [
-      {
-        city: 'Dubai, UAE',
-        address: 'Dubai Silicon Oasis\nDubai',
-        phone: '+971 4 123 4567'
-      },
-      {
-        city: 'Tel Aviv, Israel',
-        address: 'Rothschild Boulevard 45\n6578403',
-        phone: '+972 3 123 4567'
-      }
-    ]
+    // "Middle East": [
+    //   {
+    //     city: "Dubai, UAE",
+    //     address: "Dubai Silicon Oasis\nDubai",
+    //     phone: "+971 4 123 4567",
+    //   },
+    // ],
   };
 
   const handleSubscribe = () => {
     if (email) {
       alert(`Subscribed with email: ${email}`);
-      setEmail('');
+      setEmail("");
     }
   };
 
   return (
     <div className="bg-white py-16 px-8 font-pt">
-        <div className='max-w-7xl mx-auto'>
-      <div className="flex">
-        {/* Header Section */}
-        <div className="mb-12 w-1/2">
-          <div className="flex items-start justify-between">
-            <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Our locations</h2>
-              <p className="text-gray-600 mb-6">
-                Say hello to our friendly team at one<br />of these locations.
-              </p>
-              <a 
-                href="mailto:rfq@effectivesoft.com" 
-                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 transition"
-              >
-                <Mail className="w-5 h-5" />
-                <span>rfq@effectivesoft.com</span>
-              </a>
+      <div className="max-w-7xl mx-auto">
+        <div className="flex">
+          {/* Header Section */}
+          <div className="mb-12 w-1/2">
+            <div className="flex items-start justify-between">
+              <div>
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                  Our locations
+                </h2>
+                <p className="text-gray-600 mb-6">
+                  Say hello to our friendly team at one
+                  <br />
+                  of these locations.
+                </p>
+                <a
+                  href="mailto:rfq@effectivesoft.com"
+                  className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 transition"
+                >
+                  <Mail className="w-5 h-5" />
+                  <span>rfq@effectivesoft.com</span>
+                </a>
+              </div>
             </div>
-
           </div>
-        </div>
 
-        {/* Locations Grid */}
-        <div className='flex flex-col w-1/2'>
-            
+          {/* Locations Grid */}
+          <div className="flex flex-col w-1/2">
             {/* Tabs */}
             <div className="flex gap-2 pb-8">
               {Object.keys(locations).map((region) => (
@@ -117,29 +84,29 @@ export const LocationsSection:React.FC=()=> {
                   onClick={() => setActiveTab(region)}
                   className={`px-6 py-2 font-medium transition ${
                     activeTab === region
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      ? "bg-blue-600 text-white"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`}
                 >
                   {region}
                 </button>
               ))}
             </div>
-        <div className="grid grid-cols-2 gap-x-12 gap-y-8 mb-20">
-          {locations[activeTab].map((location, index) => (
-            <div key={index}>
-              <h3 className="font-semibold text-gray-900 mb-2">
-                {location.city}
-              </h3>
-              <p className="text-gray-600 whitespace-pre-line mb-1">
-                {location.address}
-              </p>
-              <p className="text-gray-600">{location.phone}</p>
+            <div className="grid grid-cols-2 gap-x-12 gap-y-8 mb-20">
+              {locations[activeTab].map((location, index) => (
+                <div key={index}>
+                  <h3 className="font-semibold text-gray-900 mb-2">
+                    {location.city}
+                  </h3>
+                  <p className="text-gray-600 whitespace-pre-line mb-1">
+                    {location.address}
+                  </p>
+                  <p className="text-gray-600">{location.phone}</p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-        </div>
-      </div>
 
         {/* Newsletter Section */}
         <div className="border-t border-gray-200 bg-gray-200 p-12">
@@ -149,10 +116,11 @@ export const LocationsSection:React.FC=()=> {
                 Join our newsletter
               </h3>
               <p className="text-gray-600">
-                Stay up to date with the latest news, announcements, and articles.
+                Stay up to date with the latest news, announcements, and
+                articles.
               </p>
             </div>
-            
+
             <div className="flex gap-3">
               <input
                 type="email"
@@ -173,4 +141,4 @@ export const LocationsSection:React.FC=()=> {
       </div>
     </div>
   );
-}
+};

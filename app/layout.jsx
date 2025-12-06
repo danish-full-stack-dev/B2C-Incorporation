@@ -1,3 +1,4 @@
+import DashboardLayout from "./componants/layout/DashboardLayout";
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 
@@ -24,7 +25,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <DashboardLayout>
+          {children}
+        </DashboardLayout>
+        
       </body>
     </html>
   );

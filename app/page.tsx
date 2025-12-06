@@ -1,11 +1,19 @@
-import Link from "next/link";
+import Footer from "./componants/Footer";
+import { Hero } from "./componants/Hero";
+import { Navbar } from "./componants/navbar/Navbar";
+import { Services } from "./componants/Services";
+import TechnicalExpertise from "./componants/TechnicalExpertise";
+import TestimonialsSection from "./componants/Testimonials";
+import WhyChooseUs from "./componants/whychoose";
 
 export default function Home() {
   return (
-    <div>
-      <Link href="/home">Go to Home Page</Link>
-      <Link href="/design">Go to Home Page</Link>
-      <Link href="/home">Go to Home Page</Link>
+    <div>        
+        <Hero />
+        <WhyChooseUs />
+        <Services />
+        <TechnicalExpertise />
+        <TestimonialsSection/>
     </div>
-  );
+  )
 }

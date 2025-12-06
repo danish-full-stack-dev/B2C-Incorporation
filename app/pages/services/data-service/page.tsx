@@ -1,8 +1,12 @@
+"use client";
 import React, { useState } from 'react'
 import { ArrowUpRight } from 'lucide-react';
-import { ProcessProgress } from '../../componants/ProgressBar';
-import { FAQAccordion } from '../../componants/FQA'; import { FeaturedProjects } from '../../componants/FeaturedProjects';
-import { TechnologiesUsed } from '../../componants/TechnologiesUsed';
+import { ProcessProgress } from '../../../componants/ProgressBar';
+import { FeaturedProjects } from '../../../componants/FeaturedProjects';
+import { TechnologiesUsed } from '../../../componants/TechnologiesUsed';
+import DataServicesSection from '@/app/componants/DataServicesSection';
+import { FAQForDataSciences } from '@/app/componants/FAQForDataScience';
+import useInViewAnimation from '@/app/hooks/useInViewAnimation';
 
 interface Technology {
   name: string;
@@ -12,7 +16,8 @@ interface Technology {
 interface TechCategory {
   [key: string]: Technology[];
 }
-export const DataServices: React.FC = () => {
+export default function DataServices () {
+  const { ref, inView } = useInViewAnimation();
   const [active, setActive] = useState(0);
 
   const [activeTab, setActiveTab] = useState<string>('Frameworks and libraries');
@@ -88,27 +93,27 @@ export const DataServices: React.FC = () => {
   ];
   const Processes = [
     {
-      icon: 'image.png',
+      icon: '/image.png',
       heading: "Kick-off",
       description: "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop."
     }, {
-      icon: 'image.png',
+      icon: '/image.png',
       heading: "Kick-off",
       description: "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop."
     }, {
-      icon: 'image.png',
+      icon: '/image.png',
       heading: "Kick-off",
       description: "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop."
     }, {
-      icon: 'image.png',
+      icon: '/image.png',
       heading: "Kick-off",
       description: "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop."
     }, {
-      icon: 'image.png',
+      icon: '/image.png',
       heading: "Kick-off",
       description: "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop."
     }, {
-      icon: 'image.png',
+      icon: '/image.png',
       heading: "Kick-off",
       description: "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop."
     },
@@ -188,20 +193,6 @@ export const DataServices: React.FC = () => {
 
       </div>
       <div className=' bg-gray-50'>
-        {/* <div className='py-16 my-10 px-16 text-white bg-blue-950'>
-          <div className='flex flex-col gap-6 py-5 px-6'>
-            <h2 className='text-5xl bg-blue-700 px-4 py-2 w-fit'>What about you?
-            </h2>
-            <p className='text-xl w-3/5'>
-              We're eager to delve deeper and understand your specific needs to unlock the full potential of AI for your business. By learning more about your challenges and goals, we can tailor our solutions to serve you best.</p>
-            <form className='group flex flex-col gap-6' onSubmit={(e) => {
-
-            }}>
-              <input type="text" placeholder='Message' className='w-full bg-transparent pb-5 outline-none border-b my-5' />
-              <button className='bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300'>Next</button>
-            </form>
-          </div>
-        </div> */}
         <section className='py-10 w-8/12 mx-auto'>
           <div className='flex flex-col gap-3 py-10'>
             <h5 className='text-sm font-medium'>SERVICES</h5>
@@ -225,9 +216,9 @@ export const DataServices: React.FC = () => {
             <h5 className='text-sm font-medium'>SOLUTIONS</h5>
             <h2 className='text-4xl font-medium'>Data and analytics solutions</h2>
           </div>
-          {Array.from({ length: 5 }).map((_) => (
+          {Array.from({ length: 5 }).map((_,idx) => (
 
-            <div className='flex items-center py-10 px-5 hover:bg-white'>
+            <div key={idx} className='flex items-center py-10 px-5 hover:bg-white'>
               <div className='w-1/4'>
                 <div className='flex items-start gap-3'><span className='mt-1'>01</span>
                   <h4 className='text-3xl font-medium'>Design and audit of architecture for data platforms</h4>
@@ -242,17 +233,21 @@ export const DataServices: React.FC = () => {
         </div>
       </div>
       <div className='py-16'>
-        <div className='w-8/12 mx-auto py-10'>
-          <div className='flex flex-col gap-2 py-10'>
+        <div className='w-8/12 mx-auto pt-10'>
+          <div className='flex flex-col gap-2'>
             <h5 className='text-sm font-medium'>OUR COMPLIANCE</h5>
             <h2 className='text-4xl font-medium'>Data security and compliance</h2>
             <p className='w-3/5 text-lg mt-4'>We apply advanced security solutions to ensure that your data is completely secure. As a result, you avoid internal data misuse, data breaches, and compliance issues.</p>
-            <div className='grid grid-cols-4'>
-              <div className='p-5 w-24'>
-                <img src="/image.png" alt="image" className='grayscale' />
-              </div>
+            <div className='grid grid-cols-4 gap-10 pt-10'>
+                <img src="/image.png" alt="image" className='grayscale hover:bg-gray-50 px-14' />
+                <img src="/image.png" alt="image" className='grayscale hover:bg-gray-50 px-14' />
+                <img src="/image.png" alt="image" className='grayscale hover:bg-gray-50 px-14' />
+                <img src="/image.png" alt="image" className='grayscale hover:bg-gray-50 px-14' />
             </div>
           </div></div>
+      </div>
+      <div>
+        <DataServicesSection/>
       </div>
 
       <div className='w-8/12 mx-auto'>
@@ -376,9 +371,9 @@ export const DataServices: React.FC = () => {
           </div>
         </div>
         <div>
-          <FAQAccordion />
+          <FAQForDataSciences />
         </div>
-        <div className='max-w-6xl mx-auto w-full py-16 my-10 px-16 text-white flex bg-blue-950 font-pt'>
+        <div className='max-w-6xl mx-auto w-full py-16 my-10 px-16 gap-5 text-white flex bg-blue-950 font-pt'>
           <div className='flex flex-col gap-6 py-5 px-6 w-1/2'>
             <div className='flex flex-col gap-1'>
               <h2 className='text-7xl font-bold bg-blue-800 px-4 py-1 mb-2 w-fit'>STILL HAVE
@@ -391,7 +386,7 @@ export const DataServices: React.FC = () => {
             <button className='bg-blue-700 text-white/90 w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300 font-bold text-lg'>Get in touch</button>
           </div>
           <div className='w-1/2 flex justify-center'>
-            <img src="workflow.jpeg" alt="book" className='px-5 w-full h-[45vh]' /></div>
+            <img src="/workflow.jpeg" alt="book" className='px-5 w-full h-[35vh]' /></div>
         </div>
       </div>
       <section>
