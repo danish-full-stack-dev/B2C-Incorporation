@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Snowflake, Volleyball } from "lucide-react";
 import Link from "next/link";
 import { DesignPageNavbar } from "../componants/navbar/DesignPageNavbar";
-import { DesignPageFooter } from "../componants/DesignPageFooter";
 import { ButtonsWithArcs } from "../componants/ButtonsWithArcs";
 import { BorderAnimation } from "../componants/BorderAnimation";
 
@@ -28,15 +27,20 @@ const ImageDiv = (props: Props) => {
           {/* hover overlay */}
           <div
             className="
-          absolute inset-0 
+          absolute inset-0 hover:cursor-pointer
           bg-black/20 backdrop-blur-sm 
           opacity-0 group-hover:opacity-100 
           transition-all duration-300 
-          flex items-center justify-center 
+          flex items-start justify-center flex-col gap-5
           z-10
         "
           >
-            {heading}
+            <div className="p-14">
+              <h2 className="text-wrap text-7xl font-bold text-blue-800  flex flex-col">
+                Kao
+              </h2>
+              <h3 className="text-4xl font-thin text-white ">{heading}</h3>
+            </div>
           </div>
         </div>
 
@@ -126,12 +130,13 @@ export default function DesignHome() {
         </div>
       </section>
       <main className="w-10/12 mx-auto">
-        <section className="min-h-screen text-white">
-          <div className="text-4xl w-full flex justify-center pt-16">
+        <section className="min-h-screen text-white/85">
+          <div className="text-5xl w-full flex justify-center pt-16">
             <div className="flex w-full">
-              <h3 className="w-1/5">
-                We focus on the <span className="text-blue-700">outcome</span>{" "}
-                not only the output
+              <h3 className="w-2/5 font-thin">
+                We focus on the <br />
+                <span className="text-blue-700">outcome</span>, not only on{" "}
+                <br /> the output
               </h3>
             </div>
           </div>
@@ -140,7 +145,7 @@ export default function DesignHome() {
               <div className="flex flex-col px-8 pt-8">
                 <Snowflake className="w-12 h-12 text-blue-800" />
                 <h3 className="my-8 text-2xl">Strategize</h3>
-                <div className="flex flex-col text-lg gap-2">
+                <div className="flex flex-col text-lg gap-2 text-white/75">
                   {[
                     "Product discovery",
                     "Proof of concept design",
@@ -162,13 +167,9 @@ export default function DesignHome() {
             <BorderAnimation className="flex flex-col w-1/3 justify-between h-[50vh]">
               <div className="flex flex-col px-8 pt-8">
                 <Snowflake className="w-12 h-12 text-blue-800" />
-                <h3 className="my-8 text-2xl">Strategize</h3>
-                <div className="flex flex-col text-lg gap-2">
-                  {[
-                    "Product discovery",
-                    "Proof of concept design",
-                    "MVP design",
-                  ].map((value, idx) => (
+                <h3 className="my-8 text-2xl">Create</h3>
+                <div className="flex flex-col text-lg gap-2 text-white/75">
+                  {["UX/UI Design", "Redesign"].map((value, idx) => (
                     <li key={idx} className="list-inside">
                       {value}
                     </li>
@@ -185,12 +186,14 @@ export default function DesignHome() {
             <BorderAnimation className="flex flex-col w-1/3 justify-between h-[50vh] p-8 ">
               <div className="flex flex-col px-8 pt-8">
                 <Snowflake className="w-12 h-12 text-blue-800" />
-                <h3 className="my-8 text-2xl">Strategize</h3>
-                <div className="flex flex-col text-lg gap-2">
+                <h3 className="my-8 text-2xl">Scale</h3>
+                <div className="flex flex-col text-lg gap-2 text-white/75">
                   {[
-                    "Product discovery",
-                    "Proof of concept design",
-                    "MVP design",
+                    "UX Audit",
+                    "Expert review",
+                    "Accessibility Audit",
+                    "User research",
+                    "Design system a service",
                   ].map((value, idx) => (
                     <li key={idx} className="list-inside">
                       {value}
@@ -241,10 +244,10 @@ export default function DesignHome() {
               </p>
             </div>
             <ImageDiv
-              image="/lecture.jpeg"
-              heading="nothing"
+              image="/kaoCaseStudy.png"
+              heading="Hygiene & Cosmetics."
               position="start"
-              listOfFeatures={["UX Audit", "Web application"]}
+              listOfFeatures={["UX Audit", "Website"]}
             />
             <ImageDiv
               image="/lecture.jpeg"

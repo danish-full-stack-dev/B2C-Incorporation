@@ -26,7 +26,7 @@ export const ButtonsWithArcs:React.FC = ()=> {
               onMouseLeave={() => setActiveStep(null)}
               className={`w-48 h-20 border transition-all duration-300 relative z-10 ${
                 activeStep === step.id
-                  ? 'border-blue-500 bg-blue-500 bg-opacity-10'
+                  ? 'border-blue-500 bg-blue-700 bg-opacity-80'
                   : 'border-white border-opacity-40 hover:border-opacity-80'
               }`}
             >

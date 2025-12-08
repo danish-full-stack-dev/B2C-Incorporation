@@ -28,7 +28,7 @@ const WhyChooseUs: React.FC = () => {
     "/lvi-info.png",
     "/mpower.png",
     "/NERF.png",
-    "/Rising phoenix.png",
+    "/Rising Phonex.png",
     "/rye-assic.png",
     "/saya.png",
     "/sirona.png",

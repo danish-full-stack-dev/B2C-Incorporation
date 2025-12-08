@@ -143,11 +143,11 @@ export const Services = () => {
                 {/* Image Section */}
                 <div className="w-full md:w-5/12 h-1/2 bg-black/90 md:h-full relative overflow-hidden">
                   <div className="absolute inset-0 " />
-                  <div className="h-full w-full flex items-center justify-center text-9xl object-contain">
+                  <div className="h-full w-full flex items-center justify-center text-9xl ">
                     <img
                       src={service.image}
                       alt="web dev"
-                      className="w-full h-full"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
