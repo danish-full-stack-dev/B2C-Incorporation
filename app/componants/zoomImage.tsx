@@ -8,8 +8,8 @@ const ZoomImage = ({ source }: { source: String }) => {
   return (
     <div ref={ref} className="w-full mx-auto">
       <Image
-        src="/marketing.png" 
-        alt="image"   
+        src={source}
+        alt="image"
         width={1200}
         height={800}
         style={style}

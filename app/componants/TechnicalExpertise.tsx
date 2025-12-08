@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const TechnicalExpertise: React.FC = () => {
   return (
     <section className="">
@@ -11,7 +10,11 @@ const TechnicalExpertise: React.FC = () => {
           </div>
           <div className="w-3/4 flex justify-center">
             <p className="w-8/12 text-2xl font-sans">
-              We specialize in AI, cloud engineering, blockchain, IoT, data analytics, and automation—building scalable, secure, and high-performance digital systems. Our expertise helps businesses accelerate innovation, optimize operations, and stay competitive in a rapidly evolving technological landscape.
+              We specialize in AI, cloud engineering, blockchain, IoT, data
+              analytics, and automation—building scalable, secure, and
+              high-performance digital systems. Our expertise helps businesses
+              accelerate innovation, optimize operations, and stay competitive
+              in a rapidly evolving technological landscape.
             </p>
           </div>
         </div>
@@ -23,9 +26,9 @@ const TechnicalExpertise: React.FC = () => {
           className="w-full h-full bg-cover"
         />
         {/* Section Heading */}
-        <div className="absolute text-white bg-blue-800 rounded-full px-6 py-7">
+        {/* <div className="absolute text-white bg-blue-800 rounded-full px-6 py-7">
           hello
-        </div>
+        </div> */}
       </section>
       <section className="relative flex flex-col bg-[#00091f] py-20 font-sans text-white">
         <div className="flex flex-col justify-center items-center">

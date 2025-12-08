@@ -169,19 +169,20 @@ export const Navbar: React.FC = () => {
                 </div>
                 <div className="flex flex-col gap-4 pl-20">
                   <span className="text-gray-500 text-xs font-bold mb-1">
-                    Healthcare specialization
+                    Trading Specialization
                   </span>
-                  {[
-                    "Custom RCM solutions",
-                    "AI solutions for healthcare",
-                    "Custom healthcare software",
+                 {[
+                    { heading: "CFD Trading Platform", to: "/pages/services/trading-services" },
+                    { heading: "Blockchain Development", to: "/design" },
+                    { heading: "Trading CRMS's", to: "/design" },
                   ].map((value, idx) => (
-                    <p
+                    <Link
+                      href={value.to}
                       key={idx}
-                      className="hover:text-blue-500 transition  hover:cursor-pointer"
+                      className="hover:text-blue-500 transition hover:cursor-pointer"
                     >
-                      {value}
-                    </p>
+                      {value.heading}
+                    </Link>
                   ))}
                 </div>
               </div>

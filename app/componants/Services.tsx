@@ -10,7 +10,7 @@ export const allServices = [
     title: "Our Strategic Expertise",
     image: "/stretgy.png",
     description:
-      "We empower real estate businesses with modern digital solutions—automation, analytics, and immersive experiences to maximize ROI.",
+      "We empower real estate businesses with modern digital solutions automation, analytics, and immersive experiences to maximize ROI.",
     services: [
       "Operations & Process Management (OPM)",
       "Real Estate CRM Development",
@@ -143,11 +143,11 @@ export const Services = () => {
                 {/* Image Section */}
                 <div className="w-full md:w-5/12 h-1/2 bg-black/90 md:h-full relative overflow-hidden">
                   <div className="absolute inset-0 " />
-                  <div className="h-full w-full flex items-center justify-center text-9xl object-contain">
+                  <div className="h-full w-full flex items-center justify-center text-9xl ">
                     <img
                       src={service.image}
                       alt="web dev"
-                      className="w-full h-full"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
@@ -165,7 +165,7 @@ export const Services = () => {
                       <p className="text-xl leading-relaxed opacity-90">
                         {service.description}
                       </p>
-                      <div className="flex gap-5 hover:cursor-pointer  mt-5 pb-5 border-b-2 ">
+                      <div className="flex gap-5  mt-5 pb-5 border-b-2 ">
                         <p className="text-xs font-bold font-sans bg-blue-800 w-fit text-white px-2 py-1 rounded-r-xl">
                           Specialized Solutions We Offer
                         </p>
@@ -174,7 +174,7 @@ export const Services = () => {
                         {service.services.map((item, idx) => (
                           <li
                             key={idx}
-                            className="px-4 py-2 rounded-full text-sm md:text-lg hover:text-blue-800 hover:cursor-pointer mr-2 bg-blend-color-dodge hover:translate-x-1 transition"
+                            className="px-4 py-2 rounded-full text-sm md:text-lg hover:text-blue-800 mr-2 bg-blend-color-dodge hover:translate-x-1 transition"
                           >
                             {item}
                           </li>

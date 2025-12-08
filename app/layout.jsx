@@ -15,6 +15,12 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "B2C Incorporation",
   description: "We provide professional AI, web, and automation services.",
+   icons: {
+    icon: "/favicon.png",
+  },
+   other: {
+    "google-site-verification": "MrrOtc9uOzs3bwGxlkS8iiFmsB2CgH_FkRZHRa5twGg",
+  },
 };
 
 export default function RootLayout({

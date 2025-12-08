@@ -141,20 +141,18 @@ export default function DesignHome() {
             </div>
           </div>
           <div className="flex flex-row gap-10 w-full mt-16 p-3">
-            <BorderAnimation className="flex p-10 flex-col w-1/3 justify-between h-[50vh]">
+            <BorderAnimation className="flex flex-col w-1/3 justify-between h-[50vh]">
               <div className="flex flex-col px-8 pt-8">
                 <Snowflake className="w-12 h-12 text-blue-800" />
-                <h3 className="my-8 text-2xl">Strategize</h3>
+                <h3 className="my-8 text-2xl">Trading Plateform</h3>
                 <div className="flex flex-col text-lg gap-2 text-white/75">
-                  {[
-                    "Product discovery",
-                    "Proof of concept design",
-                    "MVP design",
-                  ].map((value, idx) => (
-                    <li key={idx} className="list-inside">
-                      {value}
-                    </li>
-                  ))}
+                  {["NFT's", "Proof of concept design", "MVP design"].map(
+                    (value, idx) => (
+                      <li key={idx} className="list-inside">
+                        {value}
+                      </li>
+                    )
+                  )}
                 </div>
               </div>
               <Link href={"#"} className="flex gap-2 items-center p-8">
@@ -167,9 +165,9 @@ export default function DesignHome() {
             <BorderAnimation className="flex flex-col w-1/3 justify-between h-[50vh]">
               <div className="flex flex-col px-8 pt-8">
                 <Snowflake className="w-12 h-12 text-blue-800" />
-                <h3 className="my-8 text-2xl">Create</h3>
+                <h3 className="my-8 text-2xl">Real State</h3>
                 <div className="flex flex-col text-lg gap-2 text-white/75">
-                  {["UX/UI Design", "Redesign"].map((value, idx) => (
+                  {["UX/UI Design", "Marketing design"].map((value, idx) => (
                     <li key={idx} className="list-inside">
                       {value}
                     </li>
@@ -183,7 +181,7 @@ export default function DesignHome() {
                 </span>
               </Link>
             </BorderAnimation>
-            <BorderAnimation className="flex flex-col w-1/3 justify-between h-[50vh] p-8 ">
+            <BorderAnimation className="flex flex-col w-1/3 justify-between h-[50vh] ">
               <div className="flex flex-col px-8 pt-8">
                 <Snowflake className="w-12 h-12 text-blue-800" />
                 <h3 className="my-8 text-2xl">Scale</h3>

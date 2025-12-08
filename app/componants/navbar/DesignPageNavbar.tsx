@@ -33,15 +33,16 @@ export const DesignPageNavbar: React.FC = () => {
     <div className="flex fixed w-full z-30 justify-center text-white">
       <div
         className={`flex flex-col w-10/12 transition-all duration-500 
-          ${hideNav ? "-translate-y-full pointer-events-none" : "translate-y-0 pointer-events-auto mt-4"}
+          ${
+            hideNav
+              ? "-translate-y-full pointer-events-none"
+              : "translate-y-0 pointer-events-auto mt-4"
+          }
         `}
       >
         <div className="p-2 flex items-center justify-between w-full">
-          
           {/* LOGO */}
-          <h1 className="text-white font-semibold tracking-wide">
-            B2C.design
-          </h1>
+          <img src="/whiteDesignLogo.png" alt="logo" className="h-4" />
 
           {/* NAV LINKS */}
          <div className="flex justify-center">
@@ -73,7 +74,6 @@ export const DesignPageNavbar: React.FC = () => {
               Quick demo
             </button>
           </div>
-
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
-"use client"
-import React, { useState, useRef } from 'react';
+"use client";
+import React, { useState, useRef } from "react";
 // import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface Testimonial {
@@ -21,45 +21,45 @@ const TestimonialsSection: React.FC = () => {
     {
       logo: "TruBridge",
       logoColor: "text-green-600",
-      text: "We have been partnering with EffectiveSoft since 2006, so we've had time to become familiar with their professionalism and the quality of service they provide. I would highlight the great responsibility which my company assumes when solving critical tasks.",
-      author: "Thomas Golden",
-      position: "USA, TruBridge (formerly TruCode)"
+      text: "…significant increase in both traffic and sales. I couldn’t be more pleased with the outcome and highly recommend their services.",
+      author: "Mark Burrell | MD",
+      position: "Sirona Medical",
     },
     {
       logo: "plato",
       logoColor: "text-blue-500",
-      text: "Since working with EffectiveSoft, we've grown our company from the building phase to the profitability phase. We've continued expanding upon their responsibilities, and they've continued to accept challenges and integrate with our team. They've become mission-critical resources for us.",
-      author: "Jesse MacNish",
-      position: "CTO USA, Plato"
+      text: "We’ve noticed a substantial improvement in our online presence, which has translated into far more client inquiries for Madison Brook.",
+      author: "John Lipper | MD",
+      position: "Madison Brook",
     },
     {
       logo: "CNote",
       logoColor: "text-teal-600",
-      text: "We want to say big and fat thank you from the bottom of our hearts for all your hard work. Because of you, CNote was able to create this innovative financial product and change the way money gets distributed and invested. You are a critical part of our team!",
-      author: "Yuliya Tarasava",
-      position: "COO USA"
+      text: "We’ve seen a remarkable 27.5% reduction ad spend while achieving a significant 32% increase in conversions… I highly recommended!",
+      author: "Ryan Musk | MD",
+      position: "RHG & Nerf Wars",
     },
     {
       logo: "CITYINDEX",
       logoColor: "text-yellow-500",
       text: "Since our first engagement, we have been impressed not only by the quality of work that EffectiveSoft delivers to City Index but also their attention to detail and reliability on delivery.",
       author: "Arthur Grimley",
-      position: "CIO UK, CityIndex Group"
+      position: "CIO UK, CityIndex Group",
     },
     {
       logo: "ACME Corp",
       logoColor: "text-purple-600",
       text: "EffectiveSoft has been instrumental in helping us scale our operations. Their technical expertise and dedication to our success has been remarkable. We couldn't have asked for a better partner.",
       author: "Sarah Johnson",
-      position: "VP Engineering, ACME Corp"
+      position: "VP Engineering, ACME Corp",
     },
     {
       logo: "TechFlow",
       logoColor: "text-indigo-600",
       text: "The team at EffectiveSoft consistently delivers high-quality solutions on time and within budget. Their communication and project management skills are top-notch.",
       author: "Michael Chen",
-      position: "CTO, TechFlow Solutions"
-    }
+      position: "CTO, TechFlow Solutions",
+    },
   ];
 
   const handleScroll = (): void => {
@@ -71,34 +71,34 @@ const TestimonialsSection: React.FC = () => {
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>): void => {
     const container = scrollContainerRef.current;
     if (!container) return;
-    
+
     setIsDragging(true);
     setStartX(e.pageX - container.offsetLeft);
     setScrollLeft(container.scrollLeft);
-    container.style.cursor = 'grabbing';
+    container.style.cursor = "grabbing";
   };
 
   const handleMouseLeave = (): void => {
     setIsDragging(false);
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.style.cursor = 'grab';
+      scrollContainerRef.current.style.cursor = "grab";
     }
   };
 
   const handleMouseUp = (): void => {
     setIsDragging(false);
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.style.cursor = 'grab';
+      scrollContainerRef.current.style.cursor = "grab";
     }
   };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>): void => {
     if (!isDragging) return;
     e.preventDefault();
-    
+
     const container = scrollContainerRef.current;
     if (!container) return;
-    
+
     const x = e.pageX - container.offsetLeft;
     const walk = (x - startX) * 2; // Multiply by 2 for faster scrolling
     container.scrollLeft = scrollLeft - walk;
@@ -107,10 +107,10 @@ const TestimonialsSection: React.FC = () => {
   const getProgressPercentage = (): number => {
     const container = scrollContainerRef.current;
     if (!container) return 0;
-    
+
     const maxScroll = container.scrollWidth - container.clientWidth;
     if (maxScroll === 0) return 0;
-    
+
     return Math.min(100, (scrollPosition / maxScroll) * 100);
   };
 
@@ -119,8 +119,12 @@ const TestimonialsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <p className="text-sm text-gray-500 uppercase tracking-wider mb-2">TESTIMONIALS</p>
-          <h2 className="text-4xl font-bold text-gray-900 hover:text-blue-500">Our clients say it best</h2>
+          <p className="text-sm text-gray-500 uppercase tracking-wider mb-2">
+            TESTIMONIALS
+          </p>
+          <h2 className="text-4xl font-bold text-gray-900 hover:text-blue-500">
+            Our clients say it best
+          </h2>
         </div>
 
         {/* Testimonials Container */}
@@ -143,7 +147,6 @@ const TestimonialsSection: React.FC = () => {
             onMouseUp={handleMouseUp}
             onMouseMove={handleMouseMove}
             className="flex gap-6 overflow-x-hidden px-12 pb-4 cursor-grab"
-            
           >
             {testimonials.map((testimonial, index) => (
               <div
@@ -166,12 +169,19 @@ const TestimonialsSection: React.FC = () => {
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
                     <span className="text-gray-600 font-semibold text-lg">
-                      {testimonial.author.split(' ').map(n => n[0]).join('')}
+                      {testimonial.author
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
                     </span>
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">{testimonial.author}</p>
-                    <p className="text-sm text-gray-500">{testimonial.position}</p>
+                    <p className="font-semibold text-gray-900">
+                      {testimonial.author}
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      {testimonial.position}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -192,13 +202,13 @@ const TestimonialsSection: React.FC = () => {
         <div className="flex items-center justify-center gap-4 mt-8">
           <span className="text-sm text-gray-500">01</span>
           <div className="w-80 h-1 bg-gray-200 rounded-full overflow-hidden">
-            <div 
+            <div
               className="h-full bg-blue-600 transition-all duration-300"
               style={{ width: `${getProgressPercentage()}%` }}
             />
           </div>
           <span className="text-sm text-gray-500">
-            {testimonials.length.toString().padStart(2, '0')}
+            {testimonials.length.toString().padStart(2, "0")}
           </span>
         </div>
       </div>
