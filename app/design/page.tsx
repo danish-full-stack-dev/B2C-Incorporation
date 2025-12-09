@@ -255,10 +255,10 @@ export default function DesignHome() {
               </p>
             </div>
             <ImageDiv
-              image="/kaoCaseStudy.png"
+              image="/lecture.jpeg"
               heading="Hygiene & Cosmetics."
               position="start"
-              listOfFeatures={["UX Audit", "Website"]}
+              listOfFeatures={["UX Audit", "Website","Development"]}
             />
             <ImageDiv
               image="/lecture.jpeg"
@@ -276,7 +276,7 @@ export default function DesignHome() {
               image="/lecture.jpeg"
               heading="nothing"
               position="end"
-              listOfFeatures={["UX Audit", "Web application"]}
+              listOfFeatures={["UX Audit", "Web application","Development"]}
             />
           </div>
         </section>
@@ -304,21 +304,18 @@ export default function DesignHome() {
             <ArrowRight className="w-8 h-8" />
           </button>
 
-          {/* scroll container */}
           <div
             ref={scrollRef}
             className="flex flex-row overflow-x-hidden snap-both snap-mandatory scroll-smooth w-full"
-
-            /* remove onTouchMove preventDefault — that blocks natural touch scroll */
           >
             {Array.from({ length: 10 }).map((_, i) => (
               <div
                 key={i}
-                className="flex flex-col min-w-[50%] items-center text-center"
+                className="flex flex-col min-w-[50%]  text-start"
               >
-                <h4 className="py-5 text-2xl text-white/70">
+                <h4 className="py-5 text-2xl text-white/70 text-start ml-[20px]">
                   Keith Nolan{" "}
-                  <span className="text-gray-700">Head of R&D, NDA</span>
+                  <span className="text-gray-700 text-start">Head of R&D, NDA</span>
                 </h4>
 
                 <p
@@ -328,12 +325,7 @@ export default function DesignHome() {
                   From the very beginning of our collaboration, it became
                   evident that we had found a team that consistently performs
                   above expectations, pushing the limits of creativity and
-                  consistently delivering industry-leading design concepts. Each
-                  member of your design team demonstrates a passion for their
-                  craft, bringing a level of enthusiasm and expertise that is
-                  truly remarkable. It is evident that they genuinely care about
-                  the work they produce and take great pride in delivering
-                  outstanding results.
+                  consistently delivering industry-leading design concepts.
                 </p>
               </div>
             ))}

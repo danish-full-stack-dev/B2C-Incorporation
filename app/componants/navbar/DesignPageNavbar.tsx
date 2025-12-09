@@ -44,6 +44,7 @@ export const DesignPageNavbar: React.FC = () => {
           {/* LOGO */}
           <img src="/whiteDesignLogo.png" alt="logo" className="h-4" />
 
+          {/* NAV LINKS */}
           <div className="flex justify-center">
             <div className="flex gap-6">
               {[
