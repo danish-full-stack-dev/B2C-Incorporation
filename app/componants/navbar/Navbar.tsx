@@ -51,6 +51,7 @@ export const Navbar: React.FC = () => {
             </Link>
             <Link href={"/"}>
               <h1
+                className="transition-opacity duration-300"
                 onMouseEnter={() => setLogo("/spaced logo blue.png")}
                 onMouseLeave={() => setLogo("/white spaced logo.png")}
               >
@@ -142,8 +143,14 @@ export const Navbar: React.FC = () => {
                     { heading: "Design", to: "/design" },
                     { heading: "Product engineering", to: "/design" },
                     { heading: "Cloud", to: "/design" },
-                    { heading: "Data services", to: "/pages/services/data-service" },
-                    { heading: "AI Automation", to: "/pages/services/ai-service" },
+                    {
+                      heading: "Data services",
+                      to: "/pages/services/data-service",
+                    },
+                    {
+                      heading: "AI Automation",
+                      to: "/pages/services/ai-service",
+                    },
                   ].map((value, idx) => (
                     <Link
                       href={value.to}
@@ -171,8 +178,11 @@ export const Navbar: React.FC = () => {
                   <span className="text-gray-500 text-xs font-bold mb-1">
                     Trading Specialization
                   </span>
-                 {[
-                    { heading: "CFD Trading Platform", to: "/pages/services/trading-services" },
+                  {[
+                    {
+                      heading: "CFD Trading Platform",
+                      to: "/pages/services/trading-services",
+                    },
                     { heading: "Blockchain Development", to: "/design" },
                     { heading: "Trading CRMS's", to: "/design" },
                   ].map((value, idx) => (
@@ -204,7 +214,12 @@ export const Navbar: React.FC = () => {
                       "Careers",
                       "Certifications",
                     ].map((value, idx) => (
-                      <p key={idx} className="hover:text-blue-600 hover:cursor-pointer">{value}</p>
+                      <p
+                        key={idx}
+                        className="hover:text-blue-600 hover:cursor-pointer"
+                      >
+                        {value}
+                      </p>
                     ))}
                   </div>
                   <div className="flex flex-col w-2/3 pl-10">
@@ -216,7 +231,7 @@ export const Navbar: React.FC = () => {
                     <p className="">
                       We are extremely satisfied with our collaboration with
                       EffectiveSoft. We engaged them for business analysis,
-                      UI/UX design, web development, and testing. 
+                      UI/UX design, web development, and testing.
                     </p>
                     <div className="flex flex-col justify-start pt-5">
                       <h4>Gulfam .......</h4>
@@ -237,8 +252,12 @@ export const Navbar: React.FC = () => {
               <div>
                 <div className="grid grid-flow-col grid-cols-3 text-base px-5">
                   <div className="flex flex-col  gap-3 border-r  border-gray-700">
-                    <h4 className="hover:text-blue-500 hover:cursor-pointer">Blog</h4>
-                    <h4 className="hover:text-blue-500 hover:cursor-pointer">Company updates</h4>
+                    <h4 className="hover:text-blue-500 hover:cursor-pointer">
+                      Blog
+                    </h4>
+                    <h4 className="hover:text-blue-500 hover:cursor-pointer">
+                      Company updates
+                    </h4>
                   </div>
                   <div className="grid col-span-2 grid-flow-col">
                     <div className="flex flex-col border-r px-10  border-gray-700">

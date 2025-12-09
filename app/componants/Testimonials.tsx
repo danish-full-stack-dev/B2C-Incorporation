@@ -19,46 +19,25 @@ const TestimonialsSection: React.FC = () => {
 
   const testimonials: Testimonial[] = [
     {
-      logo: "TruBridge",
+      logo: "sirona medical",
       logoColor: "text-green-600",
       text: "…significant increase in both traffic and sales. I couldn’t be more pleased with the outcome and highly recommend their services.",
       author: "Mark Burrell | MD",
       position: "Sirona Medical",
     },
     {
-      logo: "plato",
+      logo: "Madison brook",
       logoColor: "text-blue-500",
       text: "We’ve noticed a substantial improvement in our online presence, which has translated into far more client inquiries for Madison Brook.",
       author: "John Lipper | MD",
       position: "Madison Brook",
     },
     {
-      logo: "CNote",
+      logo: "NerfWar",
       logoColor: "text-teal-600",
       text: "We’ve seen a remarkable 27.5% reduction ad spend while achieving a significant 32% increase in conversions… I highly recommended!",
       author: "Ryan Musk | MD",
       position: "RHG & Nerf Wars",
-    },
-    {
-      logo: "CITYINDEX",
-      logoColor: "text-yellow-500",
-      text: "Since our first engagement, we have been impressed not only by the quality of work that EffectiveSoft delivers to City Index but also their attention to detail and reliability on delivery.",
-      author: "Arthur Grimley",
-      position: "CIO UK, CityIndex Group",
-    },
-    {
-      logo: "ACME Corp",
-      logoColor: "text-purple-600",
-      text: "EffectiveSoft has been instrumental in helping us scale our operations. Their technical expertise and dedication to our success has been remarkable. We couldn't have asked for a better partner.",
-      author: "Sarah Johnson",
-      position: "VP Engineering, ACME Corp",
-    },
-    {
-      logo: "TechFlow",
-      logoColor: "text-indigo-600",
-      text: "The team at EffectiveSoft consistently delivers high-quality solutions on time and within budget. Their communication and project management skills are top-notch.",
-      author: "Michael Chen",
-      position: "CTO, TechFlow Solutions",
     },
   ];
 

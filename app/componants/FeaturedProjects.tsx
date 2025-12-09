@@ -112,7 +112,7 @@ export const FeaturedProjects: React.FC = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="shrink-0 max-w-[40vh] snap-start group"
+              className="shrink-0 max-w-[40vh] max-h-[45vh] snap-start group"
             >
               <div className="bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 ">
                 {/* Project Image */}

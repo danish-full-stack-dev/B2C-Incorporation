@@ -5,38 +5,32 @@ import Link from "next/link";
 import { DesignPageNavbar } from "../componants/navbar/DesignPageNavbar";
 import { ButtonsWithArcs } from "../componants/ButtonsWithArcs";
 import { BorderAnimation } from "../componants/BorderAnimation";
+import { designCards } from "../componants/CaseStudies";
 
 interface Props {
   image: string;
   heading: string;
-  position: "start" | "end";
+  position?: string;
   listOfFeatures: string[];
 }
 const ImageDiv = (props: Props) => {
   const { image, heading, position, listOfFeatures } = props;
   return (
-    <div className={`flex justify-${position} relative`}>
-      <aside className="flex flex-col max-w-5xl text-sm py-10">
-        <div className="group relative w-full">
-          <img
-            src={image}
-            alt="laptop"
-            className="w-full h-auto object-cover"
-          />
-
-          {/* hover overlay */}
+    <div className={`flex justify-${position ? position : "normal"} relative`}>
+      <aside className="flex flex-col text-sm py-10">
+        <div className="group w-full flex text-white/80">
+          <img src={image} alt="laptop" className="w-4/6 h-auto object-cover" />
           <div
             className="
-          absolute inset-0 hover:cursor-pointer
+          hover:cursor-pointer
           bg-black/20 backdrop-blur-sm 
           opacity-0 group-hover:opacity-100 
           transition-all duration-300 
-          flex items-start justify-center flex-col gap-5
-          z-10
+          flex flex-col gap-5
         "
           >
-            <div className="p-14">
-              <h2 className="text-wrap text-7xl font-bold text-blue-800  flex flex-col">
+            <div className="w-full">
+              <h2 className="text-wrap text-7xl font-bold text-blue-800  flex">
                 Kao
               </h2>
               <h3 className="text-4xl font-thin text-white ">{heading}</h3>
@@ -160,10 +154,10 @@ export default function DesignHome() {
                   ))}
                 </div>
               </div>
-              <Link href={"#"} className="flex gap-2 items-center p-8">
+              <Link href={"#"} className="flex gap-2 items-center p-8 group">
                 Explore{" "}
                 <span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition duration-300" />
                 </span>
               </Link>
             </BorderAnimation>
@@ -186,10 +180,10 @@ export default function DesignHome() {
                   ))}
                 </div>
               </div>
-              <Link href={"#"} className="flex gap-2 items-center p-8">
+              <Link href={"#"} className="flex gap-2 items-center p-8 group">
                 Explore{" "}
                 <span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition duration-300" />
                 </span>
               </Link>
             </BorderAnimation>
@@ -212,10 +206,10 @@ export default function DesignHome() {
                   ))}
                 </div>
               </div>
-              <Link href={"#"} className="flex gap-2 items-center p-8">
+              <Link href={"#"} className="flex gap-2 items-center p-8 group">
                 Explore{" "}
                 <span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition duration-300" />
                 </span>
               </Link>
             </BorderAnimation>
@@ -254,54 +248,42 @@ export default function DesignHome() {
                 </span>
               </p>
             </div>
-            <ImageDiv
-              image="/lecture.jpeg"
-              heading="Hygiene & Cosmetics."
-              position="start"
-              listOfFeatures={["UX Audit", "Website","Development"]}
-            />
-            <ImageDiv
-              image="/lecture.jpeg"
-              heading="nothing"
-              position="end"
-              listOfFeatures={["UX Audit", "Web application"]}
-            />
-            <ImageDiv
-              image="/lecture.jpeg"
-              heading="nothing"
-              position="start"
-              listOfFeatures={["UX Audit", "Web application"]}
-            />
-            <ImageDiv
-              image="/lecture.jpeg"
-              heading="nothing"
-              position="end"
-              listOfFeatures={["UX Audit", "Web application","Development"]}
-            />
+            <div className="w-full">
+              {designCards.map((card, i) => (
+                <ImageDiv
+                  key={i}
+                  image={card.image}
+                  heading={card.heading}
+                  position={card.position}
+                  listOfFeatures={card.listOfFeatures}
+                />
+              ))}
+            </div>
           </div>
         </section>
       </main>
       <section className="flex flex-col py-15 bg-black min-h-screen justify-center items-center">
-        <div className="relative w-full min-h-[200px] bg-blue-950 p-8 border-y-2 group flex items-center">
+        <div className="relative w-full min-h-[50vh] bg-[#000f36] p-8 group flex items-center">
           <button
             onClick={() => scroll("left")}
-            className="absolute z-10 left-10 font-bold
+            className="absolute z-10 left-10 text-blue-500 border-2 border-blue-800 p-5 rounded-full font-bold
           opacity-0 -translate-x-6 transition-all duration-300 ease-in-out
           group-hover:opacity-100 group-hover:translate-x-0
           pointer-events-none group-hover:pointer-events-auto"
           >
-            <ArrowLeft className="w-8 h-8" />
+            <ArrowLeft className="w-5 h-5" />
           </button>
 
           {/* Right Button */}
           <button
             onClick={() => scroll("right")}
-            className="absolute z-10 right-40 font-bold
+            className="absolute z-10 right-10 font-bold
+            text-blue-800 bg-black/50 border-2 border-blue-800 p-5 rounded-full
           opacity-0 translate-x-6 transition-all duration-300 ease-in-out
           group-hover:opacity-100 group-hover:translate-x-0
           pointer-events-none group-hover:pointer-events-auto"
           >
-            <ArrowRight className="w-8 h-8" />
+            <ArrowRight className="w-5 h-5" />
           </button>
 
           <div
@@ -309,18 +291,17 @@ export default function DesignHome() {
             className="flex flex-row overflow-x-hidden snap-both snap-mandatory scroll-smooth w-full"
           >
             {Array.from({ length: 10 }).map((_, i) => (
-              <div
-                key={i}
-                className="flex flex-col min-w-[50%]  text-start"
-              >
+              <div key={i} className="flex flex-col min-w-[50%]  text-start">
                 <h4 className="py-5 text-2xl text-white/70 text-start ml-[20px]">
                   Keith Nolan{" "}
-                  <span className="text-gray-700 text-start">Head of R&D, NDA</span>
+                  <span className="text-gray-700 text-start">
+                    Head of R&D, NDA
+                  </span>
                 </h4>
 
                 <p
                   className="
-              flex snap-center px-6 py-10 text-white/90 font-thin w-4/5 text-3xl"
+              flex snap-center px-6 py-10 text-white/90 font-thin w-5/6 text-2xl"
                 >
                   From the very beginning of our collaboration, it became
                   evident that we had found a team that consistently performs

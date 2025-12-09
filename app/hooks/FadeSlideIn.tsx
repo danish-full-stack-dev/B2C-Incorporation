@@ -8,7 +8,7 @@ export default function FadeSlideIn({
 }: {
   children: React.ReactNode;
   className?: string;
-  delay?: number; // for stagger animations
+  delay?: number;
 }) {
   const { ref, inView } = useInViewAnimation();
 

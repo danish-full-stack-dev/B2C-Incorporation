@@ -147,7 +147,7 @@ export const Services = () => {
                     <img
                       src={service.image}
                       alt="web dev"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full top-0 right-0 object-cover"
                     />
                   </div>
                 </div>

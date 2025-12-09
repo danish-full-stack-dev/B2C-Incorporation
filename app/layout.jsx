@@ -1,6 +1,8 @@
+import CursorDot from "./componants/CursorDot";
 import DashboardLayout from "./componants/layout/DashboardLayout";
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
+import CursorDotProvider from "./hooks/CursorContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,9 +33,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <CursorDotProvider>
+        <CursorDot />
         <DashboardLayout>
           {children}
         </DashboardLayout>
+        </CursorDotProvider>
         
       </body>
     </html>
