@@ -146,13 +146,18 @@ export default function DesignHome() {
                 <Snowflake className="w-12 h-12 text-blue-800" />
                 <h3 className="my-8 text-2xl">Trading Plateform</h3>
                 <div className="flex flex-col text-lg gap-2 text-white/75">
-                  {["NFT's", "Proof of concept design", "MVP design"].map(
-                    (value, idx) => (
-                      <li key={idx} className="list-inside">
-                        {value}
-                      </li>
-                    )
-                  )}
+                  {[
+                    "Crypto & Trading Design Services",
+                    "Digital Design for Trading & NFTs",
+                    "Crypto Branding & NFT Art",
+                    "Trading UI/UX & Crypto Graphics",
+                    "NFT & Crypto Visual Design",
+                    "Web3 Design Solutions",
+                  ].map((value, idx) => (
+                    <li key={idx} className="list-inside">
+                      {value}
+                    </li>
+                  ))}
                 </div>
               </div>
               <Link href={"#"} className="flex gap-2 items-center p-8">
@@ -167,7 +172,14 @@ export default function DesignHome() {
                 <Snowflake className="w-12 h-12 text-blue-800" />
                 <h3 className="my-8 text-2xl">Real State</h3>
                 <div className="flex flex-col text-lg gap-2 text-white/75">
-                  {["UX/UI Design", "Marketing design"].map((value, idx) => (
+                  {[
+                    "Interior & Exterior Design",
+                    "Real Estate Interiors & Exteriors",
+                    "Property Interior–Exterior",
+                    "Interior | Exterior Visuals",
+                    "Real Estate Design Duo",
+                    "Property Media & Design",
+                  ].map((value, idx) => (
                     <li key={idx} className="list-inside">
                       {value}
                     </li>
@@ -184,14 +196,15 @@ export default function DesignHome() {
             <BorderAnimation className="flex flex-col w-1/3 justify-between h-[50vh] ">
               <div className="flex flex-col px-8 pt-8">
                 <Snowflake className="w-12 h-12 text-blue-800" />
-                <h3 className="my-8 text-2xl">Scale</h3>
+                <h3 className="my-8 text-2xl">Media Buying</h3>
                 <div className="flex flex-col text-lg gap-2 text-white/75">
                   {[
-                    "UX Audit",
-                    "Expert review",
-                    "Accessibility Audit",
-                    "User research",
-                    "Design system a service",
+                    "Ad Creative Design",
+                    "Media Visual Production",
+                    "Paid Campaign Graphics",
+                    "Marketing Ad Assets",
+                    "Performance Creative",
+                    "Marketing Design",
                   ].map((value, idx) => (
                     <li key={idx} className="list-inside">
                       {value}
