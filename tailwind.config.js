@@ -15,6 +15,18 @@ const config = {
           to: { "--border-angle": "360deg" },
         },
       },
+       keyframes: {
+    slide: {
+      "0%": { transform: "translateX(0)" },
+      "25%": { transform: "translateY(10px) translateX(10px)" },
+      "50%": { transform: "translateX(0) translateY(20px)" },
+      "75%": { transform: "translateY(10px) translateX(-10px)" },
+      "100%": { transform: "translateX(0)" },
+    },
+  },
+  animation: {
+    slide: "slide 10s linear infinite",
+  },
     },
   },
   plugins: [],
