@@ -17,7 +17,7 @@ export default function CursorDotProvider({
 
   return (
     <CursorContext.Provider value={{ value, setValue }}>
-      {children}
+      {children}  
     </CursorContext.Provider>
   );
 }

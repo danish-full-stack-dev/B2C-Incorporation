@@ -17,7 +17,7 @@ const WhyChooseUs: React.FC = () => {
     ["#1f2937", "#ffffff"]
   );
 
-  const bgColor = useTransform(scrollYProgress, [0, 1], ["#456882", "#234C6A"]);
+  const bgColor = useTransform(scrollYProgress, [0, 1], ["#7393B3", "#708090"]);
 
   const brands: string[] = [
     "/ters.png",

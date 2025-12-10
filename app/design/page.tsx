@@ -6,39 +6,42 @@ import { DesignPageNavbar } from "../componants/navbar/DesignPageNavbar";
 import { ButtonsWithArcs } from "../componants/ButtonsWithArcs";
 import { BorderAnimation } from "../componants/BorderAnimation";
 import { designCards } from "../componants/CaseStudies";
+import { useCursor } from "../hooks/CursorContext";
+import { useRouter } from "next/navigation";
 
 interface Props {
   image: string;
   heading: string;
   position?: string;
   listOfFeatures: string[];
+  reverse?: boolean;
 }
 const ImageDiv = (props: Props) => {
-  const { image, heading, position, listOfFeatures } = props;
+  const { image, heading, listOfFeatures, reverse } = props;
+  const { setValue } = useCursor();
+  const router = useRouter();
   return (
-    <div className={`flex justify-${position ? position : "normal"} relative`}>
-      <aside className="flex flex-col text-sm py-10">
-        <div className="group w-full flex text-white/80">
-          <img src={image} alt="laptop" className="w-4/6 h-auto object-cover" />
-          <div
-            className="
-          hover:cursor-pointer
-          bg-black/20 backdrop-blur-sm 
-          opacity-0 group-hover:opacity-100 
-          transition-all duration-300 
-          flex flex-col gap-5
-        "
-          >
-            <div className="w-full">
-              <h2 className="text-wrap text-7xl font-bold text-blue-800  flex">
-                Kao
-              </h2>
-              <h3 className="text-4xl font-thin text-white ">{heading}</h3>
-            </div>
-          </div>
+    <div
+      className={`flex py-10 ${reverse ? "flex-row-reverse" : ""} group`}
+      onMouseEnter={() => setValue("discover")}
+      onMouseLeave={() => setValue(null)}
+      onClick={() => {
+        setValue(null);
+        router.push("/design/works/kao");
+      }}
+    >
+      {/* Image + tags */}
+      <aside className="flex flex-col text-sm w-4/6 overflow-hidden hover:cursor-pointer hover:scale-[1.03] transition-transform duration-300 relative">
+        <div className="absolute group-hover:bg-black/30 group-hover:backdrop-blur-sm inset-0 transition-all duration-300" />
+        <div className="flex text-white/80">
+          <img
+            src={image}
+            alt="laptop"
+            className="w-full h-[72vh] object-cover"
+          />
         </div>
 
-        <div className="flex gap-3 py-7">
+        <div className="flex gap-3 py-7 flex-wrap">
           {listOfFeatures.map((value, idx) => (
             <h4
               key={idx}
@@ -49,9 +52,17 @@ const ImageDiv = (props: Props) => {
           ))}
         </div>
       </aside>
+
+      <div
+        className={`flex flex-col w-2/6 px-6 opacity-0 group-hover:opacity-100 transition duration-300`}
+      >
+        <h2 className="text-7xl font-bold text-blue-800">Kao</h2>
+        <h3 className="text-4xl font-thin text-white">{heading}</h3>
+      </div>
     </div>
   );
 };
+
 export default function DesignHome() {
   const texts: string[] = [
     "We design.",
@@ -138,7 +149,7 @@ export default function DesignHome() {
             <BorderAnimation className="flex flex-col w-1/3 justify-between h-[50vh]">
               <div className="flex flex-col px-8 pt-8">
                 <Snowflake className="w-12 h-12 text-blue-800" />
-                <h3 className="my-8 text-2xl">Trading Plateform</h3>
+                <h3 className="my-8 text-2xl">Trading Platform</h3>
                 <div className="flex flex-col text-lg gap-2 text-white/75">
                   {[
                     "Crypto & Trading Design Services",
@@ -248,7 +259,7 @@ export default function DesignHome() {
                 </span>
               </p>
             </div>
-            <div className="w-full">
+            <div className="flex flex-col gap-5">
               {designCards.map((card, i) => (
                 <ImageDiv
                   key={i}
@@ -256,6 +267,7 @@ export default function DesignHome() {
                   heading={card.heading}
                   position={card.position}
                   listOfFeatures={card.listOfFeatures}
+                  reverse={i % 2 !== 0}
                 />
               ))}
             </div>
@@ -277,32 +289,40 @@ export default function DesignHome() {
           {/* Right Button */}
           <button
             onClick={() => scroll("right")}
-            className="absolute z-10 right-10 font-bold
-            text-blue-800 bg-black/50 border-2 border-blue-800 p-5 rounded-full
-          opacity-0 translate-x-6 transition-all duration-300 ease-in-out
+            className="absolute z-10 right-10 text-blue-500 border-2 border-blue-800 p-5 rounded-full font-bold
+          opacity-0 -translate-x-6 transition-all duration-300 ease-in-out
           group-hover:opacity-100 group-hover:translate-x-0
           pointer-events-none group-hover:pointer-events-auto"
           >
             <ArrowRight className="w-5 h-5" />
           </button>
-
           <div
             ref={scrollRef}
             className="flex flex-row overflow-x-hidden snap-both snap-mandatory scroll-smooth w-full"
+            onScroll={() => {
+              if (scrollRef.current) {
+                const scrollLeft = scrollRef.current.scrollLeft;
+                const itemWidth = scrollRef.current.offsetWidth / 2;
+                const activeIndex = Math.round(scrollLeft / itemWidth);
+                setIndex(activeIndex % 10);
+              }
+            }}
           >
             {Array.from({ length: 10 }).map((_, i) => (
-              <div key={i} className="flex flex-col min-w-[50%]  text-start">
+              <div
+                key={i}
+                className={`flex flex-col min-w-[50%] text-start snap-center transition-opacity duration-300 ${
+                  i === index ? "opacity-100" : "opacity-50"
+                }`}
+              >
                 <h4 className="py-5 text-2xl text-white/70 text-start ml-[20px]">
                   Keith Nolan{" "}
-                  <span className="text-gray-700 text-start">
+                  <span className="text-gray-700 text-start text-xl">
                     Head of R&D, NDA
                   </span>
                 </h4>
 
-                <p
-                  className="
-              flex snap-center px-6 py-10 text-white/90 font-thin w-5/6 text-2xl"
-                >
+                <p className="flex px-6 py-10 text-white/90 font-thin w-5/6 text-2xl transition-all duration-300 hover:opacity-100">
                   From the very beginning of our collaboration, it became
                   evident that we had found a team that consistently performs
                   above expectations, pushing the limits of creativity and

@@ -1,4 +1,6 @@
 "use client";
+import { User2Icon } from "lucide-react";
+import Image from "next/image";
 import React, { useState, useRef } from "react";
 // import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -19,25 +21,56 @@ const TestimonialsSection: React.FC = () => {
 
   const testimonials: Testimonial[] = [
     {
-      logo: "sirona medical",
+      logo: "/sironaReview.png",
       logoColor: "text-green-600",
       text: "…significant increase in both traffic and sales. I couldn’t be more pleased with the outcome and highly recommend their services.",
       author: "Mark Burrell | MD",
       position: "Sirona Medical",
     },
     {
-      logo: "Madison brook",
+      logo: "/medisonReview.png",
       logoColor: "text-blue-500",
       text: "We’ve noticed a substantial improvement in our online presence, which has translated into far more client inquiries for Madison Brook.",
       author: "John Lipper | MD",
       position: "Madison Brook",
     },
     {
-      logo: "NerfWar",
+      logo: "/NerfReview.png",
       logoColor: "text-teal-600",
       text: "We’ve seen a remarkable 27.5% reduction ad spend while achieving a significant 32% increase in conversions… I highly recommended!",
       author: "Ryan Musk | MD",
       position: "RHG & Nerf Wars",
+    },
+    {
+      logo: "/NerfReview.png",
+      logoColor: "text-teal-600",
+      text: "The team is exceptionally responsive and committed to our success, providing detailed reports and strategic guidance. They come highly recommended for any business aiming to enhance their SEO performance.",
+      author: "Axel Aaron | WsC London",
+      position: "CMO",
+    },
+
+    {
+      logo: "/NerfReview.png",
+      logoColor: "text-teal-600",
+      text: "I’m always on the lookout for ways to improve ROI, and ClickExpose delivered beyond my expectations.",
+      author: "Ryan M | Rye House Karting",
+      position: "Managing Director",
+    },
+
+    {
+      logo: "/NerfReview.png",
+      logoColor: "text-teal-600",
+      text: "The results speak for themselves. Unlike most so-called marketing companies, these guys are a credit to their industry.",
+      author: "Craig D | TPI",
+      position: "Managing Director",
+    },
+
+    {
+      logo: "/NerfReview.png",
+      logoColor: "text-teal-600",
+      text: "We’ve seen a significant boost in leads since they took over, and they seem genuinely invested in our success. A 5- star service all day long.",
+      author: "Laura Dennick | Ellis & Co",
+      position: "Managing Director",
     },
   ];
 
@@ -134,9 +167,13 @@ const TestimonialsSection: React.FC = () => {
               >
                 {/* Logo */}
                 <div className="mb-8">
-                  <h3 className={`text-2xl font-bold ${testimonial.logoColor}`}>
-                    {testimonial.logo}
-                  </h3>
+                  <Image
+                    width={100}
+                    height={100}
+                    src={testimonial.logo}
+                    alt="logo"
+                    className={`text-2xl font-bold ${testimonial.logoColor}`}
+                  />
                 </div>
 
                 {/* Testimonial Text */}
@@ -148,10 +185,7 @@ const TestimonialsSection: React.FC = () => {
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
                     <span className="text-gray-600 font-semibold text-lg">
-                      {testimonial.author
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
+                      <User2Icon className="" />
                     </span>
                   </div>
                   <div>

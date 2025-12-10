@@ -11,12 +11,13 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   const path = usePathname();
+  const isDesignPage = path.startsWith("/design");
 
   return (
     <div>
-      {path === "/design" ? <DesignPageNavbar /> : <Navbar />}
+      {isDesignPage ? <DesignPageNavbar /> : <Navbar />}
       {children}
-      {path === "/design" ? <DesignPageFooter /> : <Footer />}
+      {isDesignPage ? <DesignPageFooter /> : <Footer />}
     </div>
   );
 }

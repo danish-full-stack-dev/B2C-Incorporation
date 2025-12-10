@@ -12,14 +12,11 @@ export const DesignPageNavbar: React.FC = () => {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
 
-      // Detect scroll direction
       if (currentScroll > lastScrollY) {
         setIsScrollingDown(true);
       } else {
         setIsScrollingDown(false);
       }
-
-      // Hide navbar after 200px
       setHideNav(currentScroll > 200);
 
       setLastScrollY(currentScroll);
@@ -48,7 +45,7 @@ export const DesignPageNavbar: React.FC = () => {
           <div className="flex justify-center">
             <div className="flex gap-6">
               {[
-                { heading: "services", to: "/pages/designs/ourservices" },
+                { heading: "services", to: "/design/pages/our-services" },
                 { heading: "our works", to: "" },
                 { heading: "about us", to: "" },
                 { heading: "contacts", to: "" },

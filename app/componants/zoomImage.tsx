@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useScrollZoom } from "./useZoomImage";
 
-const ZoomImage = ({ source }: { source: String }) => {
+const ZoomImage = ({ source }: { source: string }) => {
   const { ref, style } = useScrollZoom(1, 1.4);
 
   return (
