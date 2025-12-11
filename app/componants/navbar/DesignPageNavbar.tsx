@@ -46,7 +46,7 @@ export const DesignPageNavbar: React.FC = () => {
                 { heading: "services", to: "/design/pages/our-services" },
                 { heading: "our works", to: "#" },
                 { heading: "about us", to: "/design/pages/about-us" },
-                { heading: "contacts", to: "" },
+                { heading: "contacts", to: "/design/pages/contact" },
               ].map((value, idx) => (
                 <Link
                   href={value.to}

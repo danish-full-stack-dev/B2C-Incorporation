@@ -85,7 +85,7 @@ export default function MergedPage() {
           transition={{ duration: 0.8 }}
           className="w-1/2 h-full"
         >
-          <img src={slide.image} className="w-full h-full object-fill" />
+          <img src={slide.image} className="w-full h-full object-cover" />
         </motion.div>
 
         <div className="w-1/2 bg-[#3E50FB] h-full flex flex-col justify-start px-28 py-24">

@@ -25,6 +25,6 @@
     ) border-box;
 
   border: 2px solid transparent;
-  border-radius: 1rem;
+  border-radius: 2rem;
   animation: border-rotate 6s linear infinite;
 }
