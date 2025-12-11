@@ -384,20 +384,21 @@ const steps = [
           }
           `}
         >
-          <div className="flex flex-col w-1/2 h-3/4 gap-3 text-white">
-            <h2 className="text-2xl font-medium mt-50px">Clutch Proven</h2>
-            <p className="text-lg font-sans">
-              "EffectiveSoft has earned Top IT Services Company Outsourcing, Top IT Services Company Medical, 
-              and Top Software Developers accolades from Clutch. These designations underscore our superiority 
-              in providing IT and software development services, as affirmed 
-              by hundreds of satisfied clients worldwide."ctiveSoft to explore the limitless potential of
-            </p>
-          </div>
-          <div className="w-1/2 flex justify-center">
-            <img src="/image.png" alt="image" className="w-40 object-contain" />
-          </div>
-        </FadeSlideIn>
-      </div>
+         <div className="flex flex-col w-1/2 h-3/4 gap-3 text-white">
+                     <h2 className="text-2xl font-medium">Clutch Proven</h2>
+                     <p className="text-lg pt-6">
+                       Team up with EffectiveSoft to explore the limitless potential of
+                       artificial intelligence (AI)! From AI strategy building and data
+                       analysis to AI integration and deployment, our comprehensive
+                       artificial intelligence development services are tailored to
+                       address challenges across domains.
+                     </p>
+                   </div>
+                   <div className="w-1/2 flex justify-center">
+                     <img src="/clutchlogo.png" alt="image" className="w-40 object-contain" />
+                   </div>
+                 </FadeSlideIn>
+               </div>
       <div>
         <SoftwareServices/>
       </div>\

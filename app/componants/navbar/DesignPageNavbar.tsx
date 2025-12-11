@@ -44,7 +44,7 @@ export const DesignPageNavbar: React.FC = () => {
             <div className="flex gap-6">
               {[
                 { heading: "services", to: "/design/pages/our-services" },
-                { heading: "our works", to: "#" },
+                { heading: "our works", to: "/design/pages/our-works" },
                 { heading: "about us", to: "/design/pages/about-us" },
                 { heading: "contacts", to: "/design/pages/contact" },
               ].map((value, idx) => (

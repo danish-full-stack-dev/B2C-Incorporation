@@ -5,14 +5,10 @@ import React from 'react'
 export const DesignPageFooter: React.FC = () => {
   const skills = [
     "Artificial intelligence",
-    "Cloud technologies",
     "Mobile App Development",
     "Web Development",
     "Desktop App Development",
-    "Machine Learning",
     "Data Analytics",
-    "Data Visualization",
-    "Software Testing and QA",
   ];
 
   return (
@@ -44,8 +40,8 @@ export const DesignPageFooter: React.FC = () => {
             <h3 className="text-lg  text-gray-300 mb-4">B2C industries</h3>
             <div className='flex flex-col gap-2'>
               {["Fintech",
-                "Trading",
-                "Healthcare"].map((v, idx) => (
+                "Real State",
+                "Trading Platform"].map((v, idx) => (
                   <p key={idx} className='hover:text-blue-500 transition hover:cursor-pointer'>
                     {v}
                   </p>

@@ -322,7 +322,7 @@ export default function AIDevelopementServices() {
             </p>
           </div>
           <div className="w-1/2 flex justify-center">
-            <img src="/image.png" alt="image" className="w-40 object-contain" />
+            <img src="/clutchlogo.png" alt="image" className="w-40 object-contain" />
           </div>
         </FadeSlideIn>
       </div>
@@ -418,11 +418,11 @@ export default function AIDevelopementServices() {
     </span>
 
 
-    <div className="flex items-center justify-start gap-20 mt-20 px-16">
-      <img src="/aws.svg" alt="AWS" className="h-14" />
-      <img src="/azure.svg" alt="Azure" className="h-14" />
-      <img src="/gcp.svg" alt="GCP" className="h-14" />
-      <img src="/oracle.svg" alt="Oracle" className="h-14" />
+    <div className="flex items-center justify-start gap-10 mt-10 px-16">
+      <img src="/googlecloud.png" alt="Google Cloud" className="h-1/3 w-1/3 object-contain " />
+      <img src="/Azure.png" alt="Azure" className="h-1/3 w-1/3 object-contain " />
+      <img src="/aws.png" alt="AWS" className="h-1/3 w-1/3 object-contain " />
+      <img src="/oracle.PNG" alt="Oracle" className="h-1/3 w-1/3 object-contain " />
     </div>
 
   </div>

@@ -5,57 +5,49 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, Snowflake, Volleyball } from "lucide-react";
 
 export default function DesignPage() {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
   const [activeCard, setActiveCard] = useState(0);
   const [open, setOpen] = useState<number | null>(null);
 
   const cards = [
     {
       id: 0,
-      title: "kick-off",
+      title: "Real State",
       description:
-        "The first meeting of the client and the design team that sets the course for a smooth project collaboration.",
+        "Protect and enhance your brand’s online reputation with expert ORM services.",
       outputs: [
-        "project scope and timeline",
-        "planning",
-        "discovery workshops",
+        "Monitor and manage online reviews and feedback",
+        "Customized strategies to build trust and credibility",
+        "Social media reputation management",
       ],
     },
     {
       id: 1,
-      title: "research",
-      description: "We learn who the users are and what they need.",
+      title: "ORM Services",
+      description: "Safeguard and enhance your brand’s image with professional ORM services.",
       outputs: [
-        "user personas",
-        "user journeys & flows",
-        "journey mapping",
-        "interviews & surveys",
-        "competitive analysis",
+        "Monitor and manage online reviews and mentions",
+        "Continuous reputation tracking and reporting",
+        "Build and maintain a trustworthy online reputation",
       ],
     },
     {
       id: 2,
-      title: "ideation",
-      description: "Think outside the box and generate creative solutions.",
-      outputs: ["low-fi designs", "wireframes", "sketches", "prototypes"],
+      title: "Blockchain Development",
+      description: "Build secure, scalable, and innovative blockchain solutions for your business.",
+      outputs: ["Smart contract development and auditing", "Cryptocurrency and token creation", "Blockchain integration with existing systems"],
     },
     {
       id: 3,
-      title: "testing",
-      description: "Validate solutions with real users to refine improvements.",
-      outputs: ["user testing", "A/B experiments", "feedback reports"],
+      title: "Trading Platform",
+      description:"Develop robust and user-friendly trading platforms for seamless financial transactions.",
+      outputs: ["Real-time trading and market data integration", "Secure payment gateways and transaction processing", "Advanced analytics and reporting tools"],
     },
     {
       id: 4,
-      title: "refinement",
-      description: "Improve the design based on user feedback and testing.",
-      outputs: ["final UI designs", "polished components"],
-    },
-    {
-      id: 5,
-      title: "handoff",
-      description: "Deliver complete assets and documentation to developers.",
-      outputs: ["design system", "dev-ready files", "documentation"],
+      title: "AI Automation",
+      description: "Streamline business processes and boost efficiency with intelligent AI automation solutions.",
+      outputs: ["Automate repetitive tasks and workflows", "AI-powered data analysis and decision-making","Predictive analytics for smarter business strategies"],
     },
   ];
 
@@ -111,77 +103,75 @@ export default function DesignPage() {
     },
   ];
 
-  const scrollLeft = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({
-        left: -350,
-        behavior: "smooth",
-      });
-      setActiveCard((prev) => Math.max(prev - 1, 0));
-    }
-  };
+   const scroll = (direction: "left" | "right") => {
+  const current = scrollRef.current;
+  if (!current) return;
 
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({
-        left: 350,
-        behavior: "smooth",
-      });
-      setActiveCard((prev) => Math.min(prev + 1, cards.length - 1));
-    }
-  };
+  const cardWidth = 600 + 40; 
+  let newIndex = activeCard;
+
+  if (direction === "left") {
+    newIndex = Math.max(activeCard - 1, 0);
+  } else {
+    newIndex = Math.min(activeCard + 1, cards.length - 1);
+  }
+
+  setActiveCard(newIndex);
+
+  current.scrollTo({
+    left: newIndex * cardWidth,
+    behavior: "smooth",
+  });
+};
 
   return (
     <div className="min-h-screen bg-black ">
-      <div className="flex items-end justify-between pr-10 w-11/12 ml-auto">
-        <h2 className="text-5xl text-white max-w-2xl leading-tight mt-[120px]">
-          Our design process <span className="text-blue-600">is tailored</span>
-          <br />
-          to your needs and goals
-        </h2>
+     <div className="flex items-end justify-between pr-10 w-10/12 mx-auto ">
+  <h2 className="text-5xl text-white max-w-2xl leading-tight mt-[120px]">
+    Our design process <span className="text-blue-600">is tailored</span>
+    <br />
+    to your needs and goals
+  </h2>
 
-        <div className="flex gap-4">
-          <ArrowLeft
-            onClick={scrollLeft}
-            className="text-white text-lg  w-5 h-5 flex items-center justify-center rounded-full hover:text-blue-600 hover:cursor-pointer transition-colors duration-500"
-          />
+  <div className="flex gap-4">
+  <ArrowLeft
+    onClick={() => scroll("left")}
+    className="text-white w-6 h-6 flex items-center justify-center rounded-full hover:text-blue-600 hover:cursor-pointer transition-colors duration-500"
+  />
+  <ArrowRight
+    onClick={() => scroll("right")}
+    className="text-white w-6 h-6 flex items-center justify-center rounded-full hover:text-blue-600 hover:cursor-pointer transition-colors duration-500"
+  />
+</div>
 
-          <ArrowRight
-            onClick={scrollRight}
-            className="text-white text-xl w-5 h-5 flex items-center justify-center rounded-full hover:text-blue-600 transition-colors hover:cursor-pointer duration-500"
-          />
-        </div>
-      </div>
+</div>
 
-      <div
-        ref={scrollRef}
-        className="flex gap-6 overflow-x-auto scroll-smooth mt-20 hide-scrollbar w-11/12 ml-auto"
-      >
-        {cards.map((card, index) => (
-          <div
-            key={card.id}
-            className={`min-w-[400px] p-6 rounded-xl border border-neutral-800 text-white transition-colors duration-500 ${
-              activeCard === index ? "bg-blue-600" : "bg-neutral-900"
-            }`}
-          >
-            <p className="text-sm font-semibold opacity-70">
-              {String(card.id + 1).padStart(2, "0")}
-            </p>
-            <h2 className="text-2xl font-semibold mt-1 mb-4">{card.title}</h2>
-            <p className="text-base leading-relaxed opacity-90">
-              {card.description}
-            </p>
-            <h3 className="text-lg font-semibold mt-6 mb-2">outputs</h3>
-            <ul className="space-y-1 opacity-90">
-              {card.outputs.map((output, idx) => (
-                <li key={idx} className="list-disc ml-5">
-                  {output}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+
+<div
+  ref={scrollRef}
+  className="flex gap-10 overflow-x-auto scroll-smooth mt-20 hide-scrollbar w-[calc(3*420px)] ml-[300]"
+>
+  {cards.map((card, index) => (
+    <div
+      key={card.id}
+      className={`min-w-[600px] p-6 rounded-xl border border-neutral-800 text-white transition-colors duration-500 ${
+        activeCard === index ? "bg-blue-600" : "bg-neutral-900"
+      }`}
+    >
+      <p className="text-sm font-semibold opacity-70">
+        {String(card.id + 1).padStart(2, "0")}
+      </p>
+      <h2 className="text-2xl font-semibold mt-1 mb-4">{card.title}</h2>
+      <p className="text-base leading-relaxed opacity-90">{card.description}</p>
+       <ul className="list-disc ml-5 space-y-1 opacity-90">
+      {card.outputs.map((item, idx) => (
+        <li key={idx}>{item}</li>
+      ))}
+    </ul>
+    </div>
+  ))}
+</div>
+
 
       <div className="text-white font-sans mt-[120px] w-10/12 mx-auto">
         <h2 className="text-5xl mb-12 leading-tight">
