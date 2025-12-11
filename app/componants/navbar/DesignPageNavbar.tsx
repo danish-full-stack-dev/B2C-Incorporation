@@ -40,24 +40,24 @@ export const DesignPageNavbar: React.FC = () => {
           <img src="/whiteDesignLogo.png" alt="logo" className="h-4" />
 
           {/* NAV LINKS */}
-         <div className="flex justify-center">
-  <div className="flex gap-6">
-      {[
-                    { heading: "services", to: "/pages/designs/ourservices" },
-                    { heading: "our works", to: "pages/designs/ourworks" },
-                    { heading: "about us", to: "" },
-                    { heading: "contacts", to: "pages/contact" },
-                  ].map((value, idx) => (
-                    <Link
-                      href={value.to}
-                      key={idx}
-                      className="hover:text-blue-500 transition hover:cursor-pointer"
-                    >
-         {value.heading}
-                          </Link>
-    ))}
-  </div>
-</div>
+          <div className="flex justify-center">
+            <div className="flex gap-6">
+              {[
+                { heading: "services", to: "/design/pages/our-services" },
+                { heading: "our works", to: "#" },
+                { heading: "about us", to: "/design/pages/about-us" },
+                { heading: "contacts", to: "" },
+              ].map((value, idx) => (
+                <Link
+                  href={value.to}
+                  key={idx}
+                  className="hover:text-blue-500 transition hover:cursor-pointer"
+                >
+                  {value.heading}
+                </Link>
+              ))}
+            </div>
+          </div>
 
           {/* BUTTON */}
           <div className="flex justify-center">

@@ -60,30 +60,32 @@ export default function page() {
   ];
   return (
     <div className="bg-black/90">
-      <div className="min-h-screen mx-auto flex flex-col w-10/12 pt-32 gap-1 bg-black px-5">
-        <div
-          className="p-5 hover:cursor-pointer flex justify-center items-center rounded-full border-2 h-fit w-fit hover:bg-blue-700 duration-300"
-          onClick={() => router.back()}
-        >
-          <button className="">
-            <ArrowLeft className="w-4 h-4 text-white" />
-          </button>
-        </div>
-        <div className="flex justify-start w-10/12 mx-auto">
-          <div className="flex flex-col gap-2">
-            <h1 className="text-7xl text-blue-700 font-thin">
-              Kao: A Cosmetics, Hygiene and Chemical Business.
-            </h1>
-            <span className="text-3xl text-white/80">Website</span>
+      <div className="bg-black">
+        <div className="min-h-screen mx-auto flex flex-col w-10/12 pt-32 gap-1 px-5">
+          <div
+            className="p-5 hover:cursor-pointer flex justify-center items-center rounded-full border-2 h-fit w-fit hover:bg-blue-700 duration-300"
+            onClick={() => router.back()}
+          >
+            <button className="">
+              <ArrowLeft className="w-4 h-4 text-white" />
+            </button>
+          </div>
+          <div className="flex justify-start w-10/12 mx-auto">
+            <div className="flex flex-col gap-2">
+              <h1 className="text-7xl text-blue-700 font-thin">
+                Kao: A Cosmetics, Hygiene and Chemical Business.
+              </h1>
+              <span className="text-3xl text-white/80">Website</span>
+            </div>
+          </div>
+
+          <div className="w-1/2 mx-auto my-40">
+            <ZoomImage source="/kaoCaseStudy.png" />
           </div>
         </div>
-
-        <div className="w-1/2 mx-auto my-40">
-          <ZoomImage source="/kaoCaseStudy.png" />
-        </div>
       </div>
-      <div className="mx-auto w-10/12">
-        <FadeSlideIn className="text-white/80 flex gap-5 py-10 flex-col w-full">
+      <div className="mx-auto w-10/12 pt-10">
+        <div className="text-white/80 flex gap-5 py-10 flex-col w-full">
           <div className="w-full  flex flex-row justify-between gap-20">
             <div className="w-4/6 border-b border-white/20">
               <h2 className="text-5xl pb-20 border-b border-white/20">
@@ -123,7 +125,7 @@ export default function page() {
                     (item, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1 text-white/90 text-sm rounded-full mx-1"
+                        className="py-1 text-white/90 text-sm rounded-full mx-1"
                       >
                         {item}
                       </span>
@@ -133,9 +135,9 @@ export default function page() {
               </div>
             </div>
           </div>
-        </FadeSlideIn>
+        </div>
 
-        <FadeSlideIn className="bg-[#16141c] text-white/80 mt-10">
+        <FadeSlideIn className="bg-black text-white/80 mt-10">
           <div className="h-[65vh] flex">
             <div className="inset-0 absolute -z-10 flex ">
               <div className="w-1/2 h-3/6 flex justify-center">
@@ -221,7 +223,7 @@ export default function page() {
           </div>
         </FadeSlideIn>
 
-        <FadeSlideIn>
+        <div>
           <div className="h-screen">
             <iframe
               title="vimeo-player"
@@ -232,109 +234,180 @@ export default function page() {
               className="w-full h-full object-cover object-top saturate-25"
             />
           </div>
+        </div>
+
+        <section className="flex flex-col">
+          <FadeSlideIn className="w-full flex">
+            <img src="/kao2.png" alt="kao image" className="w-1/2" />
+            <img src="/kao1.gif" alt="kao image" className="w-1/2" />
+          </FadeSlideIn>
+
+          <div className="py-16 text-white/80">
+            <div className="flex flex-col w-1/2 gap-2">
+              <h4 className="text-2xl">Design process</h4>
+              <p className="">
+                We began with a comprehensive UX Audit, covering user research,
+                competitor analysis, heuristic evaluation, and accessibility
+                assessment. From there, we moved into the design phase and
+                tested the solution. After two rounds of prototyping and
+                testing, we achieved our desired outcome.
+              </p>
+            </div>
+          </div>
+          <div className="h-screen">
+            <iframe
+              title="vimeo-player"
+              src="https://player.vimeo.com/video/1078270697?h=c9768b3827"
+              width="640"
+              height="360"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              className="w-full h-full  saturate-25"
+            />
+          </div>
+          <FadeSlideIn className="w-full flex">
+            <img src="/kao4.gif" alt="kao image" className="w-1/2" />
+            <img src="/kao3.png" alt="kao image" className="w-1/2" />
+          </FadeSlideIn>
+        </section>
+        <section>
+          <div className="">
+            <img src="/kao5.png" alt="kao image" className="w-full" />
+          </div>
+          <FadeSlideIn className="h-screen">
+            <iframe
+              title="vimeo-player"
+              src="https://player.vimeo.com/video/1078270721?h=af1b66e79e"
+              width="640"
+              height="360"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              className="w-full h-full  saturate-25"
+            />
+          </FadeSlideIn>
+        </section>
+        <section>
+          <img
+            src="/kaoCaseStudy.png"
+            alt="kao image"
+            className="w-full h-screen"
+          />
+        </section>
+
+        <FadeSlideIn className="flex">
+          <img src="/kao8.gif" alt="kao image" className="w-1/2" />
+          <img src="/kao7.png" alt="kao image" className="w-1/2" />
         </FadeSlideIn>
 
-        <div className="py-16 text-white/80">
-          <div className="flex flex-col w-1/2 gap-2 pb-16">
-            <h4 className="text-2xl">Design process</h4>
-            <p className="">
-              We began with a comprehensive UX Audit, covering user research,
-              competitor analysis, heuristic evaluation, and accessibility
-              assessment. From there, we moved into the design phase and tested
-              the solution. After two rounds of prototyping and testing, we
-              achieved our desired outcome.
-            </p>
-          </div>
-          <section className="min-h-screen text-white/80 bg-neutral-900">
-            <div className="flex justify-center items-center h-[60vh] flex-col gap-8 w-2/3 mx-auto">
-              <div className="px-5 py-2 w-fit rounded-full border border-opacity-25">
-                <button className="">Process</button>
-              </div>
-              <h4 className="text-4xl">
-                Effective planning is crucial in a redesign as it helps identify
-                user pain points early, set clear project goals, and align the
-                team's efforts on the most impactful solutions.
-              </h4>
+        <section>
+          <img src="/kao9.png" alt="kaoa image" className="h-screen w-full" />
+        </section>
+        <FadeSlideIn className="h-screen">
+          <iframe
+            title="vimeo-player"
+            src="https://player.vimeo.com/video/1078270738?h=fe66a109a6"
+            width="640"
+            height="360"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            className="w-full h-full  saturate-25"
+          />
+        </FadeSlideIn>
+
+        <section className="flex flex-col">
+          <img src="/kao10.png" alt="kao image" className="w-full" />
+          <img src="/kao6.png" alt="kao image" className="w-full" />
+        </section>
+
+        <section className="min-h-screen text-white/80 bg-neutral-900">
+          <div className="flex justify-center items-center h-[60vh] flex-col gap-8 w-2/3 mx-auto">
+            <div className="px-5 py-2 w-fit rounded-full border border-opacity-25">
+              <button className="">Process</button>
             </div>
-            <section className="flex gap-3 justify-center">
-              <div className="grid grid-cols-3 gap-12 p-6">
-                {stages.map((stage, index) => (
-                  <div
-                    key={index}
-                    className="relative h-[40vh] flex flex-col justify-between py-10"
-                  >
-                    {/* Vertical Divider */}
-                    {index < stages.length - 1 && (
-                      <div className="absolute top-0 -right-6 w-px h-full bg-neutral-700"></div>
-                    )}
+            <h4 className="text-4xl">
+              Effective planning is crucial in a redesign as it helps identify
+              user pain points early, set clear project goals, and align the
+              team's efforts on the most impactful solutions.
+            </h4>
+          </div>
+          <section className="flex gap-3 justify-center">
+            <div className="grid grid-cols-3 gap-12 p-6">
+              {stages.map((stage, index) => (
+                <div
+                  key={index}
+                  className="relative h-[40vh] flex flex-col justify-between py-10"
+                >
+                  {/* Vertical Divider */}
+                  {index < stages.length - 1 && (
+                    <div className="absolute top-0 -right-6 w-px h-full bg-neutral-700"></div>
+                  )}
 
-                    {/* Circular Progress Indicator */}
-                    <div className="flex items-center gap-6 mb-12">
-                      <div className="relative w-24 h-24 flex-shrink-0">
-                        {/* Background Circle */}
-                        <svg className="w-24 h-24 transform -rotate-90">
-                          <circle
-                            cx="48"
-                            cy="48"
-                            r="44"
-                            stroke="rgba(255, 255, 255, 0.1)"
-                            strokeWidth="3"
-                            fill="none"
-                          />
-                          {/* Progress Arc */}
-                          <circle
-                            cx="48"
-                            cy="48"
-                            r="44"
-                            stroke="#EF4444"
-                            strokeWidth="3"
-                            fill="none"
-                            strokeDasharray={`${2 * Math.PI * 135 * 0.25} ${
-                              2 * Math.PI * 44
-                            }`}
-                            strokeLinecap="round"
-                          />
-                        </svg>
-                        {/* Icon */}
-                        <div className="absolute inset-0 flex items-center justify-center text-white">
-                          {stage.icon}
-                        </div>
-                        {/* Progress Dot */}
-                        <div className="absolute top-0 left-1/2 w-2 h-2 bg-blue-500 rounded-full -translate-x-1/2"></div>
+                  {/* Circular Progress Indicator */}
+                  <div className="flex items-center gap-6 mb-12">
+                    <div className="relative w-24 h-24 flex-shrink-0">
+                      {/* Background Circle */}
+                      <svg className="w-24 h-24 transform -rotate-90">
+                        <circle
+                          cx="48"
+                          cy="48"
+                          r="44"
+                          stroke="rgba(255, 255, 255, 0.1)"
+                          strokeWidth="3"
+                          fill="none"
+                        />
+                        {/* Progress Arc */}
+                        <circle
+                          cx="48"
+                          cy="48"
+                          r="44"
+                          stroke="#EF4444"
+                          strokeWidth="3"
+                          fill="none"
+                          strokeDasharray={`${2 * Math.PI * 135 * 0.25} ${
+                            2 * Math.PI * 44
+                          }`}
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                      {/* Icon */}
+                      <div className="absolute inset-0 flex items-center justify-center text-white">
+                        {stage.icon}
                       </div>
-
-                      <div>
-                        <h3 className="text-2xl font-normal text-white mb-1">
-                          {stage.title}
-                        </h3>
-                        <p className="text-4xl font-light text-white">
-                          {stage.hours}
-                        </p>
-                      </div>
+                      {/* Progress Dot */}
+                      <div className="absolute top-0 left-1/2 w-2 h-2 bg-blue-500 rounded-full -translate-x-1/2"></div>
                     </div>
 
-                    {/* Tags Cloud */}
-                    <div className="flex flex-wrap gap-3">
-                      {stage.tags.map((tag, tagIndex) => (
-                        <span
-                          key={tagIndex}
-                          className={`px-5 py-2.5 rounded-full text-sm font-normal transition-all duration-300 ${
-                            tag === stage.highlightTag
-                              ? "bg-red-600 text-white"
-                              : "bg-transparent text-white border border-neutral-600 hover:border-neutral-400"
-                          }`}
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                    <div>
+                      <h3 className="text-2xl font-normal text-white mb-1">
+                        {stage.title}
+                      </h3>
+                      <p className="text-4xl font-light text-white">
+                        {stage.hours}
+                      </p>
                     </div>
                   </div>
-                ))}
-              </div>
-            </section>
+
+                  {/* Tags Cloud */}
+                  <div className="flex flex-wrap gap-3">
+                    {stage.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className={`px-5 py-2.5 rounded-full text-sm font-normal transition-all duration-300 ${
+                          tag === stage.highlightTag
+                            ? "bg-red-600 text-white"
+                            : "bg-transparent text-white border border-neutral-600 hover:border-neutral-400"
+                        }`}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </section>
-        </div>
-        <section className="h-[80vh] flex justify-center items-center text-white/90">
+        </section>
+      </div>
+
+      <section className="bg-black">
+        <div className="h-[80vh] flex justify-center items-center text-white/90 w-10/12 mx-auto">
           <div className="w-1/4">
             <div>
               <img
@@ -369,8 +442,8 @@ export default function page() {
               ))}
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   );
 }

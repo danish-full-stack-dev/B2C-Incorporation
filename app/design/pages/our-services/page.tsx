@@ -245,7 +245,7 @@ export default function DesignPage() {
           </div>
         </div>
         <section className=" text-white flex flex-col mt-[100px]">
-          <div className="text-4xl flex w-10/12 mx-auto  justify-center mb-20">
+          <div className="text-4xl flex  justify-center mb-20">
             <div className="flex w-full mt-[50px]">
               <h3 className="w-2/5 leading-tight">
                 We are{" "}
@@ -256,7 +256,7 @@ export default function DesignPage() {
               </h3>
             </div>
           </div>
-          <div className="flex flex-row gap-10 w-10/12 mx-auto  mb-12">
+          <div className="flex flex-row gap-10  mb-12">
             <BorderAnimation className="flex flex-col w-1/2 justify-between h-[25vh] p-8 ">
               <div className="flex flex-col gap-5 p-6">
                 <h3 className="text-2xl">Project Based</h3>
