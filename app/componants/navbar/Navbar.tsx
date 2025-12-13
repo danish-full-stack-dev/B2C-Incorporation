@@ -161,7 +161,7 @@ export const Navbar: React.FC = () => {
                   </span>
                   {[ {
                       heading: "Trading Platform",
-                      to: "/pages",
+                      to: "/pages/finetech/trading",
                     },
                   {
                     heading: "Blockchain Development",
