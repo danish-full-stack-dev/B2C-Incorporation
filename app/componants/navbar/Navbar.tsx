@@ -160,9 +160,17 @@ export const Navbar: React.FC = () => {
                     Fintech specialization
                   </span>
                   {[ {
-                      heading: "CFD Trading Platform",
-                      to: "/pages/trading/tradingplatform",
-                    }].map((value, idx) => (
+                      heading: "Trading Platform",
+                      to: "/pages",
+                    },
+                  {
+                    heading: "Blockchain Development",
+                      to: "/pages",
+                  },
+                {
+                      heading: "Payment Gateway Integration",
+                      to: "/pages",
+                }].map((value, idx) => (
                    <Link
                       href={value.to}
                       key={idx}
@@ -178,11 +186,11 @@ export const Navbar: React.FC = () => {
                   </span>
                   {[
                     {
-                      heading: "CFD Trading Platform",
+                      heading: "Real State",
                       to: "/pages/services/trading-services",
                     },
-                    { heading: "Blockchain Development", to: "/design" },
-                    { heading: "Trading CRMS's", to: "/design" },
+                    { heading: "Trading Platform", to: "/design" },
+                    { heading: "Online Reputation Management(ORM's)", to: "/design" },
                   ].map((value, idx) => (
                     <Link
                       href={value.to}
