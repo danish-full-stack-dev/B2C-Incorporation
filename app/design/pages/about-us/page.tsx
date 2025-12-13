@@ -1,8 +1,9 @@
-
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+
+const SLIDE_SCROLL_HEIGHT = 1000;
 
 export default function MergedPage() {
   const points = [
@@ -14,34 +15,53 @@ export default function MergedPage() {
     { label: "Curiosity", hoverLabel: "We explore", hoverSubtext: "Curiosity drives excellence", x: "30%", y: "30%" },
   ];
 
-  const [hoverIndex, setHoverIndex] = useState<number|null>(null);
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
-  /** ScrollSlider Data */
-  const slides = [
+   const slides = [
     {
-      id: 1,
       image: "/AI.png",
       title: "our journey",
       description:
-        "Our design studio was founded within an outsourcing software development company...",
+        "Our design studio was founded within a outsourcing software development company, giving us a distinct advantage. Having worked across numerous industries, we've gained invaluable insights into various domains. This broad experience allows us to design with a deep understanding of different user needs, creating intuitive and impactful user experiences that address specific business challenges."
     },
     {
-      id: 2,
       image: "/AI.png",
       title: "our approach",
-      description: "We pair research-led strategy with pixel-perfect execution...",
+      description:
+        "One of our key differentiators is the synergy we’ve built with our in-house development team. Our designers collaborate closely with developers, ensuring that the designs we create are not only visually appealing but also technically sound. This means we deliver solutions that leverage the latest technologies, optimized for performance, scalability, and ease of implementation.",
     },
     {
-      id: 3,
       image: "/AI.png",
       title: "our impact",
-      description: "From startups to enterprises, our solutions have helped teams...",
+      description:
+        "What truly sets us apart is our focus on creating designs that drive results. We believe that UX isn’t just about beautiful interfaces—it's about delivering user-centered solutions that align with business goals. By combining our expertise in various domains with our technical know-how, we ensure that every design decision contributes to a seamless user experience and the project’s success.",
     },
   ];
 
+  const ref = useRef<HTMLDivElement>(null);
   const [current, setCurrent] = useState(0);
-  const goTo = (index:number) => setCurrent(Math.max(0, Math.min(index, slides.length - 1)));
-  const slide = slides[current];
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (!ref.current) return;
+
+      const start = ref.current.offsetTop;
+      const scrollY = window.scrollY;
+      const distance = scrollY - start;
+
+      if (distance < 0) return;
+
+      const index = Math.min(
+        slides.length - 1,
+        Math.floor(distance / SLIDE_SCROLL_HEIGHT)
+      );
+
+      setCurrent(index);
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <div className="w-full h-full">
@@ -59,54 +79,115 @@ export default function MergedPage() {
               {!isHover ? (
                 <div className="h-2 w-2 bg-white rounded-full" />
               ) : (
-                <svg viewBox="0 0 100 100" className="w-6 h-6 fill-blue-600 animate-spin duration-0">
+                <svg viewBox="0 0 100 100" className="w-6 h-6 fill-blue-600">
                   <path d="M50 5 L58 28 L83 17 L66 38 L90 50 L66 62 L83 83 L58 72 L50 95 L42 72 L17 83 L34 62 L10 50 L34 38 L17 17 L42 28 Z" />
                 </svg>
               )}
 
-              <span className={`text-3xl font-light tracking-wide transition-all duration-200 ${isHover ? "text-blue-600" : "text-white"}`}>
+              <span
+                className={`text-3xl font-light tracking-wide transition-all duration-200 ${
+                  isHover ? "text-blue-600" : "text-white"
+                }`}
+              >
                 {isHover ? p.hoverLabel : p.label}
               </span>
 
-              <span className="`text-xl mt-1 transition-all duration-200 text-white">
-                {isHover ? p.hoverSubtext : ""}
-              </span>
+              {isHover && (
+                <span className="text-xl mt-1 text-white">
+                  {p.hoverSubtext}
+                </span>
+              )}
             </div>
           );
         })}
       </div>
+      <div
+        ref={ref}
+        className="relative bg-black"
+        style={{ height: `${slides.length * SLIDE_SCROLL_HEIGHT}px` }}
+      >
+        <div className="sticky top-0 h-screen flex overflow-hidden">
+          {/* Image */}
+          <motion.div
+            key={slides[current].image}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="w-1/2 h-full"
+          >
+            <img
+              src={slides[current].image}
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+          <div className="w-1/2 bg-[#3E50FB] text-white px-28 py-12 flex flex-col justify-between">
+            <div>
+              <div className="text-sm opacity-60 mb-6">
+                {String(current + 1).padStart(2, "0")} /{" "}
+                {String(slides.length).padStart(2, "0")}
+              </div>
 
-      {/* Scroll Slider */}
-      <div className="h-screen w-full flex flex-row overflow-hidden bg-black text-white">
-        <motion.div
-          key={slide.image}
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className="w-1/2 h-full"
-        >
-          <img src={slide.image} className="w-full h-full object-cover" />
-        </motion.div>
+              <motion.h2
+                key={slides[current].title}
+                initial={{ y: 40, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6 }}
+                className="text-5xl font-light lowercase mb-6"
+              >
+                {slides[current].title}
+              </motion.h2>
 
-        <div className="w-1/2 bg-[#3E50FB] h-full flex flex-col justify-start px-28 py-24">
-          <div className="max-w-xl mt-[50px] ml-[30px] ">
-            <div className="text-sm uppercase mb-6 text-white/60">
-              {String(current + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
+              <motion.p
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.1 }}
+                className="text-lg opacity-90 max-w-xl"
+              >
+                {slides[current].description}
+              </motion.p>
             </div>
-
-            <h2 className="text-5xl font-light lowercase mb-6">{slide.title}</h2>
-            <p className="text-lg text-white/85 leading-relaxed mb-6">{slide.description}</p>
-
-            <div className="flex items-center justify-start gap-4 mt-[300px]">
-              <button onClick={() => goTo(current - 1)} className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/5">
+            <div className="flex gap-4 mb-20">
+              <button
+                onClick={() => {
+                  const next = Math.max(0, current - 1);
+                  setCurrent(next);
+                  window.scrollTo({
+                    top: ref.current!.offsetTop + next * SLIDE_SCROLL_HEIGHT,
+                    behavior: "smooth",
+                  });
+                }}
+                className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10"
+              >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                  <path d="M15 6L9 12L15 18" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path
+                    d="M15 6L9 12L15 18"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </button>
 
-              <button onClick={() => goTo(current + 1)} className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/5">
+              <button
+                onClick={() => {
+                  const next = Math.min(slides.length - 1, current + 1);
+                  setCurrent(next);
+                  window.scrollTo({
+                    top: ref.current!.offsetTop + next * SLIDE_SCROLL_HEIGHT,
+                    behavior: "smooth",
+                  });
+                }}
+                className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10"
+              >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                  <path d="M9 6L15 12L9 18" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path
+                    d="M9 6L15 12L9 18"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </button>
             </div>
