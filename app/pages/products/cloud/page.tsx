@@ -212,6 +212,25 @@ export default function AIDevelopementServices() {
         "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
     },
   ];
+
+  const platforms = [
+    { name: "Ethereum", logo: "/logos/ethereum.png", alt: "Ethereum logo" },
+    { name: "Polygon", logo: "/logos/polygon.svg", alt: "Polygon logo" },
+    { name: "Coinbase", logo: "/logos/coinbase.svg", alt: "Coinbase logo" },
+    { name: "Multichain", logo: null, alt: "Multichain", isText: true },
+    { name: "EOS", logo: "/logos/eos.svg", alt: "EOS logo" },
+    { name: "Stellar", logo: "/logos/stellar.svg", alt: "Stellar logo" },
+    { name: "Tron", logo: "/logos/tron.svg", alt: "Tron logo" },
+    { name: "Hedera", logo: "/logos/hedera.svg", alt: "Hedera logo" },
+    { name: "EOSIO", logo: "/logos/eosio.svg", alt: "EOSIO logo" },
+    { name: "IOTA", logo: "/logos/iota.svg", alt: "IOTA logo" },
+    { name: "Near", logo: "/logos/near.svg", alt: "Near logo" },
+    { name: "Ethereum Hardhat", logo: "/logos/hardhat.svg", alt: "Ethereum Hardhat logo" },
+    { name: "Moonbeam", logo: "/logos/moonbeam.svg", alt: "Moonbeam logo" },
+    { name: "Avalanche", logo: "/logos/avalanche.svg", alt: "Avalanche logo" },
+    { name: "XinFin", logo: "/logos/xinfin.svg", alt: "XinFin logo" },
+  ];
+  
   interface Props {
     icon: string;
     heading: string;
@@ -294,11 +313,11 @@ export default function AIDevelopementServices() {
               </button>
             </div>
           </div>
-          <div className="w-1/2">
+          <div className="w-[370] m-24">
             <img
-              src="/image.png"
+              src="/favicon.png"
               alt="image"
-              className="max-h-[60vh] object-contain"
+              className="max-h-[60vh] object-contain -rotate-45"
             />
           </div>
         </div>

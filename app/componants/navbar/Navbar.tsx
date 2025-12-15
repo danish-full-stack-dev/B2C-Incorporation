@@ -165,11 +165,11 @@ export const Navbar: React.FC = () => {
                     },
                   {
                     heading: "Blockchain Development",
-                      to: "/pages",
+                      to: "/pages/finetech/blockchain",
                   },
                 {
                       heading: "Payment Gateway Integration",
-                      to: "/pages",
+                      to: "/pages/finetech/paymentgateway",
                 }].map((value, idx) => (
                    <Link
                       href={value.to}
@@ -187,10 +187,10 @@ export const Navbar: React.FC = () => {
                   {[
                     {
                       heading: "Real State",
-                      to: "/pages/services/trading-services",
+                      to: "/pages/specialization/realstate",
                     },
-                    { heading: "Trading Platform", to: "/design" },
-                    { heading: "Online Reputation Management(ORM's)", to: "/design" },
+                    { heading: "Trading Platform", to: "/pages/specialization/tradings" },
+                    { heading: "Online Reputation Management(ORM's)", to: "/pages/specialization/orm" },
                   ].map((value, idx) => (
                     <Link
                       href={value.to}

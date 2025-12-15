@@ -186,8 +186,12 @@ export default function DataServices () {
               <button className='bg-transparent border-2 border-blue-700 font-bold w-full px-8 py-2 hover:bg-blue-700 transition hover:text-whi'>View Portfolio</button>
             </div>
           </div>
-          <div className='w-1/2'>
-            <img src="/image.png" alt="image" className='max-h-[60vh] object-contain' />
+          <div className="w-[370] m-24">
+            <img
+              src="/favicon.png"
+              alt="image"
+              className="max-h-[60vh] object-contain -rotate-45"
+            />
           </div>
         </div>
 
