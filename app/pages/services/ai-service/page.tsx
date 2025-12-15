@@ -312,11 +312,11 @@ export default function AIDevelopementServices() {
               </button>
             </div>
           </div>
-          <div className="w-1/2">
+          <div className="w-[370] m-24">
             <img
-              src="/image.png"
+              src="/favicon.png"
               alt="image"
-              className="max-h-[60vh] object-contain"
+              className="max-h-[60vh] object-contain -rotate-45"
             />
           </div>
         </div>

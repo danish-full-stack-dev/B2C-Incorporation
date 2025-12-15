@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { SoftwareServices } from "@/app/componants/SoftwareServices";
+import { AIServicesSection } from "../../../componants/AiServices";
 import { OurProjects } from "../../../componants/OurProjects";
 import { FeaturedProjects } from "../../../componants/FeaturedProjects";
 import { TechnologiesUsed } from "../../../componants/TechnologiesUsed";
@@ -9,8 +9,6 @@ import { ProcessProgress } from "../../../componants/ProgressBar";
 import { FAQForDataAI } from "@/app/componants/FQAForAI";
 import useInViewAnimation from "@/app/hooks/useInViewAnimation";
 import FadeSlideIn from "@/app/hooks/FadeSlideIn";
-import SoftwareProduct from "@/app/componants/Softwareproduct";
-
 
 interface Technology {
   name: string;
@@ -20,7 +18,7 @@ interface Technology {
 interface TechCategory {
   [key: string]: Technology[];
 }
-export default function AIDevelopementServices() {
+export default function TradingServices() {
   const [active, setActive] = useState(0);
 
   const [activeTab, setActiveTab] = useState<string>(
@@ -135,23 +133,7 @@ export default function AIDevelopementServices() {
       },
     ],
   };
-const steps = [
-  {
-    title: "Business analysis",
-    description:
-      "Our team of business analysts thoroughly analyzes your revenue cycle processes, needs, and constraints. We then create a clear project road map and provide a general estimate for the project.",
-  },
-  {
-    title: "Solution architecture",
-    description:
-      "EffectiveSoft’s solution architects create a custom architectural blueprint, select suitable development tools and technologies, and identify potential challenges that might arise later in the project.",
-  },
-  {
-    title: "UI/UX Design",
-    description:
-      "We analyze end-user needs and create an intuitive UX design focused on usability and accessibility. The design is based on project specifics and customer expectations.",
-  },
-];
+
   const Industries = [
     {
       icon: "image.png",
@@ -189,54 +171,37 @@ const steps = [
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
-  ];
-
-  
-  const Advantages = [
     {
       icon: "image.png",
-      heading: "HC",
+      heading: "HealthCare",
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
     {
       icon: "image.png",
-      heading: "HC",
+      heading: "HealthCare",
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
     {
       icon: "image.png",
-      heading: "HC",
-      description:
-        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
-    },
-    {
-      icon: "image.png",
-      heading: "HC",
-      description:
-        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
-    },
-    {
-      icon: "image.png",
-      heading: "HC",
-      description:
-        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
-    },
-    {
-      icon: "image.png",
-      heading: "HC",
+      heading: "HealthCare",
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
   ];
-
   const Processes = [
     {
       icon: "image.png",
-      heading: "Kick-off",
+      heading: "Automated coding and scrubbing",
       description:
-        "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
+        "Seamlessly connects with EHRs/EMRs, practice management systems (PMSs), insurance verification platforms, and other software.",
+    },
+    {
+      icon: "image.png",
+      heading: "Eligibility verification",
+      description:
+        "Verifies patients’ insurance coverage at an early stage of the RCM process, eliminates potential eligibility issues, and reduces claim denials and payment delays.",
     },
     {
       icon: "image.png",
@@ -246,29 +211,93 @@ const steps = [
     },
     {
       icon: "image.png",
-      heading: "Kick-off",
+      heading: "Claims management",
       description:
-        "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
+        "Automates claims submissions and real-time status tracking, supports AI-powered predictive denial management, and enables claim appeals and resubmissions.",
     },
     {
       icon: "image.png",
-      heading: "Kick-off",
+      heading: "Patient portal",
       description:
-        "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
+        "Grants patients access to their health information, simplifies communication with healthcare providers, and facilitates appointment scheduling and online payments.",
     },
     {
       icon: "image.png",
-      heading: "Kick-off",
+      heading:"Reporting and analytics",
       description:
-        "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
+        "Provides real-time insights into RCM operations, analyzes relevant KPIs like clean claim and net collection rates, and drives more informed business choices.",
+    },
+        {
+      icon: "image.png",
+      heading: "Customizable dashboard",
+      description:
+        "Visualizes complex healthcare data using responsive charts and graphs, highlights key metrics and trends, and identifies areas for improvement.",
     },
     {
       icon: "image.png",
-      heading: "Kick-off",
+      heading: "Security and coding compliance",
       description:
-        "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
+        "Protects sensitive information with measures like encryption and HIPAA compliance and offers coding validation based on HCPCS, ICD-10, and CPT..",
+    },
+    {
+      icon: "image.png",
+      heading:"AR management",
+      description:
+        "Monitors outstanding invoices, sets reminders for due and past bills, follows up on claims, handles payer collections, and reduces AR days..",
+    },
+     {
+      icon: "image.png",
+      heading: "Multi-location and multi-provider support",
+      description:
+        "Unifies billing and collection processes across diverse locations, insurers, and healthcare providers to ensure consistent financial performance.",
+    },
+    {
+      icon: "image.png",
+      heading:"Cloud and on-premises deployment",
+      description:
+        "Offers the flexibility to host your RCM software in the cloud or on-premises—depending on your capabilities and preferences..",
     },
   ];
+
+ const steps = [
+  {
+    title: "Business analysis",
+    description:
+      "Our team of business analysts thoroughly analyzes your revenue cycle processes, needs, and constraints. We then create a clear project road map and provide a general estimate for the project.",
+  },
+  {
+    title: "Solution architecture",
+    description:
+      "EffectiveSoft’s solution architects create a custom architectural blueprint, select suitable development tools and technologies, and identify potential challenges that might arise later in the project.",
+  },
+  {
+    title: "UI/UX Design",
+    description:
+      "We analyze end-user needs and create an intuitive UX design focused on usability and accessibility. The design is based on project specifics and customer expectations.",
+  },
+  {
+    title: "RCM development",
+    description:
+      "Our RCM developers translate the solution architecture and UX design into working code. We equip the software with essential RCM features to ensure your long-term financial health.",
+  },
+  {
+    title: "Quality assurance and testing",
+    description:
+      "From the beginning of development, we detect emerging issues and provide immediate fixes. Once the full RCM solution is available, our testing team evaluates it for security, compliance, performance, and more.",
+  },
+  {
+    title: "Deployment",
+    description:
+      "After end-to-end testing, the software is ready for launch. We select a suitable deployment strategy and integrate the RCM software into your infrastructure, paying attention to its full compatibility with existing systems.",
+  },
+  {
+    title: "Maintenance and support",
+    description:
+      "Even after your solution goes live, EffectiveSoft continues to support it—monitoring its performance, resolving emerging issues, integrating new features, and refining it based on user feedback.",
+  },
+];
+
+
   interface Props {
     icon: string;
     heading: string;
@@ -286,20 +315,6 @@ const steps = [
       </div>
     );
   };
-
-   const AdvantagesDiv = ({ icon, heading, description }: Props) => {
-    return (
-      <div className="flex flex-col justify-start gap-5 mx-3 group hover:text-white hover:bg-blue-950 px-8 py-5">
-        <img src={icon} alt="icon" className="w-20 " />
-        <div className="flex justify-between pr-6">
-          <h4 className="text-xl">{heading}</h4>
-          <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition duration-400" />
-        </div>
-        <p className="text-lg">{description}</p>
-      </div>
-    );
-  };
-
   interface ProcessProps {
     index: number;
     heading: string;
@@ -350,14 +365,13 @@ const steps = [
       <div className="w-8/12 mx-auto min-h-screen flex flex-col items-center">
         <div className="flex py-16 h-5/6 mt-28">
           <div className="flex flex-col w-1/2 h-3/4 gap-3 ">
-            <h2 className="text-5xl font-medium">Product Engineering Services</h2>
-            <p className=" py-8 w-4/5 text-2xl text-gray-600  font-sans">
-              Through our full-cycle product engineering services, we help cross-industry businesses 
-              of all sizes build impactful software products faster and more cost-efficiently. 
-              From ideation to post-launch maintenance, we carefully guide our clients every 
-              step of the way, delivering high-quality and user-centric products that satisfy the most
-               exacting customer demands and realize the most innovative business strategies.
-            </p>
+            <h2 className="text-5xl font-medium font-bold">Online Reputation Management System(ORM's)</h2>
+            <p className="text-2xl py-8 w-4/5 font-normal">
+            Negative reviews, inconsistent online presence, and unmanaged client feedback can damage your real estate brand, reduce trust, and cost you qualified buyers and tenants. In a highly competitive property market, even a few unresolved complaints can influence purchasing and leasing decisions.
+            <br />
+            <br />
+We help real estate businesses protect and strengthen their brand with Online Reputation Management (ORM) solutions. Our services include review monitoring, reputation repair, response management, and brand sentiment analysis across property listing platforms, search engines, and social media. By proactively managing your online image, we help you build credibility, attract high-intent clients, and maintain a strong, trustworthy presence in the real estate market.
+             </p>
             <div className="flex gap-5 text-lg font-medium w-5/6">
               <button className="bg-blue-700 px-8 py-2 hover:bg-transparent w-full text-white hover:text-black transition">
                 Let's talk
@@ -367,16 +381,16 @@ const steps = [
               </button>
             </div>
           </div>
-          <div className="w-[370] m-24">
+          <div className="w-1/2">
             <img
-              src="/favicon.png"
+              src="/AI.png"
               alt="image"
-              className="max-h-[60vh] object-contain -rotate-45"
+              className="h-full max-h-[560vh] object-contain"
             />
           </div>
         </div>
         <FadeSlideIn
-          className={`flex my-28 bg-blue-600 p-8 transition-all duration-700 h-[300px]
+          className={`flex my-28 bg-blue-600 p-8 transition-all duration-700
           ${
             inView
               ? "opacity-100 translate-x-0 ease-in" // when visible → slide to center
@@ -384,80 +398,52 @@ const steps = [
           }
           `}
         >
-         <div className="flex flex-col w-1/2 h-3/4 gap-3 text-white">
-                     <h2 className="text-2xl font-medium">Clutch Proven</h2>
-                     <p className="text-lg pt-6">
-                       Team up with EffectiveSoft to explore the limitless potential of
-                       artificial intelligence (AI)! From AI strategy building and data
-                       analysis to AI integration and deployment, our comprehensive
-                       artificial intelligence development services are tailored to
-                       address challenges across domains.
-                     </p>
-                   </div>
-                   <div className="w-1/2 flex justify-center">
-                     <img src="/clutchlogo.png" alt="image" className="w-40 object-contain" />
-                   </div>
-                 </FadeSlideIn>
-               </div>
+          <div className="flex flex-col w-1/2 h-3/4 gap-3 text-white ml-7 mb-10">
+            <h2 className="text-3xl font-large mt-10 text-bold">Clutch Proven</h2>
+            <p className="text-lg">
+              Our extensive healthcare experience, empathy with clients, and ability to
+              tackle complex medical projects have earned us the prestigious Top 
+              Software Developers Medical and Top IT Services Company Medical 
+              designations by Cluctch
+            </p>
+          </div>
+          <div className="w-1/2 flex justify-center">
+            <img src="/image.png" alt="image" className="w-40 object-contain" />
+          </div>
+        </FadeSlideIn>
+      </div>
       <div>
-        <SoftwareServices/>
-      </div>\
-     <div className="bg-blue-800 flex items-center w-[1300px] h-[350px] mx-auto text-white p-10">
-  
-  {/* LEFT — IMAGE */}
-  <div className="w-[400px] flex justify-center items-center">
-    <img 
-      src="/image.png" 
-      alt="image" 
-      className="h-[300px] w-auto object-cover rounded-md"
+        <AIServicesSection />
+      </div>
+     <div className="flex flex-col md:flex-row bg-[#001437] text-white rounded-xl overflow-hidden max-h-[300px] mx-[300px]">
+  {/* Left Image */}
+  <div>
+    <img
+      src="/AI.png"
+      alt="Delivery Manager"
+      className="w-[400px] h-auto object-cover"
     />
   </div>
 
-  {/* RIGHT — TEXT */}
-  <div className="w-1/2">
-    <p className="text-lg leading-relaxed font-sans">
-      “EffectiveSoft's product engineers have extensive skill sets in project 
-      management, interpersonal communication, creative thinking, design, and 
-      technical expertise...”
+  {/* Right Content */}
+  <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+    <p className="text-lg leading-relaxed mb-6">
+      “Revenue cycle management is a complex process with many nuances. With a deep
+      understanding of the healthcare domain and proven expertise in cutting-edge
+      technology and software implementation, EffectiveSoft strives to bring
+      maximum value to its clients. We lift the technological burden, allowing
+      our clients to focus on the business side.”
     </p>
 
-    <div className="mt-5">
-      <p className="font-semibold text-lg">Alexey Galushko</p>
-      <p className="opacity-80">Delivery Director</p>
+    <div>
+      <h3 className="text-2xl font-semibold">Alexey Kozlovsky</h3>
+      <p className="text-lg opacity-80">Delivery Manager</p>
     </div>
   </div>
-
 </div>
 
-<div className="py-16 my-10 px-16 text-black bg-gray-100 w-full ">
-          <FadeSlideIn>
-            <SoftwareProduct/>
-          </FadeSlideIn>
-        </div>
       <div className="w-8/12 mx-auto">
-        <FadeSlideIn className="py-10">
-          <div className="flex flex-col gap-3 py-10">
-            <h5 className="text-sm font-medium font-sans">INDUSTRIES</h5>
-            <h2 className="text-4xl font-medium font-bold">Our product engineering expertise across<br></br>industries</h2>
-          </div>
-          <div className="grid grid-cols-2 space-y-6 items-center font-sans">
-            {Industries.map((v, idx) => (
-              <IndustryDiv
-                key={idx}
-                icon={v.icon}
-                heading={v.heading}
-                description={v.description}
-              />
-            ))}
-          </div>
-          <div className="flex justify-center py-10">
-            <button className="bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300 mx-auto">
-              Book a call with an expert
-            </button>
-          </div>
-        </FadeSlideIn>
-
-        <div className="py-16 my-10 px-16 text-white  bg-blue-950">
+        {/* <div className="py-16 my-10 px-16 text-white bg-blue-950">
           <FadeSlideIn className="flex flex-col gap-6 py-5 px-6">
             <h2 className="text-5xl bg-blue-700 px-4 py-2 w-fit">
               What about you?
@@ -472,22 +458,23 @@ const steps = [
               <input
                 type="text"
                 placeholder="Message"
-                className="w-[650px] bg-transparent pb-5 outline-none border-b my-5"
+                className="w-full bg-transparent pb-5 outline-none border-b my-5"
               />
               <button className="bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300">
                 Next
               </button>
             </form>
           </FadeSlideIn>
-        </div>
-      </div>
-         
-         <FadeSlideIn className="py-10">
-          <div className="flex flex-col gap-3 py-10 ml-[50px]">
-            <h5 className="text-sm font-medium font-sans">our advantages</h5>
-            <h2 className="text-4xl font-medium font-bold">Our product items are</h2>
+        </div> */}
+
+        <FadeSlideIn className="py-10">
+          <div className="flex flex-col gap-3 py-10">
+            <h5 className="text-sm font-medium">Advantages</h5>
+            <h2 className="text-4xl font-large text-bold">Benefits of revenue cycle management software</h2>
+            <h6 className="mt-5 text-black-500">Whether you need to build custom RCM solutions or improve existing software, EffectiveSoft<br></br>
+              has you covered. We will help you:</h6>
           </div>
-          <div className="grid grid-cols-3 space-y-6 items-center font-sans">
+          <div className="grid grid-cols-3 space-y-6 items-center">
             {Industries.map((v, idx) => (
               <IndustryDiv
                 key={idx}
@@ -497,51 +484,71 @@ const steps = [
               />
             ))}
           </div>
-          <div className="flex justify-center py-10">
-            <button className="bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300 mx-auto">
-              Contact us for help
-            </button>
-          </div>
         </FadeSlideIn>
 
-      <FadeSlideIn>
-        <OurProjects />
-      </FadeSlideIn>
-
-      {/* <div className="w-8/12 mx-auto">
-        <div className="py-16 my-16 px-16 text-white flex bg-blue-950">
-          <div className="flex flex-col gap-6 py-5 px-6 w-1/2">
-            <h2 className="text-4xl font-bold">What about you?</h2>
-            <p className="text-2xl">
+        <div className="py-16 my-10 px-16 text-white bg-blue-950">
+          <FadeSlideIn className="flex flex-col gap-6 py-5 px-6">
+            <h2 className="text-5xl bg-blue-700 px-4 py-2 w-fit">
+              What about you?
+            </h2>
+            <p className="text-xl w-3/5">
               We're eager to delve deeper and understand your specific needs to
               unlock the full potential of AI for your business. By learning
               more about your challenges and goals, we can tailor our solutions
               to serve you best.
             </p>
-            <button className="bg-blue-700 text-white/90 w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300 font-bold text-lg">
-              Get your whitepaper
+            <form className="group flex flex-col gap-6">
+              <input
+                type="text"
+                placeholder="Message"
+                className="w-[800px] bg-transparent pb-5 outline-none border-b my-5"
+              />
+              <button className="bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300">
+                Next
+              </button>
+            </form>
+          </FadeSlideIn>
+        </div>
+      </div>
+
+<div className="w-8/12 mx-auto">
+<section className="pt-10">
+          <div className="flex flex-col gap-3 py-10">
+            <h5 className="text-sm font-medium">INDUSTRIES</h5>
+            <h2 className="text-4xl font-medium">Industries we develop for</h2>
+          </div>
+          <FadeSlideIn className="grid grid-cols-3 gap-6 items-center">
+            {Processes.map((v, idx) => (
+              <FeatureDiv
+                key={idx}
+                icon={v.icon}
+                heading={v.heading}
+                description={v.description}
+              />
+            ))}
+          </FadeSlideIn>
+
+          <div className="flex justify-center py-5">
+            <button className="bg-blue-600 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300 mx-auto">
+              Let's discuss your project
             </button>
           </div>
-          <div className="w-1/2 flex justify-center">
-            <img
-              src="workflow.jpeg"
-              alt="book"
-              className="px-5 w-full h-[40vh]"
-            />
-          </div>
+        </section>
         </div>
-      </div> */}
+      <FadeSlideIn>
+        <OurProjects />
+      </FadeSlideIn>
 
-        {/* <div className="w-8/12 mx-auto">
+
+      <FadeSlideIn className="min-h-screen bg-white text-black p-10 mt-10px ">
+        <div className="w-8/12 mx-auto">
           <div className="flex flex-col gap-3 py-10">
-            <h5 className="text-sm font-medium">OUR PROCESS</h5>
+            <h5 className="text-sm font-medium">Features</h5>
             <h2 className="text-4xl font-medium">
-              AI Software development process
+              We equip your RCM software with essential features
             </h2>
           </div>
-          <div className="py-10">
-            <ProcessProgress active={active} setActive={setActive} />
-          </div>
+
           <div className="grid grid-cols-3 gap-8 items-center">
             {Processes.map((v, idx) => (
               <ProcessDiv
@@ -553,12 +560,145 @@ const steps = [
               />
             ))}
           </div>
-        </div> */}
+        </div>
+      </FadeSlideIn>
 
       <div className="w-8/12 mx-auto">
+        {/* <section className="pt-10">
+          <div className="flex flex-col gap-3 py-10">
+            <h5 className="text-sm font-medium">INDUSTRIES</h5>
+            <h2 className="text-4xl font-medium">Industries we develop for</h2>
+          </div>
+          <FadeSlideIn className="grid grid-cols-3 gap-6 items-center">
+            {Processes.map((v, idx) => (
+              <FeatureDiv
+                key={idx}
+                icon={v.icon}
+                heading={v.heading}
+                description={v.description}
+              />
+            ))}
+          </FadeSlideIn>
 
+          <div className="flex justify-center py-5">
+            <button className="bg-blue-600 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300 mx-auto">
+              Let's discuss your project
+            </button>
+          </div>
+        </section> */}
+
+        {/* <section className="py-10 min-h-screen flex justify-center">
+          <div className="my-16 text-white flex bg-blue-950 relative w-full">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/X0ZGhcvM0Xs?si=c_yZRBIVaWGKp_43"
+              title="hello"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="w-full h-full"
+            /> */}
+
+            {/* <video
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover opacity-95"
+            >
+              <source src="/main-video-mp4.mp4" type="video/mp4" />
+            </video> */}
+          {/* </div>
+        </section> */}
+
+        <div className="w-full bg-[#001437] text-white py-20">
+  <div className="w-full mx-auto px-6 md:px-16">
+    <p className="uppercase tracking-wide text-gray-300 mb-3">Process</p>
+    <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-16">
+      Our revenue cycle management software <br /> development process
+    </h2>
+
+    {steps.map((step, index) => (
+      <div key={index} className="flex gap-6 mb-14 group cursor-pointer">
+        {/* Auto Number */}
+        <div className="flex flex-col items-center">
+          <div className="w-10 h-10 flex items-center justify-center rounded-full border border-blue-500
+                          group-hover:bg-blue-500 group-hover:text-white transition-colors duration-300">
+            {index + 1}
+          </div>
+
+          {/* Vertical Line */}
+          {index !== steps.length - 1 && (
+            <div className="h-full w-px bg-blue-500 mt-2"></div>
+          )}
+        </div>
+
+        {/* Text */}
+        <div>
+          <h3 className="text-xl font-semibold underline group-hover:text-blue-500 transition-colors duration-300">
+            {step.title}
+          </h3>
+          <p className="mt-2 text-lg text-gray-300">
+            {step.description}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+<div className="w-full mx-auto">
+<section className="pt-10">
+          <div className="flex flex-col gap-3 py-10">
+            <h5 className="text-sm font-medium">Our clients</h5>
+            <h2 className="text-4xl font-medium">We build RCM software for various healthcare<br></br>entities</h2>
+          </div>
+          <FadeSlideIn className="grid grid-cols-3 gap-6 items-center">
+            {Processes.map((v, idx) => (
+              <FeatureDiv
+                key={idx}
+                icon={v.icon}
+                heading={v.heading}
+                description={v.description}
+              />
+            ))}
+          </FadeSlideIn>
+
+          <div className="flex justify-center py-5">
+            <button className="bg-blue-600 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300 mx-auto w-300px">
+              Conatct us for help
+            </button>
+          </div>
+        </section>
+        </div>
+
+        
+<div className="px-6 md:px-16 py-20">
+
+  <p className="uppercase tracking-widest text-blue-900 font-semibold mb-3">
+    Partners
+  </p>
+
+  <h2 className="text-4xl md:text-5xl font-bold mb-16">
+    We partner with the best
+  </h2>
+
+  <div className="flex items-center gap-20 mt-10">
+    <img
+      src="/b2clogo.png"
+      alt="Microsoft Solutions Partner"
+      className="w-64 object-contain"
+    />
+
+    <img
+      src="/b2clogo.png"
+      alt="AWS Partner"
+      className="w-48 object-contain"
+    />
+  </div>
+  </div>
         <div className="py-16 px-8 max-h-screen">
-          {/* Header */}
           <div className="mb-12">
             <p className="text-sm text-gray-500 uppercase tracking-wider mb-4">
               TECHNOLOGIES
