@@ -74,7 +74,6 @@ export const Navbar: React.FC = () => {
               {["What we do", "Who we are", "Insights", "Case Studies"].map(
                 (value, idx) => (
                   <div key={idx} className="relative">
-                    {/* NAV LIST */}
                     <li
                       key={idx}
                       onMouseEnter={() => {

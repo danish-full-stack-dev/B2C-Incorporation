@@ -46,53 +46,62 @@ export default function CareersPage() {
         </p>
       </section>
       
-      <section className="w-full py-24 bg-white">
-<div className="max-w-7xl mx-auto px-6">
-<div className="relative overflow-hidden rounded-xl bg-gradient-to-b from-[#031433] to-[#02102A] px-12 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
+     <section className="w-full py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="relative overflow-hidden rounded-xl bg-gradient-to-b from-[#031433] to-[#02102A] px-12 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
+          
+          {/* Left Side - Text Content */}
+          <div className="flex flex-col justify-center text-white">
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6">
+              <span className="inline-block bg-blue-600 px-3 py-1 mb-2">DIDN'T FIND</span><br />
+              <span className="inline-block bg-blue-600 px-3 py-1">A SUITABLE VACANCY?</span>
+            </h2>
 
+            <p className="text-blue-100 max-w-md mb-8 leading-relaxed">
+              Even if you haven't found a suitable position listed at the moment,
+              we encourage you to submit your resume through our online form or via e‑mail
+              <br />
+              <span className="font-medium">bcd.media.com</span>.
+            </p>
 
-<div className="flex flex-col justify-center text-white">
-<h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6">
-<span className="inline-block bg-blue-600 px-3 py-1 mb-2">DIDN’T FIND</span><br />
-<span className="inline-block bg-blue-600 px-3 py-1">A SUITABLE VACANCY?</span>
-</h2>
+            <div>
+              <button className="bg-blue-600 hover:bg-blue-700 transition px-8 py-3 rounded text-white font-medium">
+                Write to us
+              </button>
+            </div>
+          </div>
 
+          <div className="relative h-[400px] lg:h-[450px]">
+            
+            <div className="absolute top-0 left-0 w-44 h-48 rounded-2xl overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
+                alt="Professional woman"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-<p className="text-blue-100 max-w-md mb-8 leading-relaxed">
-Even if you haven’t found a suitable position listed at the moment,
-we encourage you to submit your resume through our online form or via e‑mail
-<br />
-<span className="font-medium">recruiters@effective-soft.com</span>.
-</p>
+            <div className="absolute top-0 right-0 w-48 h-48 rounded-full bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-400" />
 
+            <div className="absolute bottom-0 right-0 w-44 h-48 rounded-2xl overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+                alt="Person working on laptop"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-<div>
-<button className="bg-blue-600 hover:bg-blue-700 transition px-8 py-3 rounded text-white font-medium">
-Write to us
-</button>
-</div>
-</div>
+            <div className="absolute bottom-0 left-0 flex gap-3">
+              <div className="w-20 h-44 border-2 border-blue-400 rounded-l-full" />
+              <div className="w-20 h-44 border-2 border-blue-400 rounded-l-full" />
+            </div>
 
+            <div className="absolute top-2 left-6 w-2 h-2 bg-blue-500 rounded-full" />
 
-<div className="relative flex items-center justify-center">
-
-<div className="absolute top-0 right-16 w-40 h-40 rounded-full overflow-hidden">
-<div className="w-full h-full bg-[url('/career-1.jpg')] bg-cover bg-center" />
-</div>
-
-<div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-gradient-to-br from-purple-500 to-blue-500" />
-
-
-<div className="absolute bottom-0 right-0 w-56 h-40 rounded-lg overflow-hidden">
-<div className="w-full h-full bg-[url('/career-2.jpg')] bg-cover bg-center" />
-</div>
-
-<div className="absolute bottom-0 right-64 w-40 h-40 border border-blue-300 rounded-l-full" />
-<div className="absolute bottom-0 right-52 w-40 h-40 border border-blue-300 rounded-l-full" />
-</div>
-</div>
-</div>
-</section>
+          </div>
+        </div>
+      </div>
+    </section>
     </main>
   );
 }
