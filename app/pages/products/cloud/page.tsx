@@ -20,12 +20,10 @@ interface Technology {
 interface TechCategory {
   [key: string]: Technology[];
 }
+
 export default function AIDevelopementServices() {
   const [active, setActive] = useState(0);
-
-  const [activeTab, setActiveTab] = useState<string>(
-    "Frameworks and libraries"
-  );
+  const [activeTab, setActiveTab] = useState<string>("Frameworks and libraries");
   const { ref, inView } = useInViewAnimation();
 
   const tabs = [
@@ -174,6 +172,7 @@ export default function AIDevelopementServices() {
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven.",
     },
   ];
+
   const Processes = [
     {
       icon: "image.png",
@@ -236,79 +235,79 @@ export default function AIDevelopementServices() {
     heading: string;
     description: string;
   }
+
   const IndustryDiv = ({ icon, heading, description }: Props) => {
     return (
-      <div className="flex flex-col justify-start gap-5 mx-3 group hover:text-white hover:bg-blue-950 px-8 py-5">
-        <img src={icon} alt="icon" className="w-20 " />
-        <div className="flex justify-between pr-6">
-          <h4 className="text-xl">{heading}</h4>
-          <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition duration-400" />
+      <div className="flex flex-col justify-start gap-3 sm:gap-4 lg:gap-5 group hover:text-white hover:bg-blue-950 px-4 sm:px-6 lg:px-8 py-4 sm:py-5 transition-all duration-300">
+        <img src={icon} alt="icon" className="w-16 sm:w-20" />
+        <div className="flex justify-between items-start pr-4 sm:pr-6">
+          <h4 className="text-lg sm:text-xl">{heading}</h4>
+          <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
         </div>
-        <p className="text-lg font-sans text-gray-800">{description}</p>
+        <p className="text-sm sm:text-base lg:text-lg font-sans text-gray-800 group-hover:text-gray-200">
+          {description}
+        </p>
       </div>
     );
   };
+
   interface ProcessProps {
     index: number;
     heading: string;
     description: string;
     setActive: (index: number) => void;
   }
-  const ProcessDiv = ({
-    index,
-    heading,
-    description,
-    setActive,
-  }: ProcessProps) => {
+
+  const ProcessDiv = ({ index, heading, description, setActive }: ProcessProps) => {
     return (
       <div
-        className="flex flex-col justify-start py-5 group"
+        className="flex flex-col justify-start py-4 sm:py-5 group"
         onMouseEnter={() => setActive(index)}
         onMouseLeave={() => setActive(0)}
       >
-        <span className="group-hover:text-blue-600">
+        <span className="text-sm sm:text-base group-hover:text-blue-600">
           {index < 10 ? "0" + index : index}
         </span>
 
-        <div className="relative pt-2 pb-5">
-          <span
-            className="absolute left-0 h-[2px] w-11/12 bg-white 
-                         group-hover:bg-blue-600 group-hover:h-[4px] 
-                         transition-all duration-500"
-          ></span>
+        <div className="relative pt-2 pb-4 sm:pb-5">
+          <span className="absolute left-0 h-[2px] w-11/12 bg-white group-hover:bg-blue-600 group-hover:h-[4px] transition-all duration-500"></span>
         </div>
 
-        <h4 className="text-3xl">{heading}</h4>
-        <p className="text-lg w-full">{description}</p>
+        <h4 className="text-xl sm:text-2xl lg:text-3xl mb-2">{heading}</h4>
+        <p className="text-sm sm:text-base lg:text-lg w-full">{description}</p>
       </div>
     );
   };
 
   const FeatureDiv = ({ icon, heading, description }: Props) => {
     return (
-      <div className="flex flex-col justify-start p-5 group hover:bg-gray-100">
-        <img src={icon} alt="icon" className="w-20 " />
-        <h4 className="text-3xl">{heading}</h4>
-        <p className="text-lg w-full">{description}</p>
+      <div className="flex flex-col justify-start p-4 sm:p-5 group hover:bg-gray-100 transition-colors duration-300">
+        <img src={icon} alt="icon" className="w-16 sm:w-20 mb-3" />
+        <h4 className="text-xl sm:text-2xl lg:text-3xl mb-2">{heading}</h4>
+        <p className="text-sm sm:text-base lg:text-lg w-full">{description}</p>
       </div>
     );
   };
+
   return (
-    <div>
-      <div className="w-8/12 mx-auto min-h-screen flex flex-col items-center">
-        <div className="flex py-16 h-5/6 mt-28">
-          <div className="flex flex-col w-1/2 h-3/4 gap-3 mt-20px">
-            <h2 className="text-5xl font-medium">Cloud Engineering</h2>
-            <p className="text-2xl py-8 w-4/5 font-sans">
+    <div className="overflow-x-hidden">
+      {/* HERO SECTION */}
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:w-10/12 xl:w-8/12 mx-auto min-h-screen flex flex-col items-center">
+        <div className="flex flex-col lg:flex-row py-12 sm:py-16 lg:py-20 mt-16 sm:mt-20 lg:mt-28 gap-8 lg:gap-12 w-full">
+          {/* LEFT SIDE - TEXT */}
+          <div className="flex flex-col w-full lg:w-1/2 gap-4 sm:gap-5 lg:gap-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-medium leading-tight">
+              Cloud Engineering
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-sans leading-relaxed">
               Cloud technology provides the agility, scalability, and cost-effectiveness needed for modern digital solutions.
-               We build the foundation of your cloud 
-              environment through custom services, including cloud engineering consulting, app development, and more.
+              We build the foundation of your cloud environment through custom services, including cloud engineering consulting, app development, and more.
             </p>
-            <div className="flex gap-5 text-lg font-medium w-5/6">
-              <button className="bg-blue-700 px-8 py-2 hover:bg-transparent w-full text-white hover:text-black transition">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 text-base sm:text-lg font-medium">
+              <button className="bg-blue-700 px-6 sm:px-8 py-2.5 sm:py-3 hover:bg-transparent text-white hover:text-black transition-all border-2 border-transparent hover:border-blue-700">
                 Let's talk
               </button>
-              <button className="bg-transparent border-2 border-blue-700 font-bold w-full px-8 py-2 hover:bg-blue-700 transition hover:text-whi">
+              <button className="bg-transparent border-2 border-blue-700 font-bold px-6 sm:px-8 py-2.5 sm:py-3 hover:bg-blue-700 hover:text-white transition-all">
                 View Portfolio
               </button>
             </div>
@@ -321,18 +320,18 @@ export default function AIDevelopementServices() {
             />
           </div>
         </div>
+
+        {/* CLUTCH SECTION */}
         <FadeSlideIn
-          className={`flex my-28 bg-blue-600 p-8 transition-all duration-700
-          ${
+          className={`flex flex-col md:flex-row my-16 sm:my-20 lg:my-28 bg-blue-600 p-6 sm:p-8 lg:p-10 transition-all duration-700 w-full gap-6 md:gap-8 ${
             inView
-              ? "opacity-100 translate-x-0 ease-in" // when visible → slide to center
+              ? "opacity-100 translate-x-0 ease-in"
               : "opacity-0 -translate-x-10 ease-out"
-          }
-          `}
+          }`}
         >
-          <div className="flex flex-col w-1/2 h-3/4 gap-3 text-white">
-            <h2 className="text-2xl font-medium">Clutch Proven</h2>
-            <p className="text-lg pt-6">
+          <div className="flex flex-col w-full md:w-1/2 gap-4 sm:gap-5 text-white">
+            <h2 className="text-xl sm:text-2xl font-medium">Clutch Proven</h2>
+            <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
               Team up with EffectiveSoft to explore the limitless potential of
               artificial intelligence (AI)! From AI strategy building and data
               analysis to AI integration and deployment, our comprehensive
@@ -340,50 +339,60 @@ export default function AIDevelopementServices() {
               address challenges across domains.
             </p>
           </div>
-          <div className="w-1/2 flex justify-center">
-            <img src="/clutchlogo.png" alt="image" className="w-40 object-contain" />
+          <div className="w-full md:w-1/2 flex justify-center items-center">
+            <img 
+              src="/clutchlogo.png" 
+              alt="Clutch logo" 
+              className="w-32 sm:w-40 h-auto object-contain" 
+            />
           </div>
         </FadeSlideIn>
       </div>
+
+      {/* CLOUD SERVICES SECTION */}
       <div>
-        <CloudServicesSection/>
+        <CloudServicesSection />
       </div>
-      <div className="bg-blue-800 flex items-center w-[1300px] h-[350px] mx-auto text-white p-10">
-  
-  {/* LEFT — IMAGE */}
-  <div className="w-[400px] flex justify-center items-center">
-    <img 
-      src="/image.png" 
-      alt="image" 
-      className="h-[300px] w-auto object-cover rounded-md"
-    />
-  </div>
 
-  {/* RIGHT — TEXT */}
-  <div className="w-1/2">
-    <p className="text-lg leading-relaxed font-sans">
-      “EffectiveSoft's product engineers have extensive skill sets in project 
-      management, interpersonal communication, creative thinking, design, and 
-      technical expertise...”
-    </p>
+      {/* TESTIMONIAL SECTION */}
+      <div className="bg-blue-800 flex flex-col lg:flex-row items-center w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[1300px] mx-auto text-white p-6 sm:p-8 lg:p-10 my-12 sm:my-16 lg:my-20 gap-6 lg:gap-8">
+        {/* LEFT — IMAGE */}
+        <div className="w-full lg:w-5/12 flex justify-center items-center">
+          <img
+            src="/image.png"
+            alt="testimonial"
+            className="h-48 sm:h-64 lg:h-[300px] w-auto object-cover rounded-md"
+          />
+        </div>
 
-    <div className="mt-5">
-      <p className="font-semibold text-lg">Alexey Galushko</p>
-      <p className="opacity-80">Delivery Director</p>
-    </div>
-  </div>
+        {/* RIGHT — TEXT */}
+        <div className="w-full lg:w-7/12">
+          <p className="text-base sm:text-lg leading-relaxed font-sans mb-4 sm:mb-5">
+            "EffectiveSoft's product engineers have extensive skill sets in project
+            management, interpersonal communication, creative thinking, design, and
+            technical expertise..."
+          </p>
 
-</div>
-      <div className="w-8/12 mx-auto">
-      <FadeSlideIn className="py-10">
-          <div className="flex flex-col gap-3 py-10">
-            <h5 className="text-sm font-medium">INDUSTRIES</h5>
-            <h2 className="text-4xl font-medium">Industries we serve </h2>
-            <p className="text-m font-sans">Our team includes versatile specialists with varied experience and industry backgrounds.<br></br>
-                Below are some of the key benefits 
-                of cloud engineering solutions in some of the domains we<br></br>specialize in.</p>
+          <div>
+            <p className="font-semibold text-base sm:text-lg">Alexey Galushko</p>
+            <p className="opacity-80 text-sm sm:text-base">Delivery Director</p>
           </div>
-          <div className="grid grid-cols-3 space-y-6 items-center">
+        </div>
+      </div>
+
+      {/* INDUSTRIES SECTION */}
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:w-10/12 xl:w-8/12 mx-auto">
+        <FadeSlideIn className="py-8 sm:py-12 lg:py-16">
+          <div className="flex flex-col gap-3 sm:gap-4 py-6 sm:py-8 lg:py-10">
+            <h5 className="text-xs sm:text-sm font-medium uppercase tracking-wider text-gray-600">INDUSTRIES</h5>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium">Industries we serve</h2>
+            <p className="text-sm sm:text-base font-sans leading-relaxed max-w-4xl">
+              Our team includes versatile specialists with varied experience and industry backgrounds.
+              Below are some of the key benefits of cloud engineering solutions in some of the domains we specialize in.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {Industries.map((v, idx) => (
               <IndustryDiv
                 key={idx}
@@ -394,71 +403,75 @@ export default function AIDevelopementServices() {
             ))}
           </div>
         </FadeSlideIn>
-        <div className="py-16 my-10 px-16 text-white bg-blue-950">
-          <FadeSlideIn className="flex flex-col gap-6 py-5 px-6">
-            <h2 className="text-5xl bg-blue-700 px-4 py-2 w-fit">
+
+        {/* CONTACT FORM SECTION */}
+        <div className="py-12 sm:py-16 my-8 sm:my-10 px-6 sm:px-10 lg:px-16 text-white bg-blue-950 rounded-lg">
+          <FadeSlideIn className="flex flex-col gap-5 sm:gap-6 py-4 sm:py-5 lg:px-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl bg-blue-700 px-3 sm:px-4 py-1.5 sm:py-2 w-fit">
               What about you?
             </h2>
-            <p className="text-xl w-3/5">
+            <p className="text-base sm:text-lg lg:text-xl w-full lg:w-4/5 xl:w-3/5 leading-relaxed">
               We're eager to delve deeper and understand your specific needs to
               unlock the full potential of AI for your business. By learning
               more about your challenges and goals, we can tailor our solutions
               to serve you best.
             </p>
-            <form className="group flex flex-col gap-6">
+            <form className="group flex flex-col gap-5 sm:gap-6">
               <input
                 type="text"
                 placeholder="Message"
-                className="w-[650px] bg-transparent pb-5 outline-none border-b my-5"
+                className="w-full lg:w-[650px] bg-transparent pb-4 sm:pb-5 outline-none border-b border-white/30 focus:border-white my-3 sm:my-5 text-sm sm:text-base"
               />
-              <button className="bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300">
+              <button className="bg-blue-700 text-white w-fit px-8 sm:px-10 py-2 sm:py-2.5 hover:bg-blue-900 transition duration-300 text-sm sm:text-base">
                 Next
               </button>
             </form>
           </FadeSlideIn>
         </div>
       </div>
-       <FadeSlideIn>
-        <WorkProcess/>
-       </FadeSlideIn>
 
-       <div className="bg-white py-20">
-  <div className="max-w-5xl mx-auto px-6">
-    
-    <h5 className="text-sm font-semibold tracking-widest text-gray-500 uppercase">
-      Expertise
-    </h5>
-    <h1 className="text-3xl font-serif font-bold mt-3 mb-6">
-      Certified expertise you can trust
-    </h1>
+      {/* WORK PROCESS */}
+      <FadeSlideIn>
+        <WorkProcess />
+      </FadeSlideIn>
 
-    <span className="inline-block text-gray-900 text-lg font-sans px-1 py-1 rounded">
-      Our engineers are certified by:
-    </span>
+      {/* CERTIFICATIONS SECTION */}
+      <div className="bg-white py-12 sm:py-16 lg:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <h5 className="text-xs sm:text-sm font-semibold tracking-widest text-gray-500 uppercase mb-2">
+            Expertise
+          </h5>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold mb-4 sm:mb-6">
+            Certified expertise you can trust
+          </h1>
 
+          <span className="inline-block text-gray-900 text-base sm:text-lg font-sans px-1 py-1">
+            Our engineers are certified by:
+          </span>
 
-    <div className="flex items-center justify-start gap-10 mt-10 px-16">
-      <img src="/googlecloud.png" alt="Google Cloud" className="h-1/3 w-1/3 object-contain " />
-      <img src="/Azure.png" alt="Azure" className="h-1/3 w-1/3 object-contain " />
-      <img src="/aws.png" alt="AWS" className="h-1/3 w-1/3 object-contain " />
-      <img src="/oracle.PNG" alt="Oracle" className="h-1/3 w-1/3 object-contain " />
-    </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 mt-8 sm:mt-10 items-center">
+            <img src="/googlecloud.png" alt="Google Cloud" className="w-full h-auto object-contain" />
+            <img src="/Azure.png" alt="Azure" className="w-full h-auto object-contain" />
+            <img src="/aws.png" alt="AWS" className="w-full h-auto object-contain" />
+            <img src="/oracle.PNG" alt="Oracle" className="w-full h-auto object-contain" />
+          </div>
+        </div>
+      </div>
 
-  </div>
-</div>
-
-
+      {/* PROJECTS SECTION */}
       <FadeSlideIn>
         <OurProjects />
       </FadeSlideIn>
 
-      <div className="w-8/12 mx-auto">
-        <section className="pt-10">
-          <div className="flex flex-col gap-3 py-10">
-            <h5 className="text-lg font-medium ">Why us</h5>
-            <h2 className="text-4xl font-medium">Why choose EffectiveSoft</h2>
+      {/* WHY CHOOSE US SECTION */}
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:w-10/12 xl:w-8/12 mx-auto">
+        <section className="pt-8 sm:pt-10 lg:pt-12">
+          <div className="flex flex-col gap-3 sm:gap-4 py-6 sm:py-8 lg:py-10">
+            <h5 className="text-base sm:text-lg font-medium uppercase tracking-wider text-gray-600">Why us</h5>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium">Why choose EffectiveSoft</h2>
           </div>
-          <FadeSlideIn className="grid grid-cols-3 gap-16 items-center">
+
+          <FadeSlideIn className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16">
             {Processes.map((v, idx) => (
               <FeatureDiv
                 key={idx}
@@ -470,23 +483,24 @@ export default function AIDevelopementServices() {
           </FadeSlideIn>
         </section>
 
-        <div className="py-16 px-8 max-h-screen">
+        {/* TECH STACK SECTION */}
+        <div className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="mb-12">
-            <p className="text-sm text-gray-500 uppercase tracking-wider mb-4">
+          <div className="mb-8 sm:mb-12">
+            <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wider mb-3 sm:mb-4">
               TECHNOLOGIES
             </p>
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 sm:mb-8">
               AI tech stack
             </h2>
 
             {/* Tabs */}
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2 sm:gap-3">
               {tabs.map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`px-6 py-2 font-medium transition ${
+                  className={`px-3 sm:px-4 lg:px-6 py-1.5 sm:py-2 text-sm sm:text-base font-medium transition-all ${
                     activeTab === tab
                       ? "bg-blue-600 text-white"
                       : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
@@ -499,68 +513,69 @@ export default function AIDevelopementServices() {
           </div>
 
           {/* Technology Grid */}
-          <FadeSlideIn className="grid grid-cols-6 gap-8">
+          <FadeSlideIn className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6 lg:gap-8">
             {technologies[activeTab].map((tech, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center p-6  rounded-lg  duration-300 cursor-pointer group"
+                className="flex items-center justify-center p-4 sm:p-6 rounded-lg duration-300 cursor-pointer group"
               >
                 <img
                   src={tech.logo}
                   alt={tech.name}
-                  className="w-24 h-24 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                  className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
                   onError={(e) => {
                     const img = e.currentTarget;
-
-                    // avoid infinite onError loop
                     if (img.dataset.fallbackApplied === "true") return;
-
-                    img.dataset.fallbackApplied = "true"; // mark fallback applied
-                    img.src = `https://via.placeholder.com/100x100?text=${encodeURIComponent(
-                      tech.name
-                    )}`;
+                    img.dataset.fallbackApplied = "true";
+                    img.src = `https://via.placeholder.com/100x100?text=${encodeURIComponent(tech.name)}`;
                   }}
                 />
               </div>
             ))}
           </FadeSlideIn>
         </div>
+
+        {/* FAQ SECTION */}
         <FadeSlideIn>
           <FAQForDataAI />
         </FadeSlideIn>
 
-        <div className="max-w-6xl mx-auto w-full py-16 my-10 px-16 text-white flex bg-blue-950 font-pt">
-          <div className="flex flex-col gap-6 py-5 px-6 w-1/2">
-            <div className="flex flex-col gap-1">
-              <h2 className="text-7xl font-bold bg-blue-800 px-4 py-1 mb-2 w-fit">
+        {/* QUESTIONS CTA SECTION */}
+        <div className="w-full mx-auto py-12 sm:py-16 my-8 sm:my-10 px-6 sm:px-10 lg:px-16 text-white flex flex-col lg:flex-row bg-blue-950 font-pt gap-8 lg:gap-0">
+          <div className="flex flex-col gap-5 sm:gap-6 py-4 sm:py-5 lg:px-6 w-full lg:w-1/2">
+            <div className="flex flex-col gap-2">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-blue-800 px-3 sm:px-4 py-1 mb-2 w-fit">
                 STILL HAVE
               </h2>
-              <span className="text-7xl font-bold bg-blue-800 px-4 py-1 w-fit">
-                {" "}
+              <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-blue-800 px-3 sm:px-4 py-1 w-fit">
                 QUESTIONS?
               </span>
             </div>
-            <p className="text-xl">
-              Can’t find the answer you are looking for? Contact us and we will
+            <p className="text-base sm:text-lg lg:text-xl leading-relaxed">
+              Can't find the answer you are looking for? Contact us and we will
               get in touch with you shortly.
             </p>
-            <button className="bg-blue-700 text-white/90 w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300 font-bold text-lg">
+            <button className="bg-blue-700 text-white/90 w-fit px-8 sm:px-10 py-2 sm:py-2.5 hover:bg-blue-900 transition duration-300 font-bold text-base sm:text-lg">
               Get in touch
             </button>
           </div>
-          <div className="w-1/2 flex justify-center">
+
+          <div className="w-full lg:w-1/2 flex justify-center items-center">
             <img
               src="workflow.jpeg"
-              alt="book"
-              className="px-5 w-full h-[45vh]"
+              alt="workflow"
+              className="w-full max-w-md lg:max-w-full h-auto max-h-[45vh] object-contain lg:object-cover"
             />
           </div>
         </div>
       </div>
+
+      {/* FEATURED PROJECTS */}
       <FadeSlideIn>
         <FeaturedProjects />
       </FadeSlideIn>
 
+      {/* TECHNOLOGIES USED */}
       <FadeSlideIn>
         <TechnologiesUsed />
       </FadeSlideIn>

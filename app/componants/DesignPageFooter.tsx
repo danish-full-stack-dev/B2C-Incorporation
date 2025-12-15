@@ -4,9 +4,9 @@ import React from 'react'
 
 export const DesignPageFooter: React.FC = () => {
   const skills = [
+    "Web Development",
     "Artificial intelligence",
     "Mobile App Development",
-    "Web Development",
     "Desktop App Development",
     "Data Analytics",
   ];
