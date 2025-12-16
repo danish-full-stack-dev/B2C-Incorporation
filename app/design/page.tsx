@@ -10,6 +10,7 @@ import { useCursor } from "../hooks/CursorContext";
 import { useRouter } from "next/navigation";
 
 interface Props {
+  title: string;
   image: string;
   heading: string;
   position?: string;
@@ -17,7 +18,7 @@ interface Props {
   reverse?: boolean;
 }
 const ImageDiv = (props: Props) => {
-  const { image, heading, listOfFeatures, reverse } = props;
+  const { title, image, heading, listOfFeatures, reverse } = props;
   const { setValue } = useCursor();
   const router = useRouter();
   return (
@@ -27,11 +28,11 @@ const ImageDiv = (props: Props) => {
       onMouseLeave={() => setValue(null)}
       onClick={() => {
         setValue(null);
-        router.push("/design/works/kao");
+        router.push(`/design/works/${title.toLowerCase()}`);
       }}
     >
       {/* Image + tags */}
-      <aside className="flex flex-col text-sm w-4/6 overflow-hidden hover:cursor-pointer hover:scale-[1.03] transition-transform duration-300 relative">
+      <aside className="flex flex-col text-sm w-4/6 overflow-hidden hover:cursor-pointer transition-transform duration-300 relative">
         <div className="absolute group-hover:bg-black/30 group-hover:backdrop-blur-sm inset-0 transition-all duration-300" />
         <div className="flex text-white/80">
           <img
@@ -54,10 +55,10 @@ const ImageDiv = (props: Props) => {
       </aside>
 
       <div
-        className={`flex flex-col w-2/6 px-6 opacity-0 group-hover:opacity-100 transition duration-300`}
+        className={`flex flex-col w-2/6 px-6 opacity-0 group-hover:opacity-100 transition duration-300 gap-2 pl-5`}
       >
-        <h2 className="text-7xl font-bold text-blue-800">Kao</h2>
-        <h3 className="text-4xl font-thin text-white">{heading}</h3>
+        <h2 className="text-6xl font-bold text-blue-800">{title}</h2>
+        <h3 className="text-2xl font-thin text-white">{heading}</h3>
       </div>
     </div>
   );
@@ -100,7 +101,6 @@ export default function DesignHome() {
 
   return (
     <div className="w-full  bg-black">
-      <DesignPageNavbar />
       <section className="relative bg-black h-screen ">
         <video
           autoPlay
@@ -263,6 +263,7 @@ export default function DesignHome() {
               {designCards.map((card, i) => (
                 <ImageDiv
                   key={i}
+                  title={card.title}
                   image={card.image}
                   heading={card.heading}
                   position={card.position}
@@ -346,7 +347,7 @@ export default function DesignHome() {
           </div>
         </div>
         <div className="flex flex-row  gap-10 w-10/12 mx-auto my-16">
-          <BorderAnimation className="flex flex-col w-1/2 justify-between h-[25vh] p-8 ">
+          <BorderAnimation className="flex flex-col w-1/2 justify-between h-[25vh] p-8 group ">
             <div className="flex flex-col gap-5 p-6">
               <h3 className="text-2xl">Project Based</h3>
               <p className="text-base">
@@ -359,14 +360,14 @@ export default function DesignHome() {
             <Link href={"#"} className="flex gap-2 items-center pl-6 pb-3">
               Explore{" "}
               <span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
               </span>
             </Link>
           </BorderAnimation>
 
-          <BorderAnimation className="flex flex-col w-1/2 justify-between h-[25vh] p-8 ">
+          <BorderAnimation className="flex flex-col w-1/2 justify-between h-[25vh] p-8 group ">
             <div className="flex flex-col gap-5 p-6">
-              <h3 className="text-2xl">Project Based</h3>
+              <h3 className="text-2xl">Contract Based</h3>
               <p className="text-base">
                 If you have a need for a high-quality product delivered within a
                 set time frame, the traditional project-based model is your best
@@ -374,15 +375,18 @@ export default function DesignHome() {
                 ensure it's done in time and on budget.
               </p>
             </div>
-            <Link href={"#"} className="flex gap-2 items-center pl-6 pb-3">
+            <Link
+              href={"#"}
+              className="flex gap-2 items-center w-fit pl-6 pb-3"
+            >
               Explore{" "}
               <span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
               </span>
             </Link>
           </BorderAnimation>
         </div>
-        <section className="flex w-10/12 mx-auto my-16">
+        <section className="flex w-10/12 mx-auto my-16 justify-between">
           <div className="flex flex-col w-full">
             <h3 className="w-4/5 text-4xl leading-tight">
               Let's make something <br />
@@ -401,8 +405,12 @@ export default function DesignHome() {
             </div>
           </div>
 
-          <aside className="">
-            <img src="/image.png" alt="image" className="w-64" />
+          <aside className="w-1/4">
+            <img
+              src="/favicon.png"
+              alt="logo"
+              className="w-2/3 object-cover opacity-50 -rotate-45"
+            />
           </aside>
         </section>
         <div className="absolute -z-10 inset-0 flex justify-end"></div>
