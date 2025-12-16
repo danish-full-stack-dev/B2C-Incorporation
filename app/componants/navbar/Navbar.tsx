@@ -220,7 +220,7 @@ export const Navbar: React.FC = () => {
                     { heading: "Leadership", to: "/pages/weare/leadership" },
                     { heading: "Expertise", to: "/" },
                     { heading: "Carrers", to: "/pages/weare/leadership/carrers" },
-                    { heading: "Certification", to: "/" },
+                    { heading: "Certification", to: "/pages/weare/certification" },
                   ].map((value, idx) => (
                     <Link
                       href={value.to}
