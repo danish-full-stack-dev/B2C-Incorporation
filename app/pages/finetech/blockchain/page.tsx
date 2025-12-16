@@ -11,7 +11,7 @@ import useInViewAnimation from "@/app/hooks/useInViewAnimation";
 import FadeSlideIn from "@/app/hooks/FadeSlideIn";
 import { CloudServicesSection } from "@/app/componants/CloudServices";
 import WorkProcess from "@/app/componants/WorkProcess";
-     import Image from "next/image";
+import Image from "next/image";
 
 interface Technology {
   name: string;
@@ -149,7 +149,11 @@ export default function AIDevelopementServices() {
     { name: "EOSIO", logo: "/logos/eosio.svg", alt: "EOSIO logo" },
     { name: "IOTA", logo: "/logos/iota.svg", alt: "IOTA logo" },
     { name: "Near", logo: "/logos/near.svg", alt: "Near logo" },
-    { name: "Ethereum Hardhat", logo: "/logos/hardhat.svg", alt: "Ethereum Hardhat logo" },
+    {
+      name: "Ethereum Hardhat",
+      logo: "/logos/hardhat.svg",
+      alt: "Ethereum Hardhat logo",
+    },
     { name: "Moonbeam", logo: "/logos/moonbeam.svg", alt: "Moonbeam logo" },
     { name: "Avalanche", logo: "/logos/avalanche.svg", alt: "Avalanche logo" },
     { name: "XinFin", logo: "/logos/xinfin.svg", alt: "XinFin logo" },
@@ -298,9 +302,17 @@ export default function AIDevelopementServices() {
       <div className="w-8/12 mx-auto min-h-screen flex flex-col items-center">
         <div className="flex py-16 h-5/6 mt-28">
           <div className="flex flex-col w-1/2 h-3/4 gap-3 mt-20px">
-            <h2 className="text-5xl font-medium">Blockchain Development Services</h2>
+            <h2 className="text-5xl font-medium">
+              Blockchain Development Services
+            </h2>
             <p className="text-2xl py-8 w-4/5 font-sans">
-              Partnering with us is your gateway to transparent and secure digital operations. Our blockchain application development services empower business with unparalleled decentralized solutions. Whether it’s a custom-built blockchain for transactions, smart contract, or tokenization platform, the software we develop helps our clients unlock new opportunities in the digital space..
+              Partnering with us is your gateway to transparent and secure
+              digital operations. Our blockchain application development
+              services empower business with unparalleled decentralized
+              solutions. Whether it’s a custom-built blockchain for
+              transactions, smart contract, or tokenization platform, the
+              software we develop helps our clients unlock new opportunities in
+              the digital space..
             </p>
             <div className="flex gap-5 text-lg font-medium w-5/6">
               <button className="bg-blue-700 px-8 py-2 hover:bg-transparent w-full text-white hover:text-black transition">
@@ -339,7 +351,11 @@ export default function AIDevelopementServices() {
             </p>
           </div>
           <div className="w-1/2 flex justify-center">
-            <img src="/clutchlogo.png" alt="image" className="w-40 object-contain" />
+            <img
+              src="/clutchlogo.png"
+              alt="image"
+              className="w-40 object-contain"
+            />
           </div>
         </FadeSlideIn>
       </div>
@@ -348,9 +364,12 @@ export default function AIDevelopementServices() {
           <div className="flex flex-col gap-3 py-10">
             <h5 className="text-sm font-medium">INDUSTRIES</h5>
             <h2 className="text-4xl font-medium">Industries we serve </h2>
-            <p className="text-m font-sans">Our team includes versatile specialists with varied experience and industry backgrounds.<br></br>
-                Below are some of the key benefits 
-                of cloud engineering solutions in some of the domains we<br></br>specialize in.</p>
+            <p className="text-m font-sans">
+              Our team includes versatile specialists with varied experience and
+              industry backgrounds.<br></br>
+              Below are some of the key benefits of cloud engineering solutions
+              in some of the domains we<br></br>specialize in.
+            </p>
           </div>
           <div className="grid grid-cols-3 space-y-6 items-center">
             {Industries.map((v, idx) => (
@@ -365,66 +384,74 @@ export default function AIDevelopementServices() {
         </FadeSlideIn>
       </div>
       <div className="bg-blue-800 flex items-center w-[1300px] h-[350px] mx-auto text-white p-10">
-  
-  {/* LEFT — IMAGE */}
-  <div className="w-[400px] flex justify-center items-center">
-    <img 
-      src="/image.png" 
-      alt="image" 
-      className="h-[300px] w-auto object-cover rounded-md"
-    />
-  </div>
+        {/* LEFT — IMAGE */}
+        <div className="w-[400px] flex justify-center items-center">
+          <img
+            src="/image.png"
+            alt="image"
+            className="h-[300px] w-auto object-cover rounded-md"
+          />
+        </div>
 
-  {/* RIGHT — TEXT */}
-  <div className="w-1/2">
-    <p className="text-lg leading-relaxed font-sans">
-      “EffectiveSoft's product engineers have extensive skill sets in project 
-      management, interpersonal communication, creative thinking, design, and 
-      technical expertise...”
-    </p>
+        {/* RIGHT — TEXT */}
+        <div className="w-1/2">
+          <p className="text-lg leading-relaxed font-sans">
+            “EffectiveSoft's product engineers have extensive skill sets in
+            project management, interpersonal communication, creative thinking,
+            design, and technical expertise...”
+          </p>
 
-    <div className="mt-5">
-      <p className="font-semibold text-lg">Alexey Galushko</p>
-      <p className="opacity-80">Delivery Director</p>
-    </div>
-  </div>
-
-</div>
+          <div className="mt-5">
+            <p className="font-semibold text-lg">Alexey Galushko</p>
+            <p className="opacity-80">Delivery Director</p>
+          </div>
+        </div>
+      </div>
       <div className="w-8/12 mx-auto">
-      <FadeSlideIn className="py-10">
+        <FadeSlideIn className="py-10">
           <div>
-            <CloudServicesSection/>
+            <CloudServicesSection />
           </div>
         </FadeSlideIn>
 
         <FadeSlideIn>
-             <section className="max-w-6xl mx-auto px-6 py-16">
-      <p className="text-xs uppercase text-gray-500 mb-2 font-semibold tracking-wider">Platforms</p>
-      <h2 className="text-3xl sm:text-4xl font-bold mb-12 max-w-3xl">Blockchain development platforms we trust</h2>
+          <section className="max-w-6xl mx-auto px-6 py-16">
+            <p className="text-xs uppercase text-gray-500 mb-2 font-semibold tracking-wider">
+              Platforms
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-12 max-w-3xl">
+              Blockchain development platforms we trust
+            </h2>
 
-      <div className="grid grid-cols-6 sm:grid-cols-8 gap-x-12 gap-y-10 justify-center items-center">
-        {platforms.map(({ name, logo, alt, isText }, i) => (
-          <div key={i} className="flex justify-center items-center">
-            {isText ? (
-              <div className="bg-gray-100 dark:bg-gray-800 p-6 flex justify-center items-center rounded-md w-28 h-28">
-                <span className="text-gray-700 dark:text-gray-200 text-base font-medium">{name}</span>
-                <span className="ml-1 text-blue-600 text-xl font-bold">.</span>
-              </div>
-            ) : (
-
-<Image
-  src={logo}
-  alt={alt}
-  width={56}
-  height={56}
-  className={`${name === "Ethereum" ? "bg-blue-500 rounded-full p-2" : ""}`}
-/>
-
-            )}
-          </div>
-        ))}
-      </div>
-    </section>
+            <div className="grid grid-cols-6 sm:grid-cols-8 gap-x-12 gap-y-10 justify-center items-center">
+              {platforms.map(({ name, logo, alt, isText }, i) => (
+                <div key={i} className="flex justify-center items-center">
+                  {isText ? (
+                    <div className="bg-gray-100 dark:bg-gray-800 p-6 flex justify-center items-center rounded-md w-28 h-28">
+                      <span className="text-gray-700 dark:text-gray-200 text-base font-medium">
+                        {name}
+                      </span>
+                      <span className="ml-1 text-blue-600 text-xl font-bold">
+                        .
+                      </span>
+                    </div>
+                  ) : logo ? (
+                    <Image
+                      src={logo}
+                      alt={alt}
+                      width={56}
+                      height={56}
+                      className={`${
+                        name === "Ethereum"
+                          ? "bg-blue-500 rounded-full p-2"
+                          : ""
+                      }`}
+                    />
+                  ) : null}
+                </div>
+              ))}
+            </div>
+          </section>
         </FadeSlideIn>
       </div>
 
@@ -450,9 +477,9 @@ export default function AIDevelopementServices() {
           </FadeSlideIn>
         </section>
         <div className="bg-blue-950">
-            <WorkProcess/>
+          <WorkProcess />
         </div>
-         <section className="pt-10">
+        <section className="pt-10">
           <div className="flex flex-col gap-3 py-10">
             <h5 className="text-lg font-medium ">Why us</h5>
             <h2 className="text-4xl font-medium">Why choose EffectiveSoft</h2>
