@@ -10,11 +10,10 @@ const TechnicalExpertise: React.FC = () => {
           </div>
           <div className="w-3/4 flex justify-center">
             <p className="w-8/12 text-2xl font-sans">
-              We specialize in AI, cloud engineering, blockchain, IoT, data
-              analytics, and automation   building scalable, secure, and
-              high-performance digital systems. Our expertise helps businesses
-              accelerate innovation, optimize operations, and stay competitive
-              in a rapidly evolving technological landscape.
+              B2C INC. combines expertise in AI, blockchain, data analytics,
+              automation, fintech, trading platforms, design, digital marketing,
+              app & web development, and ORM to build robust digital systems
+              that drive innovation and operational excellence.
             </p>
           </div>
         </div>

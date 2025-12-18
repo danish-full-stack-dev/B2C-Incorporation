@@ -33,6 +33,7 @@ const WhyChooseUs: React.FC = () => {
     "/sirona.png",
     "/WealthWise.png",
     "/zero.png",
+    "/medisonbrook.png",
   ];
 
   return (
@@ -42,14 +43,14 @@ const WhyChooseUs: React.FC = () => {
         className="py-32 transition-colors duration-300 relative bg-[#00091f]"
       >
         <div className="max-w-4xl mx-auto text-center">
-          <motion.h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-200">
-            WHAT MAKES B2CINC THE RIGHT CHOICE FOR YOUR BUSINESS?
+          <motion.h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-200 capitalize">
+            WHY BUSINESSES CHOOSE B2C INC. FOR GROWTH AND INNOVATION
           </motion.h2>
 
           <motion.p className="text-xl max-w-3xl mx-auto leading-relaxed mb-16 text-gray-200">
-            We deliver effective digital solutions by uncovering deep-root
-            business needs through a blend of human insights and advanced
-            technology.
+            We at B2C INC. deliver end-to-end solutions in Design, Digital
+            Marketing, Fintech, Trading, AI, and ORM, driven by deep insights
+            and innovative technology.
           </motion.p>
         </div>
 

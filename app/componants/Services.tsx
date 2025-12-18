@@ -19,6 +19,25 @@ export const allServices = [
       "AI Automation & Intelligent Systems",
     ],
   },
+  // ---------------- ORM ----------------
+  // {
+  //   title: "Online Reputation Management (ORM)",
+  //   image: "/phone.png",
+  //   description:
+  //     "We protect and enhance your brand's online presence through strategic reputation management and proactive engagement.",
+  //   services: [
+  //     "SEO / GEO / AEO",
+  //     "Business Directory Listings",
+  //     "Trustpilot Reviews",
+  //     "Google Business Profile Reviews",
+  //     "Yelp Reviews",
+  //     "G2 Reviews",
+  //     "Clutch Reviews",
+  //     "Sitejabber Reviews",
+  //     "Reviews.io Reviews",
+  //     "GoodFirms Reviews",
+  //   ],
+  // },
 
   // ---------------- APP DEVELOPMENT ----------------
   {

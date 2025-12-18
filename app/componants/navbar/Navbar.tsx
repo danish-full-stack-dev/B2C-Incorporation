@@ -25,8 +25,46 @@ export const Navbar: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   });
+
+  const [open, setOpen] = useState(false);
+
+  // Load script ONCE
+  useEffect(() => {
+    const scriptId = "leadconnector-script";
+
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = "https://link.msgsndr.com/js/form_embed.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
   return (
     <div className="flex fixed w-full z-30 justify-center text-white mt-3">
+      <div
+        className={`fixed inset-0 bg-black/60 z-50 flex items-center justify-center transition-opacity ${
+          open
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setOpen(false)}
+      >
+        <div
+          className="bg-white rounded-lg overflow-hidden"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="px-4 py-3 border-b font-semibold text-gray-800 flex justify-center">
+            ABCD Schedule Call
+          </div>
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/WpGLuDg2sq9XRondlamP"
+            className="w-[90vw] max-w-[500px] h-[403px] border-none"
+            title="ABCD Schedule Call"
+          />
+        </div>
+      </div>
       <div
         className={`${
           strecth ? "w-5/12 p-0" : "w-8/12 p-1"
@@ -101,13 +139,24 @@ export const Navbar: React.FC = () => {
             </ul>
           </div>
           <div className=" flex justify-center">
-            <button
-              className={`bg-blue-600 hover:bg-blue-800 transition-all duration-500 ${
-                strecth ? "p-2" : "px-4 py-2 font-medium text-sm"
-              }`}
-            >
-              {strecth ? <Mail className="h-5 w-5" /> : "Quick demo"}
-            </button>
+            {strecth ? (
+              <button
+                className={`bg-blue-600 hover:bg-blue-800 transition-all duration-500 ${
+                  strecth ? "p-2" : "px-4 py-2 font-medium text-sm"
+                }`}
+              >
+                <Mail className="h-5 w-5" />
+              </button>
+            ) : (
+              <button
+                className={`bg-blue-600 hover:bg-blue-800 transition-all duration-500 ${
+                  strecth ? "p-2" : "px-4 py-2 font-medium text-sm"
+                }`}
+                onClick={() => setOpen(true)}
+              >
+                Quick demo
+              </button>
+            )}
           </div>
         </div>
         {/* MODAL */}
@@ -135,20 +184,27 @@ export const Navbar: React.FC = () => {
               }`}
             >
               <div className="grid grid-flow-col text-sm">
-                <div className="flex flex-col gap-4 pr-20 border-r border-gray-700">
+                <div
+                  className={`flex flex-col gap-4 ${
+                    strecth ? "pr-10" : "pr-20"
+                  } border-r border-gray-700`}
+                >
                   <span className="text-gray-500 text-xs font-bold mb-1">
                     Our Expertise
                   </span>
                   {[
                     { heading: "Design", to: "/design" },
                     {
-                      heading: "Product engineering",
-                      to: "/pages/products/products-engeenering",
+                      heading: "Digital Marketing",
+                      to: "/pages/products/digital-marketing",
                     },
-                    { heading: "Cloud", to: "/pages/products/cloud" },
                     {
-                      heading: "Data services",
-                      to: "/pages/services/data-service",
+                      heading: "App & Web Development",
+                      to: "/pages/products/app-and-web",
+                    },
+                    {
+                      heading: "Online Reputation Management (ORM)",
+                      to: "/pages/services/orm-service",
                     },
                     {
                       heading: "AI Automation",
@@ -158,13 +214,17 @@ export const Navbar: React.FC = () => {
                     <Link
                       href={value.to}
                       key={idx}
-                      className="hover:text-blue-500 transition hover:cursor-pointer"
+                      className="hover:text-blue-500 text-sm transition hover:cursor-pointer"
                     >
                       {value.heading}
                     </Link>
                   ))}
                 </div>
-                <div className="flex flex-col px-20 border-r  border-gray-700 gap-4">
+                <div
+                  className={`flex flex-col gap-4 ${
+                    strecth ? "px-10" : "px-20"
+                  } border-r border-gray-700`}
+                >
                   <span className="text-gray-500 text-xs font-bold mb-1">
                     Fintech specialization
                   </span>
@@ -191,7 +251,11 @@ export const Navbar: React.FC = () => {
                     </Link>
                   ))}
                 </div>
-                <div className="flex flex-col gap-4 pl-20">
+                <div
+                  className={`flex flex-col gap-4 ${
+                    strecth ? "pl-10" : "pl-20"
+                  } `}
+                >
                   <span className="text-gray-500 text-xs font-bold mb-1">
                     Trading Specialization
                   </span>
@@ -206,7 +270,7 @@ export const Navbar: React.FC = () => {
                     },
                     {
                       heading: "Online Reputation Management(ORM's)",
-                      to: "/pages/specialization/orm",
+                      to: "/pages/specialization/orm-service",
                     },
                   ].map((value, idx) => (
                     <Link
@@ -260,8 +324,8 @@ export const Navbar: React.FC = () => {
                     </div>
                     <p className="">
                       We are extremely satisfied with our collaboration with
-                      B2CINC. We engaged them for business analysis,
-                      UI/UX design, web development, and testing.
+                      B2CINC. We engaged them for business analysis, UI/UX
+                      design, web development, and testing.
                     </p>
                     <div className="flex flex-col justify-start pt-5">
                       <h4>Gulfam .......</h4>

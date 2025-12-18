@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { AIServicesSection } from "../../../componants/AiServices";
 import { OurProjects } from "../../../componants/OurProjects";
@@ -11,6 +11,7 @@ import useInViewAnimation from "@/app/hooks/useInViewAnimation";
 import FadeSlideIn from "@/app/hooks/FadeSlideIn";
 import { CloudServicesSection } from "@/app/componants/CloudServices";
 import WorkProcess from "@/app/componants/WorkProcess";
+import { RealStateServicesSection } from "@/app/componants/RealStateServicesProcess";
 
 interface Technology {
   name: string;
@@ -23,17 +24,29 @@ interface TechCategory {
 export default function AIDevelopementServices() {
   const [active, setActive] = useState(0);
 
-  const [activeTab, setActiveTab] = useState<string>(
-    "Payment gateways & APIs"
-  );
+  const [activeTab, setActiveTab] = useState<string>("Payment gateways & APIs");
   const { ref, inView } = useInViewAnimation();
+  const [inViewPicIndex, setInViewPicIndex] = useState<number>(2);
+
+  const pics = [
+    "/real1.png",
+    "/real2.png",
+    "/real3.png",
+    "/real4.png",
+    "/real5.png",
+  ];
+
+  useEffect(() => {
+    setInterval(() => {
+      setInViewPicIndex((prev) => (prev + 1) % pics.length);
+    }, 3000);
+  }, [inView]);
 
   const tabs = [
     "Payment gateways & APIs",
     "Mobile wallets",
     "Open Banking",
     "Crypto and digital assets",
-    "Subscription Platform",
   ];
 
   const technologies: TechCategory = {
@@ -53,35 +66,6 @@ export default function AIDevelopementServices() {
       {
         name: "Pandas",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg",
-      },
-      {
-        name: "Scikit-learn",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg",
-      },
-      {
-        name: "PyTorch",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",
-      },
-      {
-        name: "MXNet",
-        logo: "https://raw.githubusercontent.com/dmlc/web-data/master/mxnet/image/mxnet_logo_2.png",
-      },
-      {
-        name: "NVIDIA",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nvidia/nvidia-original.svg",
-      },
-      {
-        name: "Caffe",
-        logo: "https://avatars.githubusercontent.com/u/6392063?s=200&v=4",
-      },
-      {
-        name: "Theano",
-        logo: "https://avatars.githubusercontent.com/u/10744616?s=200&v=4",
-      },
-      { name: "OpenNN", logo: "https://www.opennn.net/images/OpenNN.png" },
-      {
-        name: "MLlib",
-        logo: "https://spark.apache.org/images/spark-logo-trademark.png",
       },
     ],
     "Mobile wallets": [
@@ -149,7 +133,11 @@ export default function AIDevelopementServices() {
     { name: "EOSIO", logo: "/logos/eosio.svg", alt: "EOSIO logo" },
     { name: "IOTA", logo: "/logos/iota.svg", alt: "IOTA logo" },
     { name: "Near", logo: "/logos/near.svg", alt: "Near logo" },
-    { name: "Ethereum Hardhat", logo: "/logos/hardhat.svg", alt: "Ethereum Hardhat logo" },
+    {
+      name: "Ethereum Hardhat",
+      logo: "/logos/hardhat.svg",
+      alt: "Ethereum Hardhat logo",
+    },
     { name: "Moonbeam", logo: "/logos/moonbeam.svg", alt: "Moonbeam logo" },
     { name: "Avalanche", logo: "/logos/avalanche.svg", alt: "Avalanche logo" },
     { name: "XinFin", logo: "/logos/xinfin.svg", alt: "XinFin logo" },
@@ -195,42 +183,43 @@ export default function AIDevelopementServices() {
   ];
   const Processes = [
     {
-      icon: "image.png",
-      heading: "Kick-off",
+      icon: "/icons/strategy.png",
+      heading: "Market Intelligence Kick-off",
       description:
-        "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
+        "We don't just start; we strategize. We analyze market trends and your platform’s goals to engineer AI-driven solutions that pinpoint high-intent buyers and maximize booking potential.",
     },
     {
-      icon: "image.png",
-      heading: "Kick-off",
+      icon: "/icons/conversion.png",
+      heading: "Growth-Engine Design",
       description:
-        "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
+        "We sketch out high-conversion UI/UX concepts specifically for real estate. Our designs focus on immersive property storytelling and seamless funnels that turn casual browsers into confirmed viewings.",
     },
     {
-      icon: "image.png",
-      heading: "Kick-off",
+      icon: "/icons/ai-matching.png",
+      heading: "Predictive AI Integration",
       description:
-        "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
+        "We implement Machine Learning algorithms that analyze user behavior to offer personalized property matches, ensuring your leads see the right home at the exact moment they are ready to buy.",
     },
     {
-      icon: "image.png",
-      heading: "Kick-off",
+      icon: "/icons/omnichannel.png",
+      heading: "Omnichannel Domination",
       description:
-        "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
+        "From Google Search to Instagram Reels, we deploy a multi-channel marketing blueprint that keeps your platform top-of-mind, driving a consistent flow of qualified traffic to your listings.",
     },
     {
-      icon: "image.png",
-      heading: "Kick-off",
+      icon: "/icons/analytics.png",
+      heading: "Performance Scaling",
       description:
-        "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
+        "Using real-time 2025 data analytics, we monitor your ROI. We scale what works—from specific ad sets to geographic targets—ensuring your marketing budget is an investment, not an expense.",
     },
     {
-      icon: "image.png",
-      heading: "Kick-off",
+      icon: "/icons/trust.png",
+      heading: "Transparency & Authority",
       description:
-        "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
+        "We build your platform's credibility through automated testimonial systems and data-backed market reports, establishing you as the most trusted authority in the real estate landscape.",
     },
   ];
+
   interface Props {
     icon: string;
     heading: string;
@@ -287,7 +276,7 @@ export default function AIDevelopementServices() {
   const FeatureDiv = ({ icon, heading, description }: Props) => {
     return (
       <div className="flex flex-col justify-start p-5 group hover:bg-gray-100">
-        <img src={icon} alt="icon" className="w-20 " />
+        <img src="/favicon.png" alt="icon" className="w-8 mb-3" />
         <h4 className="text-3xl">{heading}</h4>
         <p className="text-lg w-full">{description}</p>
       </div>
@@ -295,74 +284,87 @@ export default function AIDevelopementServices() {
   };
   return (
     <div>
-      <div className="w-8/12 mx-auto min-h-screen flex flex-col items-center">
-        <div className="flex py-16 h-5/6 mt-28">
-          <div className="flex flex-col w-1/2 h-3/4 gap-3 mt-20px">
-            <h2 className="text-5xl font-medium">Real State</h2>
-            <p className="text-xl py-8 w-4/5 font-sans">
-            Slow transaction processing, limited payment options, and compliance gaps can cause buyers and tenants to abandon payments, delay closings, and create reconciliation issues for your real estate business. These challenges also increase exposure to regulatory and financial risks.
-             <br />
-             <br />
-We address these issues with secure payment gateway integration and custom payment processing solutions for real estate. Our systems support multiple payment methods and currencies for rent payments, booking fees, deposits, and property purchases—ensuring a seamless, reliable payment experience for clients while meeting regulatory requirements such as PCI DSS, AML, and KYC compliance.
-            </p>
-            <div className="flex gap-5 text-lg font-medium w-5/6">
-              <button className="bg-blue-700 px-8 py-2 hover:bg-transparent w-full text-white hover:text-black transition">
-                Let's talk
-              </button>
-              <button className="bg-transparent border-2 border-blue-700 font-bold w-full px-8 py-2 hover:bg-blue-700 transition hover:text-whi">
-                View Portfolio
-              </button>
+      <div className="max-h-screen flex object-cover overflow-hidden relative">
+        <img
+          src={pics[inViewPicIndex]}
+          alt="pic"
+          className="w-full h-full object-contain object-top transition-all duration-700"
+        />
+
+        {/* <div className="absolute top-4 right-4 bg-white/60 px-4 py-2 rounded-lg text-black font-medium">
+          <form action="">
+            <h2>Let's get started</h2>
+            <input
+              type="text"
+              placeholder="Your email"
+              className="outline-none px-2 py-1 rounded-md w-48"
+            />
+
+            <button className="bg-blue-600 text-white px-4 py-1 rounded-md ml-2">
+              Subscribe
+            </button>
+          </form>
+        </div> */}
+
+        <div className="absolute inset-0 bg-black/30 flex">
+          <div className="w-8/12 mx-auto flex">
+            <div className="w-3/4 h-1/2 my-auto text-white flex flex-col gap-6">
+              <h1 className="text-7xl font-bold">LET's BOOST YOUR BUSINESS</h1>
+              <p className="text-2xl">
+                {" "}
+                At B2CINC, the focus is on creating market-ready growth engines.
+                By integrating deep technical mastery with strategic project
+                management and creative intelligence, the gap between complex
+                functionality and
+              </p>
             </div>
           </div>
-          <div className="w-[370] m-24">
-            <img
-              src="/favicon.png"
-              alt="image"
-              className="max-h-[60vh] object-contain -rotate-45"
+        </div>
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+          {pics.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setInViewPicIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                inViewPicIndex === index ? "bg-blue-600 w-8" : "bg-gray-200"
+              }`}
             />
+          ))}
+        </div>
+      </div>
+      <FadeSlideIn className="pb-10">
+        <div>
+          <RealStateServicesSection />
+        </div>
+      </FadeSlideIn>
+
+      <div className="bg-blue-800 flex items-center w-[1300px] h-[350px] mx-auto text-white p-10">
+        {/* LEFT — IMAGE */}
+        <div className="w-[400px] flex justify-center items-center">
+          <img
+            src="/favicon.png"
+            alt="image"
+            className="h-[200px] w-auto object-cover -rotate-45 opacity-200"
+          />
+        </div>
+
+        {/* RIGHT — TEXT */}
+        <div className="w-1/2">
+          <p className="text-lg leading-relaxed font-sans">
+            At B2CINC, the focus is on creating market-ready growth engines. By
+            integrating deep technical mastery with strategic project management
+            and creative intelligence, the gap between complex functionality and
+            high-conversion design is bridged. This ensures every project serves
+            the ultimate goal: scaling your brand and maximizing user lifetime
+            value.
+          </p>
+
+          <div className="mt-5">
+            <p className="font-semibold text-lg">Gulfam Tasawar</p>
+            <p className="opacity-80">CEO</p>
           </div>
         </div>
       </div>
-      <FadeSlideIn className="py-10">
-          <div>
-            <CloudServicesSection/>
-          </div>
-        </FadeSlideIn>
-
-      <div className="bg-blue-800 flex items-center w-[1300px] h-[350px] mx-auto text-white p-10">
-  
-  {/* LEFT — IMAGE */}
-  <div className="w-[400px] flex justify-center items-center">
-    <img 
-      src="/favicon.png" 
-      alt="image" 
-      className="h-[200px] w-auto object-cover -rotate-45 opacity-200"
-    />
-  </div>
-
-  {/* RIGHT — TEXT */}
-  <div className="w-1/2">
-    <p className="text-lg leading-relaxed font-sans">
-      B2CINC's product engineers have extensive skill sets in project 
-      management, interpersonal communication, creative thinking, design, and 
-      technical expertise...
-    </p>
-
-    <div className="mt-5">
-      <p className="font-semibold text-lg">Alexey Galushko</p>
-      <p className="opacity-80">Delivery Director</p>
-    </div>
-  </div>
-
-</div>
-
-
- 
-
-
-      <FadeSlideIn>
-        <OurProjects />
-      </FadeSlideIn>
 
       <div className="w-8/12 mx-auto">
         <section className="pt-10">
@@ -374,36 +376,33 @@ We address these issues with secure payment gateway integration and custom payme
             {Processes.map((v, idx) => (
               <FeatureDiv
                 key={idx}
-                icon={v.icon}
+                icon="/favicon.png"
                 heading={v.heading}
                 description={v.description}
               />
             ))}
           </FadeSlideIn>
 
-           <div className="py-16 my-10 px-16 text-white  bg-blue-950">
-                    <FadeSlideIn className="flex flex-col gap-6 py-5 px-6">
-                      <h2 className="text-5xl bg-blue-700 px-4 py-2 w-fit">
-                        What about you?
-                      </h2>
-                      <p className="text-xl w-3/5">
-                        We're eager to delve deeper and understand your specific needs to
-                        unlock the full potential of AI for your business. By learning
-                        more about your challenges and goals, we can tailor our solutions
-                        to serve you best.
-                      </p>
-                      <form className="group flex flex-col gap-6">
-                        <input
-                          type="text"
-                          placeholder="Message"
-                          className="w-[650px] bg-transparent pb-5 outline-none border-b my-5"
-                        />
-                        <button className="bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300">
-                          Next
-                        </button>
-                      </form>
-                    </FadeSlideIn>
-                  </div>
+          <div className="py-10 bg-black">
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/S8JfKgS3BnfMCyYtKBQ9"
+              className="w-full h-full border-0 rounded-sm"
+              id="inline-S8JfKgS3BnfMCyYtKBQ9"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Form 8"
+              data-height="432"
+              data-layout-iframe-id="inline-S8JfKgS3BnfMCyYtKBQ9"
+              data-form-id="S8JfKgS3BnfMCyYtKBQ9"
+              title="Form 8"
+            ></iframe>
+            <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+          </div>
         </section>
 
         <div className="py-16 px-8 max-h-screen">

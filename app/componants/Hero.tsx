@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
 
 export const Hero: React.FC = () => {
   const texts: string[] = [
-    "DYNAMIC, INTELLIGENT, RESOURCEFUL, POWERFUL",
-    "CUSTOM SOFTWARE SOLUTIONS FOR BUSINESS GROWTH",
-    "AI-DRIVEN, CLOUD-POWERED, INDUSTRY-CHANGING",
+    "DYNAMIC, INTELLIGENT, CREATIVE, POWERFUL",
+    "AI-ENABLED, CLOUD-NATIVE, DIGITAL & FINTECH-FOCUSED",
+    "DESIGN-LED DIGITAL, FINTECH & REPUTATION SOLUTIONS FOR BUSINESS GROWTH"
   ];
 
   const [index, setIndex] = useState<number>(0);
@@ -43,28 +43,28 @@ export const Hero: React.FC = () => {
       <div className="w-8/12 flex justify-center  relative z-10 mx-auto h-full">
         <div className="gap-6 flex flex-col justify-center w-full h-5/6">
           {/* LEFT CONTENT */}
-            <h1 className="font-pt text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight min-h-24">
-              <span
-                className={`block text-blue-300 transition-all duration-500 ${
-                  fade ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"
-                }`}
-              >
-                {texts[index]}
-              </span>
-            </h1>
+          <h1 className="font-pt text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight min-h-24">
+            <span
+              className={`block text-blue-300 transition-all duration-500 ${
+                fade ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"
+              }`}
+            >
+              {texts[index]}
+            </span>
+          </h1>
 
-            {/* CTA BUTTONS */}
-            <div className=" flex flex-col sm:flex-row gap-4 ">
-              <a
-                href="/contact"
-                className="font-serif px-10 py-2 bg-blue-500 hover:bg-blue-800 transition-all duration-500 text-white/90"
-              >
-                Let's Talk
-              </a>
-            </div>
+          {/* CTA BUTTONS */}
+          <div className=" flex flex-col sm:flex-row gap-4 ">
+            <a
+              href="/"
+              className="font-serif px-10 py-2 bg-blue-600 hover:bg-blue-800 transition-all duration-500 text-white/90"
+            >
+              Let's Talk
+            </a>
+          </div>
 
-            {/* STATS */}
-            {/* <div className="grid grid-cols-3 gap-6 mt-12">
+          {/* STATS */}
+          {/* <div className="grid grid-cols-3 gap-6 mt-12">
               <div>
                 <div className="text-4xl font-bold text-blue-300">25+</div>
                 <div className="text-gray-200 mt-1">Years Experience</div>

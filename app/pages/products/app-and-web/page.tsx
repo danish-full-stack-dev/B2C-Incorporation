@@ -23,7 +23,9 @@ interface TechCategory {
 
 export default function AIDevelopementServices() {
   const [active, setActive] = useState(0);
-  const [activeTab, setActiveTab] = useState<string>("Frameworks and libraries");
+  const [activeTab, setActiveTab] = useState<string>(
+    "Frameworks and libraries"
+  );
   const { ref, inView } = useInViewAnimation();
 
   const tabs = [
@@ -224,12 +226,16 @@ export default function AIDevelopementServices() {
     { name: "EOSIO", logo: "/logos/eosio.svg", alt: "EOSIO logo" },
     { name: "IOTA", logo: "/logos/iota.svg", alt: "IOTA logo" },
     { name: "Near", logo: "/logos/near.svg", alt: "Near logo" },
-    { name: "Ethereum Hardhat", logo: "/logos/hardhat.svg", alt: "Ethereum Hardhat logo" },
+    {
+      name: "Ethereum Hardhat",
+      logo: "/logos/hardhat.svg",
+      alt: "Ethereum Hardhat logo",
+    },
     { name: "Moonbeam", logo: "/logos/moonbeam.svg", alt: "Moonbeam logo" },
     { name: "Avalanche", logo: "/logos/avalanche.svg", alt: "Avalanche logo" },
     { name: "XinFin", logo: "/logos/xinfin.svg", alt: "XinFin logo" },
   ];
-  
+
   interface Props {
     icon: string;
     heading: string;
@@ -258,7 +264,12 @@ export default function AIDevelopementServices() {
     setActive: (index: number) => void;
   }
 
-  const ProcessDiv = ({ index, heading, description, setActive }: ProcessProps) => {
+  const ProcessDiv = ({
+    index,
+    heading,
+    description,
+    setActive,
+  }: ProcessProps) => {
     return (
       <div
         className="flex flex-col justify-start py-4 sm:py-5 group"
@@ -297,11 +308,13 @@ export default function AIDevelopementServices() {
           {/* LEFT SIDE - TEXT */}
           <div className="flex flex-col w-full lg:w-1/2 gap-4 sm:gap-5 lg:gap-6">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-medium leading-tight">
-              Cloud Engineering
+              App & Web Development Services
             </h2>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-sans leading-relaxed">
-              Cloud technology provides the agility, scalability, and cost-effectiveness needed for modern digital solutions.
-              We build the foundation of your cloud environment through custom services, including cloud engineering consulting, app development, and more.
+              App & Web Development Services provides the agility, scalability, and
+              cost-effectiveness needed for modern digital solutions. We build
+              the foundation of your cloud environment through custom services,
+              including cloud engineering consulting, app development, and more.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 text-base sm:text-lg font-medium">
               <button className="bg-blue-700 px-6 sm:px-8 py-2.5 sm:py-3 hover:bg-transparent text-white hover:text-black transition-all border-2 border-transparent hover:border-blue-700">
@@ -340,10 +353,10 @@ export default function AIDevelopementServices() {
             </p>
           </div>
           <div className="w-full md:w-1/2 flex justify-center items-center">
-            <img 
-              src="/clutchlogo.png" 
-              alt="Clutch logo" 
-              className="w-32 sm:w-40 h-auto object-contain" 
+            <img
+              src="/clutchlogo.png"
+              alt="Clutch logo"
+              className="w-32 sm:w-40 h-auto object-contain"
             />
           </div>
         </FadeSlideIn>
@@ -369,12 +382,14 @@ export default function AIDevelopementServices() {
         <div className="w-full lg:w-7/12">
           <p className="text-base sm:text-lg leading-relaxed font-sans mb-4 sm:mb-5">
             "B2CINC's product engineers have extensive skill sets in project
-            management, interpersonal communication, creative thinking, design, and
-            technical expertise...
+            management, interpersonal communication, creative thinking, design,
+            and technical expertise...
           </p>
 
           <div>
-            <p className="font-semibold text-base sm:text-lg">Alexey Galushko</p>
+            <p className="font-semibold text-base sm:text-lg">
+              Alexey Galushko
+            </p>
             <p className="opacity-80 text-sm sm:text-base">Delivery Director</p>
           </div>
         </div>
@@ -384,11 +399,16 @@ export default function AIDevelopementServices() {
       <div className="w-full px-4 sm:px-6 md:px-8 lg:w-10/12 xl:w-8/12 mx-auto">
         <FadeSlideIn className="py-8 sm:py-12 lg:py-16">
           <div className="flex flex-col gap-3 sm:gap-4 py-6 sm:py-8 lg:py-10">
-            <h5 className="text-xs sm:text-sm font-medium uppercase tracking-wider text-gray-600">INDUSTRIES</h5>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium">Industries we serve</h2>
+            <h5 className="text-xs sm:text-sm font-medium uppercase tracking-wider text-gray-600">
+              INDUSTRIES
+            </h5>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium">
+              Industries we serve
+            </h2>
             <p className="text-sm sm:text-base font-sans leading-relaxed max-w-4xl">
-              Our team includes versatile specialists with varied experience and industry backgrounds.
-              Below are some of the key benefits of cloud engineering solutions in some of the domains we specialize in.
+              Our team includes versatile specialists with varied experience and
+              industry backgrounds. Below are some of the key benefits of cloud
+              engineering solutions in some of the domains we specialize in.
             </p>
           </div>
 
@@ -450,10 +470,26 @@ export default function AIDevelopementServices() {
           </span>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 mt-8 sm:mt-10 items-center">
-            <img src="/googlecloud.png" alt="Google Cloud" className="w-full h-auto object-contain" />
-            <img src="/Azure.png" alt="Azure" className="w-full h-auto object-contain" />
-            <img src="/aws.png" alt="AWS" className="w-full h-auto object-contain" />
-            <img src="/oracle.PNG" alt="Oracle" className="w-full h-auto object-contain" />
+            <img
+              src="/googlecloud.png"
+              alt="Google Cloud"
+              className="w-full h-auto object-contain"
+            />
+            <img
+              src="/Azure.png"
+              alt="Azure"
+              className="w-full h-auto object-contain"
+            />
+            <img
+              src="/aws.png"
+              alt="AWS"
+              className="w-full h-auto object-contain"
+            />
+            <img
+              src="/oracle.PNG"
+              alt="Oracle"
+              className="w-full h-auto object-contain"
+            />
           </div>
         </div>
       </div>
@@ -467,8 +503,12 @@ export default function AIDevelopementServices() {
       <div className="w-full px-4 sm:px-6 md:px-8 lg:w-10/12 xl:w-8/12 mx-auto">
         <section className="pt-8 sm:pt-10 lg:pt-12">
           <div className="flex flex-col gap-3 sm:gap-4 py-6 sm:py-8 lg:py-10">
-            <h5 className="text-base sm:text-lg font-medium uppercase tracking-wider text-gray-600">Why us</h5>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium">Why choose B2CINC</h2>
+            <h5 className="text-base sm:text-lg font-medium uppercase tracking-wider text-gray-600">
+              Why us
+            </h5>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium">
+              Why choose B2CINC
+            </h2>
           </div>
 
           <FadeSlideIn className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16">
@@ -527,7 +567,9 @@ export default function AIDevelopementServices() {
                     const img = e.currentTarget;
                     if (img.dataset.fallbackApplied === "true") return;
                     img.dataset.fallbackApplied = "true";
-                    img.src = `https://via.placeholder.com/100x100?text=${encodeURIComponent(tech.name)}`;
+                    img.src = `https://via.placeholder.com/100x100?text=${encodeURIComponent(
+                      tech.name
+                    )}`;
                   }}
                 />
               </div>

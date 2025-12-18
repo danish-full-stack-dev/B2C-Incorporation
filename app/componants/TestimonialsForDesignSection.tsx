@@ -18,6 +18,7 @@ const TestimonialsSection: React.FC = () => {
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const [startX, setStartX] = useState<number>(0);
   const [scrollLeft, setScrollLeft] = useState<number>(0);
+
   const scroll = (direction: "left" | "right") => {
     const current = scrollRef.current;
     if (!current) return;
@@ -28,6 +29,15 @@ const TestimonialsSection: React.FC = () => {
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
     });
+
+    if (direction === "left" && scrollIndex > 0) {
+      setScrollIndex((prev) => Math.max(prev - 1, 0));
+    } else if (
+      direction === "right" &&
+      scrollIndex < testimonials.length / 2 - 1
+    ) {
+      setScrollIndex((prev) => Math.min(prev + 1, testimonials.length - 1));
+    }
   };
 
   const testimonials: Testimonial[] = [
@@ -61,7 +71,7 @@ const TestimonialsSection: React.FC = () => {
     },
 
     {
-      logo: "/NerfReview.png",
+      logo: "/Rye-review.png",
       logoColor: "text-teal-600",
       text: "I’m always on the lookout for ways to improve ROI, and ClickExpose delivered beyond my expectations.",
       author: "Ryan M | Rye House Karting",
@@ -77,7 +87,7 @@ const TestimonialsSection: React.FC = () => {
     },
 
     {
-      logo: "/NerfReview.png",
+      logo: "/ellis&cco.png",
       logoColor: "text-teal-600",
       text: "We’ve seen a significant boost in leads since they took over, and they seem genuinely invested in our success. A 5- star service all day long.",
       author: "Laura Dennick | Ellis & Co",
@@ -136,9 +146,10 @@ const TestimonialsSection: React.FC = () => {
     return Math.min(100, (scrollPosition / maxScroll) * 100);
   };
 
+  const [scrollIndex, setScrollIndex] = useState(0);
   return (
     <div className="px-8 flex text-gray-200 mx-auto flex-col">
-      <div className="">
+      <div className="w-full mx-auto">
         {/* Header */}
         <div className="mb-12">
           <p className="text-sm uppercase tracking-wider mb-2">TESTIMONIALS</p>
@@ -154,11 +165,11 @@ const TestimonialsSection: React.FC = () => {
           className="flex gap-6 overflow-x-hidden px-12 pb-4 cursor-grab select-none"
         >
           {testimonials.map((testimonial, index) => (
-            <BorderAnimation
+            <div
               key={index}
-              className="min-w-[350px] bg-white rounded-lg shadow-sm hover:shadow-md transition shrink-0"
+              className="min-w-[350px]  rounded-lg shadow-sm hover:shadow-md transition shrink-0 overflow-hidden bg-white"
             >
-              <div className="p-8">
+              <div className="p-8 ">
                 {/* Logo */}
                 <div className="mb-8">
                   <Image
@@ -178,7 +189,7 @@ const TestimonialsSection: React.FC = () => {
                 {/* Author Info */}
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center">
-                    <span className="text-white border p-3 rounded-full font-semibold text-lg">
+                    <span className="text-black border border-black p-3 rounded-full font-semibold text-lg">
                       <User2Icon className="" />
                     </span>
                   </div>
@@ -192,7 +203,7 @@ const TestimonialsSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </BorderAnimation>
+            </div>
           ))}
         </div>
       </div>
@@ -202,7 +213,7 @@ const TestimonialsSection: React.FC = () => {
       <div className="flex w-full py-10">
         <div className="flex gap-3 items-center max-w-2xl mr-auto justify-between w-full">
           <div className="flex items-center justify-center gap-4 pl-10">
-            <span className="text-sm text-gray-500">01</span>
+            <span className="text-sm text-gray-500">{scrollIndex.toString().padStart(2, "0")}</span>
             <div className="w-80 h-1 bg-gray-200 rounded-full overflow-hidden">
               <div
                 className="h-full bg-blue-600 transition-all duration-300"
@@ -210,7 +221,9 @@ const TestimonialsSection: React.FC = () => {
               />
             </div>
             <span className="text-sm text-gray-500">
-              {testimonials.length.toString().padStart(2, "0")}
+              {Math.floor(testimonials.length / 2)
+                .toString()
+                .padStart(2, "0")}
             </span>
           </div>
           <div className="flex gap-4">

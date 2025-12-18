@@ -21,14 +21,14 @@ export const LocationsSection: React.FC = () => {
       {
         city: "Cheyenne, WY 82002, US",
         address: "Herschler Building East, 122 W 25th St, Suites 100 & 101",
-        phone: "+130 74 41 3171",
+        phone: "+1 (307) 441-3171",
       },
     ],
     UAE: [
       {
         city: "Al Nahda 1, Dubai, UAE",
-        address: "Office 318,  3rd Floor, Al Noor Building 1,",
-        phone: "+971 (0) 50 328 2209",
+        address: "Office 318,  3rd Floor, Al Noor Building 1",
+        phone: "+971 (50) 328-2209",
       },
     ],
     // "Middle East": [
@@ -52,11 +52,12 @@ export const LocationsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex">
           {/* Header Section */}
-          <div className="mb-12 w-1/2">
+          <div className="w-1/2">
             <div className="flex items-start justify-between">
               <div>
                 <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                  Our locations
+                  Reach Out to Our <br />
+                  <span className="text-blue-600"> Global Support Team</span>
                 </h2>
                 <p className="text-gray-600 mb-6">
                   Say hello to our friendly team at one
@@ -68,7 +69,7 @@ export const LocationsSection: React.FC = () => {
                   className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 transition"
                 >
                   <Mail className="w-5 h-5" />
-                  <span>rfq@b2cinc.com</span>
+                  <span>global@b2cinc.com</span>
                 </a>
               </div>
             </div>
@@ -92,7 +93,7 @@ export const LocationsSection: React.FC = () => {
                 </button>
               ))}
             </div>
-            <div className="grid grid-cols-2 gap-x-12 gap-y-8 mb-20">
+            <div className="grid grid-cols-2 gap-x-12 gap-y-8">
               {locations[activeTab].map((location, index) => (
                 <div key={index}>
                   <h3 className="font-semibold text-gray-900 mb-2">
@@ -109,7 +110,7 @@ export const LocationsSection: React.FC = () => {
         </div>
 
         {/* Newsletter Section */}
-        <div className="border-t border-gray-200 bg-gray-200 p-12">
+        {/* <div className="border-t border-gray-200 bg-gray-200 p-12">
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -137,7 +138,7 @@ export const LocationsSection: React.FC = () => {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { AIServicesSection } from "../../../componants/AiServices";
+import { SoftwareServices } from "@/app/componants/SoftwareServices";
 import { OurProjects } from "../../../componants/OurProjects";
 import { FeaturedProjects } from "../../../componants/FeaturedProjects";
 import { TechnologiesUsed } from "../../../componants/TechnologiesUsed";
@@ -9,6 +9,7 @@ import { ProcessProgress } from "../../../componants/ProgressBar";
 import { FAQForDataAI } from "@/app/componants/FQAForAI";
 import useInViewAnimation from "@/app/hooks/useInViewAnimation";
 import FadeSlideIn from "@/app/hooks/FadeSlideIn";
+import SoftwareProduct from "@/app/componants/Softwareproduct";
 
 interface Technology {
   name: string;
@@ -133,7 +134,23 @@ export default function AIDevelopementServices() {
       },
     ],
   };
-
+  const steps = [
+    {
+      title: "Business analysis",
+      description:
+        "Our team of business analysts thoroughly analyzes your revenue cycle processes, needs, and constraints. We then create a clear project road map and provide a general estimate for the project.",
+    },
+    {
+      title: "Solution architecture",
+      description:
+        "B2CINC's solution architects create a custom architectural blueprint, select suitable development tools and technologies, and identify potential challenges that might arise later in the project.",
+    },
+    {
+      title: "UI/UX Design",
+      description:
+        "We analyze end-user needs and create an intuitive UX design focused on usability and accessibility. The design is based on project specifics and customer expectations.",
+    },
+  ];
   const Industries = [
     {
       icon: "image.png",
@@ -171,25 +188,47 @@ export default function AIDevelopementServices() {
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
+  ];
+
+  const Advantages = [
     {
       icon: "image.png",
-      heading: "HealthCare",
+      heading: "HC",
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
     {
       icon: "image.png",
-      heading: "HealthCare",
+      heading: "HC",
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
     {
       icon: "image.png",
-      heading: "HealthCare",
+      heading: "HC",
+      description:
+        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
+    },
+    {
+      icon: "image.png",
+      heading: "HC",
+      description:
+        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
+    },
+    {
+      icon: "image.png",
+      heading: "HC",
+      description:
+        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
+    },
+    {
+      icon: "image.png",
+      heading: "HC",
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
   ];
+
   const Processes = [
     {
       icon: "image.png",
@@ -245,6 +284,20 @@ export default function AIDevelopementServices() {
       </div>
     );
   };
+
+  const AdvantagesDiv = ({ icon, heading, description }: Props) => {
+    return (
+      <div className="flex flex-col justify-start gap-5 mx-3 group hover:text-white hover:bg-blue-950 px-8 py-5">
+        <img src={icon} alt="icon" className="w-20 " />
+        <div className="flex justify-between pr-6">
+          <h4 className="text-xl">{heading}</h4>
+          <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition duration-400" />
+        </div>
+        <p className="text-lg">{description}</p>
+      </div>
+    );
+  };
+
   interface ProcessProps {
     index: number;
     heading: string;
@@ -295,13 +348,15 @@ export default function AIDevelopementServices() {
       <div className="w-8/12 mx-auto min-h-screen flex flex-col items-center">
         <div className="flex py-16 h-5/6 mt-28">
           <div className="flex flex-col w-1/2 h-3/4 gap-3 ">
-            <h2 className="text-5xl font-medium">AI Automation Services</h2>
-            <p className="text-2xl py-8 w-4/5">
-              Team up with B2CINC to explore the limitless potential of
-              artificial intelligence (AI)! From AI strategy building and data
-              analysis to AI integration and deployment, our comprehensive
-              artificial intelligence development services are tailored to
-              address challenges across domains.
+            <h2 className="text-5xl font-medium">Digital Marketing Services</h2>
+            <p className=" py-8 w-4/5 text-2xl text-gray-600  font-sans">
+              Through our full-cycle Digital Marketing Services, we help
+              cross-industry businesses of all sizes build impactful software
+              products faster and more cost-efficiently. From ideation to
+              post-launch maintenance, we carefully guide our clients every step
+              of the way, delivering high-quality and user-centric products that
+              satisfy the most exacting customer demands and realize the most
+              innovative business strategies.
             </p>
             <div className="flex gap-5 text-lg font-medium w-5/6">
               <button className="bg-blue-700 px-8 py-2 hover:bg-transparent w-full text-white hover:text-black transition">
@@ -321,7 +376,7 @@ export default function AIDevelopementServices() {
           </div>
         </div>
         <FadeSlideIn
-          className={`flex my-28 bg-blue-800 p-8 transition-all duration-700
+          className={`flex my-28 bg-blue-600 p-8 transition-all duration-700 h-[300px]
           ${
             inView
               ? "opacity-100 translate-x-0 ease-in" // when visible → slide to center
@@ -330,7 +385,7 @@ export default function AIDevelopementServices() {
           `}
         >
           <div className="flex flex-col w-1/2 h-3/4 gap-3 text-white">
-            <h2 className="text-2xl font-medium">AI Automation Services</h2>
+            <h2 className="text-2xl font-medium">Clutch Proven</h2>
             <p className="text-lg pt-6">
               Team up with B2CINC to explore the limitless potential of
               artificial intelligence (AI)! From AI strategy building and data
@@ -340,15 +395,73 @@ export default function AIDevelopementServices() {
             </p>
           </div>
           <div className="w-1/2 flex justify-center">
-            <img src="/image.png" alt="image" className="w-40 object-contain" />
+            <img
+              src="/clutchlogo.png"
+              alt="image"
+              className="w-40 object-contain"
+            />
           </div>
         </FadeSlideIn>
       </div>
       <div>
-        <AIServicesSection />
+        <SoftwareServices />
+      </div>
+      \
+      <div className="bg-blue-800 flex items-center w-[1300px] h-[350px] mx-auto text-white p-10">
+        {/* LEFT — IMAGE */}
+        <div className="w-[400px] flex justify-center items-center">
+          <img
+            src="/image.png"
+            alt="image"
+            className="h-[300px] w-auto object-cover rounded-md"
+          />
+        </div>
+
+        {/* RIGHT — TEXT */}
+        <div className="w-1/2">
+          <p className="text-lg leading-relaxed font-sans">
+            B2CINC's product engineers have extensive skill sets in project
+            management, interpersonal communication, creative thinking, design,
+            and technical expertise...
+          </p>
+
+          <div className="mt-5">
+            <p className="font-semibold text-lg">Alexey Galushko</p>
+            <p className="opacity-80">Delivery Director</p>
+          </div>
+        </div>
+      </div>
+      <div className="py-16 my-10 px-16 text-black bg-gray-100 w-full ">
+        <FadeSlideIn>
+          <SoftwareProduct />
+        </FadeSlideIn>
       </div>
       <div className="w-8/12 mx-auto">
-        <div className="py-16 my-10 px-16 text-white bg-blue-950">
+        <FadeSlideIn className="py-10">
+          <div className="flex flex-col gap-3 py-10">
+            <h5 className="text-sm font-medium font-sans">INDUSTRIES</h5>
+            <h2 className="text-4xl font-medium font-bold">
+              Our product engineering expertise across<br></br>industries
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 space-y-6 items-center font-sans">
+            {Industries.map((v, idx) => (
+              <IndustryDiv
+                key={idx}
+                icon={v.icon}
+                heading={v.heading}
+                description={v.description}
+              />
+            ))}
+          </div>
+          <div className="flex justify-center py-10">
+            <button className="bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300 mx-auto">
+              Book a call with an expert
+            </button>
+          </div>
+        </FadeSlideIn>
+
+        <div className="py-16 my-10 px-16 text-white  bg-blue-950">
           <FadeSlideIn className="flex flex-col gap-6 py-5 px-6">
             <h2 className="text-5xl bg-blue-700 px-4 py-2 w-fit">
               What about you?
@@ -363,7 +476,7 @@ export default function AIDevelopementServices() {
               <input
                 type="text"
                 placeholder="Message"
-                className="w-full bg-transparent pb-5 outline-none border-b my-5"
+                className="w-[650px] bg-transparent pb-5 outline-none border-b my-5"
               />
               <button className="bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300">
                 Next
@@ -371,34 +484,34 @@ export default function AIDevelopementServices() {
             </form>
           </FadeSlideIn>
         </div>
-        <FadeSlideIn className="py-10">
-          <div className="flex flex-col gap-3 py-10">
-            <h5 className="text-sm font-medium">INDUSTRIES</h5>
-            <h2 className="text-4xl font-medium">Industries we develop for</h2>
-          </div>
-          <div className="grid grid-cols-3 space-y-6 items-center">
-            {Industries.map((v, idx) => (
-              <IndustryDiv
-                key={idx}
-                icon={v.icon}
-                heading={v.heading}
-                description={v.description}
-              />
-            ))}
-          </div>
-          <div className="flex justify-center py-10">
-            <button className="bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300 mx-auto">
-              Book a call
-            </button>
-          </div>
-        </FadeSlideIn>
       </div>
-
+      <FadeSlideIn className="py-10">
+        <div className="flex flex-col gap-3 py-10 ml-[50px]">
+          <h5 className="text-sm font-medium font-sans">our advantages</h5>
+          <h2 className="text-4xl font-medium font-bold">
+            Our product items are
+          </h2>
+        </div>
+        <div className="grid grid-cols-3 space-y-6 items-center font-sans">
+          {Industries.map((v, idx) => (
+            <IndustryDiv
+              key={idx}
+              icon={v.icon}
+              heading={v.heading}
+              description={v.description}
+            />
+          ))}
+        </div>
+        <div className="flex justify-center py-10">
+          <button className="bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300 mx-auto">
+            Contact us for help
+          </button>
+        </div>
+      </FadeSlideIn>
       <FadeSlideIn>
         <OurProjects />
       </FadeSlideIn>
-
-      <div className="w-8/12 mx-auto">
+      {/* <div className="w-8/12 mx-auto">
         <div className="py-16 my-16 px-16 text-white flex bg-blue-950">
           <div className="flex flex-col gap-6 py-5 px-6 w-1/2">
             <h2 className="text-4xl font-bold">What about you?</h2>
@@ -420,10 +533,8 @@ export default function AIDevelopementServices() {
             />
           </div>
         </div>
-      </div>
-
-      <FadeSlideIn className="min-h-screen bg-blue-950 text-white p-10">
-        <div className="w-8/12 mx-auto">
+      </div> */}
+      {/* <div className="w-8/12 mx-auto">
           <div className="flex flex-col gap-3 py-10">
             <h5 className="text-sm font-medium">OUR PROCESS</h5>
             <h2 className="text-4xl font-medium">
@@ -444,57 +555,8 @@ export default function AIDevelopementServices() {
               />
             ))}
           </div>
-        </div>
-      </FadeSlideIn>
-
+        </div> */}
       <div className="w-8/12 mx-auto">
-        <section className="pt-10">
-          <div className="flex flex-col gap-3 py-10">
-            <h5 className="text-sm font-medium">INDUSTRIES</h5>
-            <h2 className="text-4xl font-medium">Industries we develop for</h2>
-          </div>
-          <FadeSlideIn className="grid grid-cols-3 gap-6 items-center">
-            {Processes.map((v, idx) => (
-              <FeatureDiv
-                key={idx}
-                icon={v.icon}
-                heading={v.heading}
-                description={v.description}
-              />
-            ))}
-          </FadeSlideIn>
-
-          <div className="flex justify-center py-5">
-            <button className="bg-blue-600 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300 mx-auto">
-              Let's discuss your project
-            </button>
-          </div>
-        </section>
-
-        <section className="py-10 min-h-screen flex justify-center">
-          <div className="my-16 text-white flex bg-blue-950 relative w-full">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/X0ZGhcvM0Xs?si=c_yZRBIVaWGKp_43"
-              title="hello"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-              className="w-full h-full"
-            />
-
-            {/* <video
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-95"
-            >
-              <source src="/main-video-mp4.mp4" type="video/mp4" />
-            </video> */}
-          </div>
-        </section>
-
         <div className="py-16 px-8 max-h-screen">
           {/* Header */}
           <div className="mb-12">
@@ -585,7 +647,6 @@ export default function AIDevelopementServices() {
       <FadeSlideIn>
         <FeaturedProjects />
       </FadeSlideIn>
-
       <FadeSlideIn>
         <TechnologiesUsed />
       </FadeSlideIn>

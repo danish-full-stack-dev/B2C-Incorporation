@@ -1,6 +1,13 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, Snowflake, Volleyball } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Instagram,
+  Linkedin,
+  Snowflake,
+  Volleyball,
+} from "lucide-react";
 import Link from "next/link";
 import { ButtonsWithArcs } from "../componants/ButtonsWithArcs";
 import { BorderAnimation } from "../componants/BorderAnimation";
@@ -22,6 +29,7 @@ const ImageDiv = (props: Props) => {
   const { title, image, heading, listOfFeatures, reverse } = props;
   const { setValue } = useCursor();
   const router = useRouter();
+  const color = title === "" ? "blue-800" : "white";
   return (
     <div
       className={`flex py-10 ${reverse ? "flex-row-reverse" : ""} group`}
@@ -76,6 +84,8 @@ export default function DesignHome() {
   const [index, setIndex] = useState<number>(0);
   const [fade, setFade] = useState<boolean>(true);
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const navigate = useRouter();
+
   const scroll = (direction: "left" | "right") => {
     const current = scrollRef.current;
     if (!current) return;
@@ -108,9 +118,9 @@ export default function DesignHome() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-95"
+          className="absolute inset-0 w-full h-full object-cover opacity-50"
         >
-          <source src="/main-video-mp4.mp4" type="video/mp4" />
+          <source src="/Design page video.mp4" type="video/mp4" />
         </video>
 
         <div className="relative flex justify-center items-center text-white h-5/6">
@@ -277,10 +287,7 @@ export default function DesignHome() {
         </section>
       </main>
       <section className="flex flex-col bg-black justify-center items-end">
-        <div
-          ref={scrollRef}
-          className="flex flex-row overflow-x-hidden snap-both snap-mandatory scroll-smooth w-10/12 ml-auto"
-        >
+        <div className="w-10/12 mx-auto">
           <TestimonialsSectionForDesign />
         </div>
       </section>
@@ -297,44 +304,55 @@ export default function DesignHome() {
           </div>
         </div>
         <div className="flex flex-row  gap-10 w-10/12 mx-auto my-16">
-          <BorderAnimation className="flex flex-col w-1/2 justify-between h-[25vh] p-8 group ">
-            <div className="flex flex-col gap-5 p-6">
-              <h3 className="text-2xl">Project Based</h3>
-              <p className="text-base">
-                If you have a need for a high-quality product delivered within a
-                set time frame, the traditional project-based model is your best
-                choice. We will work on the project design from A to Z and
-                ensure it's done in time and on budget.
+          <div
+            className="w-1/2"
+            onClick={() => {
+              navigate.push("/design/works/saya");
+            }}
+          >
+            <BorderAnimation className="flex flex-col justify-between h-[25vh] p-8 group hover:cursor-pointer">
+              <div className="flex flex-col gap-5 p-6">
+                <h3 className="text-2xl">Fixed Price Project</h3>
+                <p className="text-base">
+                  If you have a need for a high-quality product delivered within
+                  a set time frame, the traditional project-based model is your
+                  best choice. We will work on the project design from A to Z
+                  and ensure it's done in time and on budget.
+                </p>
+              </div>
+              <p className="flex gap-2 items-center pl-6 pb-3 w-fit">
+                Explore{" "}
+                <span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                </span>
               </p>
-            </div>
-            <Link href={"#"} className="flex gap-2 items-center pl-6 pb-3">
-              Explore{" "}
-              <span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-              </span>
-            </Link>
-          </BorderAnimation>
+            </BorderAnimation>
+          </div>
 
-          <BorderAnimation className="flex flex-col w-1/2 justify-between h-[25vh] p-8 group ">
-            <div className="flex flex-col gap-5 p-6">
-              <h3 className="text-2xl">Contract Based</h3>
-              <p className="text-base">
-                If you have a need for a high-quality product delivered within a
-                set time frame, the traditional project-based model is your best
-                choice. We will work on the project design from A to Z and
-                ensure it's done in time and on budget.
+          <div
+            className="w-1/2"
+            onClick={() => {
+              navigate.push("/design/works/saya");
+            }}
+          >
+            <BorderAnimation className="flex flex-col justify-between h-[25vh] p-8 group hover:cursor-pointer ">
+              <div className="flex flex-col gap-5 p-6">
+                <h3 className="text-2xl">Hourly Based Project</h3>
+                <p className="text-base">
+                  For ongoing design needs that require flexibility and
+                  adaptability, our hourly-based engagement model is ideal. You
+                  can scale the design resources up or down based on your
+                  current requirements, ensuring you only pay for what you need.
+                </p>
+              </div>
+              <p className="flex gap-2 items-center w-fit pl-6 pb-3">
+                Explore{" "}
+                <span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                </span>
               </p>
-            </div>
-            <Link
-              href={"#"}
-              className="flex gap-2 items-center w-fit pl-6 pb-3"
-            >
-              Explore{" "}
-              <span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-              </span>
-            </Link>
-          </BorderAnimation>
+            </BorderAnimation>
+          </div>
         </div>
         <section className="flex w-10/12 mx-auto my-16 justify-between">
           <div className="flex flex-col w-full">
@@ -344,13 +362,13 @@ export default function DesignHome() {
             </h3>
             <div className="flex gap-4 my-10">
               <button className="px-8 py-2 rounded-full w-fit outline-1 outline">
-                drop a line.!
+                Schedule..!
               </button>
               <button className="px-3 py-3 rounded-full w-fit outline-1 outline">
-                <Volleyball className="w-5 h-5" />
+                <Linkedin className="w-5 h-5" />
               </button>
               <button className="px-3 py-3 rounded-full w-fit outline-1 outline">
-                <Volleyball className="w-5 h-5" />
+                <Instagram className="w-5 h-5" />
               </button>
             </div>
           </div>
