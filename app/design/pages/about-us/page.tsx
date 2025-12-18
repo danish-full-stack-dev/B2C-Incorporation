@@ -56,7 +56,7 @@ export default function MergedPage() {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full bg-black">
       <div className="relative w-full h-screen bg-black overflow-hidden">
         {points.map((p, index) => {
           const isHover = hoverIndex === index;
@@ -101,7 +101,7 @@ export default function MergedPage() {
         })}
       </div>
       <FadeSlideIn>
-      <AboutSection/>
+        <AboutSection />
       </FadeSlideIn>
     </div>
   );

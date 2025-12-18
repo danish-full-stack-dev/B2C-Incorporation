@@ -26,7 +26,7 @@ const ImageDiv = (props: Props) => {
     if (title === "Kao") {
       return "text-[#D6031A]";
     } else if (title === "Saya") {
-      return "text-[#52301A]";
+      return "text-[#744E35]";
     } else if (title === "Scheweppes") {
       return "text-[#FCDB45]";
     } else {
@@ -311,7 +311,7 @@ export default function DesignHome() {
           <div
             className="w-1/2"
             onClick={() => {
-              navigate.push("/design/works/saya");
+              navigate.push("/design/works/kao");
             }}
           >
             <BorderAnimation className="flex flex-col justify-between h-[25vh] p-8 group hover:cursor-pointer">
@@ -365,15 +365,24 @@ export default function DesignHome() {
               <span className="text-blue-700">awesome together!</span>
             </h3>
             <div className="flex gap-4 my-10">
-              <button className="px-8 py-2 rounded-full w-fit outline-1 outline">
+              <Link
+                href={"/"}
+                className="px-8 py-2 rounded-full w-fit outline-1 outline"
+              >
                 Schedule..!
-              </button>
-              <button className="px-3 py-3 rounded-full w-fit outline-1 outline">
+              </Link>
+              <Link
+                href={"/"}
+                className="px-3 py-3 rounded-full w-fit outline-1 outline"
+              >
                 <Linkedin className="w-5 h-5" />
-              </button>
-              <button className="px-3 py-3 rounded-full w-fit outline-1 outline">
+              </Link>
+              <Link
+                href={"/"}
+                className="px-3 py-3 rounded-full w-fit outline-1 outline"
+              >
                 <Instagram className="w-5 h-5" />
-              </button>
+              </Link>
             </div>
           </div>
 
