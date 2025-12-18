@@ -3,6 +3,7 @@ import DashboardLayout from "./componants/layout/DashboardLayout";
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import CursorDotProvider from "./hooks/CursorContext";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,6 +41,14 @@ export default function RootLayout({
         </DashboardLayout>
         </CursorDotProvider>
         
+        <div className="z-100 bottom-6 right-6 fixed">
+          <Script
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          strategy="afterInteractive"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="6932879fd355bd76d8b85082"
+        />
+        </div>
       </body>
     </html>
   );

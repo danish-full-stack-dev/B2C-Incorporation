@@ -257,7 +257,7 @@ export const Navbar: React.FC = () => {
                   } `}
                 >
                   <span className="text-gray-500 text-xs font-bold mb-1">
-                    Trading Specialization
+                    Diversification
                   </span>
                   {[
                     {
@@ -295,23 +295,29 @@ export const Navbar: React.FC = () => {
                 <div className="flex flex-row text-base px-5">
                   <div className="flex flex-col gap-4 w-1/3 border-r-2  border-gray-700">
                     {[
-                    {
-                      heading: "About us",
-                      to: "/",
-                    },
-                    { heading: "Leadership", to: "/pages/weare/leadership" },
-                    { heading: "Expertise", to: "/pages/weare/experts" },
-                    { heading: "Carrers", to: "/pages/weare/leadership/carrers" },
-                    { heading: "Certification", to: "/pages/weare/certification" },
-                  ].map((value, idx) => (
-                    <Link
-                      href={value.to}
-                      key={idx}
-                      className="hover:text-blue-500 transition hover:cursor-pointer"
-                    >
-                      {value.heading}
-                    </Link>
-                  ))}
+                      {
+                        heading: "About us",
+                        to: "/",
+                      },
+                      { heading: "Leadership", to: "/pages/weare/leadership" },
+                      { heading: "Expertise", to: "/pages/weare/experts" },
+                      {
+                        heading: "Carrers",
+                        to: "/pages/weare/leadership/carrers",
+                      },
+                      {
+                        heading: "Certification",
+                        to: "/pages/weare/certification",
+                      },
+                    ].map((value, idx) => (
+                      <Link
+                        href={value.to}
+                        key={idx}
+                        className="hover:text-blue-500 transition hover:cursor-pointer"
+                      >
+                        {value.heading}
+                      </Link>
+                    ))}
                   </div>
                   <div className="flex flex-col w-2/3 pl-10">
                     <div className="flex justify-end">

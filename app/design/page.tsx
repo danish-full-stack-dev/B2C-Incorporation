@@ -1,20 +1,12 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import {
-  ArrowLeft,
-  ArrowRight,
-  Instagram,
-  Linkedin,
-  Snowflake,
-  Volleyball,
-} from "lucide-react";
+import { ArrowRight, Instagram, Linkedin, Snowflake } from "lucide-react";
 import Link from "next/link";
 import { ButtonsWithArcs } from "../componants/ButtonsWithArcs";
 import { BorderAnimation } from "../componants/BorderAnimation";
 import { designCards } from "../componants/CaseStudies";
 import { useCursor } from "../hooks/CursorContext";
 import { useRouter } from "next/navigation";
-import TestimonialsSection from "../componants/Testimonials";
 import TestimonialsSectionForDesign from "../componants/TestimonialsForDesignSection";
 
 interface Props {
@@ -29,7 +21,19 @@ const ImageDiv = (props: Props) => {
   const { title, image, heading, listOfFeatures, reverse } = props;
   const { setValue } = useCursor();
   const router = useRouter();
-  const color = title === "" ? "blue-800" : "white";
+
+  const colors = () => {
+    if (title === "Kao") {
+      return "text-[#D6031A]";
+    } else if (title === "Saya") {
+      return "text-[#52301A]";
+    } else if (title === "Scheweppes") {
+      return "text-[#FCDB45]";
+    } else {
+      return "bg-gradient-to-b from-[#f5d98b] via-[#d4a843] to-[#8a5a12] bg-clip-text text-transparent";
+    }
+  };
+  const color = colors();
   return (
     <div
       className={`flex py-10 ${reverse ? "flex-row-reverse" : ""} group`}
@@ -66,7 +70,7 @@ const ImageDiv = (props: Props) => {
       <div
         className={`flex flex-col w-2/6 px-6 opacity-0 group-hover:opacity-100 transition duration-300 gap-2 pl-5`}
       >
-        <h2 className="text-6xl font-bold text-blue-800">{title}</h2>
+        <h2 className={`text-6xl font-bold ${color}`}>{title}</h2>
         <h3 className="text-2xl font-thin text-white">{heading}</h3>
       </div>
     </div>
