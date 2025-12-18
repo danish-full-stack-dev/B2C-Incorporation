@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import FadeSlideIn from "@/app/hooks/FadeSlideIn";
+import { AboutSection } from "@/app/componants/AboulSlider";
 
 const SLIDE_SCROLL_HEIGHT = 1000;
 
@@ -53,52 +55,6 @@ export default function MergedPage() {
 
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
-  const slides = [
-    {
-      image: "/AI.png",
-      title: "our journey",
-      description:
-        "Our design studio was founded within a outsourcing software development company, giving us a distinct advantage. Having worked across numerous industries, we've gained invaluable insights into various domains. This broad experience allows us to design with a deep understanding of different user needs, creating intuitive and impactful user experiences that address specific business challenges.",
-    },
-    {
-      image: "/aws.png",
-      title: "our approach",
-      description:
-        "One of our key differentiators is the synergy we’ve built with our in-house development team. Our designers collaborate closely with developers, ensuring that the designs we create are not only visually appealing but also technically sound. This means we deliver solutions that leverage the latest technologies, optimized for performance, scalability, and ease of implementation.",
-    },
-    {
-      image: "/AI.png",
-      title: "our impact",
-      description:
-        "What truly sets us apart is our focus on creating designs that drive results. We believe that UX isn’t just about beautiful interfaces—it's about delivering user-centered solutions that align with business goals. By combining our expertise in various domains with our technical know-how, we ensure that every design decision contributes to a seamless user experience and the project’s success.",
-    },
-  ];
-
-  const ref = useRef<HTMLDivElement>(null);
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    const onScroll = () => {
-      if (!ref.current) return;
-
-      const start = ref.current.offsetTop;
-      const scrollY = window.scrollY;
-      const distance = scrollY - start;
-
-      if (distance < 0) return;
-
-      const index = Math.min(
-        slides.length - 1,
-        Math.floor(distance / SLIDE_SCROLL_HEIGHT)
-      );
-
-      setCurrent(index);
-    };
-
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
     <div className="w-full h-full">
       <div className="relative w-full h-screen bg-black overflow-hidden">
@@ -144,103 +100,9 @@ export default function MergedPage() {
           );
         })}
       </div>
-      <div
-        ref={ref}
-        className="relative bg-black"
-        style={{ height: `${slides.length * SLIDE_SCROLL_HEIGHT}px` }}
-      >
-        <div className="sticky top-0 h-screen flex overflow-hidden">
-          <div
-            className="absolute right-0 top-10 w-[400px] h-[400px] 
-              bg-blue-700/50 blur-[120px] rounded-full"
-          ></div>
-          {/* Image */}
-          <motion.div
-            key={slides[current].image}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="w-1/2 h-full"
-          >
-            <img
-              src={slides[current].image}
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-          <div className="w-1/2 bg-transparent text-white px-28 py-12 flex flex-col justify-between">
-            <div>
-              <div className="text-sm opacity-60 mb-6">
-                {String(current + 1).padStart(2, "0")} /{" "}
-                {String(slides.length).padStart(2, "0")}
-              </div>
-
-              <motion.h2
-                key={slides[current].title}
-                initial={{ y: 40, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6 }}
-                className="text-5xl font-light lowercase mb-6"
-              >
-                {slides[current].title}
-              </motion.h2>
-
-              <motion.p
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.1 }}
-                className="text-lg opacity-90 max-w-xl"
-              >
-                {slides[current].description}
-              </motion.p>
-            </div>
-            <div className="flex gap-4 mb-20">
-              <button
-                onClick={() => {
-                  const next = Math.max(0, current - 1);
-                  setCurrent(next);
-                  window.scrollTo({
-                    top: ref.current!.offsetTop + next * SLIDE_SCROLL_HEIGHT,
-                    behavior: "smooth",
-                  });
-                }}
-                className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M15 6L9 12L15 18"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-
-              <button
-                onClick={() => {
-                  const next = Math.min(slides.length - 1, current + 1);
-                  setCurrent(next);
-                  window.scrollTo({
-                    top: ref.current!.offsetTop + next * SLIDE_SCROLL_HEIGHT,
-                    behavior: "smooth",
-                  });
-                }}
-                className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M9 6L15 12L9 18"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <FadeSlideIn>
+      <AboutSection/>
+      </FadeSlideIn>
     </div>
   );
 }

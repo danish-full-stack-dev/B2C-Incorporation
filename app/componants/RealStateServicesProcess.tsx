@@ -79,7 +79,7 @@ export const RealStateServicesSection: React.FC = () => {
           </p>
           <div className="grid grid-cols-2 gap-12">
             <h2 className="text-4xl font-bold text-gray-900">
-              Our cloud engineering services
+              Our real state services
             </h2>
           </div>
         </div>

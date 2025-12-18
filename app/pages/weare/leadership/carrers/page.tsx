@@ -38,18 +38,16 @@ export default function CareersPage() {
 
   return (
     <>
-     <section className="relative pt-32 h-screen w-full overflow-hidden">
-  <video
-    autoPlay
-    muted
-    loop
-    playsInline
-    className="absolute inset-0 h-full w-full object-cover"
-  >
-    <source src="/carrers.mp.mp4" type="video/mp4" />
-  </video>
-
-
+      <section className="relative pt-32 h-screen w-full overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/carrers.mp.mp4" type="video/mp4" />
+        </video>
 
         <div className="absolute inset-0 " />
 
@@ -123,7 +121,7 @@ export default function CareersPage() {
                 {filteredJobs.map((job) => (
                   <div
                     key={job.id}
-                    className="group min-h-[160px] rounded-lg border border-gray-200 bg-white p-6 transition hover:border-blue-500 hover:shadow-md"
+                    className="group min-h-[160px] rounded-lg border border-gray-200 bg-white p-6 transition hover:border-blue-500 hover:shadow-md cursor-pointer"
                   >
                     <div className="flex justify-between">
                       <div>
