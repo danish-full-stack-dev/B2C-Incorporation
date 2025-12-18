@@ -66,7 +66,6 @@ export default function ContactUs() {
     className="w-1/2 h-4/5 object-contain opacity-50 -rotate-45"
   />
 </div>
-
     </section>
   );
 }

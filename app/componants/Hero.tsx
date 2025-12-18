@@ -24,7 +24,7 @@ export const Hero: React.FC = () => {
   }, [texts.length]);
 
   return (
-    <section className="relative pt-32 pb-20 bg-black overflow-hidden h-screen ">
+    <section className="relative pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-12 sm:pb-16 md:pb-20 bg-black overflow-hidden min-h-screen">
       <video
         autoPlay
         loop
@@ -40,10 +40,10 @@ export const Hero: React.FC = () => {
       {/* <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-1000"></div> */}
 
-      <div className="w-8/12 flex justify-center  relative z-10 mx-auto h-full">
-        <div className="gap-6 flex flex-col justify-center w-full h-5/6">
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:w-11/12 xl:w-10/12 2xl:w-8/12 flex justify-center relative z-10 mx-auto min-h-[calc(100vh-8rem)]">
+        <div className="gap-4 sm:gap-5 md:gap-6 flex flex-col  justify-center w-full">
           {/* LEFT CONTENT */}
-          <h1 className="font-pt text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight min-h-24">
+          <h1 className="font-pt text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-5 md:mb-6 leading-tight min-h-[4rem] sm:min-h-[5rem] md:min-h-[6rem] lg:min-h-24">
             <span
               className={`block text-blue-300 transition-all duration-500 ${
                 fade ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"
@@ -54,10 +54,10 @@ export const Hero: React.FC = () => {
           </h1>
 
           {/* CTA BUTTONS */}
-          <div className=" flex flex-col sm:flex-row gap-4 ">
+          <div className=" flex flex-col sm:flex-row gap-3 sm:gap-4 ">
             <a
               href="/"
-              className="font-serif px-10 py-2 bg-blue-600 hover:bg-blue-800 transition-all duration-500 text-white/90"
+              className="font-serif px-6 sm:px-8 md:px-10 py-2 bg-blue-600 hover:bg-blue-800 transition-all duration-500 text-white/90 text-center text-sm sm:text-base"
             >
               Let's Talk
             </a>
