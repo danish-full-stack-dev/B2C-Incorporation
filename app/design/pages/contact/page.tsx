@@ -59,14 +59,13 @@ export default function ContactUs() {
           </button>
         </div>
       </div>
-<div className="absolute left-3/4 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] flex justify-center">
-  <img
-    src="/favicon.png"
-    alt="logo"
-    className="w-1/2 h-4/5 object-contain opacity-50 -rotate-45"
-  />
-</div>
-
+      <div className="absolute left-3/4 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] flex justify-center">
+        <img
+          src="/favicon.png"
+          alt="logo"
+          className="w-1/2 h-4/5 object-contain opacity-50 -rotate-45"
+        />
+      </div>
     </section>
   );
 }
