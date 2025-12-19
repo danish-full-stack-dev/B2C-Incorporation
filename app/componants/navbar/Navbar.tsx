@@ -1,5 +1,5 @@
 "use client";
-import { ChevronDown, ChevronRight, Mail } from "lucide-react";
+import { ChevronDown, ChevronRight, Mail, Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -41,10 +41,76 @@ export const Navbar: React.FC = () => {
     }
   }, []);
 
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const menu = [
+    {
+      title: "What we do",
+      sections: [
+        {
+          heading: "Our Expertise",
+          links: [
+            "Design",
+            "Digital Marketing",
+            "App & Web Development",
+            "Online Reputation Management (ORM)",
+            "AI Automation",
+          ],
+        },
+        {
+          heading: "Fintech Specialization",
+          links: [
+            "Trading Platform",
+            "Blockchain Development",
+            "Payment Gateway Integration",
+          ],
+        },
+        {
+          heading: "Diversification",
+          links: [
+            "Real Estate",
+            "Trading Platform",
+            "Online Reputation Management (ORM)",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Who we are",
+      sections: [
+        {
+          heading: "Fintech Specialization",
+          links: [
+            "Trading Platform",
+            "Blockchain Development",
+            "Payment Gateway Integration",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Insights",
+      sections: [
+        {
+          heading: "Diversification",
+          links: [
+            "Real Estate",
+            "Trading Platform",
+            "Online Reputation Management (ORM)",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Case Studies",
+      sections: [],
+    },
+  ];
+
   return (
-    <div className="flex fixed w-full z-30 justify-center text-white mt-3">
+    <div className="flex fixed w-full z-30 md:justify-center text-white mt-3">
       <div
-        className={`fixed inset-0 bg-black/60 z-50 flex items-center justify-center transition-opacity ${
+        className={`fixed inset-0 bg-black/60 z-20 flex transition-opacity ${
           open
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -52,23 +118,63 @@ export const Navbar: React.FC = () => {
         onClick={() => setOpen(false)}
       >
         <div
-          className="bg-white rounded-lg overflow-hidden"
+          className="bg-white w-full h-fit"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="px-4 py-3 border-b font-semibold text-gray-800 flex justify-center">
             ABCD Schedule Call
           </div>
-          <iframe
-            src="https://api.leadconnectorhq.com/widget/form/WpGLuDg2sq9XRondlamP"
-            className="w-[90vw] max-w-[500px] h-[403px] border-none"
-            title="ABCD Schedule Call"
-          />
+          <div className="md:hidden bg-black text-white w-full">
+            <ul className="flex flex-col">
+              {menu.map((item, index) => (
+                <li key={index} className="border-b border-white/10 py-2">
+                  {/* Top Level Button */}
+                  <button
+                    onClick={() =>
+                      setOpenIndex(openIndex === index ? null : index)
+                    }
+                    className="w-full flex items-center justify-between px-6 py-4 text-left text-lg"
+                  >
+                    {item.title}
+                    <ChevronDown
+                      className={`transition-transform ${
+                        openIndex === index ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {/* Dropdown */}
+                  {openIndex === index && (
+                    <div className="bg-neutral-900 px-6 pb-4 space-y-6">
+                      {item.sections.map((section, i) => (
+                        <div key={i} className="flex flex-col gap-2">
+                          <h4 className="text-sm text-white/40 my-2">
+                            {section.heading}
+                          </h4>
+                          <ul className="flex flex-col gap-2">
+                            {section.links.map((link, j) => (
+                              <li
+                                key={j}
+                                className="text-white hover:text-blue-400 transition"
+                              >
+                                {link}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
       <div
         className={`${
-          strecth ? "w-5/12 p-0" : "w-8/12 p-1"
-        } bg-black/70 bg-opacity-90 flex flex-col transition-all duration-500`}
+          strecth ? "md:w-5/12 p-0" : "md:w-8/12 p-1"
+        } bg-black/70 bg-opacity-90 flex flex-col w-full transition-all duration-500`}
       >
         <div className="transition-all duration-500 p-2 flex items-center justify-between h-fit">
           <div className="gap-2 flex justify-center items-center">
@@ -107,7 +213,7 @@ export const Navbar: React.FC = () => {
               </h1>
             </Link>
           </div>
-          <div className="flex justify-center relative">
+          <div className="md:flex hidden justify-center relative">
             <ul className="flex gap-5">
               {["What we do", "Who we are", "Insights"].map((value, idx) => (
                 <div key={idx} className="relative">
@@ -138,7 +244,7 @@ export const Navbar: React.FC = () => {
               </Link>
             </ul>
           </div>
-          <div className=" flex justify-center">
+          <div className="md:flex hidden justify-center">
             {strecth ? (
               <button
                 className={`bg-blue-600 hover:bg-blue-800 transition-all duration-500 ${
@@ -157,6 +263,14 @@ export const Navbar: React.FC = () => {
                 Quick demo
               </button>
             )}
+          </div>
+          <div className="md:hidden flex">
+            <button
+              className={`bg-blue-600 hover:bg-blue-800 transition-all duration-500 px-4 py-2`}
+              onClick={() => setOpen(true)}
+            >
+              <Menu className="w-5 h-5" />
+            </button>
           </div>
         </div>
         {/* MODAL */}

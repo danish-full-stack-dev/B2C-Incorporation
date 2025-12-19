@@ -55,7 +55,7 @@ export default function page() {
           </div>
           <div className="flex justify-start w-10/12 mx-auto">
             <div className="flex flex-col gap-2">
-              <h1 className="text-7xl text-blue-700 font-thin">
+              <h1 className="text-7xl text-[#D6031A] font-thin">
                 Kao: A Cosmetics, Hygiene and Chemical Business.
               </h1>
               <span className="text-3xl text-white/80">Website</span>
@@ -162,11 +162,11 @@ export default function page() {
         <FadeSlideIn className="bg-black ">
           <div className="text-white/80 flex flex-col gap-10 py-20 w-8/12 mx-auto">
             <div>
-              <h5 className="text-red-700">Kao</h5>
+              <h5 className="text-red-700 font-bold">Kao</h5>
               <p>Visual identity</p>
             </div>
             <div>
-              <h5 className="text-red-700">Sobre</h5>
+              <h5 className="text-red-700 font-bold">Sobre</h5>
               <p>
                 Kao é uma figura dedicada a ajudar pessoas a mudarem de vida,
                 especialmente aquelas que desejam sair da estagnação. Através de
@@ -182,7 +182,7 @@ export default function page() {
               </p>
             </div>
             <div>
-              <h5 className="text-red-700">About</h5>
+              <h5 className="text-red-700 font-bold">About</h5>
               <p>
                 Kao is a person deeply committed to helping others transform
                 their lives, especially those looking to break free from
@@ -197,7 +197,7 @@ export default function page() {
               </p>
             </div>
             <div>
-              <h5 className="text-red-700">Team</h5>
+              <h5 className="text-red-700 font-bold">Team</h5>
               <p>
                 Creative Leader: Gulfam Tasawar
                 <br /> Designer: Gulfam Tasawar
