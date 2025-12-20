@@ -42,12 +42,12 @@ const WhyChooseUs: React.FC = () => {
         ref={sectionRef}
         className="py-32 transition-colors duration-300 relative bg-[#00091f]"
       >
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-200 capitalize">
+        <div className="max-w-4xl mx-auto text-center md:w-full w-10/12">
+          <motion.h2 className="text-xl md:text-5xl font-bold mb-6 text-gray-200 capitalize w-60 md:w-full mx-auto">
             WHY BUSINESSES CHOOSE B2C INC. FOR GROWTH AND INNOVATION
           </motion.h2>
 
-          <motion.p className="text-xl max-w-3xl mx-auto leading-relaxed mb-16 text-gray-200">
+          <motion.p className="md:text-xl text-sm md:max-w-3xl mx-auto leading-relaxed mb-16 text-gray-200">
             We at B2C INC. deliver end-to-end solutions in Design, Digital
             Marketing, Fintech, Trading, AI, and ORM, driven by deep insights
             and innovative technology.
@@ -58,12 +58,12 @@ const WhyChooseUs: React.FC = () => {
         <div className="overflow-hidden w-full py-5 bg-black/60">
           <motion.div
             className="flex gap-16"
-            animate={{ x: ["0%", "-50%"] }}
+            animate={{ x: ["0%", "-100%"] }}
             transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
           >
             {[...brands, ...brands, ...brands].map((logo, idx) => (
               <Link key={idx} href={"/design"} className="">
-                <div className="shrink-0 w-32 h-16 flex items-center  grayscale hover:grayscale-0 justify-center group relative">
+                <div className="shrink-0 md:w-32 w-20 md:h-16 h-auto flex items-center  grayscale hover:grayscale-0 justify-center group relative">
                   <img
                     src={logo}
                     alt={`Brand ${idx % brands.length}`}

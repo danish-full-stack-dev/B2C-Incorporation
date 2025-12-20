@@ -1,5 +1,5 @@
 "use client";
-import { ChevronDown, ChevronRight, Mail, Menu } from "lucide-react";
+import { ChevronDown, ChevronRight, Handshake, Mail, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -110,7 +110,7 @@ export const Navbar: React.FC = () => {
   return (
     <div className="flex fixed w-full z-30 md:justify-center text-white mt-3">
       <div
-        className={`fixed inset-0 bg-black/60 z-20 flex transition-opacity ${
+        className={`fixed inset-0 bg-black/90 z-20 flex transition-opacity ${
           open
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -118,22 +118,37 @@ export const Navbar: React.FC = () => {
         onClick={() => setOpen(false)}
       >
         <div
-          className="bg-white w-full h-fit"
+          className="w-full h-[50vh] bg-black/70"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="px-4 py-3 border-b font-semibold text-gray-800 flex justify-center">
-            ABCD Schedule Call
+          <div className="px-4 py-6 border-b font-semibold flex justify-between items-center">
+            <Image
+              src={logo}
+              alt="B2Clogo"
+              width={100}
+              height={8}
+              className="px-2 h-8 hover:cursor-pointer transition-transform duration-500"
+            />
+            <button
+              className={`hover:bg-gray-800 transition-all duration-500 px-2 py-2`}
+              onClick={() => setOpen(false)}
+            >
+              <X className="w-6 h-6" />
+            </button>
           </div>
-          <div className="md:hidden bg-black text-white w-full">
+          <div className="md:hidden text-white w-full">
             <ul className="flex flex-col">
               {menu.map((item, index) => (
-                <li key={index} className="border-b border-white/10 py-2">
+                <li
+                  key={index}
+                  className="border-b border-white/10 py-2 hover:text-blue-400"
+                >
                   {/* Top Level Button */}
                   <button
                     onClick={() =>
                       setOpenIndex(openIndex === index ? null : index)
                     }
-                    className="w-full flex items-center justify-between px-6 py-4 text-left text-lg"
+                    className="w-full flex items-center justify-between px-6 py-2 text-left text-base"
                   >
                     {item.title}
                     <ChevronDown
@@ -144,27 +159,41 @@ export const Navbar: React.FC = () => {
                   </button>
 
                   {/* Dropdown */}
-                  {openIndex === index && (
-                    <div className="bg-neutral-900 px-6 pb-4 space-y-6">
+                  <div
+                    className={`
+                      overflow-hidden
+                      transition-all
+                      duration-300
+                      ease-in-out
+                      ${
+                        openIndex === index
+                          ? "max-h-[500px] opacity-100"
+                          : "max-h-0 opacity-0"
+                      }
+                      bg-neutral-900 px-6
+                    `}
+                  >
+                    <div className="py-2 space-y-2">
                       {item.sections.map((section, i) => (
                         <div key={i} className="flex flex-col gap-2">
-                          <h4 className="text-sm text-white/40 my-2">
+                          <h4 className="text-xs text-white/40 my-2">
                             {section.heading}
                           </h4>
-                          <ul className="flex flex-col gap-2">
+                          <ul className="flex flex-col gap-2 pl-3">
                             {section.links.map((link, j) => (
                               <li
                                 key={j}
-                                className="text-white hover:text-blue-400 transition"
+                                className="text-white hover:text-blue-600 transition hover:scale-[1.05] text-sm"
                               >
-                                {link}
+                                <Link href={"/design"}>{link}</Link>
                               </li>
                             ))}
                           </ul>
                         </div>
                       ))}
                     </div>
-                  )}
+                  </div>
+                  {/* )} */}
                 </li>
               ))}
             </ul>
@@ -173,7 +202,7 @@ export const Navbar: React.FC = () => {
       </div>
       <div
         className={`${
-          strecth ? "md:w-5/12 p-0" : "md:w-8/12 p-1"
+          strecth ? "md:w-5/12 md:p-0 p-1" : "md:w-8/12 p-1"
         } bg-black/70 bg-opacity-90 flex flex-col w-full transition-all duration-500`}
       >
         <div className="transition-all duration-500 p-2 flex items-center justify-between h-fit">
@@ -181,7 +210,7 @@ export const Navbar: React.FC = () => {
             <Link href={"/"}>
               <span
                 className={`ml-2 ${
-                  strecth ? "flex p-2 bg-blue-600" : "hidden"
+                  strecth ? "md:flex hidden p-2 md:bg-blue-600 hover:bg-blue-800 transition-all duration-300" : "hidden"
                 }`}
               >
                 <Image
@@ -200,7 +229,13 @@ export const Navbar: React.FC = () => {
                 onMouseLeave={() => setLogo("/white spaced logo.png")}
               >
                 {strecth ? (
-                  ""
+                  <Image
+                    src={logo}
+                    alt="B2Clogo"
+                    width={100}
+                    height={8}
+                    className="px-2 w-full h-8 hover:cursor-pointer transition-transform duration-500 md:hidden block"
+                  />
                 ) : (
                   <Image
                     src={logo}
@@ -251,17 +286,17 @@ export const Navbar: React.FC = () => {
                   strecth ? "p-2" : "px-4 py-2 font-medium text-sm"
                 }`}
               >
-                <Mail className="h-5 w-5" />
+                <Handshake className="h-5 w-5" />
               </button>
             ) : (
-              <button
+              <Link
+                href={"/pages/contact"}
                 className={`bg-blue-600 hover:bg-blue-800 transition-all duration-500 ${
                   strecth ? "p-2" : "px-4 py-2 font-medium text-sm"
                 }`}
-                onClick={() => setOpen(true)}
               >
                 Quick demo
-              </button>
+              </Link>
             )}
           </div>
           <div className="md:hidden flex">
@@ -297,12 +332,8 @@ export const Navbar: React.FC = () => {
                 strecth ? "w-full" : "w-8/12"
               }`}
             >
-              <div className="grid grid-flow-col text-sm">
-                <div
-                  className={`flex flex-col gap-4 ${
-                    strecth ? "pr-10" : "pr-20"
-                  } border-r border-gray-700`}
-                >
+              <div className="grid grid-cols-3 grid-flow-col text-sm gap-x-6">
+                <div className={`flex flex-col gap-4 border-r px-4 border-gray-500`}>
                   <span className="text-gray-500 text-xs font-bold mb-1">
                     Our Expertise
                   </span>
@@ -334,11 +365,7 @@ export const Navbar: React.FC = () => {
                     </Link>
                   ))}
                 </div>
-                <div
-                  className={`flex flex-col gap-4 ${
-                    strecth ? "px-10" : "px-20"
-                  } border-r border-gray-700`}
-                >
+                <div className={`flex flex-col gap-4 border-r px-4 border-gray-500`}>
                   <span className="text-gray-500 text-xs font-bold mb-1">
                     Fintech specialization
                   </span>
@@ -365,11 +392,7 @@ export const Navbar: React.FC = () => {
                     </Link>
                   ))}
                 </div>
-                <div
-                  className={`flex flex-col gap-4 ${
-                    strecth ? "pl-10" : "pl-20"
-                  } `}
-                >
+                <div className={`flex flex-col gap-4 pl-4`}>
                   <span className="text-gray-500 text-xs font-bold mb-1">
                     Diversification
                   </span>
@@ -383,7 +406,7 @@ export const Navbar: React.FC = () => {
                       to: "/pages/specialization/tradings",
                     },
                     {
-                      heading: "Online Reputation Management(ORM's)",
+                      heading: "Online Reputation Management (ORM's)",
                       to: "/pages/specialization/orm-service",
                     },
                   ].map((value, idx) => (
