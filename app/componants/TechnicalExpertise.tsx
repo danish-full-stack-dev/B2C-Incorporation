@@ -18,16 +18,14 @@ const TechnicalExpertise: React.FC = () => {
           </div>
         </div>
       </section>
-      <section className="flex flex-col">
+
+      {/* Award Image Section */}
+      <section className="flex flex-col w-full">
         <img
           src="award__2.png"
           alt="bg award image"
-          className="w-full h-full bg-cover"
+          className="w-full h-auto object-cover"
         />
-        {/* Section Heading */}
-        {/* <div className="absolute text-white bg-blue-800 rounded-full px-6 py-7">
-          hello
-        </div> */}
       </section>
       <section className="md:relative flex flex-col bg-[#00091f] py-20 font-sans text-white">
         <div className="flex flex-col justify-center md:items-center items-end">
@@ -39,7 +37,7 @@ const TechnicalExpertise: React.FC = () => {
               { header: "WE WORK SINCE", value: "2024" },
               { header: "LOCATION WORLDWIDE", value: "02" },
               { header: "ON-GOING CLIENTS", value: "200+" },
-              { header: "SERVED-CLIENTS", value: "1000+" },
+              { header: "SERVED CLIENTS", value: "1000+" },
             ].map((v, idx) => (
               <div
                 key={idx}
