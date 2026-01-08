@@ -2,11 +2,11 @@
 import { useEffect, useState } from "react";
 
 export const ServicesHero: React.FC = () => {
- const texts: string[] = [
-  "STRATEGIC, SCALABLE,RESULTS-DRIVEN SERVICES",
-  "DIGITAL, CLOUD, AI & BUSINESS TRANSFORMATION",
-  "END-TO-END SOLUTIONS DESIGNED FOR SUSTAINABLE GROWTH"
-];
+  const texts: string[] = [
+    "STRATEGIC, SCALABLE,RESULTS-DRIVEN SERVICES",
+    "DIGITAL, CLOUD, AI & BUSINESS TRANSFORMATION",
+    "END-TO-END SOLUTIONS DESIGNED FOR SUSTAINABLE GROWTH",
+  ];
   const [index, setIndex] = useState<number>(0);
   const [fade, setFade] = useState<boolean>(true);
 
@@ -33,6 +33,7 @@ export const ServicesHero: React.FC = () => {
       >
         <source src="/servicesvideo.mp4" type="video/mp4" />
       </video>
+      <div className="absolute inset-0 bg-black/50 " />
 
       <div className="w-8/12 flex justify-center  relative z-10 mx-auto h-full">
         <div className="gap-6 flex flex-col justify-center  w-full h-5/6">

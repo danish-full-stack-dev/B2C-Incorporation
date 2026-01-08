@@ -90,7 +90,7 @@ export default function DesignPage() {
       title: "Proof of Concept",
       description:
         "Validate breakthrough ideas with rapid, high-fidelity prototypes.",
-      image: "",
+      image: "/favicon.png",
       phase: "strategize",
     },
     {
@@ -98,14 +98,14 @@ export default function DesignPage() {
       title: "MVP Design",
       description:
         "Launch lean, lovable products that captivate early adopters instantly.",
-      image: "",
+      image: "/favicon.png",
       phase: "strategize",
     },
     {
       id: 4,
       title: "UX/UI Excellence",
       description: "Craft interfaces that users love and competitors envy.",
-      image: "",
+      image: "/favicon.png",
       phase: "create",
     },
     {
@@ -113,7 +113,7 @@ export default function DesignPage() {
       title: "Design Systems",
       description:
         "Build scalable foundations for consistent, world-class experiences.",
-      image: "",
+      image: "/favicon.png",
       phase: "create",
     },
     {
@@ -121,7 +121,7 @@ export default function DesignPage() {
       title: "Brand Evolution",
       description:
         "Scale your visual identity while maintaining core authenticity.",
-      image: "",
+      image: "/favicon.png",
       phase: "scale",
     },
     {
@@ -129,7 +129,7 @@ export default function DesignPage() {
       title: "Growth Design",
       description:
         "Engineer experiences that drive exponential user acquisition.",
-      image: "",
+      image: "/favicon.png",
       phase: "scale",
     },
   ];
@@ -168,8 +168,6 @@ export default function DesignPage() {
             top: mousePosition.y - 300,
           }}
         />
-        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px] animate-pulse" />
-        <div className="absolute bottom-1/3 left-1/3 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px] animate-pulse" />
       </div>
 
       <div className="flex items-end justify-between pr-10 w-10/12 mx-auto ">
@@ -218,7 +216,7 @@ export default function DesignPage() {
         ))}
       </div>
 
-      <div className="relative text-white mt-32 md:mt-40 lg:mt-48 w-full px-4 sm:px-6 md:px-8 lg:w-11/12 xl:w-10/12 mx-auto">
+      <div className="text-white mt-32 md:mt-40 lg:mt-48 w-full px-4 sm:px-6 md:px-8 lg:w-11/12 xl:w-10/12 mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium leading-tight mb-6">
             Your journey to <span className="text-blue-800">excellence</span>
@@ -317,7 +315,7 @@ export default function DesignPage() {
         </div>
       </div>
 
-      <section className="relative text-white mt-32 md:mt-40 lg:mt-48 w-full px-4 sm:px-6 md:px-8 lg:w-11/12 xl:w-10/12 mx-auto">
+      <section className="text-white mt-32 md:mt-40 lg:mt-48 w-full px-4 sm:px-6 md:px-8 lg:w-11/12 xl:w-10/12 mx-auto">
         <div className="text-4xl flex mx-auto  justify-center">
           <div className="flex w-full">
             <h3 className="w-2/5 leading-tight">
@@ -382,15 +380,13 @@ export default function DesignPage() {
         </div>
       </section>
 
-      <div className="relative w-full bg-black flex flex-col items-center text-center py-24 md:py-32 px-4">
-        <div className="absolute inset-0" />
-
-        <div className="relative max-w-5xl">
+      <div className="w-full bg-black flex flex-col items-center text-center py-24 md:py-32 px-4">
+        <div className="max-w-5xl">
           <Sparkles className="w-16 h-16 text-blue-800 mx-auto mb-8 animate-pulse" />
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-blue-800 leading-tight mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             Ready to create{" "}
-            <span className="text-blue-800">something extraordinary</span>?
+            <span className="text-blue-800">something extraordinary</span>..?
           </h2>
 
           <p className="text-white/60 text-base md:text-lg lg:text-xl leading-relaxed mb-12 max-w-3xl mx-auto">
@@ -398,8 +394,8 @@ export default function DesignPage() {
             captivates users and dominates markets
           </p>
 
-          <button className="group relative px-10 py-5 bg-blue-800 text-white font-bold text-lg rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50">
-            <span className="relative z-10">Let's Talk</span>
+          <button className="group relative px-10 py-3 bg-blue-800 text-white font-medium rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50">
+            <span className="relative z-10 text-base">Let's Talk</span>
             <div className="absolute inset-0 bg-blue-900 opacity-0 group-hover:opacity-100 transition-opacity" />
           </button>
         </div>

@@ -8,7 +8,7 @@ export const allServices = [
   // ---------------- SPECIALIZATION: REAL ESTATE ----------------
   {
     title: "Our Strategic Expertise",
-    image: "/stretgy.png",
+    source: "/b2c animation.mp4",
     description:
       "We empower real estate businesses with modern digital solutions automation, analytics, and immersive experiences to maximize ROI.",
     services: [
@@ -22,7 +22,7 @@ export const allServices = [
   // ---------------- ORM ----------------
   // {
   //   title: "Online Reputation Management (ORM)",
-  //   image: "/phone.png",
+  //   source: "/phone.png",
   //   description:
   //     "We protect and enhance your brand's online presence through strategic reputation management and proactive engagement.",
   //   services: [
@@ -42,7 +42,7 @@ export const allServices = [
   // ---------------- APP DEVELOPMENT ----------------
   {
     title: "Mobile App Development",
-    image: "/phone.png",
+    source: "/phoneVideo.mp4",
     description:
       "We develop robust iOS and Android applications that combine intuitive design with powerful functionality and scalable architecture.",
     services: [
@@ -59,7 +59,7 @@ export const allServices = [
   // ---------------- WEB DEVELOPMENT ----------------
   {
     title: "Web Design & Development",
-    image: "/webDesign.png",
+    source: "/web design.mp4",
     description:
       "We build modern, responsive websites engineered for performance, scalability, and exceptional user experience.",
     services: [
@@ -75,7 +75,7 @@ export const allServices = [
   // ---------------- DESIGN ----------------
   {
     title: "Brand Identity & Strategy",
-    image: "/brancIdentity.png",
+    source: "/b2c branding.mp4",
     description:
       "We create strong brand identities and strategic frameworks that position your business for long-term market impact.",
     services: [
@@ -92,7 +92,7 @@ export const allServices = [
   // ---------------- MARKETING ----------------
   {
     title: "Digital Marketing & Growth",
-    image: "/marketing.png",
+    source: "/marketing.mp4",
     description:
       "We drive measurable growth using data-driven marketing strategies designed to increase visibility, engagement, and revenue.",
     services: [
@@ -108,7 +108,7 @@ export const allServices = [
   // ---------------- AI ENGINEERING ----------------
   {
     title: "AI Engineering & Automation",
-    image: "/AI.png",
+    source: "/automation.mp4",
     description:
       "We engineer intelligent AI systems tailored to automate workflows, enhance operational efficiency, and improve business decision-making.",
     services: [
@@ -132,28 +132,53 @@ export const Services = () => {
   });
   interface Service {
     title: string;
-    image: string;
+    source: string;
     description: string;
     services: string[];
   }
 
   interface InnerContentProps {
     service: Service;
+    reverse?: Boolean;
   }
 
-  const InnerContent = ({ service }: InnerContentProps) => {
+  const InnerContent = ({ service, reverse }: InnerContentProps) => {
     return (
-      <div className="flex flex-col md:flex-row h-full font-pt">
-        {/* Image Section */}
-        <div className="w-full md:w-5/12 bg-black/90 md:h-full h-[40vh] md:relative overflow-hidden">
-          <div className="md:absolute inset-0 " />
-          <div className="h-full w-full flex items-center justify-center text-9xl ">
-            <img
-              src={service.image}
-              alt="web dev"
-              className="w-full h-full top-0 right-0 object-cover"
-            />
-          </div>
+      <div
+        className={`flex flex-col md:flex-row ${
+          reverse ? "md:flex-row-reverse" : ""
+        } h-full font-pt`}
+      >
+        {/* source Section */}
+        <div
+          className={`w-full md:w-5/12 bg-black/90 md:h-full h-[40vh] md:relative overflow-hidden`}
+        >
+          {service.title.toLocaleLowerCase() === "mobile app development" ||
+          service.title.toLocaleLowerCase() === "our strategic expertise" ||
+          service.title.toLocaleLowerCase() === "web design & development" ||
+          service.title.toLocaleLowerCase() === "brand identity & strategy" ||
+          service.title.toLocaleLowerCase() === "ai engineering & automation" ||
+          service.title.toLocaleLowerCase() === "digital marketing & growth" ? (
+            <div className="w-full md:h-full h-[40vh] overflow-hidden">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover opacity-95"
+              >
+                <source src={service.source} type="video/mp4" />
+              </video>
+            </div>
+          ) : (
+            <div className="h-full w-full flex items-center justify-center text-9xl ">
+              <img
+                src={service.source}
+                alt="web dev"
+                className="w-full h-full top-0 right-0 object-cover"
+              />
+            </div>
+          )}
         </div>
 
         {/* Content Section */}
@@ -161,12 +186,12 @@ export const Services = () => {
           <div className="flex flex-col md:h-3/5 md:w-4/5 md:p-0 p-5 justify-start">
             <div className="md:w-3/5 w-full">
               <div className="flex justify-between group">
-                <h3 className="md:text-3xl text-xl font-bold font-pt mb-6 hover:text-blue-800 hover:cursor-pointer">
+                <h2 className="text-xl lg:text-4xl md:text-3xl font-bold font-pt mb-6 hover:text-blue-800 hover:cursor-pointer ">
                   {service.title}
-                </h3>
+                </h2>
                 <ArrowUpRight className="w-7 h-7 group-hover:text-blue-800 group-hover:cursor-pointer group-hover:translate-x-1 group-hover:-translate-y-1 transition" />
               </div>
-              <p className="text-xl leading-relaxed opacity-90">
+              <p className="md:text-xl text-base leading-relaxed opacity-90">
                 {service.description}
               </p>
               <div className="flex gap-5  mt-5 pb-5 border-b-2 ">
@@ -195,7 +220,7 @@ export const Services = () => {
       <section
         ref={containerRef}
         className="relative w-full"
-        style={{ height: `${(allServices.length - 1) * 100}vh` }}
+        style={{ height: `${(allServices.length - 1) * 60}vh` }}
       >
         <div className="sticky top-0 h-screen flex items-start overflow-hidden">
           {allServices.map((servic, index) => {
@@ -218,7 +243,7 @@ export const Services = () => {
                 }}
                 className={`absolute inset-0 w-full md:h-screen overflow-hidden bg-white text-black border-t-2`}
               >
-                <InnerContent service={servic} />
+                <InnerContent service={servic} reverse={index % 2 !== 0} />
               </motion.div>
             );
           })}
@@ -228,7 +253,11 @@ export const Services = () => {
       <section className="hidden">
         <div className="min-h-screen">
           {allServices.map((servic, index) => (
-            <InnerContent key={index} service={servic} />
+            <InnerContent
+              key={index}
+              service={servic}
+              reverse={index % 2 === 0}
+            />
           ))}
         </div>
       </section>

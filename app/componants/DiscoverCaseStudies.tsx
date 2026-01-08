@@ -1,9 +1,12 @@
+"use client";
 import { designCards } from "./CaseStudies";
 import { useCursor } from "../hooks/CursorContext";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function DiscoverCaseStudies() {
   const { setValue } = useCursor();
+  const navigate = useRouter();
   const [imageSrc, setImageSrc] = useState<string | null>(null);
   return (
     <section className="bg-black">
@@ -34,6 +37,11 @@ export default function DiscoverCaseStudies() {
                   setImageSrc(null);
                 }}
                 className={`flex justify-between items-center py-8 hover:border-blue-700 text-white/80 border-white/30 hover:text-blue-700 hover:cursor-pointer border-t transition-colors duration-300 `}
+                onClick={() => {
+                  navigate.push(
+                    `/design/works/${caseStudy.title.toLowerCase()}`
+                  );
+                }}
               >
                 <h5 className="text-2xl">{caseStudy.title}</h5>
                 <div className="flex">

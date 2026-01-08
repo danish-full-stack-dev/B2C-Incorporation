@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import FadeSlideIn from "../hooks/FadeSlideIn";
 
 export const ButtonsWithArcs: React.FC = () => {
   const [activeStep, setActiveStep] = useState<number | null>(null);
@@ -14,7 +15,7 @@ export const ButtonsWithArcs: React.FC = () => {
   ];
 
   return (
-    <div className="bg-black flex items-center justify-center">
+    <FadeSlideIn className="bg-black flex items-center justify-center">
       <div className="w-full md:max-w-7xl mx-auto md:p-0 px-5 flex md:flex-col flex-row-reverse">
         {/* Process boxes */}
         <div className="flex md:flex-row flex-col-reverse items-start justify-between gap-4 relative">
@@ -54,6 +55,6 @@ export const ButtonsWithArcs: React.FC = () => {
           </svg>
         </div>
       </div>
-    </div>
+    </FadeSlideIn>
   );
 };

@@ -8,6 +8,7 @@ import React, { useEffect, useState } from "react";
 export const DesignPageNavbar: React.FC = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrollingDown, setIsScrollingDown] = useState(false);
+  const [logo, setLogo] = useState("/white spaced logo.png"); 
   const [hideNav, setHideNav] = useState(false);
 
   useEffect(() => {
@@ -87,7 +88,19 @@ export const DesignPageNavbar: React.FC = () => {
             </button>
           </div>
           {/* LOGO */}
-          <img src="/whiteDesignLogo.png" alt="logo" className="h-4" />
+          <Link
+            href={"/"}
+            onMouseEnter={() => setLogo("/spaced logo blue.png")}
+            onMouseLeave={() => setLogo("/white spaced logo.png")}
+          >
+            <Image
+              src={logo}
+              alt="B2Clogo"
+              width={100}
+              height={8}
+              className="px-2 h-8 hover:cursor-pointer transition-colors duration-500"
+            />
+          </Link>
 
           {/* NAV LINKS */}
           <div className="md:flex justify-center hidden">

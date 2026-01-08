@@ -5,7 +5,7 @@ export const Hero: React.FC = () => {
   const texts: string[] = [
     "DYNAMIC, INTELLIGENT, CREATIVE, POWERFUL",
     "AI-ENABLED, CLOUD-NATIVE, DIGITAL & FINTECH-FOCUSED",
-    "DESIGN-LED DIGITAL, FINTECH & REPUTATION SOLUTIONS FOR BUSINESS GROWTH"
+    "FINTECH & REPUTATION SOLUTIONS FOR BUSINESS GROWTH",
   ];
 
   const [index, setIndex] = useState<number>(0);
@@ -30,7 +30,7 @@ export const Hero: React.FC = () => {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full md:object-cover object-fill opacity-95"
+        className="absolute inset-0 w-full h-full md:object-cover object-contain opacity-95"
       >
         <source src="/main-video-mp4.mp4" type="video/mp4" />
       </video>
@@ -41,9 +41,9 @@ export const Hero: React.FC = () => {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-1000"></div> */}
 
       <div className="md:w-8/12 w-10/12 flex justify-center  relative z-10 mx-auto h-full">
-        <div className="gap-6 flex flex-col justify-center w-full h-5/6">
+        <div className="gap-6 flex flex-col justify-center w-full md:h-4/6 h-5/6">
           {/* LEFT CONTENT */}
-          <h1 className="font-pt md:text-5xl text-2xl lg:text-6xl font-bold text-white mb-6 leading-tight md:min-h-24 h-3/6">
+          <h1 className="font-pt md:text-5xl text-2xl lg:text-6xl font-bold text-white mb-6 leading-tight md:min-h-24">
             <span
               className={`block text-blue-300 transition-all duration-500 ${
                 fade ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"
@@ -54,7 +54,7 @@ export const Hero: React.FC = () => {
           </h1>
 
           {/* CTA BUTTONS */}
-          <div className=" flex flex-col sm:flex-row gap-4 ">
+          <div className="flex flex-col sm:flex-row">
             <a
               href="/"
               className="font-serif md:px-10 px-8 py-2 w-fit md:text-lg text-sm bg-blue-600 hover:bg-blue-800 transition-all duration-500 text-white/90"

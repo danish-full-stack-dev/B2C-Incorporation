@@ -23,9 +23,7 @@ interface TechCategory {
 export default function AIDevelopementServices() {
   const [active, setActive] = useState(0);
 
-  const [activeTab, setActiveTab] = useState<string>(
-    "Payment gateways & APIs"
-  );
+  const [activeTab, setActiveTab] = useState<string>("Payment gateways & APIs");
   const { ref, inView } = useInViewAnimation();
 
   const tabs = [
@@ -149,7 +147,11 @@ export default function AIDevelopementServices() {
     { name: "EOSIO", logo: "/logos/eosio.svg", alt: "EOSIO logo" },
     { name: "IOTA", logo: "/logos/iota.svg", alt: "IOTA logo" },
     { name: "Near", logo: "/logos/near.svg", alt: "Near logo" },
-    { name: "Ethereum Hardhat", logo: "/logos/hardhat.svg", alt: "Ethereum Hardhat logo" },
+    {
+      name: "Ethereum Hardhat",
+      logo: "/logos/hardhat.svg",
+      alt: "Ethereum Hardhat logo",
+    },
     { name: "Moonbeam", logo: "/logos/moonbeam.svg", alt: "Moonbeam logo" },
     { name: "Avalanche", logo: "/logos/avalanche.svg", alt: "Avalanche logo" },
     { name: "XinFin", logo: "/logos/xinfin.svg", alt: "XinFin logo" },
@@ -157,75 +159,94 @@ export default function AIDevelopementServices() {
 
   const Industries = [
     {
-      icon: "image.png",
-      heading: "Finance",
-      description:
-        "AI solutions can ensure accurate diagnoses,drug discovery, streamline medical research, and more, st levels of sensitivity data.",
-    },
-    {
-      icon: "image.png",
-      heading: "Trading",
-      description:
-        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data,",
-    },
-    {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "HealthCare",
       description:
-        "AI solutions line medical research, and more, all while adhering to all required standards to uphold the highest l evels of sensitivity.",
+        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "HealthCare",
       description:
-        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual healthcare data.",
+        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "HealthCare",
       description:
-        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data the highest.",
+        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "HealthCare",
       description:
-        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven.",
+        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
+    },
+    {
+      icon: "/favicon.png",
+      heading: "HealthCare",
+      description:
+        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
+    },
+    {
+      icon: "/favicon.png",
+      heading: "HealthCare",
+      description:
+        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
+    },
+    {
+      icon: "/favicon.png",
+      heading: "HealthCare",
+      description:
+        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
+    },
+    {
+      icon: "/favicon.png",
+      heading: "HealthCare",
+      description:
+        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
+    },
+    {
+      icon: "/favicon.png",
+      heading: "HealthCare",
+      description:
+        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
   ];
+
   const Processes = [
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "Kick-off",
       description:
         "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "Kick-off",
       description:
         "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "Kick-off",
       description:
         "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "Kick-off",
       description:
         "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "Kick-off",
       description:
         "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "Kick-off",
       description:
         "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
@@ -286,8 +307,8 @@ export default function AIDevelopementServices() {
 
   const FeatureDiv = ({ icon, heading, description }: Props) => {
     return (
-      <div className="flex flex-col justify-start p-5 group hover:bg-gray-100">
-        <img src={icon} alt="icon" className="w-20 " />
+      <div className="flex flex-col justify-start p-5 group hover:bg-gray-100 gap-2">
+        <img src={icon} alt="icon" className="w-8" />
         <h4 className="text-3xl">{heading}</h4>
         <p className="text-lg w-full">{description}</p>
       </div>
@@ -300,11 +321,16 @@ export default function AIDevelopementServices() {
           <div className="flex flex-col w-1/2 h-3/4 gap-3 mt-20px">
             <h2 className="text-5xl font-medium">Сustom Payment Solutions</h2>
             <p className="text-xl py-8 w-4/5 font-sans">
-             Slow transactions, limited payment options, or compliance gaps cause your clients to drop purchases at checkout, create failed settlements, and expose your business to regulatory penalties.
-             <br />
-             <br />
-
-We address these challenges with payment gateway integration and payment processing software development. Our solutions support multiple payment methods and currencies, ensuring a smooth and secure checkout experience for your clients while meeting the latest regulatory standards, like PCI DSS and AML
+              Slow transactions, limited payment options, or compliance gaps
+              cause your clients to drop purchases at checkout, create failed
+              settlements, and expose your business to regulatory penalties.
+              <br />
+              <br />
+              We address these challenges with payment gateway integration and
+              payment processing software development. Our solutions support
+              multiple payment methods and currencies, ensuring a smooth and
+              secure checkout experience for your clients while meeting the
+              latest regulatory standards, like PCI DSS and AML
             </p>
             <div className="flex gap-5 text-lg font-medium w-5/6">
               <button className="bg-blue-700 px-8 py-2 hover:bg-transparent w-full text-white hover:text-black transition">
@@ -343,48 +369,48 @@ We address these challenges with payment gateway integration and payment process
             </p>
           </div>
           <div className="w-1/2 flex justify-center">
-            <img src="/clutchlogo.png" alt="image" className="w-40 object-contain" />
+            <img
+              src="/clutchlogo.png"
+              alt="image"
+              className="w-40 object-contain"
+            />
           </div>
         </FadeSlideIn>
       </div>
       <FadeSlideIn className="py-10">
-          <div>
-            <CloudServicesSection/>
-          </div>
-        </FadeSlideIn>
-      <div className="bg-blue-800 flex items-center w-[1300px] h-[350px] mx-auto text-white p-10">
-  
-  {/* LEFT — IMAGE */}
-  <div className="w-[400px] flex justify-center items-center">
-    <img 
-      src="/favicon.png" 
-      alt="image" 
-      className="h-[200px] w-auto object-cover -rotate-45 opacity-200"
-    />
-  </div>
-
-  {/* RIGHT — TEXT */}
-  <div className="w-1/2">
-    <p className="text-lg leading-relaxed font-sans">
-      B2CINC's product engineers have extensive skill sets in project 
-      management, interpersonal communication, creative thinking, design, and 
-      technical expertise...
-    </p>
-
-    <div className="mt-5">
-      <p className="font-semibold text-lg">Alexey Galushko</p>
-      <p className="opacity-80">Delivery Director</p>
-    </div>
-  </div>
-
-</div>
- <div>
-    <FadeSlideIn>
-        <WorkProcess/>
+        <div>
+          <CloudServicesSection />
+        </div>
       </FadeSlideIn>
- </div>
- 
+      <div className="bg-blue-800 flex items-center w-[1300px] h-[350px] mx-auto text-white p-10">
+        {/* LEFT — IMAGE */}
+        <div className="w-[400px] flex justify-center items-center">
+          <img
+            src="/favicon.png"
+            alt="image"
+            className="h-[200px] w-auto object-cover -rotate-45 opacity-200"
+          />
+        </div>
 
+        {/* RIGHT — TEXT */}
+        <div className="w-1/2">
+          <p className="text-lg leading-relaxed font-sans">
+            B2CINC's product engineers have extensive skill sets in project
+            management, interpersonal communication, creative thinking, design,
+            and technical expertise...
+          </p>
+
+          <div className="mt-5">
+            <p className="font-semibold text-lg">Alexey Galushko</p>
+            <p className="opacity-80">Delivery Director</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <FadeSlideIn>
+          <WorkProcess />
+        </FadeSlideIn>
+      </div>
 
       <FadeSlideIn>
         <OurProjects />
@@ -407,29 +433,29 @@ We address these challenges with payment gateway integration and payment process
             ))}
           </FadeSlideIn>
 
-           <div className="py-16 my-10 px-16 text-white  bg-blue-950">
-                    <FadeSlideIn className="flex flex-col gap-6 py-5 px-6">
-                      <h2 className="text-5xl bg-blue-700 px-4 py-2 w-fit">
-                        What about you?
-                      </h2>
-                      <p className="text-xl w-3/5">
-                        We're eager to delve deeper and understand your specific needs to
-                        unlock the full potential of AI for your business. By learning
-                        more about your challenges and goals, we can tailor our solutions
-                        to serve you best.
-                      </p>
-                      <form className="group flex flex-col gap-6">
-                        <input
-                          type="text"
-                          placeholder="Message"
-                          className="w-[650px] bg-transparent pb-5 outline-none border-b my-5"
-                        />
-                        <button className="bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300">
-                          Next
-                        </button>
-                      </form>
-                    </FadeSlideIn>
-                  </div>
+          <div className="py-16 my-10 px-16 text-white  bg-blue-950">
+            <FadeSlideIn className="flex flex-col gap-6 py-5 px-6">
+              <h2 className="text-5xl bg-blue-700 px-4 py-2 w-fit">
+                What about you?
+              </h2>
+              <p className="text-xl w-3/5">
+                We're eager to delve deeper and understand your specific needs
+                to unlock the full potential of AI for your business. By
+                learning more about your challenges and goals, we can tailor our
+                solutions to serve you best.
+              </p>
+              <form className="group flex flex-col gap-6">
+                <input
+                  type="text"
+                  placeholder="Message"
+                  className="w-[650px] bg-transparent pb-5 outline-none border-b my-5"
+                />
+                <button className="bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300">
+                  Next
+                </button>
+              </form>
+            </FadeSlideIn>
+          </div>
         </section>
 
         <div className="py-16 px-8 max-h-screen">
