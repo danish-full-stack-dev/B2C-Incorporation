@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
@@ -19,25 +19,6 @@ export const allServices = [
       "AI Automation & Intelligent Systems",
     ],
   },
-  // ---------------- ORM ----------------
-  // {
-  //   title: "Online Reputation Management (ORM)",
-  //   image: "/phone.png",
-  //   description:
-  //     "We protect and enhance your brand's online presence through strategic reputation management and proactive engagement.",
-  //   services: [
-  //     "SEO / GEO / AEO",
-  //     "Business Directory Listings",
-  //     "Trustpilot Reviews",
-  //     "Google Business Profile Reviews",
-  //     "Yelp Reviews",
-  //     "G2 Reviews",
-  //     "Clutch Reviews",
-  //     "Sitejabber Reviews",
-  //     "Reviews.io Reviews",
-  //     "GoodFirms Reviews",
-  //   ],
-  // },
 
   // ---------------- APP DEVELOPMENT ----------------
   {
@@ -72,6 +53,7 @@ export const allServices = [
       "Website Optimization & Maintenance",
     ],
   },
+
   // ---------------- DESIGN ----------------
   {
     title: "Brand Identity & Strategy",
@@ -105,6 +87,7 @@ export const allServices = [
       "Performance Analytics & Reporting",
     ],
   },
+
   // ---------------- AI ENGINEERING ----------------
   {
     title: "AI Engineering & Automation",
@@ -123,7 +106,8 @@ export const allServices = [
   },
 ];
 
-export const Services = () => {
+// Desktop version with scroll animation
+const DesktopServices = () => {
   const containerRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -234,4 +218,95 @@ export const Services = () => {
       </section>
     </>
   );
+};
+
+// Mobile/Tablet version without animation (column layout)
+const MobileServices = () => {
+  return (
+    <section className="w-full py-6 sm:py-8 bg-gray-50">
+      <div className="container mx-auto px-4">
+        {/* Services Grid */}
+        <div className="flex flex-col gap-6">
+          {allServices.map((service, index) => (
+            <div
+              key={index}
+              className="w-full bg-white border-2 border-gray-200 rounded-lg overflow-hidden shadow-sm"
+            >
+              <div className="flex flex-col">
+                {/* Image Section */}
+                <div className="w-full h-48 sm:h-64 bg-black/90 relative overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Content Section */}
+                <div className="w-full p-4 sm:p-6">
+                  <div className="w-full">
+                    {/* Title with Icon */}
+                    <div className="flex items-start justify-between gap-3 mb-4 group">
+                      <h3 className="text-xl sm:text-2xl font-bold font-pt text-gray-900">
+                        {service.title}
+                      </h3>
+                      <ArrowUpRight className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 text-gray-900" />
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-sm sm:text-base leading-relaxed text-gray-700 mb-4">
+                      {service.description}
+                    </p>
+
+                    {/* Services Tag */}
+                    <div className="flex gap-3 mb-4 pb-4 border-b-2 border-gray-200">
+                      <p className="text-xs font-bold font-sans bg-[#001a5a] text-white px-2 py-1 rounded-r-xl">
+                        Specialized Solutions We Offer
+                      </p>
+                    </div>
+
+                    {/* Services List */}
+                    <ul className="flex flex-col gap-1">
+                      {service.services.map((item, idx) => (
+                        <li
+                          key={idx}
+                          className="px-3 py-1.5 text-xs sm:text-sm text-gray-800 list-disc ml-4"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Main component that switches between desktop and mobile versions
+export const Services = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    // Check if screen is desktop size (1024px and above)
+    const checkScreenSize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+
+    // Initial check
+    checkScreenSize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", checkScreenSize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  // Render desktop version with animation or mobile version without animation
+  return isDesktop ? <DesktopServices /> : <MobileServices />;
 };

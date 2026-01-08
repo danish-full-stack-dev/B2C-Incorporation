@@ -54,7 +54,7 @@ export const Hero: React.FC = () => {
           </h1>
 
           {/* CTA BUTTONS */}
-          <div className=" flex flex-col sm:flex-row gap-4 ">
+          <div className=" flex flex-col sm:flex-row gap-3 sm:gap-4 ">
             <a
               href="/"
               className="font-serif md:px-10 px-8 py-2 w-fit md:text-lg text-sm bg-blue-600 hover:bg-blue-800 transition-all duration-500 text-white/90"

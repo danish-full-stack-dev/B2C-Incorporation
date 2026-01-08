@@ -17,13 +17,26 @@ export default function ContactUs() {
             We will evaluate your application and set up a free estimation call.
           </h3>
 
-          <div className="mt-[150] text-gray-400">
-            <h3 className="font-semibold">Partnerships</h3>
-          </div>
+         <div className="mt-[150] grid grid-cols-2 gap-x-20 text-gray-400">
+  <div>
+    <h3 className="font-semibold mb-6">Partnerships</h3>
+    <div className="grid grid-cols-3 gap-6 items-center">
+      <img src="/salesforce.png" alt="Partner 1" className="h-12 mx-auto" />
+      <img src="/aws.png" alt="Partner 2" className="h-12 mx-auto" />
+      <img src="/microsoft.png" alt="Partner 3" className="h-12 mx-auto" />
+    </div>
+  </div>
 
-          <div className="mt-[150] text-gray-400">
-            <h3 className="font-semibold">Awards</h3>
-          </div>
+  <div>
+    <h3 className="font-semibold mb-6">Awards</h3>
+    <div className="grid grid-cols-3 gap-6 items-center">
+      <img src="/award1.svg" alt="Award 1" className="h-12 mx-auto" />
+      <img src="/award2.svg" alt="Award 2" className="h-12 mx-auto" />
+      <img src="/award3.svg" alt="Award 3" className="h-12 mx-auto" />
+    </div>
+  </div>
+</div>
+
         </div>
 
         <div className="flex-1 max-w-lg w-full mr-[360] py-14">
@@ -39,6 +52,7 @@ export default function ContactUs() {
         </div>
 
       </div>
+      
     </section>
   );
 }

@@ -132,7 +132,7 @@ const TestimonialsSection: React.FC = () => {
     if (!container) return;
 
     const x = e.pageX - container.offsetLeft;
-    const walk = (x - startX) * 2; // Multiply by 2 for faster scrolling
+    const walk = (x - startX) * 2;
     container.scrollLeft = scrollLeft - walk;
   };
 
