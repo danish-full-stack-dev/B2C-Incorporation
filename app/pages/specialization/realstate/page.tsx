@@ -317,6 +317,7 @@ export default function AIDevelopementServices() {
                 management and creative intelligence, the gap between complex
                 functionality and
               </p>
+              <button className="bg-blue-600 hover:bg-blue-800 transition-colors duration-200 px-8 text-sm py-2 w-fit">Get started</button>
             </div>
           </div>
         </div>
@@ -382,27 +383,6 @@ export default function AIDevelopementServices() {
               />
             ))}
           </FadeSlideIn>
-
-          <div className="py-10 bg-black">
-            <iframe
-              src="https://api.leadconnectorhq.com/widget/form/S8JfKgS3BnfMCyYtKBQ9"
-              className="w-full h-full border-0 rounded-sm"
-              id="inline-S8JfKgS3BnfMCyYtKBQ9"
-              data-layout="{'id':'INLINE'}"
-              data-trigger-type="alwaysShow"
-              data-trigger-value=""
-              data-activation-type="alwaysActivated"
-              data-activation-value=""
-              data-deactivation-type="neverDeactivate"
-              data-deactivation-value=""
-              data-form-name="Form 8"
-              data-height="432"
-              data-layout-iframe-id="inline-S8JfKgS3BnfMCyYtKBQ9"
-              data-form-id="S8JfKgS3BnfMCyYtKBQ9"
-              title="Form 8"
-            ></iframe>
-            <script src="https://link.msgsndr.com/js/form_embed.js"></script>
-          </div>
         </section>
 
         <div className="py-16 px-8 max-h-screen">
@@ -432,33 +412,6 @@ export default function AIDevelopementServices() {
               ))}
             </div>
           </div>
-
-          {/* Technology Grid */}
-          <FadeSlideIn className="grid grid-cols-6 gap-8">
-            {technologies[activeTab].map((tech, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-center p-6  rounded-lg  duration-300 cursor-pointer group"
-              >
-                <img
-                  src={tech.logo}
-                  alt={tech.name}
-                  className="w-24 h-24 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
-                  onError={(e) => {
-                    const img = e.currentTarget;
-
-                    // avoid infinite onError loop
-                    if (img.dataset.fallbackApplied === "true") return;
-
-                    img.dataset.fallbackApplied = "true"; // mark fallback applied
-                    img.src = `https://via.placeholder.com/100x100?text=${encodeURIComponent(
-                      tech.name
-                    )}`;
-                  }}
-                />
-              </div>
-            ))}
-          </FadeSlideIn>
         </div>
         <FadeSlideIn>
           <FAQForDataAI />
@@ -492,10 +445,6 @@ export default function AIDevelopementServices() {
           </div>
         </div>
       </div>
-      <FadeSlideIn>
-        <FeaturedProjects />
-      </FadeSlideIn>
-
       <FadeSlideIn>
         <TechnologiesUsed />
       </FadeSlideIn>

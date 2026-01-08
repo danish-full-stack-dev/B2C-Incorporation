@@ -21,21 +21,24 @@ export const DesignPageFooter: React.FC = () => {
 
   return (
     <div>
-      <footer className="relative text-gray-300 pt-16 bg-black">
+      <footer className="relative text-gray-300 pt-16 pb-10 bg-black">
         <div
-          className="absolute left-0 top-10 w-[400px] h-[400px] 
+          className="absolute left-0 top-10 md:w-[400px] w-[300px] h-[300px] 
               bg-blue-700/70 blur-[120px] rounded-full"
         ></div>
 
         <div
-          className="absolute right-0 top-20 w-[400px] h-[400px] 
+          className="absolute right-0 top-20 md:w-[400px] w-[300px] h-[300px] 
               bg-blue-700/70 blur-[120px] rounded-full"
         ></div>
 
-        <div className="relative z-10 w-10/12 mx-auto px-6 md:px-12 grid md:grid-cols-4 gap-12 border-y py-10 ">
+        <div className="relative z-10 md:w-10/12 px-5 mx-auto md:px-12 grid md:grid-cols-4 gap-12 border-y py-10 ">
           <div className="flex w-full">
-            <h3 className="w-full text-lg leading-tight">
-              B2C.design Incorporation <br />
+            <h3 className="w-full text-lg leading-tight gap-1 flex flex-col">
+              <span>
+                <img src="/whiteDesignLogo.png" alt="logo" className="h-4" />
+              </span>{" "}
+              Incorporation <br />
               <span className="text-xs">Powered by B2CINC </span>{" "}
             </h3>
           </div>
@@ -94,7 +97,7 @@ export const DesignPageFooter: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="w-10/12 mx-auto text-gray-400 flex justify-between py-7">
+        <div className="w-10/12 mx-auto text-gray-400 flex justify-between pt-7">
           <p className="text-lg ">
             &copy; {new Date().getFullYear()} B2CINC. All rights reserved.
           </p>

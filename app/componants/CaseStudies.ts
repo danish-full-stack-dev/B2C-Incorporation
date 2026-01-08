@@ -2,7 +2,7 @@ import { CaseStudyInterface } from ".";
 
 export const designCards:CaseStudyInterface[] = [
   {
-    title:"Kao ",
+    title:"Kao",
     image: "/kaoCaseStudy.png",
     heading: "Kao Corporation is a global cosmetics giant that develops and markets a wide array of beauty and personal care.",
     position: "start",

@@ -147,11 +147,10 @@ export default function CompanyExperts() {
     setVisibleCount((prev) => prev + 8);
   };
 
- const handleCategoryChange = (category: string) => {
-  setSelectedCategory(category);
-  setVisibleCount(8);
-};
-
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setVisibleCount(8);
+  };
 
   return (
     <section className="w-full py-16 lg:py-24 bg-white">

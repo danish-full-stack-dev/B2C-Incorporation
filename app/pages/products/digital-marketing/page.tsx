@@ -460,37 +460,51 @@ export default function AIDevelopementServices() {
             </button>
           </div>
         </FadeSlideIn>
+        {/* <div className="py-16 my-10 px-16 text-white bg-blue-950">
+          <FadeSlideIn className="flex flex-col gap-6 py-5 px-6">
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/S8JfKgS3BnfMCyYtKBQ9"
+              style={{
+                width: "100%",
+                height: "500px",
+                border: "none",
+                background: "transparent",
+              }}
+              title="LeadConnector Form"
+            />
+          </FadeSlideIn>
+        </div> */}
 
         <div className="py-16 my-10 px-16 text-white  bg-blue-950">
           <FadeSlideIn className="flex flex-col gap-6 py-5 px-6">
-            <h2 className="text-5xl bg-blue-700 px-4 py-2 w-fit">
-              What about you?
-            </h2>
-            <p className="text-xl w-3/5">
-              We're eager to delve deeper and understand your specific needs to
-              unlock the full potential of AI for your business. By learning
-              more about your challenges and goals, we can tailor our solutions
-              to serve you best.
-            </p>
-            <form className="group flex flex-col gap-6">
-              <input
-                type="text"
-                placeholder="Message"
-                className="w-[650px] bg-transparent pb-5 outline-none border-b my-5"
+            <div className="flex flex-col gap-6 justify-center items-center text-start">
+              <h2 className="text-5xl px-4 py-2 w-fit">What about you?</h2>
+              <p className="text-xl w-3/5">
+                We're eager to delve deeper and understand your specific needs
+                to unlock the full potential of AI for your business. By
+                learning more about your challenges and goals, we can tailor our
+                solutions to serve you best.
+              </p>
+            </div>
+            <div className="flex justify-start">
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/form/S8JfKgS3BnfMCyYtKBQ9"
+                style={{
+                  width: "100%",
+                  height: "500px",
+                  border: "none",
+                  background: "transparent",
+                }}
+                title="LeadConnector Form"
               />
-              <button className="bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300">
-                Next
-              </button>
-            </form>
+            </div>
           </FadeSlideIn>
         </div>
       </div>
       <FadeSlideIn className="py-10">
         <div className="flex flex-col gap-3 py-10 ml-[50px]">
           <h5 className="text-sm font-medium font-sans">our advantages</h5>
-          <h2 className="text-4xl font-medium font-bold">
-            Our product items are
-          </h2>
+          <h2 className="text-4xl font-medium">Our product items are</h2>
         </div>
         <div className="grid grid-cols-3 space-y-6 items-center font-sans">
           {Industries.map((v, idx) => (
@@ -619,13 +633,9 @@ export default function AIDevelopementServices() {
         <div className="max-w-6xl mx-auto w-full py-16 my-10 px-16 text-white flex bg-blue-950 font-pt">
           <div className="flex flex-col gap-6 py-5 px-6 w-1/2">
             <div className="flex flex-col gap-1">
-              <h2 className="text-7xl font-bold bg-blue-800 px-4 py-1 mb-2 w-fit">
-                STILL HAVE
+              <h2 className="text-7xl font-bold text-blue-800 px-4 py-1 mb-2 w-fit">
+                STILL HAVE <br /> QUESTIONS?
               </h2>
-              <span className="text-7xl font-bold bg-blue-800 px-4 py-1 w-fit">
-                {" "}
-                QUESTIONS?
-              </span>
             </div>
             <p className="text-xl">
               Can’t find the answer you are looking for? Contact us and we will
@@ -637,7 +647,7 @@ export default function AIDevelopementServices() {
           </div>
           <div className="w-1/2 flex justify-center">
             <img
-              src="workflow.jpeg"
+              src="/real1.png"
               alt="book"
               className="px-5 w-full h-[45vh]"
             />

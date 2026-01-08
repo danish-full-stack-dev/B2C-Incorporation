@@ -241,17 +241,17 @@ import { CheckCircle } from "lucide-react";
 
 export const ContactForm = () => {
   return (
-    <div className="min-h-screen bg-blue-600 flex">
+    <div className="min-h-screen bg-blue-600 flex md:flex-row flex-col">
       {/* Left Section */}
-      <div className="w-2/5 p-12 text-white flex flex-col justify-center">
-        <h1 className="text-4xl font-bold mb-4">Let's connect</h1>
-        <p className="text-lg mb-8 opacity-90">
+      <div className="md:w-2/5 p-12 text-white flex flex-col justify-center">
+        <h1 className="md:text-4xl text-xl font-bold mb-4">Let's connect</h1>
+        <p className="md:text-lg text-sm mb-8 opacity-90">
           Fill out the form, and we've got you covered.
         </p>
 
-        <h2 className="text-xl font-semibold mb-6">What happens next?</h2>
+        <h2 className="md:text-xl text-base font-semibold mb-6">What happens next?</h2>
 
-        <div className="space-y-6">
+        <div className="space-y-6 md:text-base text-xs">
           {[
             "Our expert will follow up after reviewing your needs.",
             "If required, we'll sign an NDA to ensure privacy.",
@@ -267,7 +267,7 @@ export const ContactForm = () => {
       </div>
 
       {/* Right Section - LeadConnector Form */}
-      <div className="w-3/5 bg-slate-900 p-8 flex items-center justify-center">
+      <div className="md:w-3/5 bg-slate-900 md:p-8 flex items-center justify-center">
         <iframe
           src="https://api.leadconnectorhq.com/widget/form/XVnLTR13i0p5BpPEgiBc"
           className="w-full h-[700px] rounded-lg border-0"

@@ -44,7 +44,7 @@ export default function page() {
           </div>
           <div className="flex justify-start w-10/12 mx-auto">
             <div className="flex flex-col gap-2">
-              <h1 className="text-7xl text-blue-700 font-thin">
+              <h1 className="text-7xl text-[#FCDB45] font-thin">
                 Schweppes is the original inventor of commercial soda water and
                 the definitive...
               </h1>

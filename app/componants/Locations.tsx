@@ -48,18 +48,18 @@ export const LocationsSection: React.FC = () => {
   };
 
   return (
-    <div className="bg-white py-16 px-8 font-pt">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex">
+    <div className="bg-white py-16 md:px-8 px-5 font-pt">
+      <div className="md:max-w-7xl mx-auto">
+        <div className="flex md:flex-row flex-col md:gap-0 gap-5 px-5">
           {/* Header Section */}
-          <div className="w-1/2">
+          <div className="md:w-1/2">
             <div className="flex items-start justify-between">
               <div>
-                <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                <h2 className="md:text-4xl text-xl font-bold text-gray-900 mb-4">
                   Reach Out to Our <br />
                   <span className="text-blue-600"> Global Support Team</span>
                 </h2>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-600 mb-6 md:text-base text-sm">
                   Say hello to our friendly team at one
                   <br />
                   of these locations.
@@ -76,14 +76,14 @@ export const LocationsSection: React.FC = () => {
           </div>
 
           {/* Locations Grid */}
-          <div className="flex flex-col w-1/2">
+          <div className="flex flex-col md:w-1/2">
             {/* Tabs */}
             <div className="flex gap-2 pb-8">
               {Object.keys(locations).map((region) => (
                 <button
                   key={region}
                   onClick={() => setActiveTab(region)}
-                  className={`px-6 py-2 font-medium transition ${
+                  className={`md:px-6 px-4 md:py-2 py-1 font-medium md:text-base text-sm transition ${
                     activeTab === region
                       ? "bg-blue-600 text-white"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -93,7 +93,7 @@ export const LocationsSection: React.FC = () => {
                 </button>
               ))}
             </div>
-            <div className="grid grid-cols-2 gap-x-12 gap-y-8">
+            <div className="grid md:grid-cols-2 grid-cols-1 md:gap-x-12 gap-y-8 text-sm">
               {locations[activeTab].map((location, index) => (
                 <div key={index}>
                   <h3 className="font-semibold text-gray-900 mb-2">

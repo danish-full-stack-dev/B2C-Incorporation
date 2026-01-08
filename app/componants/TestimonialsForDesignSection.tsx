@@ -23,7 +23,7 @@ const TestimonialsSection: React.FC = () => {
     const current = scrollRef.current;
     if (!current) return;
 
-    const scrollAmount = Math.round(current.offsetWidth / 2);
+    const scrollAmount = Math.round(current.offsetWidth * 1.1);
 
     current.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
@@ -148,12 +148,16 @@ const TestimonialsSection: React.FC = () => {
 
   const [scrollIndex, setScrollIndex] = useState(0);
   return (
-    <div className="px-8 flex text-gray-200 mx-auto flex-col">
+    <div className="md:px-8 px-5 flex text-gray-200 w-full mx-auto flex-col">
       <div className="w-full mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <p className="text-sm uppercase tracking-wider mb-2">TESTIMONIALS</p>
-          <h2 className="text-4xl font-bold w-fit">Our clients say it best</h2>
+          <p className="md:text-sm text-xs uppercase tracking-wider mb-2">
+            TESTIMONIALS
+          </p>
+          <h2 className="md:text-4xl text-xl font-bold w-fit">
+            Our clients say it best
+          </h2>
         </div>
         <div
           ref={scrollRef}
@@ -162,12 +166,12 @@ const TestimonialsSection: React.FC = () => {
           onMouseLeave={handleMouseLeave}
           onMouseUp={handleMouseUp}
           onMouseMove={handleMouseMove}
-          className="flex gap-6 overflow-x-hidden px-12 pb-4 cursor-grab select-none"
+          className="flex gap-6 overflow-x-hidden md:px-12 pb-4 cursor-grab select-none"
         >
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="min-w-[350px]  rounded-lg shadow-sm hover:shadow-md transition shrink-0 overflow-hidden bg-white"
+              className="md:min-w-[350px] w-fit  rounded-lg shadow-sm hover:shadow-md transition shrink-0 overflow-hidden bg-white"
             >
               <div className="p-8 ">
                 {/* Logo */}
@@ -213,8 +217,10 @@ const TestimonialsSection: React.FC = () => {
       <div className="flex w-full py-10">
         <div className="flex gap-3 items-center max-w-2xl mr-auto justify-between w-full">
           <div className="flex items-center justify-center gap-4 pl-10">
-            <span className="text-sm text-gray-500">{scrollIndex.toString().padStart(2, "0")}</span>
-            <div className="w-80 h-1 bg-gray-200 rounded-full overflow-hidden">
+            <span className="text-sm text-gray-500">
+              {scrollIndex.toString().padStart(2, "0")}
+            </span>
+            <div className="md:w-80 w-40 h-1 bg-gray-200 rounded-full overflow-hidden">
               <div
                 className="h-full bg-blue-600 transition-all duration-300"
                 style={{ width: `${getProgressPercentage()}%` }}

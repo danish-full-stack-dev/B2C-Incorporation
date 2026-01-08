@@ -50,7 +50,7 @@ export default function page() {
           </div>
           <div className="flex justify-start w-10/12 mx-auto">
             <div className="flex flex-col gap-2">
-              <h1 className="text-7xl text-blue-700 font-thin">
+              <h1 className="text-7xl bg-gradient-to-b from-[#f5d98b] via-[#d4a843] to-[#8a5a12] bg-clip-text text-transparent font-thin">
                 Specializing in a wide range of elegant and authentic Pakistani
                 designer formal, bridal, and casual wear
               </h1>
@@ -59,7 +59,7 @@ export default function page() {
           </div>
 
           <div className="w-1/2 mx-auto my-40">
-            <ZoomImage source="/scheCaseStudy.png" />
+            <ZoomImage source="/rangjahCaseStudy.jpg" />
           </div>
         </div>
       </div>
