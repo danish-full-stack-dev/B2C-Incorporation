@@ -90,7 +90,7 @@ export default function DesignPage() {
       title: "Proof of Concept",
       description:
         "Validate breakthrough ideas with rapid, high-fidelity prototypes.",
-      image: "",
+      image: "/favicon.png",
       phase: "strategize",
     },
     {
@@ -98,14 +98,14 @@ export default function DesignPage() {
       title: "MVP Design",
       description:
         "Launch lean, lovable products that captivate early adopters instantly.",
-      image: "",
+      image: "/favicon.png",
       phase: "strategize",
     },
     {
       id: 4,
       title: "UX/UI Excellence",
       description: "Craft interfaces that users love and competitors envy.",
-      image: "",
+      image: "/favicon.png",
       phase: "create",
     },
     {
@@ -113,7 +113,7 @@ export default function DesignPage() {
       title: "Design Systems",
       description:
         "Build scalable foundations for consistent, world-class experiences.",
-      image: "",
+      image: "/favicon.png",
       phase: "create",
     },
     {
@@ -121,7 +121,7 @@ export default function DesignPage() {
       title: "Brand Evolution",
       description:
         "Scale your visual identity while maintaining core authenticity.",
-      image: "",
+      image: "/favicon.png",
       phase: "scale",
     },
     {
@@ -129,7 +129,7 @@ export default function DesignPage() {
       title: "Growth Design",
       description:
         "Engineer experiences that drive exponential user acquisition.",
-      image: "",
+      image: "/favicon.png",
       phase: "scale",
     },
   ];
@@ -418,7 +418,7 @@ export default function DesignPage() {
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-blue-800 leading-tight mb-4 sm:mb-6 px-4">
             Ready to create{" "}
-            <span className="text-blue-800">something extraordinary</span>?
+            <span className="text-blue-800">something extraordinary</span>..?
           </h2>
 
           <p className="text-white/60 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto px-4">

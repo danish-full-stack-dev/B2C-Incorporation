@@ -1,5 +1,12 @@
 "use client";
-import { ChevronDown, ChevronRight, Handshake, Mail, Menu, X } from "lucide-react";
+import {
+  ChevronDown,
+  ChevronRight,
+  Handshake,
+  Mail,
+  Menu,
+  X,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -210,7 +217,9 @@ export const Navbar: React.FC = () => {
             <Link href={"/"}>
               <span
                 className={`ml-2 ${
-                  strecth ? "md:flex hidden p-2 md:bg-blue-600 hover:bg-blue-800 transition-all duration-300" : "hidden"
+                  strecth
+                    ? "md:flex hidden p-2 md:bg-blue-600 hover:bg-blue-800 transition-all duration-300"
+                    : "hidden"
                 }`}
               >
                 <Image
@@ -333,7 +342,9 @@ export const Navbar: React.FC = () => {
               }`}
             >
               <div className="grid grid-cols-3 grid-flow-col text-sm gap-x-6">
-                <div className={`flex flex-col gap-4 border-r px-4 border-gray-500`}>
+                <div
+                  className={`flex flex-col gap-4 border-r px-4 border-gray-500`}
+                >
                   <span className="text-gray-500 text-xs font-bold mb-1">
                     Our Expertise
                   </span>
@@ -365,7 +376,9 @@ export const Navbar: React.FC = () => {
                     </Link>
                   ))}
                 </div>
-                <div className={`flex flex-col gap-4 border-r px-4 border-gray-500`}>
+                <div
+                  className={`flex flex-col gap-4 border-r px-4 border-gray-500`}
+                >
                   <span className="text-gray-500 text-xs font-bold mb-1">
                     Fintech specialization
                   </span>
@@ -434,17 +447,17 @@ export const Navbar: React.FC = () => {
                     {[
                       {
                         heading: "About us",
-                        to: "/",
+                        to: "/about-us",
                       },
-                      { heading: "Leadership", to: "/pages/weare/leadership" },
-                      { heading: "Expertise", to: "/pages/weare/experts" },
+                      { heading: "Leadership", to: "/weare/leadership" },
+                      { heading: "Expertise", to: "/weare/expertise" },
                       {
                         heading: "Carrers",
                         to: "/pages/weare/leadership/carrers",
                       },
                       {
                         heading: "Certification",
-                        to: "/pages/weare/certification",
+                        to: "/weare/certification",
                       },
                     ].map((value, idx) => (
                       <Link

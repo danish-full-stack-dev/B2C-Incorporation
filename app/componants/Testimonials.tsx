@@ -1,9 +1,8 @@
 "use client";
 import { ArrowLeft, ArrowRight, User2Icon } from "lucide-react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import React, { useState, useRef } from "react";
-import { BorderAnimation } from "./BorderAnimation";
-// import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface Testimonial {
   logo: string;
@@ -23,7 +22,7 @@ const TestimonialsSection: React.FC = () => {
     const current = scrollRef.current;
     if (!current) return;
 
-    const scrollAmount = Math.round(current.offsetWidth * 1.1);
+    const scrollAmount = Math.round(current.offsetWidth / 3.2);
 
     current.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
@@ -34,7 +33,7 @@ const TestimonialsSection: React.FC = () => {
       setScrollIndex((prev) => Math.max(prev - 1, 0));
     } else if (
       direction === "right" &&
-      scrollIndex < testimonials.length / 2 - 1
+      scrollIndex < testimonials.length / 1.5
     ) {
       setScrollIndex((prev) => Math.min(prev + 1, testimonials.length - 1));
     }
@@ -155,114 +154,60 @@ const TestimonialsSection: React.FC = () => {
           <p className="md:text-sm text-xs text-gray-500 uppercase tracking-wider mb-2">
             TESTIMONIALS
           </p>
-          <h2 className="md:text-4xl text-xl font-bold text-gray-900 w-fit">
+          <h2 className="text-xl lg:text-4xl md:text-3xl font-bold text-gray-900 w-fit">
             Our clients say it best
           </h2>
         </div>
-        <div
-          ref={scrollRef}
-          onScroll={handleScroll}
-          onMouseDown={handleMouseDown}
-          onMouseLeave={handleMouseLeave}
-          onMouseUp={handleMouseUp}
-          onMouseMove={handleMouseMove}
-          className="flex gap-6 overflow-x-hidden md:px-12 pb-4 cursor-grab select-none"
-        >
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="md:min-w-[350px] w-fit  rounded-lg shadow-sm hover:shadow-md transition shrink-0 overflow-hidden bg-white"
-            >
-              <div className="p-8 ">
-                {/* Logo */}
-                <div className="mb-8">
-                  <Image
-                    width={100}
-                    height={100}
-                    src={testimonial.logo}
-                    alt="logo"
-                    className={`text-2xl font-bold ${testimonial.logoColor}`}
-                  />
-                </div>
-
-                {/* Testimonial Text */}
-                <p className="text-gray-600 mb-8 min-h-40 max-w-[40vh]">
-                  {testimonial.text}
-                </p>
-
-                {/* Author Info */}
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center">
-                    <span className="text-black border border-black p-3 rounded-full font-semibold text-lg">
-                      <User2Icon className="" />
-                    </span>
+        <div className="overflow-hidden w-full py-5">
+          <motion.div
+            className="flex gap-10 py-8"
+            animate={{ x: ["0%", "-115%"] }}
+            transition={{ repeat: Infinity, duration: 18, ease: "linear" }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="min-w-[320px] rounded-lg shadow-md hover:shadow-lg transition shrink-0 bg-white"
+              >
+                <div className="p-8 ">
+                  {/* Logo */}
+                  <div className="md:mb-8 mb-4">
+                    <Image
+                      width={100}
+                      height={100}
+                      src={testimonial.logo}
+                      alt="logo"
+                      className={`text-2xl font-bold ${testimonial.logoColor}`}
+                    />
                   </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">
-                      {testimonial.author}
-                    </p>
-                    <p className="text-sm text-gray-500">
-                      {testimonial.position}
-                    </p>
+
+                  {/* Testimonial Text */}
+                  <p className="text-gray-600 md:mb-8 min-h-40 max-w-[40vh]">
+                    {testimonial.text}
+                  </p>
+
+                  {/* Author Info */}
+                  <div className="flex items-center gap-4 bottom-5">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center">
+                      <span className="text-black border border-black p-3 rounded-full font-semibold text-lg">
+                        <User2Icon className="" />
+                      </span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">
+                        {testimonial.author}
+                      </p>
+                      <p className="text-sm text-gray-500">
+                        {testimonial.position}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </motion.div>
         </div>
       </div>
-
-      {/* Progress Indicator */}
-
-      <div className="flex w-full py-10">
-        <div className="flex gap-3 items-center max-w-2xl mr-auto justify-between w-full">
-          <div className="flex items-center justify-center gap-4 pl-10">
-            <span className="text-sm text-gray-500">
-              {scrollIndex.toString().padStart(2, "0")}
-            </span>
-            <div className="md:w-80 w-40 h-1 bg-gray-200 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-blue-600 transition-all duration-300"
-                style={{ width: `${getProgressPercentage()}%` }}
-              />
-            </div>
-            <span className="text-sm text-gray-500">
-              {Math.floor(testimonials.length / 2)
-                .toString()
-                .padStart(2, "0")}
-            </span>
-          </div>
-          <div className="flex gap-4">
-            <button onClick={() => scroll("left")} className="text-blue-500">
-              <ArrowLeft className="w-5 h-5" />
-            </button>
-
-            <button
-              onClick={() => scroll("right")}
-              className="text-blue-500 font-bold"
-            >
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <style>{`
-        .scrollbar-thin::-webkit-scrollbar {
-          height: 8px;
-        }
-        .scrollbar-thin::-webkit-scrollbar-track {
-          background: #e5e7eb;
-          border-radius: 4px;
-        }
-        .scrollbar-thin::-webkit-scrollbar-thumb {
-          background: #2563eb;
-          border-radius: 4px;
-        }
-        .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-          background: #1d4ed8;
-        }
-      `}</style>
     </div>
   );
 };

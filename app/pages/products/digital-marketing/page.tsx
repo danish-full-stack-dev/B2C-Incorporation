@@ -151,39 +151,52 @@ export default function AIDevelopementServices() {
         "We analyze end-user needs and create an intuitive UX design focused on usability and accessibility. The design is based on project specifics and customer expectations.",
     },
   ];
+
   const Industries = [
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "HealthCare",
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "HealthCare",
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "HealthCare",
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "HealthCare",
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "HealthCare",
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
+      heading: "HealthCare",
+      description:
+        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
+    },
+    {
+      icon: "/favicon.png",
+      heading: "HealthCare",
+      description:
+        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
+    },
+    {
+      icon: "/favicon.png",
       heading: "HealthCare",
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
@@ -228,40 +241,39 @@ export default function AIDevelopementServices() {
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
   ];
-
   const Processes = [
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "Kick-off",
       description:
         "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "Kick-off",
       description:
         "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "Kick-off",
       description:
         "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "Kick-off",
       description:
         "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "Kick-off",
       description:
         "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "Kick-off",
       description:
         "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
@@ -275,7 +287,7 @@ export default function AIDevelopementServices() {
   const IndustryDiv = ({ icon, heading, description }: Props) => {
     return (
       <div className="flex flex-col justify-start gap-5 mx-3 group hover:text-white hover:bg-blue-950 px-8 py-5">
-        <img src={icon} alt="icon" className="w-20 " />
+        <img src={icon} alt="icon" className="w-8" />
         <div className="flex justify-between pr-6">
           <h4 className="text-xl">{heading}</h4>
           <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition duration-400" />
@@ -407,13 +419,13 @@ export default function AIDevelopementServices() {
         <SoftwareServices />
       </div>
       \
-      <div className="bg-blue-800 flex items-center w-[1300px] h-[350px] mx-auto text-white p-10">
+      <div className="bg-blue-800 flex items-center w-8/12 h-[30vh] mx-auto text-white p-5">
         {/* LEFT — IMAGE */}
-        <div className="w-[400px] flex justify-center items-center">
+        <div className="w-1/3 flex justify-center items-center">
           <img
-            src="/image.png"
+            src="/favicon.png"
             alt="image"
-            className="h-[300px] w-auto object-cover rounded-md"
+            className="w-1/3 h-1/2 object-cover rounded-md -rotate-45"
           />
         </div>
 
@@ -440,7 +452,7 @@ export default function AIDevelopementServices() {
         <FadeSlideIn className="py-10">
           <div className="flex flex-col gap-3 py-10">
             <h5 className="text-sm font-medium font-sans">INDUSTRIES</h5>
-            <h2 className="text-4xl font-medium font-bold">
+            <h2 className="text-4xl font-medium">
               Our product engineering expertise across<br></br>industries
             </h2>
           </div>
@@ -646,11 +658,7 @@ export default function AIDevelopementServices() {
             </button>
           </div>
           <div className="w-1/2 flex justify-center">
-            <img
-              src="/real1.png"
-              alt="book"
-              className="px-5 w-full h-[45vh]"
-            />
+            <img src="/real1.png" alt="book" className="px-5 w-full h-[45vh]" />
           </div>
         </div>
       </div>

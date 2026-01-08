@@ -134,37 +134,37 @@ export default function DataServices() {
 
   const Industries = [
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "HealthCare",
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "HealthCare",
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "HealthCare",
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "HealthCare",
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "HealthCare",
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
     },
     {
-      icon: "image.png",
+      icon: "/favicon.png",
       heading: "HealthCare",
       description:
         "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
@@ -172,37 +172,37 @@ export default function DataServices() {
   ];
   const Processes = [
     {
-      icon: "/image.png",
+      icon: "/favicon.png",
       heading: "Kick-off",
       description:
         "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
     },
     {
-      icon: "/image.png",
+      icon: "/favicon.png",
       heading: "Kick-off",
       description:
         "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
     },
     {
-      icon: "/image.png",
+      icon: "/favicon.png",
       heading: "Kick-off",
       description:
         "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
     },
     {
-      icon: "/image.png",
+      icon: "/favicon.png",
       heading: "Kick-off",
       description:
         "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
     },
     {
-      icon: "/image.png",
+      icon: "/favicon.png",
       heading: "Kick-off",
       description:
         "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
     },
     {
-      icon: "/image.png",
+      icon: "/favicon.png",
       heading: "Kick-off",
       description:
         "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
@@ -216,7 +216,7 @@ export default function DataServices() {
   const IndustryDiv = ({ icon, heading, description }: Props) => {
     return (
       <div className="flex flex-col justify-start gap-5 mx-3 group hover:text-white hover:bg-blue-950 px-8 py-5">
-        <img src={icon} alt="icon" className="w-20 " />
+        <img src={icon} alt="icon" className="w-8 " />
         <div className="flex justify-between pr-6">
           <h4 className="text-xl">{heading}</h4>
           <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition duration-400" />
@@ -263,46 +263,44 @@ export default function DataServices() {
 
   const FeatureDiv = ({ icon, heading, description }: Props) => {
     return (
-      <div className="flex flex-col justify-start p-5 group hover:bg-gray-100">
-        <img src={icon} alt="icon" className="w-20 " />
+      <div className="flex flex-col justify-start gap-3 p-5 group hover:bg-gray-100">
+        <img src={icon} alt="icon" className="w-8 " />
         <h4 className="text-3xl">{heading}</h4>
         <p className="text-lg w-full">{description}</p>
       </div>
     );
   };
   return (
-    <div>
-      <div className="w-8/12 mx-auto min-h-[80vh] flex flex-col items-center">
-        <div className="flex py-16 h-5/6 mt-28">
-          <div className="flex flex-col w-1/2 h-3/4 gap-3 ">
-            <h2 className="text-5xl font-medium w-4/5">
-              Online Reputation Managment Services and Solutions
-            </h2>
-            <p className="text-2xl py-8 w-4/5">
-              Team up with B2CINC to explore the limitless potential of
-              artificial intelligence (AI)! From AI strategy building and data
-              analysis to AI integration and deployment, our comprehensive
-              artificial intelligence development services are tailored to
-              address challenges across domains.
+    <div className="bg-[#01091b]">
+      <div className="w-8/12 mx-auto flex flex-col">
+        <div className="flex h-[50vh] my-auto items-center justify-end bg-gradient-to-br from-white via-blue-800 to-white text-transparent bg-clip-text">
+          <div className="flex flex-col gap-5 justify-end items-center text-center h-3/5">
+            <p className="font-bold">Reputation &reg; IQ</p>
+            <h1 className="text-5xl font-medium">
+              Ask Anything. Know Everything.
+            </h1>
+            <p className="text-2xl w-4/5 text-white/70">
+              Natural language questions. AI-powered answers. Zero dashboards
+              required. Your new way to access the full power of Reputation data
+              in plain English.
             </p>
-            <div className="flex gap-5 text-lg font-medium w-5/6">
-              <button className="bg-blue-700 px-8 py-2 hover:bg-transparent w-full text-white hover:text-black transition">
-                Let's talk
-              </button>
-              <button className="bg-transparent border-2 border-blue-700 font-bold w-full px-8 py-2 hover:bg-blue-700 transition hover:text-whi">
-                View Portfolio
-              </button>
-            </div>
           </div>
-          <div className="w-[370] m-24">
-            <img
-              src="/favicon.png"
-              alt="image"
-              className="max-h-[60vh] object-contain -rotate-45"
-            />
+        </div>
+
+        <div className="bg-white shadow-md h-[80dvh] overflow-hidden relative flex justify-center items-center">
+          <img
+            src="/b2clogo.png"
+            alt="favicon"
+            className="object-cover w-5/6"
+          />
+          <div className="absolute inset-0 backdrop-blur-lg">
+            <div>
+              <form action=""></form>
+            </div>
           </div>
         </div>
       </div>
+
       <div className=" bg-gray-50">
         <section className="py-10 w-8/12 mx-auto">
           <div className="flex flex-col gap-3 py-10">
@@ -390,28 +388,6 @@ export default function DataServices() {
               completely secure. As a result, you avoid internal data misuse,
               data breaches, and compliance issues.
             </p>
-            <div className="grid grid-cols-4 gap-10 pt-10">
-              <img
-                src="/image.png"
-                alt="image"
-                className="grayscale hover:bg-gray-50 px-14"
-              />
-              <img
-                src="/image.png"
-                alt="image"
-                className="grayscale hover:bg-gray-50 px-14"
-              />
-              <img
-                src="/image.png"
-                alt="image"
-                className="grayscale hover:bg-gray-50 px-14"
-              />
-              <img
-                src="/image.png"
-                alt="image"
-                className="grayscale hover:bg-gray-50 px-14"
-              />
-            </div>
           </div>
         </div>
       </div>
@@ -468,7 +444,7 @@ export default function DataServices() {
         </div>
       </section>
       <div className="w-8/12 mx-auto">
-        <section className="pt-10">
+        <section className="pt-10 text-white">
           <div className="flex flex-col gap-3 py-10">
             <h5 className="text-sm font-medium">INDUSTRIES</h5>
             <h2 className="text-4xl font-medium">Industries we develop for</h2>

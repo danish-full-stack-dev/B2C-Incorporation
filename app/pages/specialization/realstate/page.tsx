@@ -306,10 +306,13 @@ export default function AIDevelopementServices() {
           </form>
         </div> */}
 
-        <div className="absolute inset-0 bg-black/30 flex">
+        <div className="absolute inset-0 bg-black/50 flex">
           <div className="w-8/12 mx-auto flex">
             <div className="w-3/4 h-1/2 my-auto text-white flex flex-col gap-6">
-              <h1 className="text-7xl font-bold">LET's BOOST YOUR BUSINESS</h1>
+              <h1 className="text-6xl font-bold">
+                LET's BOOST YOUR
+                <br />BUSINESS
+              </h1>
               <p className="text-2xl">
                 {" "}
                 At B2CINC, the focus is on creating market-ready growth engines.
@@ -317,7 +320,9 @@ export default function AIDevelopementServices() {
                 management and creative intelligence, the gap between complex
                 functionality and
               </p>
-              <button className="bg-blue-600 hover:bg-blue-800 transition-colors duration-200 px-8 text-sm py-2 w-fit">Get started</button>
+              <button className="bg-blue-600 hover:bg-blue-800 transition-colors duration-200 px-8 text-sm py-2 w-fit">
+                Get started
+              </button>
             </div>
           </div>
         </div>
@@ -339,19 +344,17 @@ export default function AIDevelopementServices() {
         </div>
       </FadeSlideIn>
 
-      <div className="bg-blue-800 flex items-center w-[1300px] h-[350px] mx-auto text-white p-10">
-        {/* LEFT — IMAGE */}
-        <div className="w-[400px] flex justify-center items-center">
+      <div className="bg-blue-800 flex items-center w-8/12 mx-auto text-white">
+        <div className="w-1/3 flex justify-center items-center p-10">
           <img
             src="/favicon.png"
             alt="image"
-            className="h-[200px] w-auto object-cover -rotate-45 opacity-200"
+            className="h-[20vh] w-auto object-cover -rotate-45 opacity-200 pb-5"
           />
         </div>
 
-        {/* RIGHT — TEXT */}
-        <div className="w-1/2">
-          <p className="text-lg leading-relaxed font-sans">
+        <div className="w-2/3">
+          <p className="text-lg leading-relaxed font-sans pr-10">
             At B2CINC, the focus is on creating market-ready growth engines. By
             integrating deep technical mastery with strategic project management
             and creative intelligence, the gap between complex functionality and
@@ -417,16 +420,12 @@ export default function AIDevelopementServices() {
           <FAQForDataAI />
         </FadeSlideIn>
 
-        <div className="max-w-6xl mx-auto w-full py-16 my-10 px-16 text-white flex bg-blue-950 font-pt">
+        <div className="max-w-6xl mx-auto w-full p-10 my-10 text-white flex bg-blue-950 font-pt ">
           <div className="flex flex-col gap-6 py-5 px-6 w-1/2">
             <div className="flex flex-col gap-1">
-              <h2 className="text-7xl font-bold bg-blue-800 px-4 py-1 mb-2 w-fit">
-                STILL HAVE
+              <h2 className="text-7xl font-bold text-blue-800 py-1 mb-2 w-fit">
+                STILL HAVE QUESTIONS?
               </h2>
-              <span className="text-7xl font-bold bg-blue-800 px-4 py-1 w-fit">
-                {" "}
-                QUESTIONS?
-              </span>
             </div>
             <p className="text-xl">
               Can’t find the answer you are looking for? Contact us and we will
@@ -436,11 +435,11 @@ export default function AIDevelopementServices() {
               Get in touch
             </button>
           </div>
-          <div className="w-1/2 flex justify-center">
+          <div className="w-1/2 flex justify-center items-center">
             <img
-              src="workflow.jpeg"
+              src="/favicon.png"
               alt="book"
-              className="px-5 w-full h-[45vh]"
+              className="px-8 pb-5 w-3/5 object-contain -rotate-45"
             />
           </div>
         </div>

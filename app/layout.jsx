@@ -4,6 +4,7 @@ import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import CursorDotProvider from "./hooks/CursorContext";
 import Script from "next/script";
+import LoadingProvider from "./context/LoadingContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,8 +17,6 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "B2C Incorporation",
-  description: "We provide professional AI, web, and automation services.",
    icons: {
     icon: "/favicon.png",
   },
@@ -36,9 +35,11 @@ export default function RootLayout({
       >
         <CursorDotProvider>
         <CursorDot />
+        <LoadingProvider>
         <DashboardLayout>
           {children}
         </DashboardLayout>
+        </LoadingProvider>
         </CursorDotProvider>
         
         <div className="z-100 bottom-6 right-6 fixed">

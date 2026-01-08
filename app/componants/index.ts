@@ -7,3 +7,4 @@ export interface CaseStudyInterface{
     position:Position;
     listOfFeatures:string[];
 }
+

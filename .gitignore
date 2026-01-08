@@ -33,6 +33,12 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 public/Design page video.mp4
+public/phoneVideo.mp4
+public/automation.mp4
+public/marketing.mp4
+public/b2c branding.mp4
+public/web design.mp4
+public/b2c animation.mp4
 
 # vercel
 .vercel

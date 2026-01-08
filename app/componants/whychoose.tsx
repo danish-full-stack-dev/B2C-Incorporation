@@ -40,14 +40,16 @@ const WhyChooseUs: React.FC = () => {
     <FadeSlideIn>
       <motion.section
         ref={sectionRef}
-        className="py-32 transition-colors duration-300 relative bg-[#00091f]"
+        className="pt-32 transition-colors duration-300 relative bg-[#00091f]"
       >
-        <div className="max-w-4xl mx-auto text-center md:w-full w-10/12">
-          <motion.h2 className="text-xl md:text-5xl font-bold mb-6 text-gray-200 capitalize w-60 md:w-full mx-auto">
-            WHY BUSINESSES CHOOSE B2C INC. FOR GROWTH AND INNOVATION
+        <div className="max-w-4xl mx-auto text-center md:w-full w-10/12 ">
+          <motion.h2 className="text-xl lg:text-5xl md:text-4xl font-bold mb-6 text-white capitalize w-60 md:w-full mx-auto">
+            WHY BUSINESSES CHOOSE{" "}
+            <span className="text-blue-600">B2C INC.</span> FOR GROWTH AND
+            INNOVATION
           </motion.h2>
 
-          <motion.p className="md:text-xl text-sm md:max-w-3xl mx-auto leading-relaxed mb-16 text-gray-200">
+          <motion.p className="md:text-xl text-sm md:max-w-3xl mx-auto leading-relaxed mb-16 text-blue-600">
             We at B2C INC. deliver end-to-end solutions in Design, Digital
             Marketing, Fintech, Trading, AI, and ORM, driven by deep insights
             and innovative technology.

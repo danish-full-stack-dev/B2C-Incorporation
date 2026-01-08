@@ -32,8 +32,8 @@ const CursorDot = () => {
   return (
     <div
       className={`
-        fixed pointer-events-none z-[9999] 
-        flex items-center justify-center
+        fixed hidden pointer-events-none z-[9999] 
+        md:flex items-center justify-center
         rounded-full transition-all duration-300 ease-out
         ${
           showBubble

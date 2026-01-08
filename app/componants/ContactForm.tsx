@@ -241,15 +241,17 @@ import { CheckCircle } from "lucide-react";
 
 export const ContactForm = () => {
   return (
-    <div className="min-h-screen bg-blue-600 flex md:flex-row flex-col">
+    <div className="min-h-screen bg-gray-100 flex md:flex-row flex-col">
       {/* Left Section */}
-      <div className="md:w-2/5 p-12 text-white flex flex-col justify-center">
+      <div className="md:w-2/5 p-12 text-black flex flex-col justify-center border">
         <h1 className="md:text-4xl text-xl font-bold mb-4">Let's connect</h1>
         <p className="md:text-lg text-sm mb-8 opacity-90">
           Fill out the form, and we've got you covered.
         </p>
 
-        <h2 className="md:text-xl text-base font-semibold mb-6">What happens next?</h2>
+        <h2 className="md:text-xl text-base font-semibold mb-6">
+          What happens next?
+        </h2>
 
         <div className="space-y-6 md:text-base text-xs">
           {[
