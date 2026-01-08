@@ -1,53 +1,36 @@
 "use client";
-import { designCards } from "@/app/componants/CaseStudies";
-import CursorDot from "@/app/componants/CursorDot";
+import DiscoverCaseStudies from "@/app/componants/DiscoverCaseStudies";
 import ZoomImage from "@/app/componants/zoomImage";
-import { useCursor } from "@/app/hooks/CursorContext";
 import FadeSlideIn from "@/app/hooks/FadeSlideIn";
-import {
-  ArrowLeft,
-  Eye,
-  Loader,
-  LucideStars,
-  Palette,
-  Volleyball,
-} from "lucide-react";
-import Image from "next/image";
+import { ArrowLeft, Eye, Loader, Palette } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function page() {
-  const { setValue } = useCursor();
   const router = useRouter();
   const stages = [
     {
       icon: <Eye className="w-6 h-6" />,
-      title: "UX Audit",
-      hours: "40h",
-      tags: [
-        "User Research",
-        "Competitor Analysis",
-        "Heuristic Evaluation",
-        "Accessibility Check",
-        "UX Audit Report",
-      ],
+      title: "Design Strategy",
+      hours: "2 days",
+      tags: ["Brand Analysis", "Audit Strategy", "UX Audit Report"],
       highlightTag: "UX Audit Report",
     },
     {
       icon: <Palette className="w-6 h-6" />,
-      title: "Design",
-      hours: "60h",
+      title: "Visual Indentity",
+      hours: "7 days",
       tags: [
-        "Customer Journey Map",
-        "Wireframing",
-        "Prototyping",
+        "Social Media Design",
+        "Design System",
+        "Mockups",
         "High-Fidelity Design",
       ],
       highlightTag: "High-Fidelity Design",
     },
     {
       icon: <Loader className="w-6 h-6" />,
-      title: "Testing",
-      hours: "50h",
+      title: "Deployment",
+      hours: "1 day",
       tags: [
         "Usability Testing",
         "Data Analysis",
@@ -72,7 +55,7 @@ export default function page() {
           </div>
           <div className="flex justify-start w-10/12 mx-auto">
             <div className="flex flex-col gap-2">
-              <h1 className="text-7xl text-blue-700 font-thin">
+              <h1 className="text-7xl text-[#D6031A] font-thin">
                 Kao: A Cosmetics, Hygiene and Chemical Business.
               </h1>
               <span className="text-3xl text-white/80">Website</span>
@@ -168,7 +151,7 @@ export default function page() {
           <div className="h-screen">
             <iframe
               title="vimeo-player"
-              src="https://player.vimeo.com/video/1078269432?h=ebaa989689"
+              src="https://player.vimeo.com/video/1146466489?h=02ca68a73a"
               width="640"
               height="360"
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
@@ -179,11 +162,11 @@ export default function page() {
         <FadeSlideIn className="bg-black ">
           <div className="text-white/80 flex flex-col gap-10 py-20 w-8/12 mx-auto">
             <div>
-              <h5 className="text-red-700">Kao</h5>
+              <h5 className="text-red-700 font-bold">Kao</h5>
               <p>Visual identity</p>
             </div>
             <div>
-              <h5 className="text-red-700">Sobre</h5>
+              <h5 className="text-red-700 font-bold">Sobre</h5>
               <p>
                 Kao é uma figura dedicada a ajudar pessoas a mudarem de vida,
                 especialmente aquelas que desejam sair da estagnação. Através de
@@ -199,7 +182,7 @@ export default function page() {
               </p>
             </div>
             <div>
-              <h5 className="text-red-700">About</h5>
+              <h5 className="text-red-700 font-bold">About</h5>
               <p>
                 Kao is a person deeply committed to helping others transform
                 their lives, especially those looking to break free from
@@ -214,7 +197,7 @@ export default function page() {
               </p>
             </div>
             <div>
-              <h5 className="text-red-700">Team</h5>
+              <h5 className="text-red-700 font-bold">Team</h5>
               <p>
                 Creative Leader: Gulfam Tasawar
                 <br /> Designer: Gulfam Tasawar
@@ -227,7 +210,7 @@ export default function page() {
           <div className="h-screen">
             <iframe
               title="vimeo-player"
-              src="https://player.vimeo.com/video/1078270664?h=108231eaed"
+              src="https://player.vimeo.com/video/1146466470?h=14efda3288"
               width="640"
               height="360"
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
@@ -257,7 +240,7 @@ export default function page() {
           <div className="h-screen">
             <iframe
               title="vimeo-player"
-              src="https://player.vimeo.com/video/1078270697?h=c9768b3827"
+              src="https://player.vimeo.com/video/1146466460?h=6d0e92ad58"
               width="640"
               height="360"
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
@@ -276,7 +259,7 @@ export default function page() {
           <FadeSlideIn className="h-screen">
             <iframe
               title="vimeo-player"
-              src="https://player.vimeo.com/video/1078270721?h=af1b66e79e"
+              src="https://player.vimeo.com/video/1146466442?h=8ebf145b4e"
               width="640"
               height="360"
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
@@ -303,7 +286,7 @@ export default function page() {
         <FadeSlideIn className="h-screen">
           <iframe
             title="vimeo-player"
-            src="https://player.vimeo.com/video/1078270738?h=fe66a109a6"
+            src="https://player.vimeo.com/video/1146466564?h=a5930db0e6"
             width="640"
             height="360"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
@@ -406,44 +389,7 @@ export default function page() {
         </section>
       </div>
 
-      <section className="bg-black">
-        <div className="h-[80vh] flex justify-center items-center text-white/90 w-10/12 mx-auto">
-          <div className="w-1/4">
-            <div>
-              <img
-                src="lecture.jpeg"
-                alt="picture"
-                className="w-full object-cover"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col w-3/4">
-            <h4 className="text-4xl pb-16">Discover more</h4>
-            <div>
-              {designCards.map((caseStudy, index) => (
-                <div
-                  key={index}
-                  onMouseEnter={() => setValue("discover")}
-                  onMouseLeave={() => setValue(null)}
-                  className={`flex justify-between items-center py-8 hover:border-blue-700 text-white/80 hover:text-blue-700 hover:cursor-pointer border-t transition-colors duration-300 `}
-                >
-                  <h5 className="text-2xl">{caseStudy.heading}</h5>
-                  <div className="flex">
-                    {caseStudy.listOfFeatures.map((feature, idx) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-1 border border-white/40 text-white/90 text-sm rounded-full mx-1"
-                      >
-                        {feature}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <DiscoverCaseStudies />
     </div>
   );
 }

@@ -16,13 +16,13 @@ export default function Home() {
               We invite you on a captivating journey into the realm of
               inspiring leaders and strategists. Discover stories and insights
               that unveil unique approaches to success from the forefront
-              personalities at EffectiveSoft.
+              personalities at B2CINC.
             </p>
 
             <p className="mt-6 text-lg text-gray-600 leading-relaxed">
               From transparent profiles of key executives to narratives about
               the leadership culture, this section aims to highlight values
-              and vision that form the core of the EffectiveSoft company.
+              and vision that form the core of the B2CINC company.
             </p>
           </div>
 

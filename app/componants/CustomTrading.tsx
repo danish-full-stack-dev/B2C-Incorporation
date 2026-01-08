@@ -22,7 +22,7 @@ export default function SolutionsSection() {
       id: "03",
       title: "Mobile trading apps",
       description: [
-        "Trading mobile applications are becoming increasingly popular as they help traders stay connected and respond to the latest industry changes promptly, keep abreast of current market events, and have permanent access to financial accounts. At EffectiveSoft, we know how to develop robust apps for all mobile platforms. Such mobile trading applications aid traders in managing their activities, including trading on the go. We possess all the necessary expertise for efficient mobile trading app development..",
+        "Trading mobile applications are becoming increasingly popular as they help traders stay connected and respond to the latest industry changes promptly, keep abreast of current market events, and have permanent access to financial accounts. At B2CINC, we know how to develop robust apps for all mobile platforms. Such mobile trading applications aid traders in managing their activities, including trading on the go. We possess all the necessary expertise for efficient mobile trading app development..",
       ],
     },
      {

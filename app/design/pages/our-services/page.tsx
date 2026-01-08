@@ -1,105 +1,136 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { ArrowLeft, ArrowRight, Sparkles, Zap, Rocket } from "lucide-react";
+import { ServicesHero } from "@/app/componants/ServicesHero";
 import { BorderAnimation } from "@/app/componants/BorderAnimation";
-import Link from "next/link";
-import { ArrowLeft, ArrowRight, Snowflake, Volleyball } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function DesignPage() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [activeCard, setActiveCard] = useState(0);
   const [open, setOpen] = useState<number | null>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const navigate = useRouter();
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   const cards = [
     {
       id: 0,
-      title: "Real State",
+      title: "Real Estate",
       description:
-        "Protect and enhance your brand's online reputation with expert ORM services.",
+        "Transform property experiences with cutting-edge digital solutions",
       outputs: [
-        "Monitor and manage online reviews and feedback",
-        "Customized strategies to build trust and credibility",
-        "Social media reputation management",
+        "Virtual tours & 3D visualization",
+        "AI-powered property matching",
+        "Smart analytics dashboard",
       ],
     },
     {
       id: 1,
       title: "ORM Services",
-      description: "Safeguard and enhance your brand's image with professional ORM services.",
+      description:
+        "Craft your digital narrative with precision and authenticity",
       outputs: [
-        "Monitor and manage online reviews and mentions",
-        "Continuous reputation tracking and reporting",
-        "Build and maintain a trustworthy online reputation",
+        "Real-time sentiment analysis",
+        "Crisis response automation",
+        "Brand perception mapping",
       ],
     },
     {
       id: 2,
-      title: "Blockchain Development",
-      description: "Build secure, scalable, and innovative blockchain solutions for your business.",
-      outputs: ["Smart contract development and auditing", "Cryptocurrency and token creation", "Blockchain integration with existing systems"],
+      title: "Blockchain",
+      description:
+        "Build the decentralized future with revolutionary technology",
+      outputs: [
+        "Smart contract architecture",
+        "DeFi protocol development",
+        "Web3 integration ecosystem",
+      ],
     },
     {
       id: 3,
       title: "Trading Platform",
-      description:"Develop robust and user-friendly trading platforms for seamless financial transactions.",
-      outputs: ["Real-time trading and market data integration", "Secure payment gateways and transaction processing", "Advanced analytics and reporting tools"],
+      description: "Engineer lightning-fast financial experiences",
+      outputs: [
+        "Real-time market data streaming",
+        "Algorithmic trading engine",
+        "Risk management suite",
+      ],
     },
     {
       id: 4,
       title: "AI Automation",
-      description: "Streamline business processes and boost efficiency with intelligent AI automation solutions.",
-      outputs: ["Automate repetitive tasks and workflows", "AI-powered data analysis and decision-making","Predictive analytics for smarter business strategies"],
+      description: "Unleash intelligent systems that revolutionize operations",
+      outputs: [
+        "Autonomous workflow orchestration",
+        "Predictive intelligence engine",
+        "Self-optimizing systems",
+      ],
     },
   ];
 
   const strategizeData = [
     {
       id: 1,
-      title: "Product discovery",
+      title: "Product Discovery",
       description:
-        "Product discovery helps understand user needs, define the right problem, and ensure the solution is meaningful before development begins.",
-      image: "/image.png",
+        "Uncover deep insights that transform ideas into market-defining products.",
+      image: "/favicon.png",
+      phase: "strategize",
     },
     {
       id: 2,
-      title: "Proof of concept design",
+      title: "Proof of Concept",
       description:
-        "A PoC design validates whether an idea is viable before investing in full development.",
-      image: "/image.png",
+        "Validate breakthrough ideas with rapid, high-fidelity prototypes.",
+      image: "",
+      phase: "strategize",
     },
     {
       id: 3,
       title: "MVP Design",
       description:
-        "MVP design focuses on building the smallest lovable product to validate early-market fit.",
-      image: "/image.png",
+        "Launch lean, lovable products that captivate early adopters instantly.",
+      image: "",
+      phase: "strategize",
     },
     {
       id: 4,
-      title: "UX/UI Design",
-      description:
-        "Crafting user-centered interfaces that balance aesthetics with usability.",
-      image: "/image.png",
+      title: "UX/UI Excellence",
+      description: "Craft interfaces that users love and competitors envy.",
+      image: "",
+      phase: "create",
     },
     {
       id: 5,
-      title: "Proof of concept design",
+      title: "Design Systems",
       description:
-        "A PoC design validates whether an idea is viable before investing in full development.",
-      image: "/image.png",
+        "Build scalable foundations for consistent, world-class experiences.",
+      image: "",
+      phase: "create",
     },
     {
       id: 6,
-      title: "MVP Design",
+      title: "Brand Evolution",
       description:
-        "MVP design focuses on building the smallest lovable product to validate early-market fit.",
-      image: "/image.png",
+        "Scale your visual identity while maintaining core authenticity.",
+      image: "",
+      phase: "scale",
     },
     {
       id: 7,
-      title: "UX/UI Design",
+      title: "Growth Design",
       description:
-        "Crafting user-centered interfaces that balance aesthetics with usability.",
-      image: "/image.png",
+        "Engineer experiences that drive exponential user acquisition.",
+      image: "",
+      phase: "scale",
     },
   ];
 
@@ -107,12 +138,12 @@ export default function DesignPage() {
     const current = scrollRef.current;
     if (!current) return;
 
-    const isMobile = window.innerWidth < 768;
-    const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+    const isMobile = window.innerWidth < 640;
+    const isTablet = window.innerWidth >= 640 && window.innerWidth < 1024;
     
-    let cardWidth = 350;
-    if (isTablet) cardWidth = 450;
-    if (window.innerWidth >= 1024) cardWidth = 640;
+    let cardWidth = 600 + 40; 
+    if (isMobile) cardWidth = window.innerWidth - 32 + 16; 
+    else if (isTablet) cardWidth = 500 + 32; 
 
     let newIndex = activeCard;
 
@@ -131,354 +162,273 @@ export default function DesignPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black overflow-x-hidden">
-      {/* HERO SECTION WITH CARDS */}
-      <div className="w-full px-4 sm:px-6 md:px-8 lg:w-11/12 xl:w-10/12 mx-auto">
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 md:gap-0 pt-20 sm:pt-24 md:pt-28 lg:pt-32">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white max-w-full md:max-w-2xl lg:max-w-3xl leading-tight">
-            Our design process <span className="text-blue-600">is tailored</span>
-            <br className="hidden sm:block" />
-            to your needs and goals
-          </h2>
+    <div className="min-h-screen bg-black overflow-x-hidden relative">
+      <div>
+        <ServicesHero />
+      </div>
 
-          <div className="flex gap-3 md:gap-4">
-            <button
-              onClick={() => scroll("left")}
-              className="p-2 md:p-3 rounded-full border border-white/20 hover:border-blue-600 hover:bg-blue-600/10 transition-all duration-300"
-              aria-label="Previous card"
-            >
-              <ArrowLeft className="text-white w-5 h-5 md:w-6 md:h-6 hover:text-blue-600 transition-colors duration-500" />
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              className="p-2 md:p-3 rounded-full border border-white/20 hover:border-blue-600 hover:bg-blue-600/10 transition-all duration-300"
-              aria-label="Next card"
-            >
-              <ArrowRight className="text-white w-5 h-5 md:w-6 md:h-6 hover:text-blue-600 transition-colors duration-500" />
-            </button>
-          </div>
-        </div>
+      <div className="fixed inset-0 overflow-hidden pointer-events-none hidden md:block">
+        <div
+          className="absolute w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-blue-600/20 rounded-full blur-[120px] transition-all duration-1000"
+          style={{
+            left: mousePosition.x - 300,
+            top: mousePosition.y - 300,
+          }}
+        />
+        <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-600/10 rounded-full blur-[100px] animate-pulse" />
+        <div className="absolute bottom-1/3 left-1/3 w-[250px] h-[250px] md:w-[400px] md:h-[400px] bg-blue-500/10 rounded-full blur-[100px] animate-pulse" />
+      </div>
 
-        {/* CARDS SLIDER */}
-        <div className="relative mt-12 md:mt-16 lg:mt-20">
-          <div
-            ref={scrollRef}
-            className="flex gap-4 sm:gap-6 md:gap-8 lg:gap-10 overflow-x-auto scroll-smooth hide-scrollbar snap-x snap-mandatory pb-4"
+      <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between px-4 sm:px-6 md:px-8 lg:px-10 w-full lg:w-11/12 xl:w-10/12 mx-auto gap-6 sm:gap-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white max-w-2xl leading-tight mt-12 sm:mt-16 md:mt-20 lg:mt-[120px]">
+          Our design process <span className="text-blue-600">is tailored</span>
+          <br className="hidden sm:block" />
+          <span className="sm:hidden"> </span>
+          to your needs and goals
+        </h2>
+
+        <div className="flex gap-3 sm:gap-4 self-end sm:self-auto">
+          <button
+            onClick={() => scroll("left")}
+            className="p-2 sm:p-3 rounded-full border border-white/20 hover:border-blue-600 transition-colors duration-300"
+            aria-label="Scroll left"
           >
-            {cards.map((card, index) => (
-              <div
-                key={card.id}
-                className={`flex-shrink-0 w-[320px] sm:w-[400px] md:w-[450px] lg:w-[600px] p-5 sm:p-6 lg:p-8 rounded-xl border border-neutral-800 text-white transition-all duration-500 snap-center ${
-                  activeCard === index 
-                    ? "bg-blue-600 scale-100" 
-                    : "bg-neutral-900 scale-95 opacity-70"
-                }`}
-              >
-                <p className="text-xs sm:text-sm font-semibold opacity-70">
-                  {String(card.id + 1).padStart(2, "0")}
-                </p>
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mt-2 mb-3 sm:mb-4">
-                  {card.title}
-                </h2>
-                <p className="text-sm sm:text-base leading-relaxed opacity-90 mb-4">
-                  {card.description}
-                </p>
-                <ul className="list-disc ml-4 sm:ml-5 space-y-1.5 sm:space-y-2 opacity-90 text-sm sm:text-base">
-                  {card.outputs.map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          {/* Mobile Indicators */}
-          <div className="flex md:hidden justify-center gap-2 mt-6">
-            {cards.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  setActiveCard(index);
-                  if (scrollRef.current) {
-                    const cardWidth = 350;
-                    scrollRef.current.scrollTo({
-                      left: index * cardWidth,
-                      behavior: "smooth",
-                    });
-                  }
-                }}
-                className={`h-2 rounded-full transition-all ${
-                  activeCard === index ? "bg-blue-500 w-8" : "bg-white/30 w-2"
-                }`}
-                aria-label={`Go to card ${index + 1}`}
-              />
-            ))}
-          </div>
+            <ArrowLeft className="text-white w-5 h-5 sm:w-6 sm:h-6 hover:text-blue-600 transition-colors duration-500" />
+          </button>
+          <button
+            onClick={() => scroll("right")}
+            className="p-2 sm:p-3 rounded-full border border-white/20 hover:border-blue-600 transition-colors duration-300"
+            aria-label="Scroll right"
+          >
+            <ArrowRight className="text-white w-5 h-5 sm:w-6 sm:h-6 hover:text-blue-600 transition-colors duration-500" />
+          </button>
         </div>
       </div>
 
-      {/* OBSTACLES SECTION */}
-      <div className="text-white font-sans mt-20 md:mt-28 lg:mt-32 w-full px-4 sm:px-6 md:px-8 lg:w-11/12 xl:w-10/12 mx-auto">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8 md:mb-12 leading-tight">
-          We know the <span className="text-blue-600">obstacles you face</span>,
-          <br className="hidden sm:block" />
-          so we're here for both rapid <br className="hidden sm:block" /> 
-          solutions and long-term <br className="hidden sm:block" /> partnership
-        </h2>
-
-        {/* STRATEGIZE SECTION */}
-        <div className="py-8 md:py-10 lg:py-12 border-b border-neutral-800">
-          {/* Desktop Layout */}
-          <div className="hidden lg:grid lg:grid-cols-12 gap-6">
-            <div className="col-span-3 flex flex-col gap-32 xl:gap-40 mt-20">
-              <div className="flex items-center gap-4">
-                <p className="text-xl opacity-70">01</p>
-                <h2 className="text-2xl font-semibold ml-[100px]">Strategize</h2>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <p className="text-xl opacity-70">02</p>
-                <h2 className="text-2xl font-semibold ml-[100px]">Create</h2>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <p className="text-xl opacity-70">03</p>
-                <h2 className="text-2xl font-semibold ml-[100px]">Scale</h2>
-              </div>
-            </div>
-
-            <div className="col-span-9 flex flex-col">
-              {strategizeData.map((item) => (
-                <div key={item.id} className="border-b border-neutral-800 py-10">
-                  <button
-                    onClick={() => setOpen(open === item.id ? null : item.id)}
-                    className="w-full flex justify-between items-center text-left group"
-                  >
-                    <span className="text-lg">{item.title}</span>
-                    <span
-                      className={`text-blue-500 text-xl transition-transform ${
-                        open === item.id
-                          ? "rotate-90"
-                          : "group-hover:translate-x-1"
-                      }`}
-                    >
-                      →
-                    </span>
-                  </button>
-
-                  {open === item.id && (
-                    <div className="mt-4 space-y-4">
-                      <p className="text-neutral-400 leading-relaxed">
-                        {item.description}
-                      </p>
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full max-w-[400px] h-[300px] object-cover rounded-lg border border-neutral-800"
-                      />
-                    </div>
-                  )}
-                </div>
+      <div
+        ref={scrollRef}
+        className="flex gap-4 sm:gap-6 md:gap-8 lg:gap-10 overflow-x-auto scroll-smooth mt-8 sm:mt-12 md:mt-16 lg:mt-20 hide-scrollbar px-4 sm:px-6 md:px-8 lg:px-0 lg:w-11/12 xl:w-10/12 mx-auto"
+      >
+        {cards.map((card, index) => (
+          <div
+            key={card.id}
+            className={`min-w-[calc(100vw-2rem)] sm:min-w-[500px] lg:min-w-[600px] p-5 sm:p-6 md:p-8 rounded-xl border border-neutral-800 text-white transition-all duration-500 ${
+              activeCard === index
+                ? "bg-blue-600 shadow-xl shadow-blue-600/30"
+                : "bg-neutral-900"
+            }`}
+          >
+            <p className="text-xs sm:text-sm font-semibold opacity-70">
+              {String(card.id + 1).padStart(2, "0")}
+            </p>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mt-2 mb-3 sm:mb-4">
+              {card.title}
+            </h2>
+            <p className="text-sm sm:text-base leading-relaxed opacity-90 mb-4">
+              {card.description}
+            </p>
+            <ul className="list-disc ml-4 sm:ml-5 space-y-1 sm:space-y-2 opacity-90">
+              {card.outputs.map((item, idx) => (
+                <li key={idx} className="text-sm sm:text-base">
+                  {item}
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
+        ))}
+      </div>
 
-          {/* Mobile & Tablet Layout */}
-          <div className="lg:hidden space-y-8 md:space-y-10">
-            {/* Strategize Group */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                <p className="text-lg sm:text-xl opacity-70">01</p>
-                <h2 className="text-xl sm:text-2xl font-semibold">Strategize</h2>
-              </div>
-              
-              {strategizeData.slice(0, 3).map((item) => (
-                <div key={item.id} className="border-b border-neutral-800 py-4 sm:py-6">
-                  <button
-                    onClick={() => setOpen(open === item.id ? null : item.id)}
-                    className="w-full flex justify-between items-center text-left group"
-                  >
-                    <span className="text-base sm:text-lg pr-4">{item.title}</span>
-                    <span
-                      className={`text-blue-500 text-lg sm:text-xl transition-transform flex-shrink-0 ${
-                        open === item.id
-                          ? "rotate-90"
-                          : "group-hover:translate-x-1"
-                      }`}
-                    >
-                      →
-                    </span>
-                  </button>
-
-                  {open === item.id && (
-                    <div className="mt-3 sm:mt-4 space-y-3 sm:space-y-4">
-                      <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
-                        {item.description}
-                      </p>
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full max-w-full sm:max-w-[400px] h-[200px] sm:h-[300px] object-cover rounded-lg border border-neutral-800"
-                      />
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            {/* Create Group */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                <p className="text-lg sm:text-xl opacity-70">02</p>
-                <h2 className="text-xl sm:text-2xl font-semibold">Create</h2>
-              </div>
-              
-              {strategizeData.slice(3, 5).map((item) => (
-                <div key={item.id} className="border-b border-neutral-800 py-4 sm:py-6">
-                  <button
-                    onClick={() => setOpen(open === item.id ? null : item.id)}
-                    className="w-full flex justify-between items-center text-left group"
-                  >
-                    <span className="text-base sm:text-lg pr-4">{item.title}</span>
-                    <span
-                      className={`text-blue-500 text-lg sm:text-xl transition-transform flex-shrink-0 ${
-                        open === item.id
-                          ? "rotate-90"
-                          : "group-hover:translate-x-1"
-                      }`}
-                    >
-                      →
-                    </span>
-                  </button>
-
-                  {open === item.id && (
-                    <div className="mt-3 sm:mt-4 space-y-3 sm:space-y-4">
-                      <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
-                        {item.description}
-                      </p>
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full max-w-full sm:max-w-[400px] h-[200px] sm:h-[300px] object-cover rounded-lg border border-neutral-800"
-                      />
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            {/* Scale Group */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                <p className="text-lg sm:text-xl opacity-70">03</p>
-                <h2 className="text-xl sm:text-2xl font-semibold">Scale</h2>
-              </div>
-              
-              {strategizeData.slice(5, 7).map((item) => (
-                <div key={item.id} className="border-b border-neutral-800 py-4 sm:py-6">
-                  <button
-                    onClick={() => setOpen(open === item.id ? null : item.id)}
-                    className="w-full flex justify-between items-center text-left group"
-                  >
-                    <span className="text-base sm:text-lg pr-4">{item.title}</span>
-                    <span
-                      className={`text-blue-500 text-lg sm:text-xl transition-transform flex-shrink-0 ${
-                        open === item.id
-                          ? "rotate-90"
-                          : "group-hover:translate-x-1"
-                      }`}
-                    >
-                      →
-                    </span>
-                  </button>
-
-                  {open === item.id && (
-                    <div className="mt-3 sm:mt-4 space-y-3 sm:space-y-4">
-                      <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
-                        {item.description}
-                      </p>
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full max-w-full sm:max-w-[400px] h-[200px] sm:h-[300px] object-cover rounded-lg border border-neutral-800"
-                      />
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+      <div className="relative text-white mt-20 sm:mt-24 md:mt-32 lg:mt-40 xl:mt-48 w-full px-4 sm:px-6 md:px-8 lg:w-11/12 xl:w-10/12 mx-auto">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium leading-tight mb-4 sm:mb-6 px-4">
+            Your journey to <span className="text-blue-800">excellence</span>
+          </h2>
+          <p className="text-white/60 text-base sm:text-lg md:text-xl max-w-3xl mx-auto px-4">
+            We don't just design interfaces—we architect experiences that
+            captivate, convert, and scale
+          </p>
         </div>
 
-        {/* FLEXIBLE WORK SECTION */}
-        <section className="text-white flex flex-col mt-16 md:mt-20 lg:mt-24">
-          <div className="mb-12 md:mb-16 lg:mb-20">
-            <h3 className="text-3xl sm:text-4xl md:text-5xl leading-tight">
-              We are{" "}
-              <span className="text-blue-700">
-                flexible <br /> 2 ways{" "}
-              </span>{" "}
-              to work with us{" "}
-            </h3>
-          </div>
+        <div className="space-y-12 sm:space-y-16 md:space-y-20 lg:space-y-24">
+          {[
+            {
+              phase: "01",
+              title: "Strategize",
+              subtitle: "Foundation of Innovation",
+              items: strategizeData.filter(
+                (item) => item.phase === "strategize"
+              ),
+            },
+            {
+              phase: "02",
+              title: "Create",
+              subtitle: "Crafting Masterpieces",
+              items: strategizeData.filter((item) => item.phase === "create"),
+            },
+            {
+              phase: "03",
+              title: "Scale",
+              subtitle: "Exponential Growth",
+              items: strategizeData.filter((item) => item.phase === "scale"),
+            },
+          ].map((section, sectionIdx) => (
+            <div key={sectionIdx} className="relative">
+              <div className="flex items-center gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10 md:mb-12">
+                <div className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-blue-500 opacity-20">
+                  {section.phase}
+                </div>
+                <div>
+                  <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium mb-1 sm:mb-2">
+                    {section.title}
+                  </h3>
+                  <p className="text-white/50 text-sm sm:text-base md:text-lg">
+                    {section.subtitle}
+                  </p>
+                </div>
+              </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 mb-12 md:mb-16 lg:mb-20">
-            {/* Project Based Card */}
-            <BorderAnimation className="flex flex-col justify-between min-h-[320px] sm:min-h-[350px]">
-              <div className="flex flex-col gap-4 sm:gap-5 p-6 sm:p-8">
-                <h3 className="text-xl sm:text-2xl">Project Based</h3>
-                <p className="text-sm sm:text-base leading-relaxed text-white/80">
+              <div className="space-y-4 sm:space-y-5 md:space-y-6">
+                {section.items.map((item) => (
+                  <div
+                    key={item.id}
+                    className="group relative bg-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-500 overflow-hidden"
+                  >
+                    <div className="absolute inset-0 bg-blue-800 opacity-0 group-hover:opacity-10 transition-opacity" />
+
+                    <button
+                      onClick={() => setOpen(open === item.id ? null : item.id)}
+                      className="relative w-full flex justify-between items-center text-left p-4 sm:p-5 md:p-6 lg:p-8"
+                    >
+                      <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-1">
+                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-800 flex-shrink-0" />
+                        <span className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold">
+                          {item.title}
+                        </span>
+                      </div>
+
+                      <div
+                        className={`text-xl sm:text-2xl transition-all duration-300 flex-shrink-0 ${
+                          open === item.id
+                            ? "rotate-90"
+                            : "group-hover:translate-x-2"
+                        }`}
+                      >
+                        <span className="text-blue-800">→</span>
+                      </div>
+                    </button>
+
+                    {open === item.id && (
+                      <div className="relative px-4 sm:px-5 md:px-6 lg:px-8 pb-4 sm:pb-5 md:pb-6 lg:pb-8 space-y-4 sm:space-y-5 md:space-y-6">
+                        <p className="text-white/70 text-sm sm:text-base md:text-lg leading-relaxed pl-4 sm:pl-5 md:pl-6">
+                          {item.description}
+                        </p>
+                        {item.image && (
+                          <div className="pl-4 sm:pl-5 md:pl-6">
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              className="w-full max-w-2xl h-48 sm:h-64 md:h-80 lg:h-[300px] object-cover rounded-lg sm:rounded-xl border border-white/10"
+                            />
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <section className="relative text-white mt-20 sm:mt-24 md:mt-32 lg:mt-40 xl:mt-48 w-full px-4 sm:px-6 md:px-8 lg:w-11/12 xl:w-10/12 mx-auto">
+        <div className="flex flex-col items-center text-center mb-8 sm:mb-12 md:mb-16">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl leading-tight max-w-3xl">
+            We are{" "}
+            <span className="text-blue-700">
+              flexible <br className="sm:hidden" />
+              <span className="hidden sm:inline">with </span>2 ways{" "}
+            </span>{" "}
+            to work with us
+          </h3>
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-10 mx-auto">
+          <div
+            className="w-full lg:w-1/2"
+            onClick={() => {
+              navigate.push("/design/works/saya");
+            }}
+          >
+            <BorderAnimation className="flex flex-col justify-between min-h-[280px] sm:min-h-[320px] md:min-h-[340px] lg:h-[25vh] p-5 sm:p-6 md:p-8 group hover:cursor-pointer">
+              <div className="flex flex-col gap-3 sm:gap-4 md:gap-5 p-3 sm:p-4 md:p-6">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold">
+                  Fixed Price Project
+                </h3>
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed">
                   If you have a need for a high-quality product delivered within
                   a set time frame, the traditional project-based model is your
                   best choice. We will work on the project design from A to Z
                   and ensure it's done in time and on budget.
                 </p>
               </div>
-              <Link 
-                href={"#"} 
-                className="flex gap-2 items-center px-6 sm:px-8 pb-6 sm:pb-8 group hover:text-blue-500 transition-colors"
-              >
+              <p className="flex gap-2 items-center pl-3 sm:pl-4 md:pl-6 pb-2 sm:pb-3 w-fit text-sm sm:text-base">
                 Explore{" "}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
-              </Link>
-            </BorderAnimation>
-
-            {/* Dedicated Team Card */}
-            <BorderAnimation className="flex flex-col justify-between min-h-[320px] sm:min-h-[350px]">
-              <div className="flex flex-col gap-4 sm:gap-5 p-6 sm:p-8">
-                <h3 className="text-xl sm:text-2xl">Dedicated Team</h3>
-                <p className="text-sm sm:text-base leading-relaxed text-white/80">
-                  For ongoing projects and long-term partnerships, our dedicated
-                  team model provides you with consistent support. Get access to
-                  expert designers who understand your brand and can scale with
-                  your needs over time.
-                </p>
-              </div>
-              <Link 
-                href={"#"} 
-                className="flex gap-2 items-center px-6 sm:px-8 pb-6 sm:pb-8 group hover:text-blue-500 transition-colors"
-              >
-                Explore{" "}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
-              </Link>
+                <span>
+                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                </span>
+              </p>
             </BorderAnimation>
           </div>
-        </section>
 
-        {/* CTA SECTION */}
-        <div className="bg-black w-full flex flex-col items-center text-center py-16 md:py-20 lg:py-24 px-4">
-          <h2 className="text-gray-500 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans leading-tight mb-6 md:mb-8 lg:mb-10">
-            Discover how we can elevate your product
+          <div
+            className="w-full lg:w-1/2"
+            onClick={() => {
+              navigate.push("/design/works/saya");
+            }}
+          >
+            <BorderAnimation className="flex flex-col justify-between min-h-[280px] sm:min-h-[320px] md:min-h-[340px] lg:h-[25vh] p-5 sm:p-6 md:p-8 group hover:cursor-pointer">
+              <div className="flex flex-col gap-3 sm:gap-4 md:gap-5 p-3 sm:p-4 md:p-6">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold">
+                  Hourly Based Project
+                </h3>
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed">
+                  For ongoing design needs that require flexibility and
+                  adaptability, our hourly-based engagement model is ideal. You
+                  can scale the design resources up or down based on your
+                  current requirements, ensuring you only pay for what you need.
+                </p>
+              </div>
+              <p className="flex gap-2 items-center w-fit pl-3 sm:pl-4 md:pl-6 pb-2 sm:pb-3 text-sm sm:text-base">
+                Explore{" "}
+                <span>
+                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                </span>
+              </p>
+            </BorderAnimation>
+          </div>
+        </div>
+      </section>
+
+      <div className="relative w-full bg-black flex flex-col items-center text-center py-16 sm:py-20 md:py-24 lg:py-32 px-4 sm:px-6">
+        <div className="absolute inset-0" />
+
+        <div className="relative max-w-5xl">
+          <Sparkles className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-blue-800 mx-auto mb-6 sm:mb-8 animate-pulse" />
+
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-blue-800 leading-tight mb-4 sm:mb-6 px-4">
+            Ready to create{" "}
+            <span className="text-blue-800">something extraordinary</span>?
           </h2>
 
-          <h4 className="text-gray-600 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed max-w-4xl">
-            Check our service guide to explore the challenges we can solve for
-            you, our approach and methodology and a step-by-step overview of
-            our process.
-          </h4>
+          <p className="text-white/60 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto px-4">
+            Let's transform your vision into a digital masterpiece that
+            captivates users and dominates markets
+          </p>
 
-          <button className="mt-8 md:mt-10 bg-gray-900 text-gray-300 px-6 sm:px-8 md:px-10 py-3 md:py-4 border border-neutral-800 rounded-full hover:bg-black hover:text-white hover:border-blue-600 transition-all duration-300 text-sm sm:text-base">
-            See how we work
+          <button className="group relative px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-blue-800 text-white font-bold text-base sm:text-lg md:text-xl rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50">
+            <span className="relative z-10">Let's Talk</span>
+            <div className="absolute inset-0 bg-blue-900 opacity-0 group-hover:opacity-100 transition-opacity" />
           </button>
         </div>
       </div>

@@ -1,17 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { OurProjects } from "../../../componants/OurProjects";
 import { FeaturedProjects } from "../../../componants/FeaturedProjects";
 import { TechnologiesUsed } from "../../../componants/TechnologiesUsed";
-import { ProcessProgress } from "../../../componants/ProgressBar";
 import { FAQForDataAI } from "@/app/componants/FQAForAI";
 import useInViewAnimation from "@/app/hooks/useInViewAnimation";
 import FadeSlideIn from "@/app/hooks/FadeSlideIn";
-import TradingServices from "../../services/trading-services/page";
-import { TradingServicesSection } from "@/app/componants/Tradingservices";
-import SolutionsSection from "@/app/componants/CustomTrading";
-import Image from "next/image";
+import { TradingServicesSection } from "@/app/componants/TradingServicesProcess";
 
 interface Technology {
   name: string;
@@ -24,20 +19,33 @@ interface TechCategory {
 export default function AIDevelopementServices() {
   const [active, setActive] = useState(0);
 
-  const [activeTab, setActiveTab] = useState<string>(
-    "Programming languages"
-  );
+  const [activeTab, setActiveTab] = useState<string>("Payment gateways & APIs");
   const { ref, inView } = useInViewAnimation();
+  const [inViewPicIndex, setInViewPicIndex] = useState<number>(2);
+
+  const pics = [
+    "/real1.png",
+    "/real2.png",
+    "/real3.png",
+    "/real4.png",
+    "/real5.png",
+  ];
+
+  useEffect(() => {
+    setInterval(() => {
+      setInViewPicIndex((prev) => (prev + 1) % pics.length);
+    }, 3000);
+  }, [inView]);
 
   const tabs = [
-    "Programming languages",
-    "Frameworks/libraries",
-    "Databases",
-    "Runtime environments",
+    "Payment gateways & APIs",
+    "Mobile wallets",
+    "Open Banking",
+    "Crypto and digital assets",
   ];
 
   const technologies: TechCategory = {
-    "Programming languages": [
+    "Payment gateways & APIs": [
       {
         name: "TensorFlow",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
@@ -54,37 +62,8 @@ export default function AIDevelopementServices() {
         name: "Pandas",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg",
       },
-      {
-        name: "Scikit-learn",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg",
-      },
-      {
-        name: "PyTorch",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",
-      },
-      {
-        name: "MXNet",
-        logo: "https://raw.githubusercontent.com/dmlc/web-data/master/mxnet/image/mxnet_logo_2.png",
-      },
-      {
-        name: "NVIDIA",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nvidia/nvidia-original.svg",
-      },
-      {
-        name: "Caffe",
-        logo: "https://avatars.githubusercontent.com/u/6392063?s=200&v=4",
-      },
-      {
-        name: "Theano",
-        logo: "https://avatars.githubusercontent.com/u/10744616?s=200&v=4",
-      },
-      { name: "OpenNN", logo: "https://www.opennn.net/images/OpenNN.png" },
-      {
-        name: "MLlib",
-        logo: "https://spark.apache.org/images/spark-logo-trademark.png",
-      },
     ],
-    "Frameworks/libraries": [
+    "Mobile wallets": [
       {
         name: "NumPy",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg",
@@ -99,7 +78,7 @@ export default function AIDevelopementServices() {
         logo: "https://miro.medium.com/max/592/1*YM2HXc7f4v02pZBEO8h-qw.png",
       },
     ],
-    Databases: [
+    "Open Banking": [
       {
         name: "AWS",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
@@ -117,7 +96,7 @@ export default function AIDevelopementServices() {
         logo: "https://www.ibm.com/brand/experience-guides/developer/b1db1ae501d522a1a4b49613fe07c9f1/01_8-bar-positive.svg",
       },
     ],
-    "Runtime environments": [
+    "Crypto and digital assets": [
       {
         name: "Python",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
@@ -137,100 +116,105 @@ export default function AIDevelopementServices() {
     ],
   };
 
+  const platforms = [
+    { name: "Ethereum", logo: "/logos/ethereum.png", alt: "Ethereum logo" },
+    { name: "Polygon", logo: "/logos/polygon.svg", alt: "Polygon logo" },
+    { name: "Coinbase", logo: "/logos/coinbase.svg", alt: "Coinbase logo" },
+    { name: "Multichain", logo: null, alt: "Multichain", isText: true },
+    { name: "EOS", logo: "/logos/eos.svg", alt: "EOS logo" },
+    { name: "Stellar", logo: "/logos/stellar.svg", alt: "Stellar logo" },
+    { name: "Tron", logo: "/logos/tron.svg", alt: "Tron logo" },
+    { name: "Hedera", logo: "/logos/hedera.svg", alt: "Hedera logo" },
+    { name: "EOSIO", logo: "/logos/eosio.svg", alt: "EOSIO logo" },
+    { name: "IOTA", logo: "/logos/iota.svg", alt: "IOTA logo" },
+    { name: "Near", logo: "/logos/near.svg", alt: "Near logo" },
+    {
+      name: "Ethereum Hardhat",
+      logo: "/logos/hardhat.svg",
+      alt: "Ethereum Hardhat logo",
+    },
+    { name: "Moonbeam", logo: "/logos/moonbeam.svg", alt: "Moonbeam logo" },
+    { name: "Avalanche", logo: "/logos/avalanche.svg", alt: "Avalanche logo" },
+    { name: "XinFin", logo: "/logos/xinfin.svg", alt: "XinFin logo" },
+  ];
+
   const Industries = [
     {
       icon: "image.png",
-      heading: "HealthCare",
+      heading: "Finance",
       description:
-        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
+        "AI solutions can ensure accurate diagnoses,drug discovery, streamline medical research, and more, st levels of sensitivity data.",
+    },
+    {
+      icon: "image.png",
+      heading: "Trading",
+      description:
+        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data,",
     },
     {
       icon: "image.png",
       heading: "HealthCare",
       description:
-        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
+        "AI solutions line medical research, and more, all while adhering to all required standards to uphold the highest l evels of sensitivity.",
     },
     {
       icon: "image.png",
       heading: "HealthCare",
       description:
-        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
+        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual healthcare data.",
     },
     {
       icon: "image.png",
       heading: "HealthCare",
       description:
-        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
+        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data the highest.",
     },
     {
       icon: "image.png",
       heading: "HealthCare",
       description:
-        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
-    },
-    {
-      icon: "image.png",
-      heading: "HealthCare",
-      description:
-        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
-    },
-    {
-      icon: "image.png",
-      heading: "HealthCare",
-      description:
-        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
-    },
-    {
-      icon: "image.png",
-      heading: "HealthCare",
-      description:
-        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
-    },
-    {
-      icon: "image.png",
-      heading: "HealthCare",
-      description:
-        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven predictions of diseases, efficiently monitor patients’ health conditions, manage patient flow, assist doctors during surgical operations, accelerate drug discovery, streamline medical research, and more, all while adhering to all required standards to uphold the highest levels of sensitivity for healthcare data.",
+        "AI solutions can ensure accurate diagnoses, automate the creation of personalized treatment plans based on individual health data, provide data-driven.",
     },
   ];
   const Processes = [
     {
-      icon: "image.png",
-      heading: "Kick-off",
+      icon: "/icons/strategy.png",
+      heading: "Market Intelligence Kick-off",
       description:
-        "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
+        "We don't just start; we strategize. We analyze market trends and your platform’s goals to engineer AI-driven solutions that pinpoint high-intent buyers and maximize booking potential.",
     },
     {
-      icon: "image.png",
-      heading: "Kick-off",
+      icon: "/icons/conversion.png",
+      heading: "Growth-Engine Design",
       description:
-        "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
+        "We sketch out high-conversion UI/UX concepts specifically for real estate. Our designs focus on immersive property storytelling and seamless funnels that turn casual browsers into confirmed viewings.",
     },
     {
-      icon: "image.png",
-      heading: "Kick-off",
+      icon: "/icons/ai-matching.png",
+      heading: "Predictive AI Integration",
       description:
-        "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
+        "We implement Machine Learning algorithms that analyze user behavior to offer personalized property matches, ensuring your leads see the right home at the exact moment they are ready to buy.",
     },
     {
-      icon: "image.png",
-      heading: "Kick-off",
+      icon: "/icons/omnichannel.png",
+      heading: "Omnichannel Domination",
       description:
-        "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
+        "From Google Search to Instagram Reels, we deploy a multi-channel marketing blueprint that keeps your platform top-of-mind, driving a consistent flow of qualified traffic to your listings.",
     },
     {
-      icon: "image.png",
-      heading: "Kick-off",
+      icon: "/icons/analytics.png",
+      heading: "Performance Scaling",
       description:
-        "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
+        "Using real-time 2025 data analytics, we monitor your ROI. We scale what works—from specific ad sets to geographic targets—ensuring your marketing budget is an investment, not an expense.",
     },
     {
-      icon: "image.png",
-      heading: "Kick-off",
+      icon: "/icons/trust.png",
+      heading: "Transparency & Authority",
       description:
-        "We analyze your needs and goals, sketch out design concepts, and decide on the AI-based solution to develop.",
+        "We build your platform's credibility through automated testimonial systems and data-backed market reports, establishing you as the most trusted authority in the real estate landscape.",
     },
   ];
+
   interface Props {
     icon: string;
     heading: string;
@@ -244,7 +228,7 @@ export default function AIDevelopementServices() {
           <h4 className="text-xl">{heading}</h4>
           <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition duration-400" />
         </div>
-        <p className="text-lg">{description}</p>
+        <p className="text-lg font-sans text-gray-800">{description}</p>
       </div>
     );
   };
@@ -287,7 +271,7 @@ export default function AIDevelopementServices() {
   const FeatureDiv = ({ icon, heading, description }: Props) => {
     return (
       <div className="flex flex-col justify-start p-5 group hover:bg-gray-100">
-        <img src={icon} alt="icon" className="w-20 " />
+        <img src="/favicon.png" alt="icon" className="w-8 mb-3" />
         <h4 className="text-3xl">{heading}</h4>
         <p className="text-lg w-full">{description}</p>
       </div>
@@ -295,195 +279,135 @@ export default function AIDevelopementServices() {
   };
   return (
     <div>
-      <div className="w-8/12 mx-auto min-h-screen flex flex-col items-center">
-        <div className="flex py-16 h-5/6 mt-28">
-          <div className="flex flex-col w-1/2 h-3/4 gap-3 ">
-            <h2 className="text-5xl font-medium">
-              Trading Platform Development
-            </h2>
-            <p className="text-xl py-8 w-4/5 font-sans">
-              As a renowned provider of trading platform development services
-              with 20+ years of IT experience, EffectiveSoft offers unparalleled
-              solutions to various businesses in the financial sector. In
-              addition to building robust, secure, and scalable trading software
-              for browsers, desktops, and mobile devices, we provide technical
-              assistance in upgrading existing trading platforms. Our
-              high-quality development services help trading companies optimize
-              trading strategies, realize business goals, and achieve tangible
-              results..
-            </p>
-            <div className="flex gap-5 text-lg font-medium w-5/6">
-              <button className="bg-blue-700 px-8 py-2 hover:bg-transparent w-full text-white hover:text-black transition">
-                Let's talk
-              </button>
-              <button className="bg-transparent border-2 border-blue-700 font-bold w-full px-8 py-2 hover:bg-blue-700 transition hover:text-whi">
-                View Portfolio
-              </button>
-            </div>
-          </div>
-          <div className="w-1/2">
-            <img
-              src="/image.png"
-              alt="image"
-              className="max-h-[60vh] object-contain"
+      <div className="max-h-screen flex object-cover overflow-hidden relative">
+        <img
+          src={pics[inViewPicIndex]}
+          alt="pic"
+          className="w-full h-full object-contain object-top transition-all duration-700"
+        />
+
+        {/* <div className="absolute top-4 right-4 bg-white/60 px-4 py-2 rounded-lg text-black font-medium">
+          <form action="">
+            <h2>Let's get started</h2>
+            <input
+              type="text"
+              placeholder="Your email"
+              className="outline-none px-2 py-1 rounded-md w-48"
             />
+
+            <button className="bg-blue-600 text-white px-4 py-1 rounded-md ml-2">
+              Subscribe
+            </button>
+          </form>
+        </div> */}
+
+        <div className="absolute inset-0 bg-black/30 flex">
+          <div className="w-8/12 mx-auto flex">
+            <div className="w-3/4 h-1/2 my-auto text-white flex flex-col gap-6">
+              <h1 className="text-7xl font-bold">LET's BOOST YOUR BUSINESS</h1>
+              <p className="text-2xl">
+                {" "}
+                At B2CINC, the focus is on creating market-ready growth engines.
+                By integrating deep technical mastery with strategic project
+                management and creative intelligence, the gap between complex
+                functionality and
+              </p>
+            </div>
           </div>
         </div>
-        <FadeSlideIn
-          className={`flex my-28 bg-blue-800 p-8 transition-all duration-700
-          ${
-            inView
-              ? "opacity-100 translate-x-0 ease-in" // when visible → slide to center
-              : "opacity-0 -translate-x-10 ease-out"
-          }
-          `}
-        >
-          <div className="flex flex-col w-1/2 h-3/4 gap-3 text-white">
-            <h2 className="text-2xl font-medium">Clutch Proven</h2>
-            <p className="text-lg pt-6">
-              Team up with EffectiveSoft to explore the limitless potential of
-              artificial intelligence (AI)! From AI strategy building and data
-              analysis to AI integration and deployment, our comprehensive
-              artificial intelligence development services are tailored to
-              address challenges across domains.
-            </p>
-          </div>
-          <div className="w-1/2 flex justify-center">
-            <img src="/image.png" alt="image" className="w-40 object-contain" />
-          </div>
-        </FadeSlideIn>
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+          {pics.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setInViewPicIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                inViewPicIndex === index ? "bg-blue-600 w-8" : "bg-gray-200"
+              }`}
+            />
+          ))}
+        </div>
       </div>
-      <div>
-        <TradingServicesSection />
-      </div>
-
-      <FadeSlideIn>
-        <SolutionsSection />
+      <FadeSlideIn className="pb-10">
+        <div>
+         <TradingServicesSection/>
+        </div>
       </FadeSlideIn>
 
-      <FadeSlideIn>
-        <OurProjects />
-      </FadeSlideIn>
-
-      <div className="bg-blue-50">
-        <div className="w-8/12 mx-auto">
-          <section className="pt-10">
-            <div className="flex flex-col gap-3 py-10">
-              <h5 className="text-sm font-medium">our advantages</h5>
-              <h2 className="text-4xl font-medium">Why choose EffectiveSoft</h2>
-            </div>
-            <FadeSlideIn className="grid grid-cols-3 gap-6 items-center">
-              {Processes.map((v, idx) => (
-                <FeatureDiv
-                  key={idx}
-                  icon={v.icon}
-                  heading={v.heading}
-                  description={v.description}
-                />
-              ))}
-            </FadeSlideIn>
-
-            <div className="flex justify-center py-5">
-              <button className="bg-blue-600 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300 mx-auto">
-                Contact us for help
-              </button>
-            </div>
-          </section>
+      <div className="bg-blue-800 flex items-center w-[1300px] h-[350px] mx-auto text-white p-10">
+        {/* LEFT — IMAGE */}
+        <div className="w-[400px] flex justify-center items-center">
+          <img
+            src="/favicon.png"
+            alt="image"
+            className="h-[200px] w-auto object-cover -rotate-45 opacity-200"
+          />
         </div>
-      </div>
 
-      <div className="w-8/12 mx-auto">
-        <div className="py-16 my-16 px-16 text-white flex bg-blue-950">
-          <FadeSlideIn className="flex flex-col gap-6 py-5 px-6">
-            <h2 className="text-5xl bg-blue-700 px-4 py-2 w-fit">
-              What about you?
-            </h2>
-            <p className="text-xl w-3/5">
-              We are thrilled to dive deep into your needs and tailor our
-              trading software services to help you build a robust, secure, and
-              scalable trading solution..
-            </p>
-            <form className="group flex flex-col gap-6">
-              <input
-                type="text"
-                placeholder="Message"
-                className="w-[1000px] bg-transparent pb-5 outline-none border-b my-5"
-              />
-              <button className="bg-blue-700 text-white w-fit disabled px-10 py-2 hover:bg-blue-900 transition duration-300">
-                Next
-              </button>
-            </form>
-          </FadeSlideIn>
-        </div>
-      </div>
-
-      <div className="w-8/12 mx-auto">
-        
-         <section className="w-full bg-white py-20">
-      <div className="mx-auto max-w-7xl px-6">
-        {/* Header */}
-        <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-gray-500">
-          Testimonial
-        </p>
-        <h2 className="mb-12 text-4xl font-bold text-gray-900">
-          Our clients say
-        </h2>
-
-        {/* Card */}
-        <div className="relative rounded-lg bg-gray-50 px-12 py-16">
-          {/* Logo */}
-          <div className="absolute right-12 top-12 text-xl font-bold">
-            <span className="text-gray-900">CITY</span>
-            <span className="text-yellow-400">INDEX</span>
-          </div>
-
-          {/* Highlighted Title */}
-          <h3 className="mb-6 max-w-4xl text-3xl font-extrabold leading-tight text-white">
-            <span className="bg-blue-600 px-2 py-1">
-              ATTENTION TO DETAIL AND
-            </span>
-            <br />
-            <span className="mt-2 inline-block bg-blue-600 px-2 py-1">
-              RELIABILITY ON DELIVERY DATES
-            </span>
-          </h3>
-
-          {/* Description */}
-          <p className="mb-10 max-w-3xl text-lg leading-relaxed text-gray-600">
-            Since our first engagement a year ago, I have been impressed not
-            only by the quality of work that EffectiveSoft have done for City
-            Index but also their attention to detail and reliability on delivery
-            dates.
+        {/* RIGHT — TEXT */}
+        <div className="w-1/2">
+          <p className="text-lg leading-relaxed font-sans">
+            At B2CINC, the focus is on creating market-ready growth engines. By
+            integrating deep technical mastery with strategic project management
+            and creative intelligence, the gap between complex functionality and
+            high-conversion design is bridged. This ensures every project serves
+            the ultimate goal: scaling your brand and maximizing user lifetime
+            value.
           </p>
 
-          {/* Author */}
-          <div className="flex items-center gap-4">
-            <div className="h-14 w-14 overflow-hidden rounded-full">
-             <Image
-  src="/AI.png"
-  alt="Arthur Grimley"
-  width={56}
-  height={56}
-/>
-            </div>
-            <div>
-              <p className="font-semibold text-gray-900">Arthur Grimley</p>
-              <p className="text-sm text-gray-500">CIO UK</p>
-              <p className="text-sm text-gray-500">CityIndex Group</p>
-            </div>
+          <div className="mt-5">
+            <p className="font-semibold text-lg">Gulfam Tasawar</p>
+            <p className="opacity-80">CEO</p>
           </div>
         </div>
       </div>
-    </section>
+
+      <div className="w-8/12 mx-auto">
+        <section className="pt-10">
+          <div className="flex flex-col gap-3 py-10">
+            <h5 className="text-lg font-medium ">Why us</h5>
+            <h2 className="text-4xl font-medium">Why choose B2C</h2>
+          </div>
+          <FadeSlideIn className="grid grid-cols-2 gap-16 items-center">
+            {Processes.map((v, idx) => (
+              <FeatureDiv
+                key={idx}
+                icon="/favicon.png"
+                heading={v.heading}
+                description={v.description}
+              />
+            ))}
+          </FadeSlideIn>
+
+          <div className="py-10 bg-black">
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/S8JfKgS3BnfMCyYtKBQ9"
+              className="w-full h-full border-0 rounded-sm"
+              id="inline-S8JfKgS3BnfMCyYtKBQ9"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Form 8"
+              data-height="432"
+              data-layout-iframe-id="inline-S8JfKgS3BnfMCyYtKBQ9"
+              data-form-id="S8JfKgS3BnfMCyYtKBQ9"
+              title="Form 8"
+            ></iframe>
+            <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+          </div>
+        </section>
 
         <div className="py-16 px-8 max-h-screen">
           {/* Header */}
           <div className="mb-12">
             <p className="text-sm text-gray-500 uppercase tracking-wider mb-4">
-              tech stack
+              Tech Stack
             </p>
             <h2 className="text-4xl font-bold text-gray-900 mb-8">
-              Trading tech stack
+              Technologies we work with
             </h2>
 
             {/* Tabs */}

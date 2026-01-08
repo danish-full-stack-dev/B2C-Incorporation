@@ -4,17 +4,16 @@ const TechnicalExpertise: React.FC = () => {
   return (
     <section className="">
       <section className="flex items-center bg-[#00091f] h-80">
-        <div className="flex flex-row  text-white">
-          <div className="w-1/3 font-sans font-medium flex justify-center">
+        <div className="flex md:flex-row flex-col  text-white md:gap-0 gap-3 md:p-0 p-5">
+          <div className="md:w-1/3 font-sans font-medium flex justify-center">
             <h4>TECNICAL EPERTISES</h4>
           </div>
-          <div className="w-3/4 flex justify-center">
-            <p className="w-8/12 text-2xl font-sans">
-              We specialize in AI, cloud engineering, blockchain, IoT, data
-              analytics, and automation   building scalable, secure, and
-              high-performance digital systems. Our expertise helps businesses
-              accelerate innovation, optimize operations, and stay competitive
-              in a rapidly evolving technological landscape.
+          <div className="md:w-3/4 flex justify-center">
+            <p className="md:w-8/12 md:text-2xl font-sans">
+              B2C INC. combines expertise in AI, blockchain, data analytics,
+              automation, fintech, trading platforms, design, digital marketing,
+              app & web development, and ORM to build robust digital systems
+              that drive innovation and operational excellence.
             </p>
           </div>
         </div>
@@ -30,12 +29,12 @@ const TechnicalExpertise: React.FC = () => {
           hello
         </div> */}
       </section>
-      <section className="relative flex flex-col bg-[#00091f] py-20 font-sans text-white">
-        <div className="flex flex-col justify-center items-center">
-          <div className="font-sans flex justify-start font-medium text-4xl my-20 w-9/12 px-5">
+      <section className="md:relative flex flex-col bg-[#00091f] py-20 font-sans text-white">
+        <div className="flex flex-col justify-center md:items-center items-end">
+          <div className="font-sans flex justify-start font-medium md:text-4xl text-xl md:my-20 my-10 w-11/12 px-5">
             <h4 className="captalize">B2C INC. SUCCESS STATS</h4>
           </div>
-          <div className="grid grid-cols-4 w-9/12 px-5">
+          <div className="grid md:grid-cols-4 md:grid-flow-col grid-flow-row md:w-9/12 px-5 md:gap-0 gap-5">
             {[
               { header: "WE WORK SINCE", value: "2024" },
               { header: "LOCATION WORLDWIDE", value: "02" },
@@ -44,10 +43,10 @@ const TechnicalExpertise: React.FC = () => {
             ].map((v, idx) => (
               <div
                 key={idx}
-                className="px-5 flex flex-col justify-around h-52 border-2 border-white hover:bg-blue-800 transition-colors duration-150 ease-in-out"
+                className="px-5 flex flex-col justify-around md:h-52 h-40 border-2 border-white hover:bg-blue-800 transition-colors duration-150 ease-in-out"
               >
-                <p className="py-2 font-medium">{v.header}</p>
-                <h1 className="text-[80px] font-sans font-bold">{v.value}</h1>
+                <p className="py-2 font-medium md:text-base text-sm">{v.header}</p>
+                <h1 className="md:text-[80px] text-[60px] font-sans font-bold">{v.value}</h1>
               </div>
             ))}
           </div>

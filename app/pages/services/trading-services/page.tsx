@@ -268,7 +268,7 @@ export default function TradingServices() {
   {
     title: "Solution architecture",
     description:
-      "EffectiveSoft’s solution architects create a custom architectural blueprint, select suitable development tools and technologies, and identify potential challenges that might arise later in the project.",
+      "B2CINC's solution architects create a custom architectural blueprint, select suitable development tools and technologies, and identify potential challenges that might arise later in the project.",
   },
   {
     title: "UI/UX Design",
@@ -293,7 +293,7 @@ export default function TradingServices() {
   {
     title: "Maintenance and support",
     description:
-      "Even after your solution goes live, EffectiveSoft continues to support it—monitoring its performance, resolving emerging issues, integrating new features, and refining it based on user feedback.",
+      "Even after your solution goes live, B2CINC continues to support it—monitoring its performance, resolving emerging issues, integrating new features, and refining it based on user feedback.",
   },
 ];
 
@@ -367,7 +367,7 @@ export default function TradingServices() {
           <div className="flex flex-col w-1/2 h-3/4 gap-3 ">
             <h2 className="text-5xl font-medium">Custom Revenue Cycle Management Solutions</h2>
             <p className="text-2xl py-8 w-4/5 font-normal">
-              Are you a clinic, laboratory, or independent practice association (IPA) tired of chasing down payments from patients and health insurance companies? Are slow billing processes, inaccurate coding and scrubbing, and repeated claim rejections and denials draining your time and budget? EffectiveSoft is here to help. We build tailored revenue cycle management (RCM) software that effectively manages your financial operations and performance, freeing you to focus on what truly matters—delivering excellent patient care.
+              Are you a clinic, laboratory, or independent practice association (IPA) tired of chasing down payments from patients and health insurance companies? Are slow billing processes, inaccurate coding and scrubbing, and repeated claim rejections and denials draining your time and budget? B2CINC is here to help. We build tailored revenue cycle management (RCM) software that effectively manages your financial operations and performance, freeing you to focus on what truly matters—delivering excellent patient care.
             </p>
             <div className="flex gap-5 text-lg font-medium w-5/6">
               <button className="bg-blue-700 px-8 py-2 hover:bg-transparent w-full text-white hover:text-black transition">
@@ -427,7 +427,7 @@ export default function TradingServices() {
     <p className="text-lg leading-relaxed mb-6">
       “Revenue cycle management is a complex process with many nuances. With a deep
       understanding of the healthcare domain and proven expertise in cutting-edge
-      technology and software implementation, EffectiveSoft strives to bring
+      technology and software implementation, B2CINC strives to bring
       maximum value to its clients. We lift the technological burden, allowing
       our clients to focus on the business side.”
     </p>
@@ -468,7 +468,7 @@ export default function TradingServices() {
           <div className="flex flex-col gap-3 py-10">
             <h5 className="text-sm font-medium">Advantages</h5>
             <h2 className="text-4xl font-large text-bold">Benefits of revenue cycle management software</h2>
-            <h6 className="mt-5 text-black-500">Whether you need to build custom RCM solutions or improve existing software, EffectiveSoft<br></br>
+            <h6 className="mt-5 text-black-500">Whether you need to build custom RCM solutions or improve existing software, B2CINC<br></br>
               has you covered. We will help you:</h6>
           </div>
           <div className="grid grid-cols-3 space-y-6 items-center">

@@ -19,6 +19,25 @@ export const allServices = [
       "AI Automation & Intelligent Systems",
     ],
   },
+  // ---------------- ORM ----------------
+  // {
+  //   title: "Online Reputation Management (ORM)",
+  //   image: "/phone.png",
+  //   description:
+  //     "We protect and enhance your brand's online presence through strategic reputation management and proactive engagement.",
+  //   services: [
+  //     "SEO / GEO / AEO",
+  //     "Business Directory Listings",
+  //     "Trustpilot Reviews",
+  //     "Google Business Profile Reviews",
+  //     "Yelp Reviews",
+  //     "G2 Reviews",
+  //     "Clutch Reviews",
+  //     "Sitejabber Reviews",
+  //     "Reviews.io Reviews",
+  //     "GoodFirms Reviews",
+  //   ],
+  // },
 
   // ---------------- APP DEVELOPMENT ----------------
   {
@@ -111,83 +130,108 @@ export const Services = () => {
     target: containerRef,
     offset: ["start start", "end end"],
   });
+  interface Service {
+    title: string;
+    image: string;
+    description: string;
+    services: string[];
+  }
 
-  return (
-    <section
-      ref={containerRef}
-      className="relative w-full"
-      style={{ height: `${(allServices.length - 1) * 100}vh` }}
-    >
-      <div className="sticky top-0 h-screen flex items-start overflow-hidden">
-        {allServices.map((service, index) => {
-          const start = index / allServices.length;
-          const end = (index + 1) / allServices.length;
+  interface InnerContentProps {
+    service: Service;
+  }
 
-          // Each card slides up to cover the previous one
-          const y = useTransform(
-            scrollYProgress,
-            [start, end],
-            [index === 0 ? "0vh" : "100vh", "0vh"]
-          );
+  const InnerContent = ({ service }: InnerContentProps) => {
+    return (
+      <div className="flex flex-col md:flex-row h-full font-pt">
+        {/* Image Section */}
+        <div className="w-full md:w-5/12 bg-black/90 md:h-full h-[40vh] md:relative overflow-hidden">
+          <div className="md:absolute inset-0 " />
+          <div className="h-full w-full flex items-center justify-center text-9xl ">
+            <img
+              src={service.image}
+              alt="web dev"
+              className="w-full h-full top-0 right-0 object-cover"
+            />
+          </div>
+        </div>
 
-          return (
-            <motion.div
-              key={index}
-              style={{
-                y,
-                zIndex: index,
-              }}
-              className={`absolute inset-0 w-full h-screen overflow-hidden bg-white text-black border-t-2`}
-            >
-              <div className="flex flex-col md:flex-row h-full font-pt">
-                {/* Image Section */}
-                <div className="w-full md:w-5/12 h-1/2 bg-black/90 md:h-full relative overflow-hidden">
-                  <div className="absolute inset-0 " />
-                  <div className="h-full w-full flex items-center justify-center text-9xl ">
-                    <img
-                      src={service.image}
-                      alt="web dev"
-                      className="w-full h-full top-0 right-0 object-cover"
-                    />
-                  </div>
-                </div>
-
-                {/* Content Section */}
-                <div className="w-full md:w-7/12 flex justify-end items-center font-pt">
-                  <div className="flex flex-col h-3/5 w-4/5 justify-start">
-                    <div className="w-3/5">
-                      <div className="flex justify-between group">
-                        <h3 className="text-3xl font-bold font-pt mb-6 hover:text-blue-800 hover:cursor-pointer">
-                          {service.title}
-                        </h3>
-                        <ArrowUpRight className="w-7 h-7 group-hover:text-blue-800 group-hover:cursor-pointer group-hover:translate-x-1 group-hover:-translate-y-1 transition" />
-                      </div>
-                      <p className="text-xl leading-relaxed opacity-90">
-                        {service.description}
-                      </p>
-                      <div className="flex gap-5  mt-5 pb-5 border-b-2 ">
-                        <p className="text-xs font-bold font-sans bg-blue-800 w-fit text-white px-2 py-1 rounded-r-xl">
-                          Specialized Solutions We Offer
-                        </p>
-                      </div>
-                      <div className="flex flex-col list-inside mt-5">
-                        {service.services.map((item, idx) => (
-                          <li
-                            key={idx}
-                            className="px-4 py-2 rounded-full text-sm md:text-lg hover:text-blue-800 mr-2 bg-blend-color-dodge hover:translate-x-1 transition"
-                          >
-                            {item}
-                          </li>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+        {/* Content Section */}
+        <div className="w-full md:w-7/12 flex justify-end items-center font-pt">
+          <div className="flex flex-col md:h-3/5 md:w-4/5 md:p-0 p-5 justify-start">
+            <div className="md:w-3/5 w-full">
+              <div className="flex justify-between group">
+                <h3 className="md:text-3xl text-xl font-bold font-pt mb-6 hover:text-blue-800 hover:cursor-pointer">
+                  {service.title}
+                </h3>
+                <ArrowUpRight className="w-7 h-7 group-hover:text-blue-800 group-hover:cursor-pointer group-hover:translate-x-1 group-hover:-translate-y-1 transition" />
               </div>
-            </motion.div>
-          );
-        })}
+              <p className="text-xl leading-relaxed opacity-90">
+                {service.description}
+              </p>
+              <div className="flex gap-5  mt-5 pb-5 border-b-2 ">
+                <p className="text-xs font-bold font-sans bg-[#001a5a] w-fit text-white px-2 py-1 rounded-r-xl">
+                  Specialized Solutions We Offer
+                </p>
+              </div>
+              <div className="flex flex-col list-inside mt-5">
+                {service.services.map((item, idx) => (
+                  <li
+                    key={idx}
+                    className="px-4 py-2 rounded-full text-sm md:text-lg hover:text-blue-800 mr-2 bg-blend-color-dodge hover:translate-x-1 transition"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+    );
+  };
+  return (
+    <>
+      <section
+        ref={containerRef}
+        className="relative w-full"
+        style={{ height: `${(allServices.length - 1) * 100}vh` }}
+      >
+        <div className="sticky top-0 h-screen flex items-start overflow-hidden">
+          {allServices.map((servic, index) => {
+            const start = index / allServices.length;
+            const end = (index + 1) / allServices.length;
+
+            // Each card slides up to cover the previous one
+            const y = useTransform(
+              scrollYProgress,
+              [start, end],
+              [index === 0 ? "0vh" : "100vh", "0vh"]
+            );
+
+            return (
+              <motion.div
+                key={index}
+                style={{
+                  y,
+                  zIndex: index,
+                }}
+                className={`absolute inset-0 w-full md:h-screen overflow-hidden bg-white text-black border-t-2`}
+              >
+                <InnerContent service={servic} />
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="hidden">
+        <div className="min-h-screen">
+          {allServices.map((servic, index) => (
+            <InnerContent key={index} service={servic} />
+          ))}
+        </div>
+      </section>
+    </>
   );
 };

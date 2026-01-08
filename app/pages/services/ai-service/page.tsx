@@ -295,9 +295,9 @@ export default function AIDevelopementServices() {
       <div className="w-8/12 mx-auto min-h-screen flex flex-col items-center">
         <div className="flex py-16 h-5/6 mt-28">
           <div className="flex flex-col w-1/2 h-3/4 gap-3 ">
-            <h2 className="text-5xl font-medium">AI Development Services</h2>
+            <h2 className="text-5xl font-medium">AI Automation Services</h2>
             <p className="text-2xl py-8 w-4/5">
-              Team up with EffectiveSoft to explore the limitless potential of
+              Team up with B2CINC to explore the limitless potential of
               artificial intelligence (AI)! From AI strategy building and data
               analysis to AI integration and deployment, our comprehensive
               artificial intelligence development services are tailored to
@@ -312,11 +312,11 @@ export default function AIDevelopementServices() {
               </button>
             </div>
           </div>
-          <div className="w-1/2">
+          <div className="w-[370] m-24">
             <img
-              src="/image.png"
+              src="/favicon.png"
               alt="image"
-              className="max-h-[60vh] object-contain"
+              className="max-h-[60vh] object-contain -rotate-45"
             />
           </div>
         </div>
@@ -330,9 +330,9 @@ export default function AIDevelopementServices() {
           `}
         >
           <div className="flex flex-col w-1/2 h-3/4 gap-3 text-white">
-            <h2 className="text-2xl font-medium">AI Development Services</h2>
+            <h2 className="text-2xl font-medium">AI Automation Services</h2>
             <p className="text-lg pt-6">
-              Team up with EffectiveSoft to explore the limitless potential of
+              Team up with B2CINC to explore the limitless potential of
               artificial intelligence (AI)! From AI strategy building and data
               analysis to AI integration and deployment, our comprehensive
               artificial intelligence development services are tailored to

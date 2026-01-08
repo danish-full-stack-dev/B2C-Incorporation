@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
 
 export const Hero: React.FC = () => {
   const texts: string[] = [
-    "DYNAMIC, INTELLIGENT, RESOURCEFUL, POWERFUL",
-    "CUSTOM SOFTWARE SOLUTIONS FOR BUSINESS GROWTH",
-    "AI-DRIVEN, CLOUD-POWERED, INDUSTRY-CHANGING",
+    "DYNAMIC, INTELLIGENT, CREATIVE, POWERFUL",
+    "AI-ENABLED, CLOUD-NATIVE, DIGITAL & FINTECH-FOCUSED",
+    "DESIGN-LED DIGITAL, FINTECH & REPUTATION SOLUTIONS FOR BUSINESS GROWTH"
   ];
 
   const [index, setIndex] = useState<number>(0);
@@ -24,13 +24,13 @@ export const Hero: React.FC = () => {
   }, [texts.length]);
 
   return (
-    <section className="relative pt-32 pb-20 bg-black overflow-hidden h-screen ">
+    <section className="relative pt-32 pb-20 bg-black overflow-hidden md:h-screen h-[50vh] ">
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-95"
+        className="absolute inset-0 w-full h-full md:object-cover object-fill opacity-95"
       >
         <source src="/main-video-mp4.mp4" type="video/mp4" />
       </video>
@@ -40,31 +40,31 @@ export const Hero: React.FC = () => {
       {/* <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-1000"></div> */}
 
-      <div className="w-8/12 flex justify-center  relative z-10 mx-auto h-full">
+      <div className="md:w-8/12 w-10/12 flex justify-center  relative z-10 mx-auto h-full">
         <div className="gap-6 flex flex-col justify-center w-full h-5/6">
           {/* LEFT CONTENT */}
-            <h1 className="font-pt text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight min-h-24">
-              <span
-                className={`block text-blue-300 transition-all duration-500 ${
-                  fade ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"
-                }`}
-              >
-                {texts[index]}
-              </span>
-            </h1>
+          <h1 className="font-pt md:text-5xl text-2xl lg:text-6xl font-bold text-white mb-6 leading-tight md:min-h-24 h-3/6">
+            <span
+              className={`block text-blue-300 transition-all duration-500 ${
+                fade ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"
+              }`}
+            >
+              {texts[index]}
+            </span>
+          </h1>
 
-            {/* CTA BUTTONS */}
-            <div className=" flex flex-col sm:flex-row gap-4 ">
-              <a
-                href="/contact"
-                className="font-serif px-10 py-2 bg-blue-500 hover:bg-blue-800 transition-all duration-500"
-              >
-                Let's Talk
-              </a>
-            </div>
+          {/* CTA BUTTONS */}
+          <div className=" flex flex-col sm:flex-row gap-4 ">
+            <a
+              href="/"
+              className="font-serif md:px-10 px-8 py-2 w-fit md:text-lg text-sm bg-blue-600 hover:bg-blue-800 transition-all duration-500 text-white/90"
+            >
+              Let's Talk
+            </a>
+          </div>
 
-            {/* STATS */}
-            {/* <div className="grid grid-cols-3 gap-6 mt-12">
+          {/* STATS */}
+          {/* <div className="grid grid-cols-3 gap-6 mt-12">
               <div>
                 <div className="text-4xl font-bold text-blue-300">25+</div>
                 <div className="text-gray-200 mt-1">Years Experience</div>
