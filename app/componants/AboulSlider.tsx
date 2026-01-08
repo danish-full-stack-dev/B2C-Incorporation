@@ -74,10 +74,10 @@ export const AboutSection: React.FC = () => {
         className="relative bg-black"
         style={{ height: `${aboutCards.length * SLIDE_SCROLL_HEIGHT}px` }}
       >
-        <div className="sticky top-0 h-screen flex overflow-hidden ">
+        <div className="sticky top-0 h-screen flex overflow-hidden">
           <div
-            className="absolute right-0 top-10 w-[400px] h-[400px] 
-              bg-blue-700/50 blur-[120px] rounded-full pointer-events-none z-10"
+            className="absolute right-0 top-10 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px]
+              bg-blue-700/50 blur-[80px] sm:blur-[100px] md:blur-[120px] rounded-full pointer-events-none z-10"
           ></div>
           
           <div
@@ -87,7 +87,7 @@ export const AboutSection: React.FC = () => {
             {aboutCards.map((card, index) => (
               <div
                 key={card.id}
-                className="flex-shrink-0 w-full h-screen flex"
+                className="flex-shrink-0 w-full h-screen flex flex-col md:flex-row"
               >
                 <motion.div
                   initial={{ opacity: 0, scale: 1.05 }}
@@ -96,19 +96,21 @@ export const AboutSection: React.FC = () => {
                     scale: 1 
                   }}
                   transition={{ duration: 0.5 }}
-                  className="w-1/2 h-full relative"
+                  className="w-full md:w-1/2 h-1/2 md:h-full relative"
                 >
                   <img
                     src={card.image}
                     alt={card.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-black/20 to-transparent"></div>
                 </motion.div>
                 
-                <div className="w-1/2 bg-transparent text-white px-28 py-36 flex flex-col justify-between">
+                <div className="w-full md:w-1/2 h-1/2 md:h-full bg-transparent text-white 
+                  px-6 py-8 sm:px-12 sm:py-16 md:px-16 md:py-24 lg:px-28 lg:py-36 
+                  flex flex-col justify-between overflow-y-auto md:overflow-visible">
                   <div>
-                    <div className="text-sm opacity-60 mb-6">
+                    <div className="text-xs sm:text-sm opacity-60 mb-4 sm:mb-6">
                       {String(current + 1).padStart(2, "0")} / {String(aboutCards.length).padStart(2, "0")}
                     </div>
 
@@ -120,12 +122,11 @@ export const AboutSection: React.FC = () => {
                         opacity: current === index ? 1 : 0 
                       }}
                       transition={{ duration: 0.6 }}
-                      className="text-5xl font-light lowercase mb-6"
+                      className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light lowercase mb-4 sm:mb-6"
                     >
                       {card.title}
                     </motion.h2>
 
-                    {/* Tags */}
                     <motion.div
                       initial={{ y: 30, opacity: 0 }}
                       animate={{ 
@@ -133,9 +134,10 @@ export const AboutSection: React.FC = () => {
                         opacity: current === index ? 1 : 0 
                       }}
                       transition={{ delay: 0.05 }}
-                      className="flex flex-wrap gap-2 mb-6"
+                      className="flex flex-wrap gap-2 mb-4 sm:mb-6"
                     >
                     </motion.div>
+
                     <motion.p
                       initial={{ y: 30, opacity: 0 }}
                       animate={{ 
@@ -143,7 +145,7 @@ export const AboutSection: React.FC = () => {
                         opacity: current === index ? 1 : 0 
                       }}
                       transition={{ delay: 0.1 }}
-                      className="text-lg opacity-90 max-w-xl leading-relaxed"
+                      className="text-sm sm:text-base md:text-lg opacity-90 max-w-xl leading-relaxed"
                     >
                       {card.description}
                     </motion.p>

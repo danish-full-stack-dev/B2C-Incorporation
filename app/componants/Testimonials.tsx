@@ -94,6 +94,57 @@ const TestimonialsSection: React.FC = () => {
     },
   ];
 
+  const handleScroll = (): void => {
+    if (scrollRef.current) {
+      setScrollPosition(scrollRef.current.scrollLeft);
+    }
+  };
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    setIsDragging(true);
+    setStartX(e.pageX - container.offsetLeft);
+    setScrollLeft(container.scrollLeft);
+  };
+
+  const handleMouseLeave = (): void => {
+    setIsDragging(false);
+    if (scrollRef.current) {
+      scrollRef.current.style.cursor = "grab";
+    }
+  };
+
+  const handleMouseUp = (): void => {
+    setIsDragging(false);
+    if (scrollRef.current) {
+      scrollRef.current.style.cursor = "grab";
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>): void => {
+    if (!isDragging) return;
+    e.preventDefault();
+
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX) * 2;
+    container.scrollLeft = scrollLeft - walk;
+  };
+
+  const getProgressPercentage = (): number => {
+    const container = scrollRef.current;
+    if (!container) return 0;
+
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    if (maxScroll === 0) return 0;
+
+    return Math.min(100, (scrollPosition / maxScroll) * 100);
+  };
+
   const [scrollIndex, setScrollIndex] = useState(0);
   return (
     <div className="md:px-8 px-5 flex text-black flex-col md:w-10/12 w-full mx-auto py-16">
