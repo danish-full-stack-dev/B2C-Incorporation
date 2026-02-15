@@ -215,7 +215,7 @@ const DesktopServices = () => {
             const y = useTransform(
               scrollYProgress,
               [start, end],
-              [index === 0 ? "0vh" : "100vh", "0vh"]
+              [index === 0 ? "0vh" : "100vh", "0vh"],
             );
 
             return (
@@ -265,7 +265,7 @@ const MobileServices = () => {
                 {/* Image Section */}
                 <div className="w-full h-48 sm:h-64 bg-black/90 relative overflow-hidden">
                   <img
-                    src={service.image}
+                    src={service.source}
                     alt={service.title}
                     className="w-full h-full object-cover"
                   />
