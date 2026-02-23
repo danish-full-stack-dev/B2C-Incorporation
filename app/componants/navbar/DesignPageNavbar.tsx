@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
 export const DesignPageNavbar: React.FC = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrollingDown, setIsScrollingDown] = useState(false);
-  const [logo, setLogo] = useState("/white spaced logo.png"); 
+  const [logo, setLogo] = useState("/white spaced logo.png");
   const [hideNav, setHideNav] = useState(false);
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export const DesignPageNavbar: React.FC = () => {
         >
           <div className="px-4 py-6 border-b font-semibold flex justify-between items-center">
             <Image
-              src={"blueDesignLogo.png"}
+              src={"/blueDesignLogo.png"}
               alt="B2Clogo"
               width={100}
               height={8}
@@ -53,10 +53,10 @@ export const DesignPageNavbar: React.FC = () => {
           </div>
           <div className="h-2/3">
             <div className="md:hidden w-full h-full my-auto flex flex-col text-2xl text-blue-700 gap-4 justify-center items-center font-extrabold">
-              <Link href={"/"}>services</Link>
-              <Link href={"/"}>our works</Link>
-              <Link href={"/"}>about us</Link>
-              <Link href={"/"}>contact</Link>
+              <Link href={"/design/pages/our-service"}>services</Link>
+              <Link href={"/design/pages/our-works"}>our works</Link>
+              <Link href={"/design/pages/about-us"}>about us</Link>
+              <Link href={"/design/pages/contact"}>contact</Link>
             </div>
           </div>
           <div className="flex justify-center items-end">

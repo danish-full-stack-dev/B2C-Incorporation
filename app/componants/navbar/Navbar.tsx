@@ -8,7 +8,6 @@ import {
   X,
 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 export const Navbar: React.FC = () => {
@@ -192,7 +191,7 @@ export const Navbar: React.FC = () => {
                                 key={j}
                                 className="text-white hover:text-blue-600 transition hover:scale-[1.05] text-sm"
                               >
-                                <Link href={"/design"}>{link}</Link>
+                                <a href={"/design"}>{link}</a>
                               </li>
                             ))}
                           </ul>
@@ -214,7 +213,7 @@ export const Navbar: React.FC = () => {
       >
         <div className="transition-all duration-500 p-2 flex items-center justify-between h-fit">
           <div className="gap-2 flex justify-center items-center">
-            <Link href={"/"}>
+            <a href={"/"}>
               <span
                 className={`ml-2 ${
                   strecth
@@ -230,8 +229,8 @@ export const Navbar: React.FC = () => {
                   className="h-5 w-5 hover:cursor-pointer"
                 />
               </span>
-            </Link>
-            <Link href={"/"}>
+            </a>
+            <a href={"/"}>
               <h1
                 className="transition-opacity duration-300"
                 onMouseEnter={() => setLogo("/spaced logo blue.png")}
@@ -255,7 +254,7 @@ export const Navbar: React.FC = () => {
                   />
                 )}
               </h1>
-            </Link>
+            </a>
           </div>
           <div className="md:flex hidden justify-center relative">
             <ul className="flex gap-5">
@@ -283,9 +282,9 @@ export const Navbar: React.FC = () => {
                   </li>
                 </div>
               ))}
-              <Link href={"/design/pages/our-works"} className="">
+              <a href={"/design/pages/our-works"} className="">
                 CaseStudies
-              </Link>
+              </a>
             </ul>
           </div>
           <div className="md:flex hidden justify-center">
@@ -298,14 +297,14 @@ export const Navbar: React.FC = () => {
                 <Handshake className="h-5 w-5" />
               </button>
             ) : (
-              <Link
-                href={"/pages/contact"}
+              <a
+                href={"/contact"}
                 className={`bg-blue-600 hover:bg-blue-800 transition-all duration-500 ${
                   strecth ? "p-2" : "px-4 py-2 font-medium text-sm"
                 }`}
               >
                 Quick demo
-              </Link>
+              </a>
             )}
           </div>
           <div className="md:hidden flex">
@@ -349,31 +348,31 @@ export const Navbar: React.FC = () => {
                     Our Expertise
                   </span>
                   {[
-                    { heading: "Design", to: "/design" },
+                    { heading: "Design", to: "/pages/design" },
                     {
                       heading: "Digital Marketing",
-                      to: "/pages/products/digital-marketing",
+                      to: "/products/digital-marketing",
                     },
                     {
                       heading: "App & Web Development",
-                      to: "/pages/products/app-and-web",
+                      to: "/products/app-and-web",
                     },
                     {
                       heading: "Online Reputation Management (ORM)",
-                      to: "/pages/services/orm-service",
+                      to: "/services/orm-service",
                     },
                     {
                       heading: "AI Automation",
-                      to: "/pages/services/ai-service",
+                      to: "/services/ai-service",
                     },
                   ].map((value, idx) => (
-                    <Link
+                    <a
                       href={value.to}
                       key={idx}
                       className="hover:text-blue-500 text-sm transition hover:cursor-pointer"
                     >
                       {value.heading}
-                    </Link>
+                    </a>
                   ))}
                 </div>
                 <div
@@ -385,24 +384,24 @@ export const Navbar: React.FC = () => {
                   {[
                     {
                       heading: "Trading Platform",
-                      to: "/pages/finetech/trading",
+                      to: "/finetech/trading",
                     },
                     {
                       heading: "Blockchain Development",
-                      to: "/pages/finetech/blockchain",
+                      to: "/finetech/blockchain",
                     },
                     {
                       heading: "Payment Gateway Integration",
-                      to: "/pages/finetech/paymentgateway",
+                      to: "/finetech/paymentgateway",
                     },
                   ].map((value, idx) => (
-                    <Link
+                    <a
                       href={value.to}
                       key={idx}
                       className="hover:text-blue-500 transition hover:cursor-pointer"
                     >
                       {value.heading}
-                    </Link>
+                    </a>
                   ))}
                 </div>
                 <div className={`flex flex-col gap-4 pl-4`}>
@@ -412,24 +411,24 @@ export const Navbar: React.FC = () => {
                   {[
                     {
                       heading: "Real State",
-                      to: "/pages/specialization/realstate",
+                      to: "/diversification/pages/realstate",
                     },
                     {
                       heading: "Trading Platform",
-                      to: "/pages/specialization/tradings",
+                      to: "/diversification/pages/tradings",
                     },
                     {
                       heading: "Online Reputation Management (ORM's)",
-                      to: "/pages/specialization/orm-service",
+                      to: "/diversification/pages/orm",
                     },
                   ].map((value, idx) => (
-                    <Link
+                    <a
                       href={value.to}
                       key={idx}
                       className="hover:text-blue-500 transition hover:cursor-pointer"
                     >
                       {value.heading}
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>
@@ -453,20 +452,20 @@ export const Navbar: React.FC = () => {
                       { heading: "Expertise", to: "/weare/expertise" },
                       {
                         heading: "Carrers",
-                        to: "/pages/weare/leadership/carrers",
+                        to: "/weare/careers",
                       },
                       {
                         heading: "Certification",
                         to: "/weare/certification",
                       },
                     ].map((value, idx) => (
-                      <Link
+                      <a
                         href={value.to}
                         key={idx}
                         className="hover:text-blue-500 transition hover:cursor-pointer"
                       >
                         {value.heading}
-                      </Link>
+                      </a>
                     ))}
                   </div>
                   <div className="flex flex-col w-2/3 pl-10">

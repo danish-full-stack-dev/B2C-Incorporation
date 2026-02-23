@@ -23,7 +23,34 @@ export default function CareersPage() {
       const titleMatch = job.title
         .toLowerCase()
         .includes(search.trim().toLowerCase());
+      {
+        /* Left Side - Text Content */
+      }
+      <div className="flex flex-col justify-center text-white">
+        <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6">
+          <span className="inline-block bg-blue-600 px-3 py-1 mb-2">
+            DIDN'T FIND
+          </span>
+          <br />
+          <span className="inline-block bg-blue-600 px-3 py-1">
+            A SUITABLE VACANCY?
+          </span>
+        </h2>
 
+        <p className="text-blue-100 max-w-md mb-8 leading-relaxed">
+          Even if you haven't found a suitable position listed at the moment, we
+          encourage you to submit your resume through our online form or via e
+          {"‑"}mail
+          <br />
+          <span className="font-medium">bcd.media@gmail.com</span>.
+        </p>
+
+        <div>
+          <button className="bg-blue-600 hover:bg-blue-700 transition px-8 py-3 rounded text-white font-medium">
+            Write to us
+          </button>
+        </div>
+      </div>;
       const locationMatch =
         location === "" ||
         job.location.toLowerCase().includes(location.toLowerCase());
