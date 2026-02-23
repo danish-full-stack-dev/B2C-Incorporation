@@ -1,17 +1,15 @@
 "use client";
 import React, { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { AIServicesSection } from "../../../componants/AiServices";
-import { OurProjects } from "../../../componants/OurProjects";
-import { FeaturedProjects } from "../../../componants/FeaturedProjects";
-import { TechnologiesUsed } from "../../../componants/TechnologiesUsed";
-import { ProcessProgress } from "../../../componants/ProgressBar";
 import { FAQForDataAI } from "@/app/componants/FQAForAI";
 import useInViewAnimation from "@/app/hooks/useInViewAnimation";
 import FadeSlideIn from "@/app/hooks/FadeSlideIn";
 import { CloudServicesSection } from "@/app/componants/CloudServices";
 import WorkProcess from "@/app/componants/WorkProcess";
 import Image from "next/image";
+import { OurProjects } from "@/app/componants/OurProjects";
+import { FeaturedProjects } from "@/app/componants/FeaturedProjects";
+import { TechnologiesUsed } from "@/app/componants/TechnologiesUsed";
 
 interface Technology {
   name: string;
@@ -25,7 +23,7 @@ export default function AIDevelopementServices() {
   const [active, setActive] = useState(0);
 
   const [activeTab, setActiveTab] = useState<string>(
-    "Frameworks and libraries"
+    "Frameworks and libraries",
   );
   const { ref, inView } = useInViewAnimation();
 
@@ -543,7 +541,7 @@ export default function AIDevelopementServices() {
 
                     img.dataset.fallbackApplied = "true"; // mark fallback applied
                     img.src = `https://via.placeholder.com/100x100?text=${encodeURIComponent(
-                      tech.name
+                      tech.name,
                     )}`;
                   }}
                 />

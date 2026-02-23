@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { FeaturedProjects } from "../../../componants/FeaturedProjects";
 import { TechnologiesUsed } from "../../../componants/TechnologiesUsed";
 import { FAQForDataAI } from "@/app/componants/FQAForAI";
 import useInViewAnimation from "@/app/hooks/useInViewAnimation";
