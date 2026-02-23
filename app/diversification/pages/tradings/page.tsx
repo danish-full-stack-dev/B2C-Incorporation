@@ -1,17 +1,13 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { AIServicesSection } from "../../../componants/AiServices";
-import { OurProjects } from "../../../componants/OurProjects";
 import { FeaturedProjects } from "../../../componants/FeaturedProjects";
 import { TechnologiesUsed } from "../../../componants/TechnologiesUsed";
-import { ProcessProgress } from "../../../componants/ProgressBar";
 import { FAQForDataAI } from "@/app/componants/FQAForAI";
 import useInViewAnimation from "@/app/hooks/useInViewAnimation";
 import FadeSlideIn from "@/app/hooks/FadeSlideIn";
-import { CloudServicesSection } from "@/app/componants/CloudServices";
-import WorkProcess from "@/app/componants/WorkProcess";
-import { RealStateServicesSection } from "@/app/componants/RealStateServicesProcess";
+import { TradingServicesSection } from "@/app/componants/TradingServicesProcess";
+import TradingProcess from "@/app/componants/TradingProcess";
 
 interface Technology {
   name: string;
@@ -306,13 +302,10 @@ export default function AIDevelopementServices() {
           </form>
         </div> */}
 
-        <div className="absolute inset-0 bg-black/50 flex">
+        <div className="absolute inset-0 bg-black/30 flex">
           <div className="w-8/12 mx-auto flex">
             <div className="w-3/4 h-1/2 my-auto text-white flex flex-col gap-6">
-              <h1 className="text-6xl font-bold">
-                LET's BOOST YOUR
-                <br />BUSINESS
-              </h1>
+              <h1 className="text-7xl font-bold">LET's BOOST YOUR BUSINESS</h1>
               <p className="text-2xl">
                 {" "}
                 At B2CINC, the focus is on creating market-ready growth engines.
@@ -320,9 +313,6 @@ export default function AIDevelopementServices() {
                 management and creative intelligence, the gap between complex
                 functionality and
               </p>
-              <button className="bg-blue-600 hover:bg-blue-800 transition-colors duration-200 px-8 text-sm py-2 w-fit">
-                Get started
-              </button>
             </div>
           </div>
         </div>
@@ -340,21 +330,28 @@ export default function AIDevelopementServices() {
       </div>
       <FadeSlideIn className="pb-10">
         <div>
-          <RealStateServicesSection />
+          <TradingServicesSection />
+        </div>
+      </FadeSlideIn>
+      <FadeSlideIn className="pb-10">
+        <div>
+          <TradingProcess />
         </div>
       </FadeSlideIn>
 
-      <div className="bg-blue-800 flex items-center w-8/12 mx-auto text-white">
-        <div className="w-1/3 flex justify-center items-center p-10">
+      <div className="bg-blue-800 flex items-center w-[1300px] h-[350px] mx-auto text-white p-10">
+        {/* LEFT — IMAGE */}
+        <div className="w-[400px] flex justify-center items-center">
           <img
             src="/favicon.png"
             alt="image"
-            className="h-[20vh] w-auto object-cover -rotate-45 opacity-200 pb-5"
+            className="h-[200px] w-auto object-cover -rotate-45 opacity-200"
           />
         </div>
 
-        <div className="w-2/3">
-          <p className="text-lg leading-relaxed font-sans pr-10">
+        {/* RIGHT — TEXT */}
+        <div className="w-1/2">
+          <p className="text-lg leading-relaxed font-sans">
             At B2CINC, the focus is on creating market-ready growth engines. By
             integrating deep technical mastery with strategic project management
             and creative intelligence, the gap between complex functionality and
@@ -415,17 +412,48 @@ export default function AIDevelopementServices() {
               ))}
             </div>
           </div>
+
+          {/* Technology Grid */}
+          <FadeSlideIn className="grid grid-cols-6 gap-8">
+            {technologies[activeTab].map((tech, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-center p-6  rounded-lg  duration-300 cursor-pointer group"
+              >
+                <img
+                  src={tech.logo}
+                  alt={tech.name}
+                  className="w-24 h-24 object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                  onError={(e) => {
+                    const img = e.currentTarget;
+
+                    // avoid infinite onError loop
+                    if (img.dataset.fallbackApplied === "true") return;
+
+                    img.dataset.fallbackApplied = "true"; // mark fallback applied
+                    img.src = `https://via.placeholder.com/100x100?text=${encodeURIComponent(
+                      tech.name,
+                    )}`;
+                  }}
+                />
+              </div>
+            ))}
+          </FadeSlideIn>
         </div>
         <FadeSlideIn>
           <FAQForDataAI />
         </FadeSlideIn>
 
-        <div className="max-w-6xl mx-auto w-full p-10 my-10 text-white flex bg-blue-950 font-pt ">
+        <div className="max-w-6xl mx-auto w-full py-16 my-10 px-16 text-white flex bg-blue-950 font-pt">
           <div className="flex flex-col gap-6 py-5 px-6 w-1/2">
             <div className="flex flex-col gap-1">
-              <h2 className="text-7xl font-bold text-blue-800 py-1 mb-2 w-fit">
-                STILL HAVE QUESTIONS?
+              <h2 className="text-7xl font-bold bg-blue-800 px-4 py-1 mb-2 w-fit">
+                STILL HAVE
               </h2>
+              <span className="text-7xl font-bold bg-blue-800 px-4 py-1 w-fit">
+                {" "}
+                QUESTIONS?
+              </span>
             </div>
             <p className="text-xl">
               Can’t find the answer you are looking for? Contact us and we will
@@ -435,15 +463,16 @@ export default function AIDevelopementServices() {
               Get in touch
             </button>
           </div>
-          <div className="w-1/2 flex justify-center items-center">
+          <div className="w-1/2 flex justify-center">
             <img
-              src="/favicon.png"
+              src="workflow.jpeg"
               alt="book"
-              className="px-8 pb-5 w-3/5 object-contain -rotate-45"
+              className="px-5 w-full h-[45vh]"
             />
           </div>
         </div>
       </div>
+
       <FadeSlideIn>
         <TechnologiesUsed />
       </FadeSlideIn>

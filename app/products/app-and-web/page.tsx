@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { AIServicesSection } from "../../../componants/AiServices";
-import { OurProjects } from "../../../componants/OurProjects";
-import { FeaturedProjects } from "../../../componants/FeaturedProjects";
-import { TechnologiesUsed } from "../../../componants/TechnologiesUsed";
-import { ProcessProgress } from "../../../componants/ProgressBar";
+import { AIServicesSection } from "../../componants/AiServices";
+import { OurProjects } from "../../componants/OurProjects";
+import { FeaturedProjects } from "../../componants/FeaturedProjects";
+import { TechnologiesUsed } from "../../componants/TechnologiesUsed";
+import { ProcessProgress } from "../../componants/ProgressBar";
 import { FAQForDataAI } from "@/app/componants/FQAForAI";
 import useInViewAnimation from "@/app/hooks/useInViewAnimation";
 import FadeSlideIn from "@/app/hooks/FadeSlideIn";
@@ -24,7 +24,7 @@ interface TechCategory {
 export default function AIDevelopementServices() {
   const [active, setActive] = useState(0);
   const [activeTab, setActiveTab] = useState<string>(
-    "Frameworks and libraries"
+    "Frameworks and libraries",
   );
   const { ref, inView } = useInViewAnimation();
 
@@ -311,10 +311,11 @@ export default function AIDevelopementServices() {
               App & Web Development Services
             </h2>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-sans leading-relaxed">
-              App & Web Development Services provides the agility, scalability, and
-              cost-effectiveness needed for modern digital solutions. We build
-              the foundation of your cloud environment through custom services,
-              including cloud engineering consulting, app development, and more.
+              App & Web Development Services provides the agility, scalability,
+              and cost-effectiveness needed for modern digital solutions. We
+              build the foundation of your cloud environment through custom
+              services, including cloud engineering consulting, app development,
+              and more.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 text-base sm:text-lg font-medium">
               <button className="bg-blue-700 px-6 sm:px-8 py-2.5 sm:py-3 hover:bg-transparent text-white hover:text-black transition-all border-2 border-transparent hover:border-blue-700">
@@ -568,7 +569,7 @@ export default function AIDevelopementServices() {
                     if (img.dataset.fallbackApplied === "true") return;
                     img.dataset.fallbackApplied = "true";
                     img.src = `https://via.placeholder.com/100x100?text=${encodeURIComponent(
-                      tech.name
+                      tech.name,
                     )}`;
                   }}
                 />

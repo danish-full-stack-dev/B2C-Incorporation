@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { FeaturedProjects } from "../../../componants/FeaturedProjects";
-import { TechnologiesUsed } from "../../../componants/TechnologiesUsed";
+import { FeaturedProjects } from "../../componants/FeaturedProjects";
+import { TechnologiesUsed } from "../../componants/TechnologiesUsed";
 import { FAQForDataAI } from "@/app/componants/FQAForAI";
 import useInViewAnimation from "@/app/hooks/useInViewAnimation";
 import FadeSlideIn from "@/app/hooks/FadeSlideIn";
@@ -329,7 +329,7 @@ export default function AIDevelopementServices() {
       </div>
       <FadeSlideIn className="pb-10">
         <div>
-         <TradingServicesSection/>
+          <TradingServicesSection />
         </div>
       </FadeSlideIn>
 
@@ -447,7 +447,7 @@ export default function AIDevelopementServices() {
 
                     img.dataset.fallbackApplied = "true"; // mark fallback applied
                     img.src = `https://via.placeholder.com/100x100?text=${encodeURIComponent(
-                      tech.name
+                      tech.name,
                     )}`;
                   }}
                 />

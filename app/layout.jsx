@@ -5,6 +5,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import CursorDotProvider from "./hooks/CursorContext";
 import Script from "next/script";
 import LoadingProvider from "./context/LoadingContext";
+import { Navbar } from "./componants/navbar/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,7 @@ export default function RootLayout({
         <CursorDot />
         <LoadingProvider>
         <DashboardLayout>
+          {/* <Navbar /> */}
           {children}
         </DashboardLayout>
         </LoadingProvider>
