@@ -1,11 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { AIServicesSection } from "../../componants/AiServices";
 import { OurProjects } from "../../componants/OurProjects";
 import { FeaturedProjects } from "../../componants/FeaturedProjects";
 import { TechnologiesUsed } from "../../componants/TechnologiesUsed";
-import { ProcessProgress } from "../../componants/ProgressBar";
 import { FAQForDataAI } from "@/app/componants/FQAForAI";
 import useInViewAnimation from "@/app/hooks/useInViewAnimation";
 import FadeSlideIn from "@/app/hooks/FadeSlideIn";
