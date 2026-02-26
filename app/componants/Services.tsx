@@ -114,6 +114,7 @@ const DesktopServices = () => {
     target: containerRef,
     offset: ["start start", "end end"],
   });
+
   interface Service {
     title: string;
     source: string;
@@ -123,7 +124,7 @@ const DesktopServices = () => {
 
   interface InnerContentProps {
     service: Service;
-    reverse?: Boolean;
+    reverse?: boolean;
   }
 
   const InnerContent = ({ service, reverse }: InnerContentProps) => {
@@ -204,7 +205,7 @@ const DesktopServices = () => {
       <section
         ref={containerRef}
         className="relative w-full"
-        style={{ height: `${(allServices.length - 1) * 60}vh` }}
+        style={{ height: `${(allServices.length - 1) * 100}vh` }}
       >
         <div className="sticky top-0 h-screen flex items-start overflow-hidden">
           {allServices.map((servic, index) => {
@@ -218,11 +219,18 @@ const DesktopServices = () => {
               [index === 0 ? "0vh" : "100vh", "0vh"],
             );
 
+            const o = useTransform(
+              scrollYProgress,
+              [start, end],
+              [index === 0 ? 1 : 0, 1],
+            );
+
             return (
               <motion.div
                 key={index}
                 style={{
                   y,
+                  opacity: o,
                   zIndex: index,
                 }}
                 className={`absolute inset-0 w-full md:h-screen overflow-hidden bg-white text-black border-t-2`}
